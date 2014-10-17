@@ -32,9 +32,11 @@
             this.rad_lan = new DevExpress.XtraEditors.RadioGroup();
             this.txt_pwd = new DevExpress.XtraEditors.TextEdit();
             this.txt_id = new DevExpress.XtraEditors.TextEdit();
+            this.rad_db = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.rad_lan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_pwd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rad_db.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_login
@@ -42,10 +44,11 @@
             this.btn_login.BackgroundImage = global::DLS.Properties.Resources.loginBTN;
             this.btn_login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_login.Image = global::DLS.Properties.Resources.loginBTN;
-            this.btn_login.Location = new System.Drawing.Point(47, 293);
+            this.btn_login.Location = new System.Drawing.Point(47, 294);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(434, 50);
             this.btn_login.TabIndex = 0;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // rad_lan
             // 
@@ -77,6 +80,7 @@
             this.txt_pwd.Properties.PasswordChar = '●';
             this.txt_pwd.Size = new System.Drawing.Size(320, 30);
             this.txt_pwd.TabIndex = 2;
+            this.txt_pwd.Click += new System.EventHandler(this.txt_pwd_Click);
             // 
             // txt_id
             // 
@@ -93,6 +97,18 @@
             this.txt_id.Size = new System.Drawing.Size(320, 30);
             this.txt_id.TabIndex = 1;
             // 
+            // rad_db
+            // 
+            this.rad_db.EditValue = "ACTIVE";
+            this.rad_db.Location = new System.Drawing.Point(47, 366);
+            this.rad_db.Name = "rad_db";
+            this.rad_db.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("ACTIVE", "ACTIVE"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("TEST", "TEST")});
+            this.rad_db.Size = new System.Drawing.Size(434, 31);
+            this.rad_db.TabIndex = 4;
+            this.rad_db.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -100,6 +116,7 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = global::DLS.Properties.Resources.Login_Form;
             this.ClientSize = new System.Drawing.Size(525, 409);
+            this.Controls.Add(this.rad_db);
             this.Controls.Add(this.txt_pwd);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.rad_lan);
@@ -112,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rad_lan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_pwd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rad_db.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,5 +140,6 @@
         private DevExpress.XtraEditors.RadioGroup rad_lan;
         private DevExpress.XtraEditors.TextEdit txt_pwd;
         private DevExpress.XtraEditors.TextEdit txt_id;
+        private DevExpress.XtraEditors.RadioGroup rad_db;
     }
 }

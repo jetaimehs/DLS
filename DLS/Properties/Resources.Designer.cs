@@ -79,5 +79,32 @@ namespace DLS.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   아이디또는 비밀번호를 입력하세요.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string msg_001 {
+            get {
+                return ResourceManager.GetString("msg_001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   등록된 아이디가 없습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string msg_002 {
+            get {
+                return ResourceManager.GetString("msg_002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   비밀번호가 일치하지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string msg_003 {
+            get {
+                return ResourceManager.GetString("msg_003", resourceCulture);
+            }
+        }
     }
 }
