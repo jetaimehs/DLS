@@ -16,6 +16,7 @@ namespace DLS
     {
         public static string G_cuture;
         public static string G_userid;
+        public static string G_skin;
         public static string G_werks;        
         public static string G_user_group;
         public static string G_TARGET_DB;
@@ -80,8 +81,9 @@ namespace DLS
                 }
                 else
                 {
+                    DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(G_skin);   
                     this.Visible = false;
-                    DLS.Main_MDI_Form fMain = new DLS.Main_MDI_Form();
+                    DLS.Main_MID_Form fMain = new DLS.Main_MID_Form();
                     fMain.WindowState = FormWindowState.Maximized;
                     fMain.Show();
                 }
@@ -100,6 +102,7 @@ namespace DLS
             G_userid = dt.Rows[0]["UserID"].ToString();
             G_GRADE = dt.Rows[0]["Grade"].ToString();
             L_pwd = dt.Rows[0]["Pass"].ToString();
+            G_skin = dt.Rows[0]["Skin"].ToString();
         }
 
         private void txt_pwd_Click(object sender, EventArgs e)

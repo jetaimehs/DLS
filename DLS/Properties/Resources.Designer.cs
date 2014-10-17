@@ -106,5 +106,15 @@ namespace DLS.Properties {
                 return ResourceManager.GetString("msg_003", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap window_menu {
+            get {
+                object obj = ResourceManager.GetObject("window_menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -99,12 +99,12 @@ namespace DLS.Common.Util
             }
         }
 
-        public static string SetMultiLang(string FormName)
+        public static string SetMultiLang(string Name)
         {
-            //컬럼의 필드명으로 리소스파일에 있으면 다국어 자동처리.
+            //각 컨트롤 이름 리소스파일에 있으면 다국어 자동처리.
             System.Globalization.CultureInfo cultureUi = System.Threading.Thread.CurrentThread.CurrentUICulture;
 
-            string name = GetMASTER_TEXT_RESOURCE(FormName, cultureUi);    //ResourceManager.GetString(FormName, cultureUi);
+            string name = GetMASTER_TEXT_RESOURCE(Name, cultureUi);    //ResourceManager.GetString(FormName, cultureUi);
 
             return name;
         }
@@ -112,78 +112,17 @@ namespace DLS.Common.Util
         /**
          * //컬럼의 필드명으로 리소스파일에 있으면 다국어 자동처리.
          */
-        //public static void SetMultiLang(ref DevExpress.XtraGrid.Views.Grid.GridView gv)
-        //{
-        //    //컬럼의 필드명으로 리소스파일에 있으면 다국어 자동처리.
-        //    System.Globalization.CultureInfo cultureUi = System.Threading.Thread.CurrentThread.CurrentUICulture;
+        ////public static void SetMultiLang(ref DevExpress.XtraGrid.Views.Grid.GridView gv)
+        ////{
+        ////    //컬럼의 필드명으로 리소스파일에 있으면 다국어 자동처리.
+        ////    System.Globalization.CultureInfo cultureUi = System.Threading.Thread.CurrentThread.CurrentUICulture;
 
-        //    for (int i = 0; i < gv.Columns.Count; i++)
-        //    {
-        //        gv.Columns[i].Caption = GetMASTER_TEXT_RESOURCE(gv.Columns[i].FieldName, cultureUi);
-        //        //DB에서 먼저 가져오는것으로 변경 gv.Columns[i].Caption = ResourceManager.GetString(gv.Columns[i].FieldName, cultureUi);
-        //    }
-
-        //    /*
-        //    if (gv.Columns["CHK"] != null) gv.Columns["CHK"].Caption = Properties.Resources.chk;
-        //    if (gv.Columns["LIFNR_F"] != null) gv.Columns["LIFNR_F"].Caption = Properties.Resources.LIFNR_F;
-        //    if (gv.Columns["INVOICE"] != null) gv.Columns["INVOICE"].Caption = Properties.Resources.INVOICE;
-        //    if (gv.Columns["DATE_PACK_CONT"] != null) gv.Columns["DATE_PACK_CONT"].Caption = Properties.Resources.DATE_PACK_CONT;
-        //    if (gv.Columns["CONTNO"] != null) gv.Columns["CONTNO"].Caption = Properties.Resources.CONTNO;
-        //    if (gv.Columns["DATE_PORT_CONTOUT"] != null) gv.Columns["DATE_PORT_CONTOUT"].Caption = Properties.Resources.DATE_PORT_CONTOUT;
-        //    if (gv.Columns["DATE_PORT_CONTIN"] != null) gv.Columns["DATE_PORT_CONTIN"].Caption = Properties.Resources.DATE_PORT_CONTIN;
-        //    if (gv.Columns["CONT_LOCATION"] != null) gv.Columns["CONT_LOCATION"].Caption = Properties.Resources.CONT_LOCATION;
-        //    if (gv.Columns["DATE_YARD_CONTIN"] != null) gv.Columns["DATE_YARD_CONTIN"].Caption = Properties.Resources.DATE_YARD_CONTIN;
-        //    if (gv.Columns["DATE_YARD_CONTOUT"] != null) gv.Columns["DATE_YARD_CONTOUT"].Caption = Properties.Resources.DATE_YARD_CONTOUT;
-        //    if (gv.Columns["DATE_YARD_ORDER"] != null) gv.Columns["DATE_YARD_ORDER"].Caption = Properties.Resources.DATE_YARD_ORDER;
-        //    if (gv.Columns["DELAY_DAY"] != null) gv.Columns["DELAY_DAY"].Caption = Properties.Resources.DELAY_DAY;
-        //    if (gv.Columns["DATE_PLANT_CONTUNPACK"] != null) gv.Columns["DATE_PLANT_CONTUNPACK"].Caption = Properties.Resources.DATE_PLANT_CONTUNPACK;
-        //    if (gv.Columns["I_EBELN"] != null) gv.Columns["I_EBELN"].Caption = Properties.Resources.I_EBELN;
-        //    if (gv.Columns["I_MBLNR"] != null) gv.Columns["I_MBLNR"].Caption = Properties.Resources.I_MBLNR;
-        //    if (gv.Columns["NOTE"] != null) gv.Columns["NOTE"].Caption = Properties.Resources.NOTE;
-
-        //    if (gv.Columns["KUNNR"] != null) gv.Columns["KUNNR"].Caption = Properties.Resources.KUNNR;
-        //    if (gv.Columns["MATNR"] != null) gv.Columns["MATNR"].Caption = Properties.Resources.MATNR;
-        //    if (gv.Columns["MAKTX"] != null) gv.Columns["MAKTX"].Caption = Properties.Resources.MAKTX;
-        //    if (gv.Columns["MATKL"] != null) gv.Columns["MATKL"].Caption = Properties.Resources.matkl;
-        //    if (gv.Columns["CASENO"] != null) gv.Columns["CASENO"].Caption = Properties.Resources.CASENO;
-        //    if (gv.Columns["BOXNO"] != null) gv.Columns["BOXNO"].Caption = Properties.Resources.BOXNO;
-        //    if (gv.Columns["CASENO2"] != null) gv.Columns["CASENO2"].Caption = Properties.Resources.CASENO2;
-        //    if (gv.Columns["CASE_LOCATION"] != null) gv.Columns["CASE_LOCATION"].Caption = Properties.Resources.CASE_LOCATION;
-        //    if (gv.Columns["DATE_PACK_CASE"] != null) gv.Columns["DATE_PACK_CASE"].Caption = Properties.Resources.DATE_PACK_CASE;
-        //    if (gv.Columns["DATE_BOXIN"] != null) gv.Columns["DATE_BOXIN"].Caption = Properties.Resources.DATE_BOXIN;
-        //    if (gv.Columns["DATE_CASEIN"] != null) gv.Columns["DATE_CASEIN"].Caption = Properties.Resources.DATE_CASEIN;
-        //    if (gv.Columns["SUM_QTY"] != null) gv.Columns["SUM_QTY"].Caption = Properties.Resources.SUM_QTY;
-        //    if (gv.Columns["USE_AGE"] != null) gv.Columns["USE_AGE"].Caption = Properties.Resources.USE_AGE;
-        //    if (gv.Columns["COMPLET_QTY"] != null) gv.Columns["COMPLET_QTY"].Caption = Properties.Resources.COMPLET_QTY;
-        //    if (gv.Columns["DATE_CASELOCK"] != null) gv.Columns["DATE_CASELOCK"].Caption = Properties.Resources.DATE_CASELOCK;
-        //    if (gv.Columns["DATE_OUTORDER"] != null) gv.Columns["DATE_OUTORDER"].Caption = Properties.Resources.DATE_OUTORDER;
-        //    if (gv.Columns["DATE_PACK_BOX"] != null) gv.Columns["DATE_PACK_BOX"].Caption = Properties.Resources.DATE_PACK_BOX;
-        //    if (gv.Columns["PACK_SEQ"] != null) gv.Columns["PACK_SEQ"].Caption = Properties.Resources.PACK_SEQ;
-        //    if (gv.Columns["QTY"] != null) gv.Columns["QTY"].Caption = Properties.Resources.QTY;
-        //    if (gv.Columns["BRGEW"] != null) gv.Columns["BRGEW"].Caption = Properties.Resources.BRGEW;
-        //    if (gv.Columns["BRGEW_QTY"] != null) gv.Columns["BRGEW_QTY"].Caption = Properties.Resources.BRGEW_QTY;
-        //    if (gv.Columns["BRGEW_BOX"] != null) gv.Columns["BRGEW_BOX"].Caption = Properties.Resources.BRGEW_BOX;
-        //    if (gv.Columns["PACK_QTY"] != null) gv.Columns["PACK_QTY"].Caption = Properties.Resources.PACK_QTY;
-        //    if (gv.Columns["PACK_WEIGHT"] != null) gv.Columns["PACK_WEIGHT"].Caption = Properties.Resources.PACK_WEIGHT;
-
-        //    if (gv.Columns["matnr_header"] != null) gv.Columns["matnr_header"].Caption = Properties.Resources.matnr_header;
-        //    if (gv.Columns["MAKTX_HEADER"] != null) gv.Columns["MAKTX_HEADER"].Caption = Properties.Resources.MAKTX_HEADER;
-        //    if (gv.Columns["LIFNR"] != null) gv.Columns["LIFNR"].Caption = Properties.Resources.LIFNR;
-        //    if (gv.Columns["LNAME"] != null) gv.Columns["LNAME"].Caption = Properties.Resources.LNAME;
-        //    if (gv.Columns["PACKED_QTY"] != null) gv.Columns["PACKED_QTY"].Caption = Properties.Resources.PACKED_QTY;
-        //    if (gv.Columns["PACK_CASE_QTY"] != null) gv.Columns["PACK_CASE_QTY"].Caption = Properties.Resources.PACK_CASE_QTY;
-        //    if (gv.Columns["PACK_BOX_QTY"] != null) gv.Columns["PACK_BOX_QTY"].Caption = Properties.Resources.PACK_BOX_QTY;
-        //    if (gv.Columns["DEPART_PORT_QTY"] != null) gv.Columns["DEPART_PORT_QTY"].Caption = Properties.Resources.DEPART_PORT_QTY;
-        //    if (gv.Columns["SEA_QTY"] != null) gv.Columns["SEA_QTY"].Caption = Properties.Resources.SEA_QTY;
-        //    if (gv.Columns["ARRIVAL_PORT_QTY"] != null) gv.Columns["ARRIVAL_PORT_QTY"].Caption = Properties.Resources.ARRIVAL_PORT_QTY;
-        //    if (gv.Columns["YARD_QTY"] != null) gv.Columns["YARD_QTY"].Caption = Properties.Resources.YARD_QTY;
-        //    if (gv.Columns["CASE_QTY"] != null) gv.Columns["CASE_QTY"].Caption = Properties.Resources.CASE_QTY;
-        //    if (gv.Columns["BOX_QTY"] != null) gv.Columns["BOX_QTY"].Caption = Properties.Resources.BOX_QTY;
-        //    if (gv.Columns["FACTORY_QTY"] != null) gv.Columns["FACTORY_QTY"].Caption = Properties.Resources.FACTORY_QTY;
-        //    if (gv.Columns["SUM_USE_AGE"] != null) gv.Columns["SUM_USE_AGE"].Caption = Properties.Resources.SUM_USE_AGE;
-        //    */
-
-        //}
+        ////    for (int i = 0; i < gv.Columns.Count; i++)
+        ////    {
+        ////        gv.Columns[i].Caption = GetMASTER_TEXT_RESOURCE(gv.Columns[i].FieldName, cultureUi);
+        ////        //DB에서 먼저 가져오는것으로 변경 gv.Columns[i].Caption = ResourceManager.GetString(gv.Columns[i].FieldName, cultureUi);
+        ////    }
+        ////}
 
         /**
          * 패널 내부 버튼 or 레이블 다국어 처리
