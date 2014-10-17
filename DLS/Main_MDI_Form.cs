@@ -19,6 +19,7 @@ namespace DLS
         private void Main_MDI_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+
         }
     }
 }
