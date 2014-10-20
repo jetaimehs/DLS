@@ -68,13 +68,13 @@ namespace DLS
 
             for (int i = 0; i < Rbn_Menu.Pages.Count; i++)
             {
-                Rbn_Menu.Pages[i].Text = Common.Util.MyUtil.GetMASTER_TEXT_RESOURCE(Rbn_Menu.Pages[i].Name, cultureUi);
+                Rbn_Menu.Pages[i].Text = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Name, cultureUi);
                 for (int j = 0; j < Rbn_Menu.Pages[i].Groups.Count; j++)
                 {
-                    Rbn_Menu.Pages[i].Groups[j].Text = Common.Util.MyUtil.GetMASTER_TEXT_RESOURCE(Rbn_Menu.Pages[i].Name, cultureUi);
+                    Rbn_Menu.Pages[i].Groups[j].Text = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Name, cultureUi);
                     for (int k = 0; k < Rbn_Menu.Pages[i].Groups[j].ItemLinks.Count; k++)
                     {
-                        Rbn_Menu.Pages[i].Groups[j].ItemLinks[k].Item.Caption = Common.Util.MyUtil.GetMASTER_TEXT_RESOURCE(Rbn_Menu.Pages[i].Groups[j].ItemLinks[k].Item.Name, cultureUi);
+                        Rbn_Menu.Pages[i].Groups[j].ItemLinks[k].Item.Caption = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Groups[j].ItemLinks[k].Item.Name, cultureUi);
                     }
                 }
             }

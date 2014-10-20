@@ -161,6 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 743);
             this.Controls.Add(this.Rbn_Menu);
+            this.IsMdiContainer = true;
             this.Name = "Main_MID_Form";
             this.Ribbon = this.Rbn_Menu;
             this.Text = "동희 물류 관리 시스템";

@@ -136,4 +136,67 @@
   <data name="window_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\window-menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Btn_Master_User" xml:space="preserve">
+    <value>사용자관리</value>
+  </data>
+  <data name="Master_G1" xml:space="preserve">
+    <value>사용자관리</value>
+  </data>
+  <data name="Rbn_Menu_Home" xml:space="preserve">
+    <value>홈</value>
+  </data>
+  <data name="Rbn_Menu_Master" xml:space="preserve">
+    <value>기준정보</value>
+  </data>
+  <data name="Rbn_Menu_MM" xml:space="preserve">
+    <value>자재</value>
+  </data>
+  <data name="Rbn_Menu_PP" xml:space="preserve">
+    <value>생산</value>
+  </data>
+  <data name="Rbn_Menu_SD" xml:space="preserve">
+    <value>영업</value>
+  </data>
+  <data name="btn_add" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="btn_delete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="btn_find" xml:space="preserve">
+    <value>조회</value>
+  </data>
+  <data name="btn_save" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="display_kor_name" xml:space="preserve">
+    <value>성명</value>
+  </data>
+  <data name="img_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lbl_name" xml:space="preserve">
+    <value>성명</value>
+  </data>
+  <data name="lbl_userID" xml:space="preserve">
+    <value>아이디</value>
+  </data>
+  <data name="person_id" xml:space="preserve">
+    <value>아이디</value>
+  </data>
+  <data name="pstn_name_kor" xml:space="preserve">
+    <value>직급</value>
+  </data>
+  <data name="unit_name_kor" xml:space="preserve">
+    <value>부서명</value>
+  </data>
+  <data name="User_Management" xml:space="preserve">
+    <value>메일</value>
+  </data>
+  <data name="msg_004" xml:space="preserve">
+    <value>리스트에서 삭제할 사용자를 선택하세요.</value>
+  </data>
+  <data name="msg_005" xml:space="preserve">
+    <value>삭제되었습니다.</value>
+  </data>
 </root>

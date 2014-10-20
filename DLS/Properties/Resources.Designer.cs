@@ -61,6 +61,88 @@ namespace DLS.Properties {
         }
         
         /// <summary>
+        ///   추가과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string btn_add {
+            get {
+                return ResourceManager.GetString("btn_add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   삭제과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string btn_delete {
+            get {
+                return ResourceManager.GetString("btn_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   조회과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string btn_find {
+            get {
+                return ResourceManager.GetString("btn_find", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   사용자관리과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Btn_Master_User {
+            get {
+                return ResourceManager.GetString("Btn_Master_User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   저장과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string btn_save {
+            get {
+                return ResourceManager.GetString("btn_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   성명과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string display_kor_name {
+            get {
+                return ResourceManager.GetString("display_kor_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_find {
+            get {
+                object obj = ResourceManager.GetObject("img_find", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   성명과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string lbl_name {
+            get {
+                return ResourceManager.GetString("lbl_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   아이디과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string lbl_userID {
+            get {
+                return ResourceManager.GetString("lbl_userID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.Drawing.Bitmap Login_Form {
@@ -77,6 +159,15 @@ namespace DLS.Properties {
             get {
                 object obj = ResourceManager.GetObject("loginBTN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   사용자관리과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Master_G1 {
+            get {
+                return ResourceManager.GetString("Master_G1", resourceCulture);
             }
         }
         
@@ -104,6 +195,105 @@ namespace DLS.Properties {
         internal static string msg_003 {
             get {
                 return ResourceManager.GetString("msg_003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   리스트에서 삭제할 사용자를 선택하세요.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string msg_004 {
+            get {
+                return ResourceManager.GetString("msg_004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   삭제되었습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string msg_005 {
+            get {
+                return ResourceManager.GetString("msg_005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   아이디과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string person_id {
+            get {
+                return ResourceManager.GetString("person_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   직급과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string pstn_name_kor {
+            get {
+                return ResourceManager.GetString("pstn_name_kor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   홈과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Rbn_Menu_Home {
+            get {
+                return ResourceManager.GetString("Rbn_Menu_Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   기준정보과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Rbn_Menu_Master {
+            get {
+                return ResourceManager.GetString("Rbn_Menu_Master", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   자재과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Rbn_Menu_MM {
+            get {
+                return ResourceManager.GetString("Rbn_Menu_MM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   생산과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Rbn_Menu_PP {
+            get {
+                return ResourceManager.GetString("Rbn_Menu_PP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   영업과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Rbn_Menu_SD {
+            get {
+                return ResourceManager.GetString("Rbn_Menu_SD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   부서명과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string unit_name_kor {
+            get {
+                return ResourceManager.GetString("unit_name_kor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   메일과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string User_Management {
+            get {
+                return ResourceManager.GetString("User_Management", resourceCulture);
             }
         }
         
