@@ -67,6 +67,8 @@ namespace DLS
 
             Get_UserInfo();
 
+            G_cuture = rad_lan.EditValue.ToString();
+
             if (G_userid != txt_id.Text)
             {
                 //등록된 아이디가 없습니다.
@@ -102,7 +104,7 @@ namespace DLS
             G_userid = dt.Rows[0]["UserID"].ToString();
             G_GRADE = dt.Rows[0]["Grade"].ToString();
             L_pwd = dt.Rows[0]["Pass"].ToString();
-            G_skin = dt.Rows[0]["Skin"].ToString();
+            G_skin = dt.Rows[0]["Skin"].ToString();            
         }
 
         private void txt_pwd_Click(object sender, EventArgs e)
@@ -113,6 +115,11 @@ namespace DLS
             {
                 rad_db.Visible = true;
             }
+        }
+
+        private void rad_db_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            G_TARGET_DB = rad_db.EditValue.ToString();
         }
     }
 }

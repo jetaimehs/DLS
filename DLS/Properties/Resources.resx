@@ -199,4 +199,10 @@
   <data name="msg_005" xml:space="preserve">
     <value>삭제되었습니다.</value>
   </data>
+  <data name="Btn_SD_Delivery" xml:space="preserve">
+    <value>납품처리</value>
+  </data>
+  <data name="SD_G1" xml:space="preserve">
+    <value>납품</value>
+  </data>
 </root>

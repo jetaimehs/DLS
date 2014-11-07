@@ -68,6 +68,7 @@
             // 
             // txt_pwd
             // 
+            this.txt_pwd.EditValue = "D@ngh22";
             this.txt_pwd.Location = new System.Drawing.Point(161, 195);
             this.txt_pwd.MaximumSize = new System.Drawing.Size(320, 30);
             this.txt_pwd.MinimumSize = new System.Drawing.Size(320, 30);
@@ -85,6 +86,7 @@
             // txt_id
             // 
             this.txt_id.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_id.EditValue = "admin";
             this.txt_id.Location = new System.Drawing.Point(161, 140);
             this.txt_id.MaximumSize = new System.Drawing.Size(320, 30);
             this.txt_id.MinimumSize = new System.Drawing.Size(320, 30);
@@ -99,7 +101,7 @@
             // 
             // rad_db
             // 
-            this.rad_db.EditValue = "ACTIVE";
+            this.rad_db.EditValue = "TEST";
             this.rad_db.Location = new System.Drawing.Point(47, 366);
             this.rad_db.Name = "rad_db";
             this.rad_db.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
@@ -108,6 +110,7 @@
             this.rad_db.Size = new System.Drawing.Size(434, 31);
             this.rad_db.TabIndex = 4;
             this.rad_db.Visible = false;
+            this.rad_db.SelectedIndexChanged += new System.EventHandler(this.rad_db_SelectedIndexChanged);
             // 
             // Login
             // 

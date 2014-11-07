@@ -30,17 +30,17 @@
         {
             this.Rbn_Menu = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.Rgb_Skin = new DevExpress.XtraBars.RibbonGalleryBarItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_User = new DevExpress.XtraBars.BarButtonItem();
             this.barMdiChildrenListItem1 = new DevExpress.XtraBars.BarMdiChildrenListItem();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_SD = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.SD_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_MM = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_PP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Btn_SD_Delivery = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,11 +51,11 @@
             this.Rbn_Menu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.Rbn_Menu.ExpandCollapseItem,
             this.Rgb_Skin,
-            this.barButtonItem1,
             this.Btn_Master_User,
-            this.barMdiChildrenListItem1});
+            this.barMdiChildrenListItem1,
+            this.Btn_SD_Delivery});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 10;
+            this.Rbn_Menu.MaxItemId = 11;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Rbn_Menu_Home,
@@ -85,12 +85,6 @@
             this.Rgb_Skin.Id = 1;
             this.Rgb_Skin.Name = "Rgb_Skin";
             this.Rgb_Skin.GalleryItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.Rgb_Skin_GalleryItemClick);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // Btn_Master_User
             // 
@@ -122,15 +116,15 @@
             // Rbn_Menu_SD
             // 
             this.Rbn_Menu_SD.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.SD_G1});
             this.Rbn_Menu_SD.Name = "Rbn_Menu_SD";
             this.Rbn_Menu_SD.Text = "영업";
             // 
-            // ribbonPageGroup1
+            // SD_G1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.SD_G1.ItemLinks.Add(this.Btn_SD_Delivery);
+            this.SD_G1.Name = "SD_G1";
+            this.SD_G1.Text = "납품";
             // 
             // Rbn_Menu_MM
             // 
@@ -154,6 +148,14 @@
             this.Master_G1.ItemLinks.Add(this.Btn_Master_User);
             this.Master_G1.Name = "Master_G1";
             this.Master_G1.Text = "사용자관리";
+            // 
+            // Btn_SD_Delivery
+            // 
+            this.Btn_SD_Delivery.Caption = "납품처리";
+            this.Btn_SD_Delivery.Id = 10;
+            this.Btn_SD_Delivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_Delivery.Name = "Btn_SD_Delivery";
+            this.Btn_SD_Delivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_Delivery_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -183,10 +185,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage Rbn_Menu_Home;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup Home_G1;
         private DevExpress.XtraBars.RibbonGalleryBarItem Rgb_Skin;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup SD_G1;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_User;
         private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem1;
+        private DevExpress.XtraBars.BarButtonItem Btn_SD_Delivery;
 
     }
 }

@@ -21,7 +21,7 @@ namespace DLS.Common.Frm10.SapConntor
             configParam[RfcConfigParameters.PoolSize] = "5";
             configParam[RfcConfigParameters.MaxPoolSize] = "10";
 
-            if (Login.G_TARGET_DB == "Test")
+            if (Login.G_TARGET_DB == "TEST")
             {
                 configParam[RfcConfigParameters.AppServerHost] = "10.206.92.80";
                 configParam[RfcConfigParameters.Client] = "530";            

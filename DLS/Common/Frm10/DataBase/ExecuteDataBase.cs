@@ -465,7 +465,7 @@ namespace DLS.Common.Frm10.DataBase
             switch (conn)
             {   
                 default:
-                    if (Login.G_TARGET_DB == "Test")
+                    if (Login.G_TARGET_DB == "TEST")
                     {
                         dbConn = new SqlConnection(base.getTestConnString);
                     }

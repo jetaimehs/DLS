@@ -106,6 +106,15 @@ namespace DLS.Properties {
         }
         
         /// <summary>
+        ///   납품처리과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Btn_SD_Delivery {
+            get {
+                return ResourceManager.GetString("Btn_SD_Delivery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   성명과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string display_kor_name {
@@ -276,6 +285,15 @@ namespace DLS.Properties {
         internal static string Rbn_Menu_SD {
             get {
                 return ResourceManager.GetString("Rbn_Menu_SD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   납품과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string SD_G1 {
+            get {
+                return ResourceManager.GetString("SD_G1", resourceCulture);
             }
         }
         

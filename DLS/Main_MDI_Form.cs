@@ -129,6 +129,8 @@ namespace DLS
             NewForm.Text = Common.Util.MyUtil.SetMultiLang(NewForm.Name);
         }
 
+        #region 메뉴버튼 클릭
+        #region 기준정보
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (FromOpen("User_Management"))
@@ -137,5 +139,26 @@ namespace DLS
                 Mdi_Child_NewOpen(fm);
             }
         }
+        #endregion
+
+        #region 영업
+        private void Btn_SD_Delivery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Outbound_Delivery"))
+            {
+                Sales_Distribution.Outbound_Delivery fm = new Sales_Distribution.Outbound_Delivery();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+        #endregion
+
+        #region 자재
+
+        #endregion
+
+        #region 생산
+
+        #endregion
+        #endregion
     }
 }
