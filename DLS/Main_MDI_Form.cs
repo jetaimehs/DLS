@@ -143,14 +143,14 @@ namespace DLS
         #endregion
 
         #region 영업
-        private void Btn_SD_Delivery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (FromOpen("Outbound_Delivery"))
-            {
-                Sales_Distribution.Outbound_Delivery fm = new Sales_Distribution.Outbound_Delivery();
-                Mdi_Child_NewOpen(fm);
-            }
-        }
+        //private void Btn_SD_Delivery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //{
+        //    if (FromOpen("Outbound_Delivery"))
+        //    {
+        //        Sales_Distribution.Outbound_Delivery fm = new Sales_Distribution.Outbound_Delivery();
+        //        Mdi_Child_NewOpen(fm);
+        //    }
+        //}
 
         //출고처리
         private void Btn_SD_OutDelivery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

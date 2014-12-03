@@ -106,14 +106,6 @@
             this.barMdiChildrenListItem1.Id = 8;
             this.barMdiChildrenListItem1.Name = "barMdiChildrenListItem1";
             // 
-            // Btn_SD_Delivery
-            // 
-            this.Btn_SD_Delivery.Caption = "납품처리";
-            this.Btn_SD_Delivery.Id = 10;
-            this.Btn_SD_Delivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.Btn_SD_Delivery.Name = "Btn_SD_Delivery";
-            this.Btn_SD_Delivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_Delivery_ItemClick);
-            // 
             // Btn_SD_OutDelivery
             // 
             this.Btn_SD_OutDelivery.Caption = "출고처리";
