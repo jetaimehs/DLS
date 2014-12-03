@@ -232,10 +232,9 @@ namespace DLS.Sales_Distribution
 
         }
 
-        private void gv_matral_list_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        private void btn_down_Click(object sender, EventArgs e)
         {
-            string aa = "A";
-            aa = "B";
+            Common.Frm10.Base.BaseModules.ExcelExport(gc_matral_list, "당일_출고_현황");
         }        
     }
 }

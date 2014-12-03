@@ -89,6 +89,7 @@
             this.LABST = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LFIMG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OUTQTY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).BeginInit();
@@ -119,6 +120,7 @@
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.btn_down);
             this.pc_main.Controls.Add(this.btn_save);
             this.pc_main.Controls.Add(this.btn_delete);
             this.pc_main.Controls.Add(this.btn_add);
@@ -685,20 +687,7 @@
             this.gc_matral_list.Size = new System.Drawing.Size(1344, 590);
             this.gc_matral_list.TabIndex = 2;
             this.gc_matral_list.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_matral_list});
-            // 
-            // gv_matral_list
-            // 
-            this.gv_matral_list.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MATNR,
-            this.MAKTX,
-            this.MATKL,
-            this.LABST,
-            this.LFIMG,
-            this.OUTQTY});
-            this.gv_matral_list.GridControl = this.gc_matral_list;
-            this.gv_matral_list.Name = "gv_matral_list";
-            this.gv_matral_list.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_matral_list_CellValueChanged);
+            this.gv_matral_list});            
             // 
             // MATNR
             // 
@@ -754,6 +743,17 @@
             this.OUTQTY.Name = "OUTQTY";
             this.OUTQTY.Visible = true;
             this.OUTQTY.VisibleIndex = 5;
+            // 
+            // btn_down
+            // 
+            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_down.Location = new System.Drawing.Point(336, 12);
+            this.btn_down.Name = "btn_down";
+            this.btn_down.Size = new System.Drawing.Size(75, 60);
+            this.btn_down.TabIndex = 5;
+            this.btn_down.Text = "저장";
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
             // 
             // Outbound_Delivery
             // 
@@ -859,6 +859,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn LABST;
         private DevExpress.XtraGrid.Columns.GridColumn LFIMG;
         private DevExpress.XtraGrid.Columns.GridColumn OUTQTY;
+        private DevExpress.XtraEditors.SimpleButton btn_down;
 
     }
 }
