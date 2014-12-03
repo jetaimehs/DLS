@@ -41,37 +41,37 @@ namespace DLS.Common.Frm10.Base
         #endregion
 
         #region 엑셀저장 - Devexpress
+        
+        //public static void ExcelExport(GridControl gc, string FileName)
+        //{
+        //    System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor;
 
-        public static void ExcelExport(GridControl gc, string FileName)
-        {
-            System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor;
+        //    SaveFileDialog saveFD = new SaveFileDialog();
+        //    saveFD.CreatePrompt = true;
+        //    saveFD.OverwritePrompt = true;
+        //    saveFD.FileName = FileName;
+        //    saveFD.DefaultExt = "xls";
+        //    saveFD.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx ";
+        //    DialogResult result = saveFD.ShowDialog();
 
-            SaveFileDialog saveFD = new SaveFileDialog();
-            saveFD.CreatePrompt = true;
-            saveFD.OverwritePrompt = true;
-            saveFD.FileName = FileName;
-            saveFD.DefaultExt = "xls";
-            saveFD.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx ";
-            DialogResult result = saveFD.ShowDialog();
+        //    if (result == DialogResult.OK)
+        //    {
+        //        string exportFilePath = saveFD.FileName;
+        //        string fileExtenstion = new FileInfo(exportFilePath).Extension;
 
-            if (result == DialogResult.OK)
-            {
-                string exportFilePath = saveFD.FileName;
-                string fileExtenstion = new FileInfo(exportFilePath).Extension;
-
-                switch (fileExtenstion)
-                {
-                    case ".xls":
-                        gc.ExportToXls(exportFilePath);
-                        break;
-                    case ".xlsx":
-                        gc.ExportToXlsx(exportFilePath);
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
+        //        switch (fileExtenstion)
+        //        {
+        //            case ".xls":
+        //                gc.ExportToXls(exportFilePath);
+        //                break;
+        //            case ".xlsx":
+        //                gc.ExportToXlsx(exportFilePath);
+        //                break;
+        //            default:
+        //                break;
+        //        }
+        //    }
+        //}
         #endregion
 
         #region 메일 보내기
