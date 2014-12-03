@@ -163,14 +163,14 @@ namespace DLS
         }
 
         //출고이력
-        private void Btn_SD_DeliveryHistory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (FromOpen("Delivery_History.cs"))
-            {
-                Sales_Distribution.Delivery_History fm = new Sales_Distribution.Delivery_History();
-                Mdi_Child_NewOpen(fm);
-            }
-        }
+        //private void Btn_SD_DeliveryHistory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //{
+        //    if (FromOpen("Delivery_History.cs"))
+        //    {
+        //        Sales_Distribution.Delivery_History fm = new Sales_Distribution.Delivery_History();
+        //        Mdi_Child_NewOpen(fm);
+        //    }
+        //}
 
         //운송이력
         private void Btn_SD_TransferHistory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
