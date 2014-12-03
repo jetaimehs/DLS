@@ -57,6 +57,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.date_be = new DevExpress.XtraEditors.DateEdit();
             this.lbl_delivery_date = new DevExpress.XtraEditors.LabelControl();
+            this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_SEL)).BeginInit();
@@ -222,6 +223,7 @@
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.btn_down);
             this.pc_main.Controls.Add(this.sle_werks);
             this.pc_main.Controls.Add(this.btn_Cancel);
             this.pc_main.Controls.Add(this.btn_find);
@@ -378,6 +380,17 @@
             this.lbl_delivery_date.TabIndex = 17;
             this.lbl_delivery_date.Text = "납품일";
             // 
+            // btn_down
+            // 
+            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_down.Location = new System.Drawing.Point(174, 12);
+            this.btn_down.Name = "btn_down";
+            this.btn_down.Size = new System.Drawing.Size(75, 60);
+            this.btn_down.TabIndex = 26;
+            this.btn_down.Text = "다운로드";
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
+            // 
             // Delivery_History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -437,5 +450,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn sdtSeq;
         private DevExpress.XtraEditors.DateEdit date_cancel;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SimpleButton btn_down;
     }
 }

@@ -125,5 +125,10 @@ namespace DLS.Sales_Distribution
                 MessageBox.Show("이미 출고취소된 출고건 입니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_down_Click(object sender, EventArgs e)
+        {
+            Common.Frm10.Base.BaseModules.ExcelExport(gc_matral_list, "출고이력");
+        }
     }
 }
