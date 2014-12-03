@@ -104,6 +104,22 @@ namespace DLS.Common.Frm10.DataBase
         {
             new ExecuteDataBase()._ExecNonQueryTran_Complex(sGroup, mGroup, conn);
         }
+        
+        /**
+         * 리턴값을 가지는 실행쿼리
+         */
+        internal static object ExecQueryReturn(string proc, Hashtable ht, string conn)
+        {
+            return new ExecuteDataBase()._ExecQueryReturn(proc, ht, conn);
+        }
+
+        /**
+         * 리턴값을 가지는 실행쿼리 (트랜잭션 없음)
+         */
+        internal static object ExecQueryReturn_NoTran(string proc, Hashtable ht, string conn)
+        {
+            return new ExecuteDataBase()._ExecQueryReturn_NoTran(proc, ht, conn);
+        }
         #endregion
 
         #region 내부에서 Run되는 메서드 집합(경고:직접사용금지!!)
@@ -744,6 +760,110 @@ namespace DLS.Common.Frm10.DataBase
                 if (dbConn.State == ConnectionState.Open || dbConn.State == ConnectionState.Connecting)
                     dbConn.Close();
             }
+        }
+        #endregion
+
+        #region 리턴값을 가지는 쿼리
+        private object _ExecQueryReturn(string proc, Hashtable ht, string conn)
+        {
+            SqlConnection dbConn = null;
+            SqlCommand dbComm = null;
+            object rtn = null;
+            SqlTransaction trans = null;
+            try
+            {
+                dbConn = this._dbConn(dbConn, conn);
+                dbComm = new SqlCommand();
+                dbComm.Connection = dbConn;
+                dbComm.CommandTimeout = 3000; //5분
+                dbComm.CommandType = CommandType.StoredProcedure;
+                dbComm.CommandText = proc;
+
+                //파라메터 등록
+                if (ht.Count > 0)
+                    this._AddParam(ref dbComm, ref ht);
+
+                //리턴파라메터 등록
+                SqlParameter spRtn = new SqlParameter("ReturnValue", rtn);
+                spRtn.Direction = ParameterDirection.ReturnValue;
+                dbComm.Parameters.Add(spRtn);
+
+                //실행
+                dbConn.Open();
+
+                //트랜잭션 시작..
+                trans = dbConn.BeginTransaction();
+                dbComm.Transaction = trans;
+
+                dbComm.ExecuteNonQuery();
+
+                rtn = dbComm.Parameters["ReturnValue"].SqlValue;
+
+                //커밋..
+                trans.Commit();
+
+                dbConn.Close();
+            }
+            catch (Exception ex)
+            {
+                //롤백..
+                trans.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                if (dbConn.State == ConnectionState.Open || dbConn.State == ConnectionState.Connecting)
+                    dbConn.Close();
+            }
+
+            return rtn;
+        }
+        #endregion
+
+        #region 리턴값을 가지는 트랜잭션 없는 쿼리(데이터 체크용도)
+        private object _ExecQueryReturn_NoTran(string proc, Hashtable ht, string conn)
+        {
+            SqlConnection dbConn = null;
+            SqlCommand dbComm = null;
+            object rtn = null;
+            try
+            {
+                dbConn = this._dbConn(dbConn, conn);
+                dbComm = new SqlCommand();
+                dbComm.Connection = dbConn;
+                dbComm.CommandTimeout = 3000; //5분
+                dbComm.CommandType = CommandType.StoredProcedure;
+                dbComm.CommandText = proc;
+
+                //파라메터 등록
+                if (ht.Count > 0)
+                    this._AddParam(ref dbComm, ref ht);
+
+                //리턴파라메터 등록
+                SqlParameter spRtn = new SqlParameter("ReturnValue", rtn);
+                spRtn.Direction = ParameterDirection.ReturnValue;
+                dbComm.Parameters.Add(spRtn);
+
+                //실행
+                dbConn.Open();
+
+                dbComm.ExecuteNonQuery();
+
+                rtn = dbComm.Parameters["ReturnValue"].SqlValue;
+
+                dbConn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (dbConn.State == ConnectionState.Open || dbConn.State == ConnectionState.Connecting)
+                    dbConn.Close();
+            }
+
+            return rtn;
         }
         #endregion
 

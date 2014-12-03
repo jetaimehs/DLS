@@ -64,20 +64,21 @@ namespace DLS
         private void InitLanguage()
         {
             #region 메뉴 다국어
-            System.Globalization.CultureInfo cultureUi = System.Threading.Thread.CurrentThread.CurrentUICulture;
+            //임시 주석처리
+            //System.Globalization.CultureInfo cultureUi = System.Threading.Thread.CurrentThread.CurrentUICulture;
 
-            for (int i = 0; i < Rbn_Menu.Pages.Count; i++)
-            {
-                Rbn_Menu.Pages[i].Text = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Name, cultureUi);
-                for (int j = 0; j < Rbn_Menu.Pages[i].Groups.Count; j++)
-                {
-                    Rbn_Menu.Pages[i].Groups[j].Text = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Name, cultureUi);
-                    for (int k = 0; k < Rbn_Menu.Pages[i].Groups[j].ItemLinks.Count; k++)
-                    {
-                        Rbn_Menu.Pages[i].Groups[j].ItemLinks[k].Item.Caption = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Groups[j].ItemLinks[k].Item.Name, cultureUi);
-                    }
-                }
-            }
+            //for (int i = 0; i < Rbn_Menu.Pages.Count; i++)
+            //{
+            //    Rbn_Menu.Pages[i].Text = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Name, cultureUi);
+            //    for (int j = 0; j < Rbn_Menu.Pages[i].Groups.Count; j++)
+            //    {
+            //        Rbn_Menu.Pages[i].Groups[j].Text = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Name, cultureUi);
+            //        for (int k = 0; k < Rbn_Menu.Pages[i].Groups[j].ItemLinks.Count; k++)
+            //        {
+            //            Rbn_Menu.Pages[i].Groups[j].ItemLinks[k].Item.Caption = Common.Util.MyUtil.ResourceManager.GetString(Rbn_Menu.Pages[i].Groups[j].ItemLinks[k].Item.Name, cultureUi);
+            //        }
+            //    }
+            //}
             #endregion
         }
 
@@ -150,13 +151,52 @@ namespace DLS
                 Mdi_Child_NewOpen(fm);
             }
         }
-        #endregion
 
+        //출고처리
+        private void Btn_SD_OutDelivery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Customer_Delivery.cs"))
+            {
+                Sales_Distribution.Customer_Delivery fm = new Sales_Distribution.Customer_Delivery();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        //출고이력
+        private void Btn_SD_DeliveryHistory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Delivery_History.cs"))
+            {
+                Sales_Distribution.Delivery_History fm = new Sales_Distribution.Delivery_History();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        //운송이력
+        private void Btn_SD_TransferHistory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Transfer_History.cs"))
+            {
+                Sales_Distribution.Transfer_History fm = new Sales_Distribution.Transfer_History();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        #endregion
+        
         #region 자재
+
+
+
+
 
         #endregion
 
         #region 생산
+
+
+
+
 
         #endregion
         #endregion

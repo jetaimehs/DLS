@@ -32,6 +32,9 @@
             this.Rgb_Skin = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.Btn_Master_User = new DevExpress.XtraBars.BarButtonItem();
             this.barMdiChildrenListItem1 = new DevExpress.XtraBars.BarMdiChildrenListItem();
+            this.Btn_SD_Delivery = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_SD_OutDelivery = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_SD_DeliveryHistory = new DevExpress.XtraBars.BarButtonItem();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_SD = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -40,7 +43,7 @@
             this.Rbn_Menu_PP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.Btn_SD_Delivery = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_SD_TransferHistory = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +56,12 @@
             this.Rgb_Skin,
             this.Btn_Master_User,
             this.barMdiChildrenListItem1,
-            this.Btn_SD_Delivery});
+            this.Btn_SD_Delivery,
+            this.Btn_SD_OutDelivery,
+            this.Btn_SD_DeliveryHistory,
+            this.Btn_SD_TransferHistory});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 11;
+            this.Rbn_Menu.MaxItemId = 14;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Rbn_Menu_Home,
@@ -100,6 +106,30 @@
             this.barMdiChildrenListItem1.Id = 8;
             this.barMdiChildrenListItem1.Name = "barMdiChildrenListItem1";
             // 
+            // Btn_SD_Delivery
+            // 
+            this.Btn_SD_Delivery.Caption = "납품처리";
+            this.Btn_SD_Delivery.Id = 10;
+            this.Btn_SD_Delivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_Delivery.Name = "Btn_SD_Delivery";
+            this.Btn_SD_Delivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_Delivery_ItemClick);
+            // 
+            // Btn_SD_OutDelivery
+            // 
+            this.Btn_SD_OutDelivery.Caption = "출고처리";
+            this.Btn_SD_OutDelivery.Id = 11;
+            this.Btn_SD_OutDelivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_OutDelivery.Name = "Btn_SD_OutDelivery";
+            this.Btn_SD_OutDelivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_OutDelivery_ItemClick);
+            // 
+            // Btn_SD_DeliveryHistory
+            // 
+            this.Btn_SD_DeliveryHistory.Caption = "납품이력";
+            this.Btn_SD_DeliveryHistory.Id = 12;
+            this.Btn_SD_DeliveryHistory.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_DeliveryHistory.Name = "Btn_SD_DeliveryHistory";
+            this.Btn_SD_DeliveryHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_DeliveryHistory_ItemClick);
+            // 
             // Rbn_Menu_Home
             // 
             this.Rbn_Menu_Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -123,6 +153,9 @@
             // SD_G1
             // 
             this.SD_G1.ItemLinks.Add(this.Btn_SD_Delivery);
+            this.SD_G1.ItemLinks.Add(this.Btn_SD_OutDelivery);
+            this.SD_G1.ItemLinks.Add(this.Btn_SD_DeliveryHistory);
+            this.SD_G1.ItemLinks.Add(this.Btn_SD_TransferHistory);
             this.SD_G1.Name = "SD_G1";
             this.SD_G1.Text = "납품";
             // 
@@ -149,13 +182,13 @@
             this.Master_G1.Name = "Master_G1";
             this.Master_G1.Text = "사용자관리";
             // 
-            // Btn_SD_Delivery
+            // Btn_SD_TransferHistory
             // 
-            this.Btn_SD_Delivery.Caption = "납품처리";
-            this.Btn_SD_Delivery.Id = 10;
-            this.Btn_SD_Delivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.Btn_SD_Delivery.Name = "Btn_SD_Delivery";
-            this.Btn_SD_Delivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_Delivery_ItemClick);
+            this.Btn_SD_TransferHistory.Caption = "운송이력";
+            this.Btn_SD_TransferHistory.Id = 13;
+            this.Btn_SD_TransferHistory.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_TransferHistory.Name = "Btn_SD_TransferHistory";
+            this.Btn_SD_TransferHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_TransferHistory_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -189,6 +222,9 @@
         private DevExpress.XtraBars.BarButtonItem Btn_Master_User;
         private DevExpress.XtraBars.BarMdiChildrenListItem barMdiChildrenListItem1;
         private DevExpress.XtraBars.BarButtonItem Btn_SD_Delivery;
+        private DevExpress.XtraBars.BarButtonItem Btn_SD_OutDelivery;
+        private DevExpress.XtraBars.BarButtonItem Btn_SD_DeliveryHistory;
+        private DevExpress.XtraBars.BarButtonItem Btn_SD_TransferHistory;
 
     }
 }

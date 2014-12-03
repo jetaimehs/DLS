@@ -203,6 +203,39 @@ namespace DLS.Sales_Distribution
             sle_route.Properties.View.Columns.ColumnByFieldName("CODE").Caption = "코드";
             sle_route.Properties.View.Columns.ColumnByFieldName("TEXT").Caption = "내역";
         }
-        
+
+        private void btn_find_Click(object sender, EventArgs e)
+        {
+            if (sle_vstel.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (sle_lfart.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (sle_vkorg.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (sle_vtweg.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (sle_spart.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (sle_kunnr.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (date_delivery.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (sle_route.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (sle_ton.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+            if (sle_lifnr.Text == "") { MessageBox.Show("납품 정보를 모두 입력후 조회버튼을 클릭하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+
+            //영업자재 리스트
+            Hashtable ht = new Hashtable();
+            ht.Add("I_VKORG", sle_vstel.Text);
+            ht.Add("I_WERKS", "3100");
+            ht.Add("I_VTWEG", sle_vtweg.Text);
+            ht.Add("I_VSTEL", sle_vstel.Text);
+            ht.Add("I_LFART", sle_lfart.Text);
+            ht.Add("I_KDMAT", date_delivery.Text.Replace("-",""));
+
+            IRfcTable sapTable = Common.Frm10.SapConntor.SAPConnection.SAPExecuteTableData(ht, "ZCA_GET_SALES_MATERIAL", "E_TAB");
+            DataTable netTable = Common.Util.sapTableConvert.DataTableSet(sapTable);
+
+
+        }
+
+        private void gv_matral_list_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            string aa = "A";
+            aa = "B";
+        }        
     }
 }

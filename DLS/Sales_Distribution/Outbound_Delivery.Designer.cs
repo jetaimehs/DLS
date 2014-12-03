@@ -34,57 +34,71 @@
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gc_delivery_main = new DevExpress.XtraEditors.GroupControl();
+            this.sle_lifnr = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbl_lifnr = new DevExpress.XtraEditors.LabelControl();
+            this.sle_ton = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbl_ton = new DevExpress.XtraEditors.LabelControl();
+            this.sle_route = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbl_route = new DevExpress.XtraEditors.LabelControl();
             this.date_delivery = new DevExpress.XtraEditors.DateEdit();
             this.lbl_delivery_date = new DevExpress.XtraEditors.LabelControl();
             this.sle_kunnr = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbl_kunnr = new DevExpress.XtraEditors.LabelControl();
             this.sle_spart = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbl_spart = new DevExpress.XtraEditors.LabelControl();
             this.sle_vtweg = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbl_vtweg = new DevExpress.XtraEditors.LabelControl();
             this.sle_vkorg = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbl_vkorg = new DevExpress.XtraEditors.LabelControl();
             this.sle_lfart = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.sle_vstel = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lbl_lfart = new DevExpress.XtraEditors.LabelControl();
-            this.lbl_vstel = new DevExpress.XtraEditors.LabelControl();
-            this.sle_route = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lbl_route = new DevExpress.XtraEditors.LabelControl();
-            this.sle_ton = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lbl_ton = new DevExpress.XtraEditors.LabelControl();
-            this.sle_lifnr = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lbl_lifnr = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sle_vstel = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TEXT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbl_lfart = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_vstel = new DevExpress.XtraEditors.LabelControl();
+            this.gc_matral_list = new DevExpress.XtraGrid.GridControl();
+            this.gv_matral_list = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MATNR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MAKTX = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MATKL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LABST = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LFIMG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OUTQTY = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).BeginInit();
             this.gc_delivery_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sle_lifnr.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sle_ton.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sle_route.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_delivery.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_delivery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sle_kunnr.Properties)).BeginInit();
@@ -99,12 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sle_vstel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sle_route.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sle_ton.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sle_lifnr.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).BeginInit();
             this.SuspendLayout();
             // 
             // pc_main
@@ -159,6 +169,7 @@
             this.btn_find.Size = new System.Drawing.Size(75, 60);
             this.btn_find.TabIndex = 1;
             this.btn_find.Text = "조회";
+            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
             // 
             // gc_delivery_main
             // 
@@ -188,6 +199,156 @@
             this.gc_delivery_main.Size = new System.Drawing.Size(1340, 94);
             this.gc_delivery_main.TabIndex = 0;
             this.gc_delivery_main.Text = "납품 정보";
+            // 
+            // sle_lifnr
+            // 
+            this.sle_lifnr.EditValue = "";
+            this.sle_lifnr.Location = new System.Drawing.Point(968, 66);
+            this.sle_lifnr.Name = "sle_lifnr";
+            this.sle_lifnr.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sle_lifnr.Properties.NullText = "";
+            this.sle_lifnr.Properties.View = this.gridView8;
+            this.sle_lifnr.Size = new System.Drawing.Size(100, 20);
+            this.sle_lifnr.TabIndex = 24;
+            // 
+            // gridView8
+            // 
+            this.gridView8.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn15,
+            this.gridColumn16});
+            this.gridView8.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView8.Name = "gridView8";
+            this.gridView8.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView8.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "코드";
+            this.gridColumn15.FieldName = "CODE";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 0;
+            this.gridColumn15.Width = 30;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "내역";
+            this.gridColumn16.FieldName = "TEXT";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 1;
+            this.gridColumn16.Width = 50;
+            // 
+            // lbl_lifnr
+            // 
+            this.lbl_lifnr.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lbl_lifnr.Location = new System.Drawing.Point(902, 69);
+            this.lbl_lifnr.MinimumSize = new System.Drawing.Size(60, 14);
+            this.lbl_lifnr.Name = "lbl_lifnr";
+            this.lbl_lifnr.Size = new System.Drawing.Size(60, 14);
+            this.lbl_lifnr.TabIndex = 23;
+            this.lbl_lifnr.Text = "운송업체";
+            // 
+            // sle_ton
+            // 
+            this.sle_ton.EditValue = "";
+            this.sle_ton.Location = new System.Drawing.Point(751, 66);
+            this.sle_ton.Name = "sle_ton";
+            this.sle_ton.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sle_ton.Properties.NullText = "";
+            this.sle_ton.Properties.View = this.gridView7;
+            this.sle_ton.Size = new System.Drawing.Size(100, 20);
+            this.sle_ton.TabIndex = 22;
+            // 
+            // gridView7
+            // 
+            this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn13,
+            this.gridColumn14});
+            this.gridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView7.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "코드";
+            this.gridColumn13.FieldName = "CODE";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            this.gridColumn13.Width = 30;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "내역";
+            this.gridColumn14.FieldName = "TEXT";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            this.gridColumn14.Width = 50;
+            // 
+            // lbl_ton
+            // 
+            this.lbl_ton.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lbl_ton.Location = new System.Drawing.Point(685, 69);
+            this.lbl_ton.MinimumSize = new System.Drawing.Size(60, 14);
+            this.lbl_ton.Name = "lbl_ton";
+            this.lbl_ton.Size = new System.Drawing.Size(60, 14);
+            this.lbl_ton.TabIndex = 21;
+            this.lbl_ton.Text = "차량톤수";
+            // 
+            // sle_route
+            // 
+            this.sle_route.EditValue = "";
+            this.sle_route.Location = new System.Drawing.Point(537, 66);
+            this.sle_route.Name = "sle_route";
+            this.sle_route.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sle_route.Properties.NullText = "";
+            this.sle_route.Properties.View = this.gridView6;
+            this.sle_route.Size = new System.Drawing.Size(100, 20);
+            this.sle_route.TabIndex = 20;
+            // 
+            // gridView6
+            // 
+            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn11,
+            this.gridColumn12});
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "코드";
+            this.gridColumn11.FieldName = "CODE";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 0;
+            this.gridColumn11.Width = 30;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "내역";
+            this.gridColumn12.FieldName = "TEXT";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 1;
+            this.gridColumn12.Width = 50;
+            // 
+            // lbl_route
+            // 
+            this.lbl_route.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lbl_route.Location = new System.Drawing.Point(471, 69);
+            this.lbl_route.MinimumSize = new System.Drawing.Size(60, 14);
+            this.lbl_route.Name = "lbl_route";
+            this.lbl_route.Size = new System.Drawing.Size(60, 14);
+            this.lbl_route.TabIndex = 19;
+            this.lbl_route.Text = "운송경로";
             // 
             // date_delivery
             // 
@@ -233,6 +394,24 @@
             this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "코드";
+            this.gridColumn9.FieldName = "CODE";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
+            this.gridColumn9.Width = 30;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "내역";
+            this.gridColumn10.FieldName = "TEXT";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 1;
+            this.gridColumn10.Width = 50;
+            // 
             // lbl_kunnr
             // 
             this.lbl_kunnr.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -265,6 +444,24 @@
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "코드";
+            this.gridColumn7.FieldName = "CODE";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            this.gridColumn7.Width = 30;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "내역";
+            this.gridColumn8.FieldName = "TEXT";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 1;
+            this.gridColumn8.Width = 50;
             // 
             // lbl_spart
             // 
@@ -299,6 +496,24 @@
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "코드";
+            this.gridColumn5.FieldName = "CODE";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
+            this.gridColumn5.Width = 30;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "내역";
+            this.gridColumn6.FieldName = "TEXT";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
+            this.gridColumn6.Width = 50;
+            // 
             // lbl_vtweg
             // 
             this.lbl_vtweg.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -332,6 +547,24 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "코드";
+            this.gridColumn3.FieldName = "CODE";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 30;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "내역";
+            this.gridColumn4.FieldName = "TEXT";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 50;
+            // 
             // lbl_vkorg
             // 
             this.lbl_vkorg.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -364,6 +597,24 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "코드";
+            this.gridColumn1.FieldName = "CODE";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 30;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "내역";
+            this.gridColumn2.FieldName = "TEXT";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 50;
+            // 
             // sle_vstel
             // 
             this.sle_vstel.EditValue = "";
@@ -387,6 +638,24 @@
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // CODE
+            // 
+            this.CODE.Caption = "코드";
+            this.CODE.FieldName = "CODE";
+            this.CODE.Name = "CODE";
+            this.CODE.Visible = true;
+            this.CODE.VisibleIndex = 0;
+            this.CODE.Width = 30;
+            // 
+            // TEXT
+            // 
+            this.TEXT.Caption = "내역";
+            this.TEXT.FieldName = "TEXT";
+            this.TEXT.Name = "TEXT";
+            this.TEXT.Visible = true;
+            this.TEXT.VisibleIndex = 1;
+            this.TEXT.Width = 50;
+            // 
             // lbl_lfart
             // 
             this.lbl_lfart.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -407,269 +676,91 @@
             this.lbl_vstel.TabIndex = 0;
             this.lbl_vstel.Text = "출하지점";
             // 
-            // sle_route
+            // gc_matral_list
             // 
-            this.sle_route.EditValue = "";
-            this.sle_route.Location = new System.Drawing.Point(537, 66);
-            this.sle_route.Name = "sle_route";
-            this.sle_route.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.sle_route.Properties.NullText = "";
-            this.sle_route.Properties.View = this.gridView6;
-            this.sle_route.Size = new System.Drawing.Size(100, 20);
-            this.sle_route.TabIndex = 20;
+            this.gc_matral_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_matral_list.Location = new System.Drawing.Point(0, 178);
+            this.gc_matral_list.MainView = this.gv_matral_list;
+            this.gc_matral_list.Name = "gc_matral_list";
+            this.gc_matral_list.Size = new System.Drawing.Size(1344, 590);
+            this.gc_matral_list.TabIndex = 2;
+            this.gc_matral_list.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_matral_list});
             // 
-            // gridView6
+            // gv_matral_list
             // 
-            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn11,
-            this.gridColumn12});
-            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView6.OptionsView.ShowGroupPanel = false;
+            this.gv_matral_list.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MATNR,
+            this.MAKTX,
+            this.MATKL,
+            this.LABST,
+            this.LFIMG,
+            this.OUTQTY});
+            this.gv_matral_list.GridControl = this.gc_matral_list;
+            this.gv_matral_list.Name = "gv_matral_list";
+            this.gv_matral_list.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_matral_list_CellValueChanged);
             // 
-            // lbl_route
+            // MATNR
             // 
-            this.lbl_route.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_route.Location = new System.Drawing.Point(471, 69);
-            this.lbl_route.MinimumSize = new System.Drawing.Size(60, 14);
-            this.lbl_route.Name = "lbl_route";
-            this.lbl_route.Size = new System.Drawing.Size(60, 14);
-            this.lbl_route.TabIndex = 19;
-            this.lbl_route.Text = "운송경로";
+            this.MATNR.Caption = "자재번호";
+            this.MATNR.FieldName = "MATNR";
+            this.MATNR.Name = "MATNR";
+            this.MATNR.OptionsColumn.AllowEdit = false;
+            this.MATNR.Visible = true;
+            this.MATNR.VisibleIndex = 0;
             // 
-            // sle_ton
+            // MAKTX
             // 
-            this.sle_ton.EditValue = "";
-            this.sle_ton.Location = new System.Drawing.Point(751, 66);
-            this.sle_ton.Name = "sle_ton";
-            this.sle_ton.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.sle_ton.Properties.NullText = "";
-            this.sle_ton.Properties.View = this.gridView7;
-            this.sle_ton.Size = new System.Drawing.Size(100, 20);
-            this.sle_ton.TabIndex = 22;
+            this.MAKTX.Caption = "자재내역";
+            this.MAKTX.FieldName = "MAKTX";
+            this.MAKTX.Name = "MAKTX";
+            this.MAKTX.OptionsColumn.AllowEdit = false;
+            this.MAKTX.Visible = true;
+            this.MAKTX.VisibleIndex = 1;
             // 
-            // gridView7
+            // MATKL
             // 
-            this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn13,
-            this.gridColumn14});
-            this.gridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView7.Name = "gridView7";
-            this.gridView7.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView7.OptionsView.ShowGroupPanel = false;
+            this.MATKL.Caption = "자재그룹";
+            this.MATKL.FieldName = "MATKL";
+            this.MATKL.Name = "MATKL";
+            this.MATKL.OptionsColumn.AllowEdit = false;
+            this.MATKL.Visible = true;
+            this.MATKL.VisibleIndex = 2;
             // 
-            // lbl_ton
+            // LABST
             // 
-            this.lbl_ton.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_ton.Location = new System.Drawing.Point(685, 69);
-            this.lbl_ton.MinimumSize = new System.Drawing.Size(60, 14);
-            this.lbl_ton.Name = "lbl_ton";
-            this.lbl_ton.Size = new System.Drawing.Size(60, 14);
-            this.lbl_ton.TabIndex = 21;
-            this.lbl_ton.Text = "차량톤수";
+            this.LABST.Caption = "현창고재고";
+            this.LABST.FieldName = "LABST";
+            this.LABST.Name = "LABST";
+            this.LABST.OptionsColumn.AllowEdit = false;
+            this.LABST.Visible = true;
+            this.LABST.VisibleIndex = 3;
             // 
-            // sle_lifnr
+            // LFIMG
             // 
-            this.sle_lifnr.EditValue = "";
-            this.sle_lifnr.Location = new System.Drawing.Point(968, 66);
-            this.sle_lifnr.Name = "sle_lifnr";
-            this.sle_lifnr.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.sle_lifnr.Properties.NullText = "";
-            this.sle_lifnr.Properties.View = this.gridView8;
-            this.sle_lifnr.Size = new System.Drawing.Size(100, 20);
-            this.sle_lifnr.TabIndex = 24;
+            this.LFIMG.Caption = "당일납품수량";
+            this.LFIMG.FieldName = "LFIMG";
+            this.LFIMG.Name = "LFIMG";
+            this.LFIMG.OptionsColumn.AllowEdit = false;
+            this.LFIMG.Visible = true;
+            this.LFIMG.VisibleIndex = 4;
             // 
-            // gridView8
+            // OUTQTY
             // 
-            this.gridView8.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn15,
-            this.gridColumn16});
-            this.gridView8.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView8.Name = "gridView8";
-            this.gridView8.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView8.OptionsView.ShowGroupPanel = false;
-            // 
-            // lbl_lifnr
-            // 
-            this.lbl_lifnr.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_lifnr.Location = new System.Drawing.Point(902, 69);
-            this.lbl_lifnr.MinimumSize = new System.Drawing.Size(60, 14);
-            this.lbl_lifnr.Name = "lbl_lifnr";
-            this.lbl_lifnr.Size = new System.Drawing.Size(60, 14);
-            this.lbl_lifnr.TabIndex = 23;
-            this.lbl_lifnr.Text = "운송업체";
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.Caption = "코드";
-            this.gridColumn15.FieldName = "CODE";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 0;
-            this.gridColumn15.Width = 30;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "내역";
-            this.gridColumn16.FieldName = "TEXT";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 1;
-            this.gridColumn16.Width = 50;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "코드";
-            this.gridColumn13.FieldName = "CODE";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 0;
-            this.gridColumn13.Width = 30;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "내역";
-            this.gridColumn14.FieldName = "TEXT";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 1;
-            this.gridColumn14.Width = 50;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "코드";
-            this.gridColumn11.FieldName = "CODE";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 0;
-            this.gridColumn11.Width = 30;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "내역";
-            this.gridColumn12.FieldName = "TEXT";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 1;
-            this.gridColumn12.Width = 50;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "코드";
-            this.gridColumn9.FieldName = "CODE";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 0;
-            this.gridColumn9.Width = 30;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "내역";
-            this.gridColumn10.FieldName = "TEXT";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 1;
-            this.gridColumn10.Width = 50;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "코드";
-            this.gridColumn7.FieldName = "CODE";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 0;
-            this.gridColumn7.Width = 30;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "내역";
-            this.gridColumn8.FieldName = "TEXT";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 1;
-            this.gridColumn8.Width = 50;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "코드";
-            this.gridColumn5.FieldName = "CODE";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 0;
-            this.gridColumn5.Width = 30;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "내역";
-            this.gridColumn6.FieldName = "TEXT";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 1;
-            this.gridColumn6.Width = 50;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "코드";
-            this.gridColumn3.FieldName = "CODE";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            this.gridColumn3.Width = 30;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "내역";
-            this.gridColumn4.FieldName = "TEXT";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            this.gridColumn4.Width = 50;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "코드";
-            this.gridColumn1.FieldName = "CODE";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 30;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "내역";
-            this.gridColumn2.FieldName = "TEXT";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 50;
-            // 
-            // CODE
-            // 
-            this.CODE.Caption = "코드";
-            this.CODE.FieldName = "CODE";
-            this.CODE.Name = "CODE";
-            this.CODE.Visible = true;
-            this.CODE.VisibleIndex = 0;
-            this.CODE.Width = 30;
-            // 
-            // TEXT
-            // 
-            this.TEXT.Caption = "내역";
-            this.TEXT.FieldName = "TEXT";
-            this.TEXT.Name = "TEXT";
-            this.TEXT.Visible = true;
-            this.TEXT.VisibleIndex = 1;
-            this.TEXT.Width = 50;
+            this.OUTQTY.Caption = "출고수량";
+            this.OUTQTY.DisplayFormat.FormatString = "N0";
+            this.OUTQTY.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.OUTQTY.FieldName = "OUTQTY";
+            this.OUTQTY.Name = "OUTQTY";
+            this.OUTQTY.Visible = true;
+            this.OUTQTY.VisibleIndex = 5;
             // 
             // Outbound_Delivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 768);
+            this.Controls.Add(this.gc_matral_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Outbound_Delivery";
             this.Text = "Outbound_Delivery";
@@ -679,6 +770,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).EndInit();
             this.gc_delivery_main.ResumeLayout(false);
             this.gc_delivery_main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sle_lifnr.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sle_ton.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sle_route.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_delivery.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_delivery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sle_kunnr.Properties)).EndInit();
@@ -693,12 +790,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sle_vstel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sle_route.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sle_ton.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sle_lifnr.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -758,6 +851,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraEditors.LabelControl lbl_ton;
+        private DevExpress.XtraGrid.GridControl gc_matral_list;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_matral_list;
+        private DevExpress.XtraGrid.Columns.GridColumn MATNR;
+        private DevExpress.XtraGrid.Columns.GridColumn MAKTX;
+        private DevExpress.XtraGrid.Columns.GridColumn MATKL;
+        private DevExpress.XtraGrid.Columns.GridColumn LABST;
+        private DevExpress.XtraGrid.Columns.GridColumn LFIMG;
+        private DevExpress.XtraGrid.Columns.GridColumn OUTQTY;
 
     }
 }
