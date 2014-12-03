@@ -146,12 +146,6 @@
     <Compile Include="Sales_Distribution\Customer_Delivery.Designer.cs">
       <DependentUpon>Customer_Delivery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales_Distribution\Delivery_History.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sales_Distribution\Delivery_History.Designer.cs">
-      <DependentUpon>Delivery_History.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sales_Distribution\Outbound_Delivery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,9 +183,6 @@
     </Compile>
     <EmbeddedResource Include="Sales_Distribution\Customer_Delivery.resx">
       <DependentUpon>Customer_Delivery.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sales_Distribution\Delivery_History.resx">
-      <DependentUpon>Delivery_History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales_Distribution\Outbound_Delivery.resx">
       <DependentUpon>Outbound_Delivery.cs</DependentUpon>

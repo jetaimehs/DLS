@@ -120,15 +120,7 @@
             this.Btn_SD_OutDelivery.Id = 11;
             this.Btn_SD_OutDelivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
             this.Btn_SD_OutDelivery.Name = "Btn_SD_OutDelivery";
-            this.Btn_SD_OutDelivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_OutDelivery_ItemClick);
-            // 
-            // Btn_SD_DeliveryHistory
-            // 
-            this.Btn_SD_DeliveryHistory.Caption = "납품이력";
-            this.Btn_SD_DeliveryHistory.Id = 12;
-            this.Btn_SD_DeliveryHistory.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.Btn_SD_DeliveryHistory.Name = "Btn_SD_DeliveryHistory";
-            this.Btn_SD_DeliveryHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_DeliveryHistory_ItemClick);
+            this.Btn_SD_OutDelivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_OutDelivery_ItemClick);            
             // 
             // Rbn_Menu_Home
             // 
