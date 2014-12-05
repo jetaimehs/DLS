@@ -34,22 +34,6 @@ namespace DLS.Sales_Distribution
             Common.Util.MyUtil.SetGridControlDesign(ref gc_matral_list);
             Common.Util.MyUtil.SetGridViewDesign(ref gv_matral_list);
 
-            //소속 플랜트 
-            Hashtable ht1 = new Hashtable();
-            ht1.Add("@MODE", 104);
-            ht1.Add("@USERID", Login.G_userid);
-
-            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPAccount]", ht1, "");
-
-            sle_werks.Properties.DataSource = dt1;
-            sle_werks.Properties.DisplayMember = "Werks";
-            sle_werks.Properties.ValueMember = "Werks";
-
-            sle_werks.Properties.View.Columns.ColumnByFieldName("Werks").Caption = "플랜트코드";
-            sle_werks.Properties.View.Columns.ColumnByFieldName("wName").Caption = "플랜트명";
-
-            sle_werks.Text = dt1.Rows[0]["Werks"].ToString();
-
             //고객 리스트
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 100);
@@ -69,7 +53,7 @@ namespace DLS.Sales_Distribution
             //운송경로
             Hashtable ht2 = new Hashtable();
             ht2.Add("@MODE", 100);
-            ht2.Add("@Werks", sle_werks.Text);
+            ht2.Add("@Werks", Main_MID_Form.G_werks);
 
             DataTable dt2 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DlsSpRoute", ht2, "");
 
@@ -84,7 +68,7 @@ namespace DLS.Sales_Distribution
             //운송차량
             Hashtable ht3 = new Hashtable();
             ht3.Add("@MODE", 100);
-            ht3.Add("@Werks", sle_werks.Text);
+            ht3.Add("@Werks", Main_MID_Form.G_werks);
 
             DataTable dt3 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DlsSpDeliveryLifnr", ht3, "");
 
@@ -103,7 +87,7 @@ namespace DLS.Sales_Distribution
         {
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 100);
-            ht.Add("@Werks", sle_werks.Text);
+            ht.Add("@Werks", Main_MID_Form.G_werks);
 
             DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DlsSPDeliveryList", ht, "");
 
@@ -154,7 +138,7 @@ namespace DLS.Sales_Distribution
             {
                 arrth[i] = new Hashtable();
                 arrth[i].Add("@MODE", 200);
-                arrth[i].Add("@Werks", sle_werks.Text);
+                arrth[i].Add("@Werks", Main_MID_Form.G_werks);
                 arrth[i].Add("@Kunnr", sle_kunnr.Text);
                 arrth[i].Add("@Matnr", dr_Delivery_Order[i]["Matnr"].ToString());
                 arrth[i].Add("@Budat", date_delivery.Text);
@@ -170,7 +154,7 @@ namespace DLS.Sales_Distribution
             //운송이력 저장
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 200);
-            ht.Add("@Werks", sle_werks.Text);
+            ht.Add("@Werks", Main_MID_Form.G_werks);
             ht.Add("@Budat", date_delivery.Text);
             ht.Add("@Cnumber", sle_lifnr.Text);            
             ht.Add("@Rcode", sle_route.EditValue);

@@ -44,10 +44,7 @@
             this.Cflg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sdtSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
-            this.sle_werks = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Werks = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.wName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gc_delivery_main = new DevExpress.XtraEditors.GroupControl();
@@ -57,14 +54,11 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.date_be = new DevExpress.XtraEditors.DateEdit();
             this.lbl_delivery_date = new DevExpress.XtraEditors.LabelControl();
-            this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_SEL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sle_werks.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).BeginInit();
             this.gc_delivery_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.date_cancel.Properties.VistaTimeProperties)).BeginInit();
@@ -224,7 +218,6 @@
             // pc_main
             // 
             this.pc_main.Controls.Add(this.btn_down);
-            this.pc_main.Controls.Add(this.sle_werks);
             this.pc_main.Controls.Add(this.btn_Cancel);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Controls.Add(this.gc_delivery_main);
@@ -234,48 +227,16 @@
             this.pc_main.Size = new System.Drawing.Size(1353, 159);
             this.pc_main.TabIndex = 5;
             // 
-            // sle_werks
+            // btn_down
             // 
-            this.sle_werks.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sle_werks.EditValue = "";
-            this.sle_werks.Location = new System.Drawing.Point(1251, 2);
-            this.sle_werks.Name = "sle_werks";
-            this.sle_werks.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.sle_werks.Properties.NullText = "";
-            this.sle_werks.Properties.View = this.gridView1;
-            this.sle_werks.Size = new System.Drawing.Size(100, 20);
-            this.sle_werks.TabIndex = 25;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Werks,
-            this.wName});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // Werks
-            // 
-            this.Werks.Caption = "플랜트코드";
-            this.Werks.FieldName = "Werks";
-            this.Werks.Name = "Werks";
-            this.Werks.OptionsColumn.AllowEdit = false;
-            this.Werks.Visible = true;
-            this.Werks.VisibleIndex = 0;
-            this.Werks.Width = 30;
-            // 
-            // wName
-            // 
-            this.wName.Caption = "플랜트명";
-            this.wName.FieldName = "wName";
-            this.wName.Name = "wName";
-            this.wName.OptionsColumn.AllowEdit = false;
-            this.wName.Visible = true;
-            this.wName.VisibleIndex = 1;
-            this.wName.Width = 50;
+            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_down.Location = new System.Drawing.Point(174, 12);
+            this.btn_down.Name = "btn_down";
+            this.btn_down.Size = new System.Drawing.Size(75, 60);
+            this.btn_down.TabIndex = 26;
+            this.btn_down.Text = "다운로드";
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
             // 
             // btn_Cancel
             // 
@@ -380,17 +341,6 @@
             this.lbl_delivery_date.TabIndex = 17;
             this.lbl_delivery_date.Text = "납품일";
             // 
-            // btn_down
-            // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
-            this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_down.Location = new System.Drawing.Point(174, 12);
-            this.btn_down.Name = "btn_down";
-            this.btn_down.Size = new System.Drawing.Size(75, 60);
-            this.btn_down.TabIndex = 26;
-            this.btn_down.Text = "다운로드";
-            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
-            // 
             // Delivery_History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -404,8 +354,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_SEL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sle_werks.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).EndInit();
             this.gc_delivery_main.ResumeLayout(false);
             this.gc_delivery_main.PerformLayout();
@@ -424,10 +372,6 @@
         private DevExpress.XtraGrid.GridControl gc_matral_list;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_matral_list;
         private DevExpress.XtraEditors.PanelControl pc_main;
-        private DevExpress.XtraEditors.SearchLookUpEdit sle_werks;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Werks;
-        private DevExpress.XtraGrid.Columns.GridColumn wName;
         private DevExpress.XtraEditors.SimpleButton btn_Cancel;
         private DevExpress.XtraEditors.SimpleButton btn_find;
         private DevExpress.XtraEditors.GroupControl gc_delivery_main;

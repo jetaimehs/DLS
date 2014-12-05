@@ -11,11 +11,14 @@ using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DLS.Common.Frm10.DataBase;
+using DevExpress.XtraEditors.Repository;
 
 namespace DLS
 {
     public partial class Main_MID_Form : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public static string G_werks;
+
         public Main_MID_Form()
         {
             InitializeComponent();            
@@ -37,7 +40,20 @@ namespace DLS
         //
         private void InitOnlyData()
         {
-            
+            //소속 플랜트 
+            Hashtable ht1 = new Hashtable();
+            ht1.Add("@MODE", 104);
+            ht1.Add("@USERID", Login.G_userid);
+                        
+            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPAccount]", ht1, "");
+
+            foreach(DataRow dr in dt1.Rows )
+            {
+                cb_werks.Items.Add(dr["Werks"] + "-" + dr["wName"]);
+            }
+
+            barEditItem1.EditValue = cb_werks.Items[0].ToString();
+            G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
         }
 
         private bool FromOpen(string OpenFrom)
@@ -183,7 +199,12 @@ namespace DLS
         }
 
         #endregion
-        
+
+        private void barEditItem1_EditValueChanged(object sender, EventArgs e)
+        {
+            G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
+        }
+
         #region 자재
 
 

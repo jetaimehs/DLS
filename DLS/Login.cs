@@ -17,7 +17,6 @@ namespace DLS
         public static string G_cuture;
         public static string G_userid;
         public static string G_skin;
-        public static string G_werks;        
         public static string G_user_group;
         public static string G_TARGET_DB;
         public static string G_GRADE;

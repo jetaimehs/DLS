@@ -35,6 +35,8 @@
             this.Btn_SD_OutDelivery = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_SD_DeliveryHistory = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_SD_TransferHistory = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.cb_werks = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_SD = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -43,7 +45,12 @@
             this.Rbn_Menu_PP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // Rbn_Menu
@@ -57,16 +64,21 @@
             this.barMdiChildrenListItem1,
             this.Btn_SD_OutDelivery,
             this.Btn_SD_DeliveryHistory,
-            this.Btn_SD_TransferHistory});
+            this.Btn_SD_TransferHistory,
+            this.barEditItem1});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 15;
+            this.Rbn_Menu.MaxItemId = 17;
             this.Rbn_Menu.Name = "Rbn_Menu";
+            this.Rbn_Menu.PageHeaderItemLinks.Add(this.barEditItem1);
             this.Rbn_Menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Rbn_Menu_Home,
             this.Rbn_Menu_SD,
             this.Rbn_Menu_MM,
             this.Rbn_Menu_PP,
             this.Rbn_Menu_Master});
+            this.Rbn_Menu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemSearchLookUpEdit1,
+            this.cb_werks});
             this.Rbn_Menu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.Rbn_Menu.ShowToolbarCustomizeItem = false;
             this.Rbn_Menu.Size = new System.Drawing.Size(1344, 133);
@@ -128,6 +140,22 @@
             this.Btn_SD_TransferHistory.Name = "Btn_SD_TransferHistory";
             this.Btn_SD_TransferHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_TransferHistory_ItemClick);
             // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "소속플랜트";
+            this.barEditItem1.Edit = this.cb_werks;
+            this.barEditItem1.Id = 16;
+            this.barEditItem1.Name = "barEditItem1";
+            this.barEditItem1.Width = 200;
+            this.barEditItem1.EditValueChanged += new System.EventHandler(this.barEditItem1_EditValueChanged);
+            // 
+            // cb_werks
+            // 
+            this.cb_werks.AutoHeight = false;
+            this.cb_werks.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cb_werks.Name = "cb_werks";
+            // 
             // Rbn_Menu_Home
             // 
             this.Rbn_Menu_Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -179,6 +207,22 @@
             this.Master_G1.Name = "Master_G1";
             this.Master_G1.Text = "사용자관리";
             // 
+            // repositoryItemSearchLookUpEdit1
+            // 
+            this.repositoryItemSearchLookUpEdit1.AutoHeight = false;
+            this.repositoryItemSearchLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSearchLookUpEdit1.Name = "repositoryItemSearchLookUpEdit1";
+            this.repositoryItemSearchLookUpEdit1.NullText = "";
+            this.repositoryItemSearchLookUpEdit1.View = this.repositoryItemSearchLookUpEdit1View;
+            // 
+            // repositoryItemSearchLookUpEdit1View
+            // 
+            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
+            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
             // Main_MID_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -192,6 +236,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_MDI_Form_FormClosing);
             this.Load += new System.EventHandler(this.Main_MID_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,6 +260,10 @@
         private DevExpress.XtraBars.BarButtonItem Btn_SD_OutDelivery;
         private DevExpress.XtraBars.BarButtonItem Btn_SD_DeliveryHistory;
         private DevExpress.XtraBars.BarButtonItem Btn_SD_TransferHistory;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_werks;
 
     }
 }

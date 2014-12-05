@@ -38,10 +38,6 @@
             this.Labst = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Outqty = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
-            this.sle_werks = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Werks = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.wName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_Rundelivery = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gc_delivery_main = new DevExpress.XtraEditors.GroupControl();
@@ -69,8 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sle_werks.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).BeginInit();
             this.gc_delivery_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sle_lifnr.Properties)).BeginInit();
@@ -182,7 +176,6 @@
             // 
             // pc_main
             // 
-            this.pc_main.Controls.Add(this.sle_werks);
             this.pc_main.Controls.Add(this.btn_Rundelivery);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Controls.Add(this.gc_delivery_main);
@@ -191,49 +184,6 @@
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1355, 159);
             this.pc_main.TabIndex = 3;
-            // 
-            // sle_werks
-            // 
-            this.sle_werks.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sle_werks.EditValue = "";
-            this.sle_werks.Location = new System.Drawing.Point(1253, 2);
-            this.sle_werks.Name = "sle_werks";
-            this.sle_werks.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.sle_werks.Properties.NullText = "";
-            this.sle_werks.Properties.View = this.gridView1;
-            this.sle_werks.Size = new System.Drawing.Size(100, 20);
-            this.sle_werks.TabIndex = 25;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Werks,
-            this.wName});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // Werks
-            // 
-            this.Werks.Caption = "플랜트코드";
-            this.Werks.FieldName = "Werks";
-            this.Werks.Name = "Werks";
-            this.Werks.OptionsColumn.AllowEdit = false;
-            this.Werks.Visible = true;
-            this.Werks.VisibleIndex = 0;
-            this.Werks.Width = 30;
-            // 
-            // wName
-            // 
-            this.wName.Caption = "플랜트명";
-            this.wName.FieldName = "wName";
-            this.wName.Name = "wName";
-            this.wName.OptionsColumn.AllowEdit = false;
-            this.wName.Visible = true;
-            this.wName.VisibleIndex = 1;
-            this.wName.Width = 50;
             // 
             // btn_Rundelivery
             // 
@@ -495,8 +445,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sle_werks.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).EndInit();
             this.gc_delivery_main.ResumeLayout(false);
             this.gc_delivery_main.PerformLayout();
@@ -544,10 +492,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Name1;
         private DevExpress.XtraEditors.LabelControl lbl_kunnr;
         private DevExpress.XtraGrid.Columns.GridColumn Outqty;
-        private DevExpress.XtraEditors.SearchLookUpEdit sle_werks;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Werks;
-        private DevExpress.XtraGrid.Columns.GridColumn wName;
         private DevExpress.XtraGrid.Columns.GridColumn Rfee;
         private DevExpress.XtraGrid.Columns.GridColumn Cnumber;
         private DevExpress.XtraGrid.Columns.GridColumn Driver;

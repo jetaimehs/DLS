@@ -33,23 +33,7 @@ namespace DLS.Sales_Distribution
         {
             Common.Util.MyUtil.SetGridControlDesign(ref gc_matral_list);
             Common.Util.MyUtil.SetGridViewDesign(ref gv_matral_list);
-
-            //소속 플랜트 
-            Hashtable ht1 = new Hashtable();
-            ht1.Add("@MODE", 104);
-            ht1.Add("@USERID", Login.G_userid);
-
-            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPAccount]", ht1, "");
-
-            sle_werks.Properties.DataSource = dt1;
-            sle_werks.Properties.DisplayMember = "Werks";
-            sle_werks.Properties.ValueMember = "Werks";
-
-            sle_werks.Properties.View.Columns.ColumnByFieldName("Werks").Caption = "플랜트코드";
-            sle_werks.Properties.View.Columns.ColumnByFieldName("wName").Caption = "플랜트명";
-
-            sle_werks.Text = dt1.Rows[0]["Werks"].ToString();
-
+            
             date_be.Text = DateTime.Now.ToShortDateString();
             date_af.Text = DateTime.Now.ToShortDateString();
         }
@@ -58,7 +42,7 @@ namespace DLS.Sales_Distribution
         {
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 101);
-            ht.Add("@Werks", sle_werks.Text);
+            ht.Add("@Werks", Main_MID_Form.G_werks);
             ht.Add("@Bedate", date_be.Text);
             ht.Add("@Afdate", date_af.Text);
 

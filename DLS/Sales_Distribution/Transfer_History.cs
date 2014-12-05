@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Popup;
 using DevExpress.Utils.Win;
+using DevExpress.XtraGrid;
 
 namespace DLS.Sales_Distribution
 {
@@ -36,21 +37,16 @@ namespace DLS.Sales_Distribution
             Common.Util.MyUtil.SetGridControlDesign(ref gc_matral_list);
             Common.Util.MyUtil.SetGridViewDesign(ref gv_matral_list);
 
-            //소속 플랜트 
-            Hashtable ht1 = new Hashtable();
-            ht1.Add("@MODE", 104);
-            ht1.Add("@USERID", Login.G_userid);
+            gv_matral_list.OptionsView.ShowGroupPanel = true;
 
-            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPAccount]", ht1, "");
-
-            sle_werks.Properties.DataSource = dt1;
-            sle_werks.Properties.DisplayMember = "Werks";
-            sle_werks.Properties.ValueMember = "Werks";
-
-            sle_werks.Properties.View.Columns.ColumnByFieldName("Werks").Caption = "플랜트코드";
-            sle_werks.Properties.View.Columns.ColumnByFieldName("wName").Caption = "플랜트명";
-
-            sle_werks.Text = dt1.Rows[0]["Werks"].ToString();
+            gv_matral_list.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;            
+            
+            //GridGroupSummaryItem item1 = new GridGroupSummaryItem();
+            //item1.FieldName = "Rfee";
+            //item1.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            //item1.DisplayFormat = "Total {0}";
+            //item1.ShowInGroupColumnFooter = Rfee;
+            //gv_matral_list.GroupSummary.Add(item1);
         }
 
         private void ShowData()
@@ -72,19 +68,33 @@ namespace DLS.Sales_Distribution
 
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 100);
-            ht.Add("@Werks", sle_werks.Text);
+            ht.Add("@Werks", Main_MID_Form.G_werks);
             ht.Add("@Bedate", bedate.ToShortDateString());
             ht.Add("@Afdate", afdate.ToShortDateString());
 
             DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPTransferHistory]", ht, "");
 
+            dt.Columns.Add("carno");
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["carno"] = dt.Rows[i]["Cnumber"];
+            }           
+
             gc_matral_list.DataSource = dt;
+
+            gv_matral_list.ExpandAllGroups();
 
         }
 
         private void btn_find_Click(object sender, EventArgs e)
         {
             ShowData();
+        }
+
+        private void btn_down_Click(object sender, System.EventArgs e)
+        {
+            Common.Frm10.Base.BaseModules.ExcelExport(gc_matral_list, "출고이력_리스트");
         }
 
         //달력 월 부터 보여주기
