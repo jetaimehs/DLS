@@ -14,8 +14,8 @@ namespace DLS.Common.Frm10.SapConntor
             RfcConfigParameters configParam = new RfcConfigParameters();
 
             configParam[RfcConfigParameters.Name] = "DH_CONNECTION";
-            configParam[RfcConfigParameters.User] = "ICOM";
-            configParam[RfcConfigParameters.Password] = "donghee2007";
+            configParam[RfcConfigParameters.User] = "IDEV";
+            configParam[RfcConfigParameters.Password] = "erp2010";
             configParam[RfcConfigParameters.Language] = Login.G_cuture.Substring(0,2).ToUpper();
             configParam[RfcConfigParameters.SystemNumber] = "00";
             configParam[RfcConfigParameters.PoolSize] = "5";
@@ -28,8 +28,11 @@ namespace DLS.Common.Frm10.SapConntor
             }
             else if (Login.G_TARGET_DB == "ACTIVE")
             {
-                configParam[RfcConfigParameters.AppServerHost] = "10.206.92.203";
-                configParam[RfcConfigParameters.Client] = "100";
+                //configParam[RfcConfigParameters.AppServerHost] = "10.206.92.203";
+                //configParam[RfcConfigParameters.Client] = "100";
+
+                configParam[RfcConfigParameters.AppServerHost] = "10.206.92.80";
+                configParam[RfcConfigParameters.Client] = "530";            
             }                       
 
             return configParam;

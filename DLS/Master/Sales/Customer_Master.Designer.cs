@@ -36,11 +36,17 @@
             this.Tell = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CEO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Bcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ADD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemHyperLinkEdit_Add = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.Delete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemHyperLinkEdit_delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
             this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Kunnr_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Kunnr_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit_Add)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit_delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +57,9 @@
             this.gc_Kunnr_list.Location = new System.Drawing.Point(0, 83);
             this.gc_Kunnr_list.MainView = this.gv_Kunnr_list;
             this.gc_Kunnr_list.Name = "gc_Kunnr_list";
+            this.gc_Kunnr_list.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemHyperLinkEdit_Add,
+            this.repositoryItemHyperLinkEdit_delete});
             this.gc_Kunnr_list.Size = new System.Drawing.Size(1334, 660);
             this.gc_Kunnr_list.TabIndex = 10;
             this.gc_Kunnr_list.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -64,17 +73,20 @@
             this.Addr,
             this.Tell,
             this.CEO,
-            this.Bcode});
+            this.Bcode,
+            this.ADD,
+            this.Delete});
             this.gv_Kunnr_list.GridControl = this.gc_Kunnr_list;
             this.gv_Kunnr_list.Name = "gv_Kunnr_list";
             this.gv_Kunnr_list.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gv_Kunnr_list.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_Kunnr_list_RowUpdated);
+            this.gv_Kunnr_list.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_Kunnr_list_ValidatingEditor);
             // 
             // Kunnr
             // 
             this.Kunnr.Caption = "고객코드";
             this.Kunnr.FieldName = "Kunnr";
             this.Kunnr.Name = "Kunnr";
-            this.Kunnr.OptionsColumn.AllowEdit = false;
             this.Kunnr.Visible = true;
             this.Kunnr.VisibleIndex = 0;
             // 
@@ -123,6 +135,38 @@
             this.Bcode.Visible = true;
             this.Bcode.VisibleIndex = 5;
             // 
+            // ADD
+            // 
+            this.ADD.Caption = "Add";
+            this.ADD.ColumnEdit = this.repositoryItemHyperLinkEdit_Add;
+            this.ADD.Name = "ADD";
+            this.ADD.Visible = true;
+            this.ADD.VisibleIndex = 6;
+            // 
+            // repositoryItemHyperLinkEdit_Add
+            // 
+            this.repositoryItemHyperLinkEdit_Add.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit_Add.Name = "repositoryItemHyperLinkEdit_Add";
+            this.repositoryItemHyperLinkEdit_Add.NullText = "Add";
+            this.repositoryItemHyperLinkEdit_Add.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Add_Click);
+            this.repositoryItemHyperLinkEdit_Add.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repositoryItemHyperLinkEdit_Add_KeyDown);
+            // 
+            // Delete
+            // 
+            this.Delete.Caption = "Delete";
+            this.Delete.ColumnEdit = this.repositoryItemHyperLinkEdit_delete;
+            this.Delete.Name = "Delete";
+            this.Delete.Visible = true;
+            this.Delete.VisibleIndex = 7;
+            // 
+            // repositoryItemHyperLinkEdit_delete
+            // 
+            this.repositoryItemHyperLinkEdit_delete.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit_delete.Name = "repositoryItemHyperLinkEdit_delete";
+            this.repositoryItemHyperLinkEdit_delete.NullText = "Delete";
+            this.repositoryItemHyperLinkEdit_delete.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_delete_Click);
+            this.repositoryItemHyperLinkEdit_delete.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repositoryItemHyperLinkEdit_delete_KeyDown);
+            // 
             // pc_main
             // 
             this.pc_main.Controls.Add(this.btn_down);
@@ -165,6 +209,8 @@
             this.Load += new System.EventHandler(this.Customer_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Kunnr_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Kunnr_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit_Add)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit_delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -184,5 +230,9 @@
         private DevExpress.XtraEditors.PanelControl pc_main;
         private DevExpress.XtraEditors.SimpleButton btn_down;
         private DevExpress.XtraEditors.SimpleButton btn_find;
+        private DevExpress.XtraGrid.Columns.GridColumn ADD;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Add;
+        private DevExpress.XtraGrid.Columns.GridColumn Delete;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_delete;
     }
 }

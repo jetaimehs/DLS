@@ -148,11 +148,22 @@ namespace DLS
 
         #region 메뉴버튼 클릭
         #region 기준정보
+        //사용자 관리
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (FromOpen("User_Management"))
             {
                 Master.User_Management fm = new Master.User_Management();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        //고객마스터 관리
+        private void Btn_Master_Kunnr_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Customer_Master"))
+            {
+                Master.Sales.Customer_Master fm = new Master.Sales.Customer_Master();
                 Mdi_Child_NewOpen(fm);
             }
         }
@@ -203,7 +214,7 @@ namespace DLS
         private void barEditItem1_EditValueChanged(object sender, EventArgs e)
         {
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
-        }
+        }        
 
         #region 자재
 

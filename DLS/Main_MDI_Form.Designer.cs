@@ -37,6 +37,7 @@
             this.Btn_SD_TransferHistory = new DevExpress.XtraBars.BarButtonItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.cb_werks = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.Btn_Master_Kunnr = new DevExpress.XtraBars.BarButtonItem();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_SD = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -45,6 +46,7 @@
             this.Rbn_Menu_PP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Master_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
@@ -65,9 +67,10 @@
             this.Btn_SD_OutDelivery,
             this.Btn_SD_DeliveryHistory,
             this.Btn_SD_TransferHistory,
-            this.barEditItem1});
+            this.barEditItem1,
+            this.Btn_Master_Kunnr});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 17;
+            this.Rbn_Menu.MaxItemId = 18;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageHeaderItemLinks.Add(this.barEditItem1);
             this.Rbn_Menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -156,6 +159,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cb_werks.Name = "cb_werks";
             // 
+            // Btn_Master_Kunnr
+            // 
+            this.Btn_Master_Kunnr.Caption = "고객마스터관리";
+            this.Btn_Master_Kunnr.Id = 17;
+            this.Btn_Master_Kunnr.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Kunnr.Name = "Btn_Master_Kunnr";
+            this.Btn_Master_Kunnr.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Kunnr_ItemClick);
+            // 
             // Rbn_Menu_Home
             // 
             this.Rbn_Menu_Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -197,7 +208,8 @@
             // Rbn_Menu_Master
             // 
             this.Rbn_Menu_Master.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.Master_G1});
+            this.Master_G1,
+            this.Master_G2});
             this.Rbn_Menu_Master.Name = "Rbn_Menu_Master";
             this.Rbn_Menu_Master.Text = "기준정보";
             // 
@@ -206,6 +218,12 @@
             this.Master_G1.ItemLinks.Add(this.Btn_Master_User);
             this.Master_G1.Name = "Master_G1";
             this.Master_G1.Text = "사용자관리";
+            // 
+            // Master_G2
+            // 
+            this.Master_G2.ItemLinks.Add(this.Btn_Master_Kunnr);
+            this.Master_G2.Name = "Master_G2";
+            this.Master_G2.Text = "영업기준정보";
             // 
             // repositoryItemSearchLookUpEdit1
             // 
@@ -232,7 +250,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main_MID_Form";
             this.Ribbon = this.Rbn_Menu;
-            this.Text = "동희 물류 관리 시스템";
+            this.Text = "영업기준정보";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_MDI_Form_FormClosing);
             this.Load += new System.EventHandler(this.Main_MID_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).EndInit();
@@ -264,6 +282,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_werks;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_Kunnr;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup Master_G2;
 
     }
 }
