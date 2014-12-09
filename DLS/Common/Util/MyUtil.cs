@@ -85,7 +85,6 @@ namespace DLS.Common.Util
         //그리드 컬럼 헤드텍스트 다국어설정
         private static global::System.Resources.ResourceManager resourceMan;
 
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager
         {
             get

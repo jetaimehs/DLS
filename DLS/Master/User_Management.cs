@@ -27,18 +27,18 @@ namespace DLS.Master
         private void InitLanguage()
         {
             //패널 다국어
-            Common.Util.MyUtil.SetMultiLangByButtonAndLabel(ref pc_main);
+            DLS.Common.Util.MyUtil.SetMultiLangByButtonAndLabel(ref pc_main);
             //그룹 컨트롤 다국어
            // Common.Util.MyUtil.SetMultiLangByButtonAndLabel(ref gc_main);
             //그리드 다국어
-            Common.Util.MyUtil.SetMultiLangGV(ref gv_UserList);
+            DLS.Common.Util.MyUtil.SetMultiLangGV(ref gv_UserList);
 
         }
 
         private void InitOnlyData()
         {
-            Common.Util.MyUtil.SetGridControlDesign(ref gc_UserList);
-            Common.Util.MyUtil.SetGridViewDesign(ref gv_UserList);
+            DLS.Common.Util.MyUtil.SetGridControlDesign(ref gc_UserList);
+            DLS.Common.Util.MyUtil.SetGridViewDesign(ref gv_UserList);
         }
 
         private void ShowData()
@@ -46,7 +46,7 @@ namespace DLS.Master
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 103);
 
-            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DLSSPAccount]", ht, "");
+            DataTable dt = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DLSSPAccount]", ht, "");
 
             gc_UserList.DataSource = dt;
         }
@@ -76,7 +76,7 @@ namespace DLS.Master
                 ht.Add("@MODE", 400);
                 ht.Add("@USERID", gv_UserList.GetRowCellValue(gv_UserList.GetSelectedRows()[0], "UserID"));
 
-                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("DLSSPAccount", ht, "");
+                DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("DLSSPAccount", ht, "");
 
                 //삭제되었습니다.
                 MessageBox.Show(Properties.Resources.msg_005, "", MessageBoxButtons.OK, MessageBoxIcon.Error); return;

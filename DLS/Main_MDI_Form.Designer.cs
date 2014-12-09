@@ -38,15 +38,20 @@
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.cb_werks = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.Btn_Master_Kunnr = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Kprice = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Bwart = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_SD = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.SD_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_MM = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_PP = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.Rbn_Menu_FI = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Master_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Master_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
@@ -68,16 +73,21 @@
             this.Btn_SD_DeliveryHistory,
             this.Btn_SD_TransferHistory,
             this.barEditItem1,
-            this.Btn_Master_Kunnr});
+            this.Btn_Master_Kunnr,
+            this.Btn_Master_Kprice,
+            this.Btn_Master_Bwart});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 18;
+            this.Rbn_Menu.MaxItemId = 20;
             this.Rbn_Menu.Name = "Rbn_Menu";
+            this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
+            this.ribbonPageCategory1});
             this.Rbn_Menu.PageHeaderItemLinks.Add(this.barEditItem1);
             this.Rbn_Menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Rbn_Menu_Home,
             this.Rbn_Menu_SD,
             this.Rbn_Menu_MM,
             this.Rbn_Menu_PP,
+            this.Rbn_Menu_FI,
             this.Rbn_Menu_Master});
             this.Rbn_Menu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSearchLookUpEdit1,
@@ -167,6 +177,27 @@
             this.Btn_Master_Kunnr.Name = "Btn_Master_Kunnr";
             this.Btn_Master_Kunnr.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Kunnr_ItemClick);
             // 
+            // Btn_Master_Kprice
+            // 
+            this.Btn_Master_Kprice.Caption = "판매단가관리";
+            this.Btn_Master_Kprice.Id = 18;
+            this.Btn_Master_Kprice.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Kprice.Name = "Btn_Master_Kprice";
+            this.Btn_Master_Kprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Kprice_ItemClick);
+            // 
+            // Btn_Master_Bwart
+            // 
+            this.Btn_Master_Bwart.Caption = "이동유형마스터";
+            this.Btn_Master_Bwart.Id = 19;
+            this.Btn_Master_Bwart.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Bwart.Name = "Btn_Master_Bwart";
+            this.Btn_Master_Bwart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Bwart_ItemClick);
+            // 
+            // ribbonPageCategory1
+            // 
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            // 
             // Rbn_Menu_Home
             // 
             this.Rbn_Menu_Home.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -205,11 +236,17 @@
             this.Rbn_Menu_PP.Name = "Rbn_Menu_PP";
             this.Rbn_Menu_PP.Text = "생산";
             // 
+            // Rbn_Menu_FI
+            // 
+            this.Rbn_Menu_FI.Name = "Rbn_Menu_FI";
+            this.Rbn_Menu_FI.Text = "회계";
+            // 
             // Rbn_Menu_Master
             // 
             this.Rbn_Menu_Master.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.Master_G1,
-            this.Master_G2});
+            this.Master_G2,
+            this.Master_G3});
             this.Rbn_Menu_Master.Name = "Rbn_Menu_Master";
             this.Rbn_Menu_Master.Text = "기준정보";
             // 
@@ -222,8 +259,15 @@
             // Master_G2
             // 
             this.Master_G2.ItemLinks.Add(this.Btn_Master_Kunnr);
+            this.Master_G2.ItemLinks.Add(this.Btn_Master_Kprice);
             this.Master_G2.Name = "Master_G2";
             this.Master_G2.Text = "영업기준정보";
+            // 
+            // Master_G3
+            // 
+            this.Master_G3.ItemLinks.Add(this.Btn_Master_Bwart);
+            this.Master_G3.Name = "Master_G3";
+            this.Master_G3.Text = "공통마스터";
             // 
             // repositoryItemSearchLookUpEdit1
             // 
@@ -284,6 +328,11 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cb_werks;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Kunnr;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup Master_G2;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_Kprice;
+        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage Rbn_Menu_FI;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_Bwart;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup Master_G3;
 
     }
 }

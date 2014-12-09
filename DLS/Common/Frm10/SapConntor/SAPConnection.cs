@@ -43,7 +43,7 @@ namespace DLS.Common.Frm10.SapConntor
             RfcConfigParameters configParam = GetConfigParam();
 
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             function.Invoke(destination);
 
@@ -57,7 +57,7 @@ namespace DLS.Common.Frm10.SapConntor
             RfcConfigParameters configParam = GetConfigParam();   
 
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IDictionaryEnumerator ie = ht.GetEnumerator();
 
@@ -89,7 +89,7 @@ namespace DLS.Common.Frm10.SapConntor
             RfcConfigParameters configParam = GetConfigParam();   
 
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IDictionaryEnumerator ie = ht.GetEnumerator();
 
@@ -111,7 +111,7 @@ namespace DLS.Common.Frm10.SapConntor
             RfcConfigParameters configParam = GetConfigParam();
 
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IDictionaryEnumerator ie = ht.GetEnumerator();
 
@@ -134,7 +134,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IDictionaryEnumerator ie = ht.GetEnumerator();
 
@@ -157,7 +157,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IDictionaryEnumerator ie = ht.GetEnumerator();
 
@@ -180,7 +180,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             RfcStructureMetadata strMeta = destination.Repository.GetStructureMetadata(Structure_Name);
             IRfcStructure rfcStructure = strMeta.CreateStructure();
@@ -224,7 +224,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IRfcTable rfcTable = function.GetTable(Table_Name);
 
@@ -273,7 +273,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IRfcTable rfcTable = function.GetTable(Table_Name);
 
@@ -346,7 +346,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             if (ImportData.Count > 0)
             {
@@ -372,7 +372,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IRfcTable rfcTable = function.GetTable(SetTable_Name);
             IRfcTable rfcTable2 = function.GetTable(SetTable_Name2);
@@ -443,7 +443,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IRfcTable rfcTable = function.GetTable(SetTable_Name);
 
@@ -506,7 +506,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             RfcStructureMetadata strMeta = destination.Repository.GetStructureMetadata(RfcStructure_Name);
             IRfcStructure rfcStructure = strMeta.CreateStructure();
@@ -534,7 +534,7 @@ namespace DLS.Common.Frm10.SapConntor
         {
             RfcConfigParameters configParam = GetConfigParam();
             RfcDestination destination = RfcDestinationManager.GetDestination(configParam);
-            IRfcFunction function = destination.Repository.CreateFunction(Function_Name);
+            IRfcFunction function= destination.Repository.CreateFunction(Function_Name);
 
             IRfcTable rfcTable = function.GetTable(SetTable_Name);
 

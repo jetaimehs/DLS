@@ -126,11 +126,23 @@
     <Compile Include="Main_MDI_Form.Designer.cs">
       <DependentUpon>Main_MDI_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\Bwart_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Bwart_Master.Designer.cs">
+      <DependentUpon>Bwart_Master.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\Sales\Customer_Master.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master\Sales\Customer_Master.Designer.cs">
       <DependentUpon>Customer_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Sales\Matrial_Price_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Sales\Matrial_Price_Master.Designer.cs">
+      <DependentUpon>Matrial_Price_Master.cs</DependentUpon>
     </Compile>
     <Compile Include="Master\User_Management.cs">
       <SubType>Form</SubType>
@@ -176,8 +188,14 @@
     <EmbeddedResource Include="Main_MDI_Form.resx">
       <DependentUpon>Main_MDI_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Master\Bwart_Master.resx">
+      <DependentUpon>Bwart_Master.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master\Sales\Customer_Master.resx">
       <DependentUpon>Customer_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Sales\Matrial_Price_Master.resx">
+      <DependentUpon>Matrial_Price_Master.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\User_Management.resx">
       <DependentUpon>User_Management.cs</DependentUpon>
