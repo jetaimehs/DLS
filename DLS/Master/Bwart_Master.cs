@@ -128,6 +128,20 @@ namespace DLS.Master
 
         private void repositoryItemHyperLinkEdit_Delete_Click(object sender, EventArgs e)
         {
+            DataRowView drv = (DataRowView)gv_Bwart_list.GetRow(gv_Bwart_list.GetSelectedRows()[0]);
+
+            if (drv == null)
+            {
+                MessageBox.Show("리스트에서 삭제하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (drv.Row.RowState.ToString() == "Detached")
+            {
+                MessageBox.Show("리스트에서 삭제하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (DialogResult.Cancel == MessageBox.Show("삭제하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
             {
                 return;
@@ -154,6 +168,20 @@ namespace DLS.Master
 
         private void repositoryItemHyperLinkEdit_Update_Click(object sender, EventArgs e)
         {
+            DataRowView drv = (DataRowView)gv_Bwart_list.GetRow(gv_Bwart_list.GetSelectedRows()[0]);
+
+            if (drv == null)
+            {
+                MessageBox.Show("리스트에서 수정하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (drv.Row.RowState.ToString() == "Detached")
+            {
+                MessageBox.Show("리스트에서 수정하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 300);            
             ht.Add("@Code", gv_Bwart_list.GetFocusedRowCellValue("Code"));

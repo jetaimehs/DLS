@@ -214,6 +214,16 @@ namespace DLS
             }
         }
 
+        //운송업체 관리
+        private void Btn_Master_Transper_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Transport_Company_Master"))
+            {
+                Master.Sales.Transport_Company_Master fm = new Master.Sales.Transport_Company_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
         #endregion
 
         #region 영업

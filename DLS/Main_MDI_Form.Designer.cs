@@ -54,6 +54,7 @@
             this.Master_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Btn_Master_Transper = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -75,9 +76,10 @@
             this.barEditItem1,
             this.Btn_Master_Kunnr,
             this.Btn_Master_Kprice,
-            this.Btn_Master_Bwart});
+            this.Btn_Master_Bwart,
+            this.Btn_Master_Transper});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 20;
+            this.Rbn_Menu.MaxItemId = 21;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -260,6 +262,7 @@
             // 
             this.Master_G2.ItemLinks.Add(this.Btn_Master_Kunnr);
             this.Master_G2.ItemLinks.Add(this.Btn_Master_Kprice);
+            this.Master_G2.ItemLinks.Add(this.Btn_Master_Transper);
             this.Master_G2.Name = "Master_G2";
             this.Master_G2.Text = "영업기준정보";
             // 
@@ -284,6 +287,14 @@
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // Btn_Master_Transper
+            // 
+            this.Btn_Master_Transper.Caption = "운송업체관리";
+            this.Btn_Master_Transper.Id = 20;
+            this.Btn_Master_Transper.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Transper.Name = "Btn_Master_Transper";
+            this.Btn_Master_Transper.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Transper_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -333,6 +344,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage Rbn_Menu_FI;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Bwart;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup Master_G3;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_Transper;
 
     }
 }
