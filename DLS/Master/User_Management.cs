@@ -37,8 +37,8 @@ namespace DLS.Master
 
         private void InitOnlyData()
         {
-            Common.Util.MyUtil.SetGridControlDesign(ref gc_UserList);
-            Common.Util.MyUtil.SetGridViewDesign(ref gv_UserList);
+            DLS.Common.Util.MyUtil.SetGridControlDesign(ref gc_UserList);
+            DLS.Common.Util.MyUtil.SetGridViewDesign(ref gv_UserList);
         }
 
         private void ShowData()

@@ -69,7 +69,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
@@ -84,11 +84,10 @@
     <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="sapnco">
-      <HintPath>..\..\RMMS\RMMS\bin\sapnco.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP\SAP_DotNetConnector3_x86\sapnco.dll</HintPath>
     </Reference>
-    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\RMMS\RMMS\bin\sapnco_utils.dll</HintPath>
+    <Reference Include="sapnco_utils">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP\SAP_DotNetConnector3_x86\sapnco_utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -125,6 +124,12 @@
     </Compile>
     <Compile Include="Main_MDI_Form.Designer.cs">
       <DependentUpon>Main_MDI_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MasterCommon\Lgort_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\MasterCommon\Lgort_Master.Designer.cs">
+      <DependentUpon>Lgort_Master.cs</DependentUpon>
     </Compile>
     <Compile Include="Master\Sales\Customer_Master.cs">
       <SubType>Form</SubType>
@@ -175,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main_MDI_Form.resx">
       <DependentUpon>Main_MDI_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\MasterCommon\Lgort_Master.resx">
+      <DependentUpon>Lgort_Master.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Sales\Customer_Master.resx">
       <DependentUpon>Customer_Master.cs</DependentUpon>

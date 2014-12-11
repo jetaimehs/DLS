@@ -214,13 +214,24 @@ namespace DLS
         private void barEditItem1_EditValueChanged(object sender, EventArgs e)
         {
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
-        }        
+        }
 
+        #region 공통
+
+        private void Btn_Master_Lgort_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Lgort_Master.cs"))
+            {
+                Master.MasterCommon.Lgort_Master fm = new Master.MasterCommon.Lgort_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+        
+        #endregion
+
+        
         #region 자재
-
-
-
-
+        
 
         #endregion
 
