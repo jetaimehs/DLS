@@ -113,7 +113,7 @@
             this.DELETE});
             this.gv_Matnr_list.GridControl = this.gc_Matnr_list;
             this.gv_Matnr_list.Name = "gv_Matnr_list";
-            this.gv_Matnr_list.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;            
+            this.gv_Matnr_list.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gv_Matnr_list.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_Matnr_list_RowUpdated);
             this.gv_Matnr_list.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_Matnr_list_ValidatingEditor);
             // 
