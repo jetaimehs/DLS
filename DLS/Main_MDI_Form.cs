@@ -74,7 +74,33 @@ namespace DLS
         //권한제어
         private void AuthSetting()
         {
-            
+            switch (Login.G_GRADE)
+            {
+                    //admin
+                case "1":
+
+                    break;
+
+                    //super admin
+                case "2":
+                    break;
+
+                    //fi
+                case "3":
+                    
+                    Btn_SD_OutDelivery.Enabled = false;
+                    break;
+
+                    //관리자
+                case "4":
+                    break;
+            }
+
+            //관리자가 아니면 모두 안보이는 메뉴들
+            if (Login.G_GRADE != "4")
+            {
+                Master_G3.Visible = false;
+            }
         }
 
         private void InitLanguage()
@@ -167,6 +193,37 @@ namespace DLS
                 Mdi_Child_NewOpen(fm);
             }
         }
+
+        //판매단가 관리
+        private void Btn_Master_Kprice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Matrial_Price_Master"))
+            {
+                Master.Sales.Matrial_Price_Master fm = new Master.Sales.Matrial_Price_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }        
+
+        //이동유형 관리
+        private void Btn_Master_Bwart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Bwart_Master"))
+            {
+                Master.Bwart_Master fm = new Master.Bwart_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        //운송업체 관리
+        private void Btn_Master_Transper_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Transport_Company_Master"))
+            {
+                Master.Sales.Transport_Company_Master fm = new Master.Sales.Transport_Company_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
         #endregion
 
         #region 영업
@@ -210,28 +267,12 @@ namespace DLS
         }
 
         #endregion
-
-        private void barEditItem1_EditValueChanged(object sender, EventArgs e)
-        {
-            G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
-        }
-
-        #region 공통
-
-        private void Btn_Master_Lgort_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (FromOpen("Lgort_Master.cs"))
-            {
-                Master.MasterCommon.Lgort_Master fm = new Master.MasterCommon.Lgort_Master();
-                Mdi_Child_NewOpen(fm);
-            }
-        }
-        
-        #endregion
-
         
         #region 자재
-        
+
+
+
+
 
         #endregion
 
@@ -243,5 +284,11 @@ namespace DLS
 
         #endregion
         #endregion
+
+        private void barEditItem1_EditValueChanged(object sender, EventArgs e)
+        {
+            G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
+        }
+        
     }
 }

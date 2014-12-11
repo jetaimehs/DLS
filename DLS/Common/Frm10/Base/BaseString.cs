@@ -77,7 +77,8 @@ namespace DLS.Common.Frm10.Base
         #region Enter -> <br> 로 변환
         /// <summary>
         /// Enter -> <br> 로 변환
-        /// </summary>	
+                     /// </br>	
+        /// </summary>
         public static string EnterToBr(string data)
         {
             return data.Replace("\r\n", "<br>");
@@ -86,7 +87,7 @@ namespace DLS.Common.Frm10.Base
 
         #region ' -> `로 강제변환하는 함수
         /// <summary>
-        ///  ' -> `로 강제변환하는 함수
+        /// ' -> `로 강제변환하는 함수
         /// </summary>	
         public static string SmallQuotChange(string data)
         {
@@ -96,7 +97,7 @@ namespace DLS.Common.Frm10.Base
 
         #region '' -> ``로 강제변환하는 함수
         /// <summary>
-        ///  ' -> `로 강제변환하는 함수
+        /// ' -> `로 강제변환하는 함수
         /// </summary>	
         public static string TwoSmallQuotChange(string data)
         {

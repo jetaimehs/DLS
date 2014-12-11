@@ -32,8 +32,8 @@ namespace DLS.Master.Sales
 
         private void InitOnlyData()
         {
-            Common.Util.MyUtil.SetGridControlDesign(ref gc_Kunnr_list);
-            Common.Util.MyUtil.SetGridViewDesign(ref gv_Kunnr_list);
+            DLS.Common.Util.MyUtil.SetGridControlDesign(ref gc_Kunnr_list);
+            DLS.Common.Util.MyUtil.SetGridViewDesign(ref gv_Kunnr_list);
         }
 
         private void ShowData()
@@ -41,7 +41,7 @@ namespace DLS.Master.Sales
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 100);
 
-            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpKunnr]", ht, "");
+            DataTable dt = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpKunnr]", ht, "");
 
             gc_Kunnr_list.DataSource = dt;
         }
@@ -66,7 +66,7 @@ namespace DLS.Master.Sales
                 Hashtable ht = new Hashtable();
                 ht.Add("I_KUNNR", gv_Kunnr_list.GetFocusedRowCellValue("Kunnr").ToString().Trim());
 
-                IRfcStructure st = Common.Frm10.SapConntor.SAPConnection.SAPGetStructure("ZCA_GET_KUNNR", "E_KUNNR_INFO", ht);
+                IRfcStructure st = DLS.Common.Frm10.SapConntor.SAPConnection.SAPGetStructure("ZCA_GET_KUNNR", "E_KUNNR_INFO", ht);
 
                 //st.GetString("KUNNR").ToString();
 
@@ -80,7 +80,7 @@ namespace DLS.Master.Sales
                 ht1.Add("@Bcode", st.GetString("STCD2"));
                 ht1.Add("@Userid", Login.G_userid);
 
-                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpKunnr]", ht1, "");
+                DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpKunnr]", ht1, "");
 
                 MessageBox.Show("저장되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -104,6 +104,20 @@ namespace DLS.Master.Sales
 
         private void repositoryItemHyperLinkEdit_delete_Click(object sender, EventArgs e)
         {
+            DataRowView drv = (DataRowView)gv_Kunnr_list.GetRow(gv_Kunnr_list.GetSelectedRows()[0]);
+
+            if (drv == null)
+            {
+                MessageBox.Show("리스트에서 삭제하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (drv.Row.RowState.ToString() == "Detached")
+            {
+                MessageBox.Show("리스트에서 삭제하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (DialogResult.Cancel == MessageBox.Show("삭제하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
             {
                 return;
@@ -113,7 +127,7 @@ namespace DLS.Master.Sales
             ht.Add("@MODE", 400);
             ht.Add("@Kunnr", gv_Kunnr_list.GetFocusedRowCellValue("Kunnr").ToString().Trim());
 
-            Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpKunnr]", ht, "");
+            DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpKunnr]", ht, "");
 
             MessageBox.Show("삭제되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -122,7 +136,10 @@ namespace DLS.Master.Sales
 
         private void repositoryItemHyperLinkEdit_delete_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Space)
+            {
+                repositoryItemHyperLinkEdit_delete_Click(sender, e);
+            }
         }
 
         private void gv_Kunnr_list_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
