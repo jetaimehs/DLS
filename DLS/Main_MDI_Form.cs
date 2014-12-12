@@ -224,6 +224,16 @@ namespace DLS
             }
         }
 
+        //운송경로 관리
+        private void Btn_Master_Route_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Route_Master"))
+            {
+                Master.Sales.Route_Master fm = new Master.Sales.Route_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
         #endregion
 
         #region 영업
@@ -288,7 +298,6 @@ namespace DLS
         private void barEditItem1_EditValueChanged(object sender, EventArgs e)
         {
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
-        }
-        
+        }        
     }
 }

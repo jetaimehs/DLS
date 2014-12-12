@@ -30,13 +30,9 @@
         {
             this.gc_Route_list = new DevExpress.XtraGrid.GridControl();
             this.gv_Route_list = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Lifnr = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Cnumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.mFee = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Driver = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Ctype = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Tell = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Rcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Text = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Rfee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Add = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Add = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.Update = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,75 +69,42 @@
             // gv_Route_list
             // 
             this.gv_Route_list.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Lifnr,
-            this.Cnumber,
-            this.Name1,
-            this.mFee,
-            this.Driver,
-            this.Ctype,
-            this.Tell,
+            this.Rcode,
+            this.Text,
+            this.Rfee,
             this.Add,
             this.Update,
             this.Delete});
             this.gv_Route_list.GridControl = this.gc_Route_list;
             this.gv_Route_list.Name = "gv_Route_list";
             this.gv_Route_list.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gv_Route_list.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_Route_list_RowUpdated);
+            this.gv_Route_list.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_Route_list_ValidatingEditor);
             // 
-            // Lifnr
+            // Rcode
             // 
-            this.Lifnr.Caption = "업체코드";
-            this.Lifnr.FieldName = "Lifnr";
-            this.Lifnr.Name = "Lifnr";
-            this.Lifnr.Visible = true;
-            this.Lifnr.VisibleIndex = 0;
+            this.Rcode.Caption = "운송경로코드";
+            this.Rcode.FieldName = "Rcode";
+            this.Rcode.Name = "Rcode";
+            this.Rcode.OptionsColumn.AllowEdit = false;
+            this.Rcode.Visible = true;
+            this.Rcode.VisibleIndex = 0;
             // 
-            // Cnumber
+            // Text
             // 
-            this.Cnumber.Caption = "차량번호";
-            this.Cnumber.FieldName = "Cnumber";
-            this.Cnumber.Name = "Cnumber";
-            this.Cnumber.Visible = true;
-            this.Cnumber.VisibleIndex = 1;
+            this.Text.Caption = "운송경로내역";
+            this.Text.FieldName = "Text";
+            this.Text.Name = "Text";
+            this.Text.Visible = true;
+            this.Text.VisibleIndex = 1;
             // 
-            // Name1
+            // Rfee
             // 
-            this.Name1.Caption = "업체명";
-            this.Name1.FieldName = "Name1";
-            this.Name1.Name = "Name1";
-            this.Name1.Visible = true;
-            this.Name1.VisibleIndex = 2;
-            // 
-            // mFee
-            // 
-            this.mFee.Caption = "월대금액";
-            this.mFee.FieldName = "mFee";
-            this.mFee.Name = "mFee";
-            this.mFee.Visible = true;
-            this.mFee.VisibleIndex = 3;
-            // 
-            // Driver
-            // 
-            this.Driver.Caption = "운전자";
-            this.Driver.FieldName = "Driver";
-            this.Driver.Name = "Driver";
-            this.Driver.Visible = true;
-            this.Driver.VisibleIndex = 4;
-            // 
-            // Ctype
-            // 
-            this.Ctype.Caption = "차량톤수";
-            this.Ctype.FieldName = "Ctype";
-            this.Ctype.Name = "Ctype";
-            this.Ctype.Visible = true;
-            this.Ctype.VisibleIndex = 5;
-            // 
-            // Tell
-            // 
-            this.Tell.Caption = "전화번호";
-            this.Tell.FieldName = "Tell";
-            this.Tell.Name = "Tell";
-            this.Tell.Visible = true;
-            this.Tell.VisibleIndex = 6;
+            this.Rfee.Caption = "추가운송비";
+            this.Rfee.FieldName = "Rfee";
+            this.Rfee.Name = "Rfee";
+            this.Rfee.Visible = true;
+            this.Rfee.VisibleIndex = 2;
             // 
             // Add
             // 
@@ -153,13 +116,15 @@
             this.Add.ColumnEdit = this.repositoryItemHyperLinkEdit_Add;
             this.Add.Name = "Add";
             this.Add.Visible = true;
-            this.Add.VisibleIndex = 7;
+            this.Add.VisibleIndex = 3;
             // 
             // repositoryItemHyperLinkEdit_Add
             // 
             this.repositoryItemHyperLinkEdit_Add.AutoHeight = false;
             this.repositoryItemHyperLinkEdit_Add.Name = "repositoryItemHyperLinkEdit_Add";
             this.repositoryItemHyperLinkEdit_Add.NullText = "Add";
+            this.repositoryItemHyperLinkEdit_Add.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Add_Click);
+            this.repositoryItemHyperLinkEdit_Add.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repositoryItemHyperLinkEdit_Add_KeyDown);
             // 
             // Update
             // 
@@ -171,13 +136,15 @@
             this.Update.ColumnEdit = this.repositoryItemHyperLinkEdit_Update;
             this.Update.Name = "Update";
             this.Update.Visible = true;
-            this.Update.VisibleIndex = 8;
+            this.Update.VisibleIndex = 4;
             // 
             // repositoryItemHyperLinkEdit_Update
             // 
             this.repositoryItemHyperLinkEdit_Update.AutoHeight = false;
             this.repositoryItemHyperLinkEdit_Update.Name = "repositoryItemHyperLinkEdit_Update";
             this.repositoryItemHyperLinkEdit_Update.NullText = "Update";
+            this.repositoryItemHyperLinkEdit_Update.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Update_Click);
+            this.repositoryItemHyperLinkEdit_Update.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repositoryItemHyperLinkEdit_Update_KeyDown);
             // 
             // Delete
             // 
@@ -189,13 +156,14 @@
             this.Delete.ColumnEdit = this.repositoryItemHyperLinkEdit_Delete;
             this.Delete.Name = "Delete";
             this.Delete.Visible = true;
-            this.Delete.VisibleIndex = 9;
+            this.Delete.VisibleIndex = 5;
             // 
             // repositoryItemHyperLinkEdit_Delete
             // 
             this.repositoryItemHyperLinkEdit_Delete.AutoHeight = false;
             this.repositoryItemHyperLinkEdit_Delete.Name = "repositoryItemHyperLinkEdit_Delete";
             this.repositoryItemHyperLinkEdit_Delete.NullText = "Delete";
+            this.repositoryItemHyperLinkEdit_Delete.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Delete_Click);
             // 
             // pc_main
             // 
@@ -216,6 +184,7 @@
             this.btn_down.Size = new System.Drawing.Size(75, 60);
             this.btn_down.TabIndex = 26;
             this.btn_down.Text = "다운로드";
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
             // 
             // btn_find
             // 
@@ -226,6 +195,7 @@
             this.btn_find.Size = new System.Drawing.Size(75, 60);
             this.btn_find.TabIndex = 1;
             this.btn_find.Text = "새로고침";
+            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
             // 
             // Route_Master
             // 
@@ -235,7 +205,7 @@
             this.Controls.Add(this.gc_Route_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Route_Master";
-            this.Text = "Route_Master";
+            this.Load += new System.EventHandler(this.Route_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Route_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Route_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit_Add)).EndInit();
@@ -251,13 +221,6 @@
 
         private DevExpress.XtraGrid.GridControl gc_Route_list;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Route_list;
-        private DevExpress.XtraGrid.Columns.GridColumn Lifnr;
-        private DevExpress.XtraGrid.Columns.GridColumn Cnumber;
-        private DevExpress.XtraGrid.Columns.GridColumn Name1;
-        private DevExpress.XtraGrid.Columns.GridColumn mFee;
-        private DevExpress.XtraGrid.Columns.GridColumn Driver;
-        private DevExpress.XtraGrid.Columns.GridColumn Ctype;
-        private DevExpress.XtraGrid.Columns.GridColumn Tell;
         private DevExpress.XtraGrid.Columns.GridColumn Add;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Add;
         private DevExpress.XtraGrid.Columns.GridColumn Update;
@@ -267,5 +230,8 @@
         private DevExpress.XtraEditors.PanelControl pc_main;
         private DevExpress.XtraEditors.SimpleButton btn_down;
         private DevExpress.XtraEditors.SimpleButton btn_find;
+        private DevExpress.XtraGrid.Columns.GridColumn Rcode;
+        private DevExpress.XtraGrid.Columns.GridColumn Text;
+        private DevExpress.XtraGrid.Columns.GridColumn Rfee;
     }
 }
