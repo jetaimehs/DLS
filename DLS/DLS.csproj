@@ -144,6 +144,12 @@
     <Compile Include="Master\Sales\Matrial_Price_Master.Designer.cs">
       <DependentUpon>Matrial_Price_Master.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\Sales\Route_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Sales\Route_Master.Designer.cs">
+      <DependentUpon>Route_Master.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\Sales\Transport_Company_Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Sales\Matrial_Price_Master.resx">
       <DependentUpon>Matrial_Price_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Sales\Route_Master.resx">
+      <DependentUpon>Route_Master.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Sales\Transport_Company_Master.resx">
       <DependentUpon>Transport_Company_Master.cs</DependentUpon>
