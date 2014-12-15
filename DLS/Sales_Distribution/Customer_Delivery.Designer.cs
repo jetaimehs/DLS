@@ -154,7 +154,6 @@
             // Labst
             // 
             this.Labst.Caption = "현재재고";
-            this.Labst.DisplayFormat.FormatString = "N0";
             this.Labst.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Labst.FieldName = "Labst";
             this.Labst.Name = "Labst";
@@ -167,7 +166,6 @@
             this.Outqty.AppearanceCell.Options.UseTextOptions = true;
             this.Outqty.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Outqty.Caption = "출고량";
-            this.Outqty.DisplayFormat.FormatString = "N0";
             this.Outqty.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Outqty.FieldName = "Outqty";
             this.Outqty.Name = "Outqty";

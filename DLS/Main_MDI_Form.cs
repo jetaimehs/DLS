@@ -276,6 +276,15 @@ namespace DLS
             }
         }
 
+        //일일 영업계획
+        private void Btn_SD_DailyPlan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Daily_SalesPlan.cs"))
+            {
+                Sales_Distribution.Daily_SalesPlan fm = new Sales_Distribution.Daily_SalesPlan();
+                Mdi_Child_NewOpen(fm);
+            }
+        }        
         #endregion
         
         #region 자재
@@ -298,6 +307,6 @@ namespace DLS
         private void barEditItem1_EditValueChanged(object sender, EventArgs e)
         {
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
-        }        
+        }
     }
 }
