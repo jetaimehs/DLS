@@ -88,6 +88,7 @@ namespace DLS.Sales_Distribution
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 100);
             ht.Add("@Werks", Main_MID_Form.G_werks);
+            ht.Add("@Pday", date_delivery.Text);
 
             DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DlsSPDeliveryList", ht, "");
 

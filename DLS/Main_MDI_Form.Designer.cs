@@ -42,10 +42,12 @@
             this.Btn_Master_Bwart = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_Transper = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_Route = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_SD_DailyPlan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_SD = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.SD_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.SD_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_MM = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_PP = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -56,8 +58,8 @@
             this.Master_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.SD_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.Btn_SD_DailyPlan = new DevExpress.XtraBars.BarButtonItem();
+            this.SD_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Btn_SD_Presult = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -82,9 +84,10 @@
             this.Btn_Master_Bwart,
             this.Btn_Master_Transper,
             this.Btn_Master_Route,
-            this.Btn_SD_DailyPlan});
+            this.Btn_SD_DailyPlan,
+            this.Btn_SD_Presult});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 23;
+            this.Rbn_Menu.MaxItemId = 24;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -216,6 +219,14 @@
             this.Btn_Master_Route.Name = "Btn_Master_Route";
             this.Btn_Master_Route.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Route_ItemClick);
             // 
+            // Btn_SD_DailyPlan
+            // 
+            this.Btn_SD_DailyPlan.Caption = "일일영업계획";
+            this.Btn_SD_DailyPlan.Id = 22;
+            this.Btn_SD_DailyPlan.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_DailyPlan.Name = "Btn_SD_DailyPlan";
+            this.Btn_SD_DailyPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_DailyPlan_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -238,9 +249,16 @@
             // 
             this.Rbn_Menu_SD.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.SD_G2,
-            this.SD_G1});
+            this.SD_G1,
+            this.SD_G3});
             this.Rbn_Menu_SD.Name = "Rbn_Menu_SD";
             this.Rbn_Menu_SD.Text = "영업";
+            // 
+            // SD_G2
+            // 
+            this.SD_G2.ItemLinks.Add(this.Btn_SD_DailyPlan);
+            this.SD_G2.Name = "SD_G2";
+            this.SD_G2.Text = "계획";
             // 
             // SD_G1
             // 
@@ -311,19 +329,19 @@
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // SD_G2
+            // SD_G3
             // 
-            this.SD_G2.ItemLinks.Add(this.Btn_SD_DailyPlan);
-            this.SD_G2.Name = "SD_G2";
-            this.SD_G2.Text = "계획";
+            this.SD_G3.ItemLinks.Add(this.Btn_SD_Presult);
+            this.SD_G3.Name = "SD_G3";
+            this.SD_G3.Text = "리포트";
             // 
-            // Btn_SD_DailyPlan
+            // Btn_SD_Presult
             // 
-            this.Btn_SD_DailyPlan.Caption = "일일영업계획";
-            this.Btn_SD_DailyPlan.Id = 22;
-            this.Btn_SD_DailyPlan.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.Btn_SD_DailyPlan.Name = "Btn_SD_DailyPlan";
-            this.Btn_SD_DailyPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_DailyPlan_ItemClick);
+            this.Btn_SD_Presult.Caption = "계획실적현황";
+            this.Btn_SD_Presult.Id = 23;
+            this.Btn_SD_Presult.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_Presult.Name = "Btn_SD_Presult";
+            this.Btn_SD_Presult.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_Presult_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -377,6 +395,8 @@
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Route;
         private DevExpress.XtraBars.BarButtonItem Btn_SD_DailyPlan;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup SD_G2;
+        private DevExpress.XtraBars.BarButtonItem Btn_SD_Presult;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup SD_G3;
 
     }
 }

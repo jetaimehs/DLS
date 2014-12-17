@@ -199,6 +199,12 @@
     <Compile Include="Sales_Distribution\Delivery_History.Designer.cs">
       <DependentUpon>Delivery_History.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales_Distribution\Sales_Plan_Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales_Distribution\Sales_Plan_Result.Designer.cs">
+      <DependentUpon>Sales_Plan_Result.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales_Distribution\Transfer_History.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sales_Distribution\Delivery_History.resx">
       <DependentUpon>Delivery_History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales_Distribution\Sales_Plan_Result.resx">
+      <DependentUpon>Sales_Plan_Result.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales_Distribution\Transfer_History.resx">
       <DependentUpon>Transfer_History.cs</DependentUpon>

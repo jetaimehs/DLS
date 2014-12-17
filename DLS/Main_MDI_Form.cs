@@ -285,6 +285,16 @@ namespace DLS
                 Mdi_Child_NewOpen(fm);
             }
         }        
+
+        //계획대비 실적
+        private void Btn_SD_Presult_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Sales_Plan_Result.cs"))
+            {
+                Sales_Distribution.Sales_Plan_Result fm = new Sales_Distribution.Sales_Plan_Result();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
         #endregion
         
         #region 자재
