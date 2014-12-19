@@ -14,12 +14,8 @@ namespace DLS.Master.MasterCommon
         public Lgort_Master()
         {
             InitializeComponent();
-            testc();
         }
 
-        private void testc()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
