@@ -15,5 +15,13 @@ namespace DLS.Master.MasterCommon
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> parent of fe2f223... �ѱ�Ŀ�� ��Ʈ��
+=======
+>>>>>>> parent of fe2f223... �ѱ�Ŀ�� ��Ʈ��
     }
 }
