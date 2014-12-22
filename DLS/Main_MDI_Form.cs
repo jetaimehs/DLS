@@ -41,7 +41,7 @@ namespace DLS
         private void InitOnlyData()
         {
             //소속 플랜트 
-            Hashtable ht1 = new Hashtable();
+            Hashtable ht1 = new Hashtable(); 
             ht1.Add("@MODE", 104);
             ht1.Add("@USERID", Login.G_userid);
                         
