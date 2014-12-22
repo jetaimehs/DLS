@@ -15,5 +15,7 @@ namespace DLS.Master.MasterCommon
         {
             InitializeComponent();
         }
+
+
     }
 }
