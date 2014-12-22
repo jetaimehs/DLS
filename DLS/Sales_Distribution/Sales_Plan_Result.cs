@@ -21,7 +21,7 @@ namespace DLS.Sales_Distribution
         {
             this.InitLanguage();    //다국어 설정
             this.InitOnlyData();    //폼로딩시 기본 작업
-            this.ShowData();        //DATA 작업
+            this.ShowData();        //DATA 작업test
         }
 
         private void InitLanguage()
