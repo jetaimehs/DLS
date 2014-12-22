@@ -66,19 +66,10 @@
     <ManifestKeyFile>DLS_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
-<<<<<<< HEAD
-  </PropertyGroup>
-  <PropertyGroup>
-    <TargetZone>LocalIntranet</TargetZone>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-=======
->>>>>>> 624fa474f874a5561a24e80b3caaf17ea874df00
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
@@ -92,21 +83,11 @@
     <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-<<<<<<< HEAD
-    <Reference Include="sapnco, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\sapnco.dll</HintPath>
-    </Reference>
-    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\sapnco_utils.dll</HintPath>
-=======
     <Reference Include="sapnco">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP\SAP_DotNetConnector3_x86\sapnco.dll</HintPath>
     </Reference>
     <Reference Include="sapnco_utils">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP\SAP_DotNetConnector3_x86\sapnco_utils.dll</HintPath>
->>>>>>> 624fa474f874a5561a24e80b3caaf17ea874df00
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -144,13 +125,6 @@
     <Compile Include="Main_MDI_Form.Designer.cs">
       <DependentUpon>Main_MDI_Form.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Master\BOM_Management.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Master\BOM_Management.Designer.cs">
-      <DependentUpon>BOM_Management.cs</DependentUpon>
-=======
     <Compile Include="Master\Bwart_Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,7 +160,6 @@
     </Compile>
     <Compile Include="Master\Sales\Transport_Company_Master.Designer.cs">
       <DependentUpon>Transport_Company_Master.cs</DependentUpon>
->>>>>>> 624fa474f874a5561a24e80b3caaf17ea874df00
     </Compile>
     <Compile Include="Master\User_Management.cs">
       <SubType>Form</SubType>
@@ -244,10 +217,6 @@
     <EmbeddedResource Include="Main_MDI_Form.resx">
       <DependentUpon>Main_MDI_Form.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Master\BOM_Management.resx">
-      <DependentUpon>BOM_Management.cs</DependentUpon>
-=======
     <EmbeddedResource Include="Master\Bwart_Master.resx">
       <DependentUpon>Bwart_Master.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,7 +234,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Sales\Transport_Company_Master.resx">
       <DependentUpon>Transport_Company_Master.cs</DependentUpon>
->>>>>>> 624fa474f874a5561a24e80b3caaf17ea874df00
     </EmbeddedResource>
     <EmbeddedResource Include="Master\User_Management.resx">
       <DependentUpon>User_Management.cs</DependentUpon>
@@ -303,7 +271,6 @@
       <DependentUpon>Transfer_History.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -404,10 +371,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\Image\" />
-<<<<<<< HEAD
     <Folder Include="Materials Management\" />
-=======
->>>>>>> 624fa474f874a5561a24e80b3caaf17ea874df00
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\window-menu.png" />
