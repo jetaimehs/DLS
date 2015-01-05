@@ -48,6 +48,8 @@
             this.Btn_Master_Arbpl = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_Matkl = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_Mtart = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_BOM = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Lgort = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,7 +68,6 @@
             this.Master_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Btn_Master_BOM = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -97,9 +98,10 @@
             this.Btn_Master_Arbpl,
             this.Btn_Master_Matkl,
             this.Btn_Master_Mtart,
-            this.Btn_Master_BOM});
+            this.Btn_Master_BOM,
+            this.Btn_Master_Lgort});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 29;
+            this.Rbn_Menu.MaxItemId = 30;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -279,6 +281,22 @@
             this.Btn_Master_Mtart.Name = "Btn_Master_Mtart";
             this.Btn_Master_Mtart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Mtart_ItemClick);
             // 
+            // Btn_Master_BOM
+            // 
+            this.Btn_Master_BOM.Caption = "BOM관리";
+            this.Btn_Master_BOM.Id = 28;
+            this.Btn_Master_BOM.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_BOM.Name = "Btn_Master_BOM";
+            this.Btn_Master_BOM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_BOM_ItemClick);
+            // 
+            // Btn_Master_Lgort
+            // 
+            this.Btn_Master_Lgort.Caption = "저장위치마스터";
+            this.Btn_Master_Lgort.Id = 29;
+            this.Btn_Master_Lgort.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Lgort.Name = "Btn_Master_Lgort";
+            this.Btn_Master_Lgort.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Lgort_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -386,6 +404,7 @@
             this.Master_G3.ItemLinks.Add(this.Btn_Master_Mtart);
             this.Master_G3.ItemLinks.Add(this.Btn_Master_Matkl);
             this.Master_G3.ItemLinks.Add(this.Btn_Master_Bwart);
+            this.Master_G3.ItemLinks.Add(this.Btn_Master_Lgort);
             this.Master_G3.Name = "Master_G3";
             this.Master_G3.Text = "공통마스터";
             // 
@@ -404,14 +423,6 @@
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // Btn_Master_BOM
-            // 
-            this.Btn_Master_BOM.Caption = "BOM관리";
-            this.Btn_Master_BOM.Id = 28;
-            this.Btn_Master_BOM.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.Btn_Master_BOM.Name = "Btn_Master_BOM";
-            this.Btn_Master_BOM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_BOM_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -474,6 +485,7 @@
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Matkl;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Mtart;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_BOM;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_Lgort;
 
     }
 }
