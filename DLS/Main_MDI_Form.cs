@@ -234,6 +234,46 @@ namespace DLS
             }
         }
 
+        //작업장 관리
+        private void Btn_Master_Arbpl_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Arbpl_Master"))
+            {
+                Master.Production.Arbpl_Master fm = new Master.Production.Arbpl_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        //자재그룹
+        private void Btn_Master_Matkl_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Matkl_Master"))
+            {
+                Master.MasterCommon.Matkl_Master fm = new Master.MasterCommon.Matkl_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        //자재유형
+        private void Btn_Master_Mtart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Mtart_Master"))
+            {
+                Master.MasterCommon.Mtart_Master fm = new Master.MasterCommon.Mtart_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        //BOM관리
+        private void Btn_Master_BOM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("BOM_Master"))
+            {
+                Master.Production.BOM_Master fm = new Master.Production.BOM_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
         #endregion
 
         #region 영업
@@ -307,10 +347,14 @@ namespace DLS
 
         #region 생산
 
-
-
-
-
+        private void Btn_PP_Plan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Production_Plan.cs"))
+            {
+                Production_Planning.Production_Plan fm = new Production_Planning.Production_Plan();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
         #endregion
         #endregion
 
