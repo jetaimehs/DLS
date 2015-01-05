@@ -44,6 +44,10 @@
             this.Btn_Master_Route = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_SD_DailyPlan = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_SD_Presult = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_PP_Plan = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Arbpl = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Matkl = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Mtart = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -53,13 +57,16 @@
             this.SD_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_MM = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_PP = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.PP_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_FI = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Master_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Master_G4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Master_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Btn_Master_BOM = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -85,9 +92,14 @@
             this.Btn_Master_Transper,
             this.Btn_Master_Route,
             this.Btn_SD_DailyPlan,
-            this.Btn_SD_Presult});
+            this.Btn_SD_Presult,
+            this.Btn_PP_Plan,
+            this.Btn_Master_Arbpl,
+            this.Btn_Master_Matkl,
+            this.Btn_Master_Mtart,
+            this.Btn_Master_BOM});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 24;
+            this.Rbn_Menu.MaxItemId = 29;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -235,6 +247,38 @@
             this.Btn_SD_Presult.Name = "Btn_SD_Presult";
             this.Btn_SD_Presult.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_Presult_ItemClick);
             // 
+            // Btn_PP_Plan
+            // 
+            this.Btn_PP_Plan.Caption = "생산계획";
+            this.Btn_PP_Plan.Id = 24;
+            this.Btn_PP_Plan.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_PP_Plan.Name = "Btn_PP_Plan";
+            this.Btn_PP_Plan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PP_Plan_ItemClick);
+            // 
+            // Btn_Master_Arbpl
+            // 
+            this.Btn_Master_Arbpl.Caption = "작업장관리";
+            this.Btn_Master_Arbpl.Id = 25;
+            this.Btn_Master_Arbpl.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Arbpl.Name = "Btn_Master_Arbpl";
+            this.Btn_Master_Arbpl.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Arbpl_ItemClick);
+            // 
+            // Btn_Master_Matkl
+            // 
+            this.Btn_Master_Matkl.Caption = "자재그룹";
+            this.Btn_Master_Matkl.Id = 26;
+            this.Btn_Master_Matkl.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Matkl.Name = "Btn_Master_Matkl";
+            this.Btn_Master_Matkl.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Matkl_ItemClick);
+            // 
+            // Btn_Master_Mtart
+            // 
+            this.Btn_Master_Mtart.Caption = "자재유형";
+            this.Btn_Master_Mtart.Id = 27;
+            this.Btn_Master_Mtart.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Mtart.Name = "Btn_Master_Mtart";
+            this.Btn_Master_Mtart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Mtart_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -289,8 +333,16 @@
             // 
             // Rbn_Menu_PP
             // 
+            this.Rbn_Menu_PP.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.PP_G1});
             this.Rbn_Menu_PP.Name = "Rbn_Menu_PP";
             this.Rbn_Menu_PP.Text = "생산";
+            // 
+            // PP_G1
+            // 
+            this.PP_G1.ItemLinks.Add(this.Btn_PP_Plan);
+            this.PP_G1.Name = "PP_G1";
+            this.PP_G1.Text = "계획";
             // 
             // Rbn_Menu_FI
             // 
@@ -302,6 +354,7 @@
             this.Rbn_Menu_Master.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.Master_G1,
             this.Master_G2,
+            this.Master_G4,
             this.Master_G3});
             this.Rbn_Menu_Master.Name = "Rbn_Menu_Master";
             this.Rbn_Menu_Master.Text = "기준정보";
@@ -321,8 +374,17 @@
             this.Master_G2.Name = "Master_G2";
             this.Master_G2.Text = "영업기준정보";
             // 
+            // Master_G4
+            // 
+            this.Master_G4.ItemLinks.Add(this.Btn_Master_Arbpl);
+            this.Master_G4.ItemLinks.Add(this.Btn_Master_BOM);
+            this.Master_G4.Name = "Master_G4";
+            this.Master_G4.Text = "생산기준정보";
+            // 
             // Master_G3
             // 
+            this.Master_G3.ItemLinks.Add(this.Btn_Master_Mtart);
+            this.Master_G3.ItemLinks.Add(this.Btn_Master_Matkl);
             this.Master_G3.ItemLinks.Add(this.Btn_Master_Bwart);
             this.Master_G3.Name = "Master_G3";
             this.Master_G3.Text = "공통마스터";
@@ -342,6 +404,14 @@
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // Btn_Master_BOM
+            // 
+            this.Btn_Master_BOM.Caption = "BOM관리";
+            this.Btn_Master_BOM.Id = 28;
+            this.Btn_Master_BOM.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_BOM.Name = "Btn_Master_BOM";
+            this.Btn_Master_BOM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_BOM_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -397,6 +467,13 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup SD_G2;
         private DevExpress.XtraBars.BarButtonItem Btn_SD_Presult;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup SD_G3;
+        private DevExpress.XtraBars.BarButtonItem Btn_PP_Plan;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PP_G1;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_Arbpl;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup Master_G4;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_Matkl;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_Mtart;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_BOM;
 
     }
 }
