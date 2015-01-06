@@ -137,6 +137,30 @@
     <Compile Include="Master\MasterCommon\Lgort_Master.Designer.cs">
       <DependentUpon>Lgort_Master.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\MasterCommon\Matkl_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\MasterCommon\Matkl_Master.Designer.cs">
+      <DependentUpon>Matkl_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MasterCommon\Mtart_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\MasterCommon\Mtart_Master.Designer.cs">
+      <DependentUpon>Mtart_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Production\Arbpl_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Production\Arbpl_Master.Designer.cs">
+      <DependentUpon>Arbpl_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Production\BOM_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Production\BOM_Master.Designer.cs">
+      <DependentUpon>BOM_Master.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\Sales\Customer_Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +196,12 @@
     </Compile>
     <Compile Include="Popup_Form\Find_User.Designer.cs">
       <DependentUpon>Find_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Planning\Production_Output.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Planning\Production_Output.Designer.cs">
+      <DependentUpon>Production_Output.cs</DependentUpon>
     </Compile>
     <Compile Include="Production Planning\Production_Plan.cs">
       <SubType>Form</SubType>
@@ -222,6 +252,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MasterCommon\Lgort_Master.resx">
       <DependentUpon>Lgort_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\MasterCommon\Matkl_Master.resx">
+      <DependentUpon>Matkl_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\MasterCommon\Mtart_Master.resx">
+      <DependentUpon>Mtart_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Production\Arbpl_Master.resx">
+      <DependentUpon>Arbpl_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Production\BOM_Master.resx">
+      <DependentUpon>BOM_Master.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Sales\Customer_Master.resx">
       <DependentUpon>Customer_Master.cs</DependentUpon>

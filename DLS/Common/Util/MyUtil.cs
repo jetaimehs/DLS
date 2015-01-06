@@ -24,6 +24,23 @@ namespace DLS.Common.Util
             return bl;
         }
 
+        //파라메터 값이 DateTime 타입인지 검사
+        public static Boolean TryParseDateTimeToShortDate(object obj, out string strDate)
+        {
+            Boolean bl = false;
+            DateTime date = DateTime.Now;
+
+            if (obj != null
+                && obj.GetType() == typeof(DateTime))
+            {
+                bl = true;
+                date = (DateTime)obj;
+            }
+
+            strDate = date.ToShortDateString();
+            return bl;
+        }
+
         //DateEdit 컨트롤의 DateTime을 파라메터 값으로 설정
         public static void SetDateTime(ref DateEdit dateedit, object obj)
         {
