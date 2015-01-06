@@ -131,6 +131,12 @@
     <Compile Include="Master\Bwart_Master.Designer.cs">
       <DependentUpon>Bwart_Master.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\Linfr_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Linfr_Master.Designer.cs">
+      <DependentUpon>Linfr_Master.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\MasterCommon\Lgort_Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,24 @@
     </Compile>
     <Compile Include="Master\MasterCommon\Mtart_Master.Designer.cs">
       <DependentUpon>Mtart_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Material\Lprice_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Material\Lprice_Master.Designer.cs">
+      <DependentUpon>Lprice_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Material\Material_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Material\Material_Master.Designer.cs">
+      <DependentUpon>Material_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Material\Plant_Material_Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Material\Plant_Material_Master.Designer.cs">
+      <DependentUpon>Plant_Material_Master.cs</DependentUpon>
     </Compile>
     <Compile Include="Master\Production\Arbpl_Master.cs">
       <SubType>Form</SubType>
@@ -250,6 +274,9 @@
     <EmbeddedResource Include="Master\Bwart_Master.resx">
       <DependentUpon>Bwart_Master.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Master\Linfr_Master.resx">
+      <DependentUpon>Linfr_Master.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master\MasterCommon\Lgort_Master.resx">
       <DependentUpon>Lgort_Master.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +285,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MasterCommon\Mtart_Master.resx">
       <DependentUpon>Mtart_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Material\Lprice_Master.resx">
+      <DependentUpon>Lprice_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Material\Material_Master.resx">
+      <DependentUpon>Material_Master.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Production\Arbpl_Master.resx">
       <DependentUpon>Arbpl_Master.cs</DependentUpon>

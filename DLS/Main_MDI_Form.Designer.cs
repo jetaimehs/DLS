@@ -50,6 +50,9 @@
             this.Btn_Master_Mtart = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_BOM = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_Lgort = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_LIfnr = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Master_MM = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Master_PMM = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,8 +69,10 @@
             this.Master_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Master_G4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Master_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Master_G5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btn_Master_Lprice = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -99,9 +104,13 @@
             this.Btn_Master_Matkl,
             this.Btn_Master_Mtart,
             this.Btn_Master_BOM,
-            this.Btn_Master_Lgort});
+            this.Btn_Master_Lgort,
+            this.Btn_Master_LIfnr,
+            this.btn_Master_MM,
+            this.btn_Master_PMM,
+            this.btn_Master_Lprice});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 30;
+            this.Rbn_Menu.MaxItemId = 34;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -297,6 +306,30 @@
             this.Btn_Master_Lgort.Name = "Btn_Master_Lgort";
             this.Btn_Master_Lgort.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Lgort_ItemClick);
             // 
+            // Btn_Master_LIfnr
+            // 
+            this.Btn_Master_LIfnr.Caption = "협력업체마스터";
+            this.Btn_Master_LIfnr.Id = 30;
+            this.Btn_Master_LIfnr.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_LIfnr.Name = "Btn_Master_LIfnr";
+            this.Btn_Master_LIfnr.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_LIfnr_ItemClick);
+            // 
+            // btn_Master_MM
+            // 
+            this.btn_Master_MM.Caption = "자재마스터";
+            this.btn_Master_MM.Id = 31;
+            this.btn_Master_MM.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_Master_MM.Name = "btn_Master_MM";
+            this.btn_Master_MM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_MM_ItemClick);
+            // 
+            // btn_Master_PMM
+            // 
+            this.btn_Master_PMM.Caption = "플랜트별자재리스트";
+            this.btn_Master_PMM.Id = 32;
+            this.btn_Master_PMM.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_Master_PMM.Name = "btn_Master_PMM";
+            this.btn_Master_PMM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_PMM_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -373,7 +406,8 @@
             this.Master_G1,
             this.Master_G2,
             this.Master_G4,
-            this.Master_G3});
+            this.Master_G3,
+            this.Master_G5});
             this.Rbn_Menu_Master.Name = "Rbn_Menu_Master";
             this.Rbn_Menu_Master.Text = "기준정보";
             // 
@@ -405,8 +439,17 @@
             this.Master_G3.ItemLinks.Add(this.Btn_Master_Matkl);
             this.Master_G3.ItemLinks.Add(this.Btn_Master_Bwart);
             this.Master_G3.ItemLinks.Add(this.Btn_Master_Lgort);
+            this.Master_G3.ItemLinks.Add(this.Btn_Master_LIfnr);
             this.Master_G3.Name = "Master_G3";
             this.Master_G3.Text = "공통마스터";
+            // 
+            // Master_G5
+            // 
+            this.Master_G5.ItemLinks.Add(this.btn_Master_MM);
+            this.Master_G5.ItemLinks.Add(this.btn_Master_PMM);
+            this.Master_G5.ItemLinks.Add(this.btn_Master_Lprice);
+            this.Master_G5.Name = "Master_G5";
+            this.Master_G5.Text = "자재기준정보";
             // 
             // repositoryItemSearchLookUpEdit1
             // 
@@ -423,6 +466,14 @@
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // btn_Master_Lprice
+            // 
+            this.btn_Master_Lprice.Caption = "구매단가마스터";
+            this.btn_Master_Lprice.Id = 33;
+            this.btn_Master_Lprice.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_Master_Lprice.Name = "btn_Master_Lprice";
+            this.btn_Master_Lprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_Lprice_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -486,6 +537,11 @@
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Mtart;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_BOM;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Lgort;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_LIfnr;
+        private DevExpress.XtraBars.BarButtonItem btn_Master_MM;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup Master_G5;
+        private DevExpress.XtraBars.BarButtonItem btn_Master_PMM;
+        private DevExpress.XtraBars.BarButtonItem btn_Master_Lprice;
 
     }
 }
