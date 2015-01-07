@@ -301,6 +301,9 @@
     <EmbeddedResource Include="Master\Material\Material_Master.resx">
       <DependentUpon>Material_Master.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Master\Material\Plant_Material_Master.resx">
+      <DependentUpon>Plant_Material_Master.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master\Production\Arbpl_Master.resx">
       <DependentUpon>Arbpl_Master.cs</DependentUpon>
     </EmbeddedResource>
