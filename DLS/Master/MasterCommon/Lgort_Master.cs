@@ -208,6 +208,7 @@ namespace DLS.Master.MasterCommon
         {
             e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
             MessageBox.Show(e.ErrorText, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }    
     }
 }
