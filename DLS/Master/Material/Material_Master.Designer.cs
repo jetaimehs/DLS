@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
-            this.ckDeleted = new DevExpress.XtraEditors.CheckEdit();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gp1 = new DevExpress.XtraEditors.GroupControl();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
@@ -51,10 +50,8 @@
             this.SDlgort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OSlgort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Loekz = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.delete = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckDeleted.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gp1)).BeginInit();
             this.gp1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
@@ -67,21 +64,12 @@
             // 
             // pc_main
             // 
-            this.pc_main.Controls.Add(this.ckDeleted);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
             this.pc_main.Location = new System.Drawing.Point(0, 0);
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1320, 77);
             this.pc_main.TabIndex = 0;
-            // 
-            // ckDeleted
-            // 
-            this.ckDeleted.Location = new System.Drawing.Point(103, 48);
-            this.ckDeleted.Name = "ckDeleted";
-            this.ckDeleted.Properties.Caption = "삭제표시 포함";
-            this.ckDeleted.Size = new System.Drawing.Size(107, 19);
-            this.ckDeleted.TabIndex = 3;
             // 
             // btn_find
             // 
@@ -111,7 +99,7 @@
             this.gcMain.Location = new System.Drawing.Point(2, 22);
             this.gcMain.MainView = this.MainView;
             this.gcMain.Name = "gcMain";
-            this.gcMain.Size = new System.Drawing.Size(1316, 274);
+            this.gcMain.Size = new System.Drawing.Size(1316, 397);
             this.gcMain.TabIndex = 1;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.MainView});
@@ -131,6 +119,8 @@
             this.MainView.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.MainView_ShowingEditor);
             this.MainView.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.MainView_ValidateRow);
             this.MainView.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.MainView_RowUpdated);
+            this.MainView.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.MainView_ValidatingEditor);
+            this.MainView.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.MainView_InvalidValueException);
             // 
             // Matnr
             // 
@@ -168,9 +158,9 @@
             // 
             this.gp2.Controls.Add(this.gcSub);
             this.gp2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gp2.Location = new System.Drawing.Point(2, 296);
+            this.gp2.Location = new System.Drawing.Point(2, 419);
             this.gp2.Name = "gp2";
-            this.gp2.Size = new System.Drawing.Size(1316, 366);
+            this.gp2.Size = new System.Drawing.Size(1316, 243);
             this.gp2.TabIndex = 0;
             this.gp2.Text = "플랜별 자재 정보";
             // 
@@ -180,7 +170,7 @@
             this.gcSub.Location = new System.Drawing.Point(2, 22);
             this.gcSub.MainView = this.SubView;
             this.gcSub.Name = "gcSub";
-            this.gcSub.Size = new System.Drawing.Size(1312, 342);
+            this.gcSub.Size = new System.Drawing.Size(1312, 219);
             this.gcSub.TabIndex = 0;
             this.gcSub.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.SubView});
@@ -197,8 +187,7 @@
             this.PPlgort,
             this.SDlgort,
             this.OSlgort,
-            this.Loekz,
-            this.delete});
+            this.Loekz});
             this.SubView.GridControl = this.gcSub;
             this.SubView.Name = "SubView";
             this.SubView.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
@@ -206,6 +195,8 @@
             this.SubView.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.SubView_InitNewRow);
             this.SubView.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.SubView_ValidateRow);
             this.SubView.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.SubView_RowUpdated);
+            this.SubView.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.SubView_ValidatingEditor);
+            this.SubView.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.SubView_InvalidValueException);
             // 
             // Werks
             // 
@@ -283,18 +274,11 @@
             // 
             // Loekz
             // 
-            this.Loekz.Caption = "삭제 지시자(X:삭제)";
+            this.Loekz.Caption = "삭제 표시";
             this.Loekz.FieldName = "Loekz";
             this.Loekz.Name = "Loekz";
             this.Loekz.Visible = true;
             this.Loekz.VisibleIndex = 9;
-            // 
-            // delete
-            // 
-            this.delete.Caption = "삭제";
-            this.delete.Name = "delete";
-            this.delete.Visible = true;
-            this.delete.VisibleIndex = 10;
             // 
             // Material_Master
             // 
@@ -308,7 +292,6 @@
             this.Load += new System.EventHandler(this.Material_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ckDeleted.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gp1)).EndInit();
             this.gp1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).EndInit();
@@ -335,7 +318,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Meins;
         private DevExpress.XtraGrid.GridControl gcSub;
         private DevExpress.XtraGrid.Views.Grid.GridView SubView;
-        private DevExpress.XtraEditors.CheckEdit ckDeleted;
         private DevExpress.XtraGrid.Columns.GridColumn Werks;
         private DevExpress.XtraGrid.Columns.GridColumn pMatnr;
         private DevExpress.XtraGrid.Columns.GridColumn Matkl;
@@ -346,6 +328,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn SDlgort;
         private DevExpress.XtraGrid.Columns.GridColumn OSlgort;
         private DevExpress.XtraGrid.Columns.GridColumn Loekz;
-        private DevExpress.XtraGrid.Columns.GridColumn delete;
     }
 }

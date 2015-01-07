@@ -69,7 +69,6 @@ namespace DLS.Master
 
         private void LifnrView_RowClick(object sender, RowClickEventArgs e)
         {
-
             if (LifnrClickEvent != null)
                 LifnrClickEvent(LifnrView.GetFocusedRowCellValue("LIFNR").ToString(), LifnrView.GetFocusedRowCellValue("NAME1").ToString());
             this.Close();

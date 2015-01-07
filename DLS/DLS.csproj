@@ -137,6 +137,12 @@
     <Compile Include="Master\Linfr_Master.Designer.cs">
       <DependentUpon>Linfr_Master.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\MasterCommon\LgortList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\MasterCommon\LgortList.Designer.cs">
+      <DependentUpon>LgortList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\MasterCommon\Lgort_Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Linfr_Master.resx">
       <DependentUpon>Linfr_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\MasterCommon\LgortList.resx">
+      <DependentUpon>LgortList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MasterCommon\Lgort_Master.resx">
       <DependentUpon>Lgort_Master.cs</DependentUpon>
