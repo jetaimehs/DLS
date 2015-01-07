@@ -184,7 +184,6 @@ namespace DLS.Master.Material
         {
             DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
 
-
             if (view.RowCount == 1 && (view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle)) )
             {
                 MessageBox.Show("동일한 자재번호가 추가 할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -232,6 +231,7 @@ namespace DLS.Master.Material
             DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;            
             view.SetRowCellValue(e.RowHandle, view.Columns["Werks"], Main_MID_Form.G_werks.ToString());
             view.SetRowCellValue(e.RowHandle, view.Columns["Matnr"], MainView.GetFocusedRowCellValue("Matnr"));
+            view.SetRowCellValue(e.RowHandle, view.Columns["Loekz"], false);
         }
 
         //서브뷰 값 체크
@@ -302,7 +302,7 @@ namespace DLS.Master.Material
                     if (e.Value.ToString().Length > 10)
                     {
                         e.Valid = false;
-                        e.ErrorText = "제품군 최대10자리입니다.";
+                        e.ErrorText = "제품군은 최대10자리입니다.";
                     }
                     break;
 

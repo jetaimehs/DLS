@@ -30,6 +30,7 @@
         {
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
+            this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
@@ -43,8 +44,6 @@
             this.PPlgort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDlgort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OSlgort = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Loekz = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -73,6 +72,17 @@
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1306, 77);
             this.pc_main.TabIndex = 1;
+            // 
+            // btn_down
+            // 
+            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_down.Location = new System.Drawing.Point(93, 7);
+            this.btn_down.Name = "btn_down";
+            this.btn_down.Size = new System.Drawing.Size(75, 60);
+            this.btn_down.TabIndex = 27;
+            this.btn_down.Text = "다운로드";
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
             // 
             // gridView2
             // 
@@ -104,11 +114,10 @@
             this.MMlgort,
             this.PPlgort,
             this.SDlgort,
-            this.OSlgort,
-            this.Loekz});
+            this.OSlgort});
             this.MainView.GridControl = this.gcMain;
             this.MainView.Name = "MainView";
-            this.MainView.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.MainView.OptionsBehavior.ReadOnly = true;
             // 
             // Werks
             // 
@@ -184,25 +193,6 @@
             this.OSlgort.Visible = true;
             this.OSlgort.VisibleIndex = 8;
             // 
-            // Loekz
-            // 
-            this.Loekz.Caption = "삭제 표시";
-            this.Loekz.FieldName = "Loekz";
-            this.Loekz.Name = "Loekz";
-            this.Loekz.Visible = true;
-            this.Loekz.VisibleIndex = 9;
-            // 
-            // btn_down
-            // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
-            this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_down.Location = new System.Drawing.Point(93, 7);
-            this.btn_down.Name = "btn_down";
-            this.btn_down.Size = new System.Drawing.Size(75, 60);
-            this.btn_down.TabIndex = 27;
-            this.btn_down.Text = "다운로드";
-            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
-            // 
             // Plant_Material_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -239,7 +229,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn PPlgort;
         private DevExpress.XtraGrid.Columns.GridColumn SDlgort;
         private DevExpress.XtraGrid.Columns.GridColumn OSlgort;
-        private DevExpress.XtraGrid.Columns.GridColumn Loekz;
         private DevExpress.XtraEditors.SimpleButton btn_down;
     }
 }

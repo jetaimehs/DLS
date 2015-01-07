@@ -81,6 +81,7 @@
             this.LifnrView.GridControl = this.gc_Lifnr;
             this.LifnrView.Name = "LifnrView";
             this.LifnrView.OptionsBehavior.Editable = false;
+            this.LifnrView.OptionsBehavior.ReadOnly = true;
             this.LifnrView.OptionsSelection.MultiSelect = true;
             this.LifnrView.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.LifnrView_RowClick);
             // 
@@ -123,6 +124,7 @@
             this.EkorgView.GridControl = this.gc_Ekorg;
             this.EkorgView.Name = "EkorgView";
             this.EkorgView.OptionsBehavior.Editable = false;
+            this.EkorgView.OptionsBehavior.ReadOnly = true;
             this.EkorgView.OptionsSelection.MultiSelect = true;
             this.EkorgView.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.EkorgView_SelectionChanged);
             // 

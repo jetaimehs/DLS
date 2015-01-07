@@ -161,6 +161,12 @@
     <Compile Include="Master\MasterCommon\Mtart_Master.Designer.cs">
       <DependentUpon>Mtart_Master.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\Material\LpriceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Material\LpriceList.Designer.cs">
+      <DependentUpon>LpriceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\Material\Lprice_Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MasterCommon\Mtart_Master.resx">
       <DependentUpon>Mtart_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Material\LpriceList.resx">
+      <DependentUpon>LpriceList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Material\Lprice_Master.resx">
       <DependentUpon>Lprice_Master.cs</DependentUpon>
