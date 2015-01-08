@@ -177,5 +177,6 @@ namespace DLS.Sales_Distribution
                 MessageBox.Show("출고수량이 재고 수량보다 많습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
