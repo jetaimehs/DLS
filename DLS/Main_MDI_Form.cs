@@ -274,6 +274,25 @@ namespace DLS
             }
         }
 
+        //저장위치
+        private void Btn_Master_Lgort_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Lgort_Master"))
+            {
+                Master.MasterCommon.Lgort_Master fm = new Master.MasterCommon.Lgort_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        private void Btn_Master_LIfnr_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Lifnr_Master"))
+            {
+                Master.Linfr_Master fm = new Master.Linfr_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }        
+
         #endregion
 
         #region 영업
@@ -339,10 +358,33 @@ namespace DLS
         
         #region 자재
 
+        private void btn_Master_MM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Material_Master"))
+            {
+                Master.Material.Material_Master fm = new Master.Material.Material_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
 
+        private void btn_Master_PMM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Plant_Material_Master"))
+            {
+                Master.Material.Plant_Material_Master fm = new Master.Material.Plant_Material_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
 
-
-
+        private void btn_Master_Lprice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Lprice_Master"))
+            {
+                Master.Material.Lprice_Master fm = new Master.Material.Lprice_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }    
+        
         #endregion
 
         #region 생산
@@ -372,5 +414,6 @@ namespace DLS
         {
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
         }
+             
     }
 }
