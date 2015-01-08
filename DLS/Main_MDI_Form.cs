@@ -56,7 +56,7 @@ namespace DLS
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
         }
 
-        private bool FromOpen(string OpenFrom)
+        public bool FromOpen(string OpenFrom)
         {
             foreach (Form oForm in this.MdiChildren)
             {
