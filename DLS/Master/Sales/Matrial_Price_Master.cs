@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid;
 
 namespace DLS.Master.Sales
 {
@@ -255,6 +256,20 @@ namespace DLS.Master.Sales
                     old_Edate = edit.OldEditValue.ToString();
                 }
             }
+        }
+
+        private void gv_Matnr_list_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            if(!gv_Matnr_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
+            {
+                ShowSubData();
+            }
+        }
+
+        private void ShowSubData()
+        {
+            //Hashtable ht = new Hashtable();
+            //ht.Add("@MODE", )
         }
     }
 }
