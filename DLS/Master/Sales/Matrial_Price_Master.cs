@@ -268,8 +268,8 @@ namespace DLS.Master.Sales
 
         private void ShowSubData()
         {
-            //Hashtable ht = new Hashtable();
-            //ht.Add("@MODE", )
+            Hashtable ht = new Hashtable();
+            ht.Add("@MODE", )
         }
     }
 }
