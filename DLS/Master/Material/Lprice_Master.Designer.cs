@@ -239,6 +239,7 @@
             this.SubView.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.SubView.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.SubView_ShowingEditor);
             this.SubView.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.SubView_InitNewRow);
+            this.SubView.ShownEditor += new System.EventHandler(this.SubView_ShownEditor);
             this.SubView.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.SubView_ValidateRow);
             this.SubView.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.SubView_RowUpdated);
             this.SubView.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.SubView_ValidatingEditor);

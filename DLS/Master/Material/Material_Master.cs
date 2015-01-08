@@ -79,9 +79,7 @@ namespace DLS.Master.Material
 
                 DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpMatrialMaster]", ht, "");
 
-                gcMain.DataSource = dt;
-
-                ShowData();    
+                ((DataRowView)e.Row).Row.AcceptChanges();
             }          
         }
 
@@ -173,17 +171,13 @@ namespace DLS.Master.Material
 
                 DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht, "");
 
-                gcMain.DataSource = dt;
-
-                ShowData();
-                ShowSubData();    
+                ((DataRowView)e.Row).Row.AcceptChanges();
             }      
         }
 
         private void SubView_ShowingEditor(object sender, CancelEventArgs e)
         {
             DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
-
             if (view.RowCount == 1 && (view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle)) )
             {
                 MessageBox.Show("동일한 자재번호가 추가 할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -195,7 +189,11 @@ namespace DLS.Master.Material
             {
                 e.Cancel = true;
             }
+        }
 
+        private void SubView_ShownEditor(object sender, EventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
             if (view.FocusedColumn.FieldName == "MMlgort" ||
                 view.FocusedColumn.FieldName == "PPlgort" ||
                 view.FocusedColumn.FieldName == "SDlgort" ||
@@ -204,7 +202,7 @@ namespace DLS.Master.Material
                 DLS.Master.MasterCommon.LgortList fmLgort = new MasterCommon.LgortList();
                 fmLgort.LgortClickEvent += new MasterCommon.LgortList.LgortClickEventHandler(fmLgort_LgortClickEventHandler);
                 fmLgort.Owner = this;
-                fmLgort.Show();
+                fmLgort.ShowDialog();
             }
         }
 
@@ -280,6 +278,9 @@ namespace DLS.Master.Material
         private void ValidationCheck(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
             GridView view = sender as GridView;
+            if (view.FocusedColumn.FieldName == null)
+                return;
+
             switch (view.FocusedColumn.FieldName)
             {
                 case "Matnr":
@@ -347,6 +348,5 @@ namespace DLS.Master.Material
             e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
             MessageBox.Show(e.ErrorText, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
     }
 }

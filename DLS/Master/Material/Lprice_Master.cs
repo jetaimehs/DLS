@@ -85,12 +85,12 @@ namespace DLS.Master.Material
         private void SubView_ShowingEditor(object sender, CancelEventArgs e)
         {
             DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
-
             if (view.FocusedColumn.FieldName == "LPseq" || view.FocusedColumn.FieldName == "Werks" || view.FocusedColumn.FieldName == "Matnr" || view.FocusedColumn.FieldName == "Lifnr")
             {
                 if (view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) && view.FocusedColumn.FieldName == "Lifnr")
                 {
-                    e.Cancel = false;
+                    e.Cancel = false;                    
+                    return;
                 }
                 else
                 {
@@ -115,14 +115,17 @@ namespace DLS.Master.Material
 
                 }
             }
+        }
 
-
-            if (view.FocusedColumn.FieldName == "Lifnr")
+        private void SubView_ShownEditor(object sender, EventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
+            if (view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) && view.FocusedColumn.FieldName == "Lifnr")
             {
                 DLS.Master.Linfr_Master fmLifnr = new Linfr_Master();
                 fmLifnr.LifnrClickEvent += new Linfr_Master.LifnrClickEventHandler(fmLifnr_LifnrClickEvent);
                 fmLifnr.Owner = this;
-                fmLifnr.Show();
+                fmLifnr.ShowDialog();
             }
         }
 
@@ -153,6 +156,8 @@ namespace DLS.Master.Material
                 return false;
             }
 
+            //기존 효력일자 수정에 따른 에러 체크필요
+
             return true;
         }
 
@@ -170,11 +175,11 @@ namespace DLS.Master.Material
         }
 
         private void SubView_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
-            if (!SubView.IsFocusedView)
+        {            
+            GridView view = sender as GridView;
+            if (view.FocusedColumn.FieldName == null)
                 return;
 
-            GridView view = sender as GridView;     
             switch (view.FocusedColumn.FieldName)
             {
                 case "Sdate":
@@ -259,13 +264,16 @@ namespace DLS.Master.Material
 
                 DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpLprice]", ht, "");
 
-                gcSub.DataSource = dt;
-
-                ShowData();
-                ShowSubData();
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("기존 구매단가의 효력종료일을 수정할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ((DataRowView)e.Row).Row.RejectChanges();
+                }
+                else
+                {
+                    ((DataRowView)e.Row).Row.AcceptChanges();
+                }
             }      
         }
-
-
     }
 }
