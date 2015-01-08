@@ -173,6 +173,12 @@
     <Compile Include="Master\MasterCommon\Mtart_Master.Designer.cs">
       <DependentUpon>Mtart_Master.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\Material\LpriceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Material\LpriceList.Designer.cs">
+      <DependentUpon>LpriceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\Material\Lprice_Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,11 +319,17 @@
     <EmbeddedResource Include="Master\MasterCommon\Mtart_Master.resx">
       <DependentUpon>Mtart_Master.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Master\Material\LpriceList.resx">
+      <DependentUpon>LpriceList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master\Material\Lprice_Master.resx">
       <DependentUpon>Lprice_Master.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Material\Material_Master.resx">
       <DependentUpon>Material_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Material\Plant_Material_Master.resx">
+      <DependentUpon>Plant_Material_Master.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Production\Arbpl_Master.resx">
       <DependentUpon>Arbpl_Master.cs</DependentUpon>
@@ -342,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_Form\Find_User.resx">
       <DependentUpon>Find_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Planning\Production_Output.resx">
+      <DependentUpon>Production_Output.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production Planning\Production_Plan.resx">
       <DependentUpon>Production_Plan.cs</DependentUpon>

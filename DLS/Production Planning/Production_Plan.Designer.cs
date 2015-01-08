@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
+            this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.btn_com = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ExcelUp = new DevExpress.XtraEditors.SimpleButton();
@@ -145,6 +146,7 @@
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.btn_save);
             this.pc_main.Controls.Add(this.btn_com);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Controls.Add(this.btn_ExcelUp);
@@ -155,11 +157,22 @@
             this.pc_main.Size = new System.Drawing.Size(1436, 158);
             this.pc_main.TabIndex = 2;
             // 
+            // btn_save
+            // 
+            this.btn_save.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_save.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_save.Location = new System.Drawing.Point(93, 12);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(75, 60);
+            this.btn_save.TabIndex = 8;
+            this.btn_save.Text = "저장";
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
             // btn_com
             // 
             this.btn_com.Image = global::DLS.Properties.Resources.window_menu;
             this.btn_com.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_com.Location = new System.Drawing.Point(93, 12);
+            this.btn_com.Location = new System.Drawing.Point(174, 12);
             this.btn_com.Name = "btn_com";
             this.btn_com.Size = new System.Drawing.Size(75, 60);
             this.btn_com.TabIndex = 7;
@@ -170,7 +183,7 @@
             // 
             this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_find.Location = new System.Drawing.Point(174, 12);
+            this.btn_find.Location = new System.Drawing.Point(255, 12);
             this.btn_find.Name = "btn_find";
             this.btn_find.Size = new System.Drawing.Size(75, 60);
             this.btn_find.TabIndex = 2;
@@ -214,13 +227,13 @@
             // sle_matnr
             // 
             this.sle_matnr.EditValue = "";
-            this.sle_matnr.Location = new System.Drawing.Point(1184, 34);
+            this.sle_matnr.Location = new System.Drawing.Point(1105, 34);
             this.sle_matnr.Name = "sle_matnr";
             this.sle_matnr.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.sle_matnr.Properties.NullText = "";
             this.sle_matnr.Properties.View = this.gridView5;
-            this.sle_matnr.Size = new System.Drawing.Size(199, 20);
+            this.sle_matnr.Size = new System.Drawing.Size(100, 20);
             this.sle_matnr.TabIndex = 26;
             // 
             // gridView5
@@ -254,7 +267,7 @@
             // sle_matkl
             // 
             this.sle_matkl.EditValue = "";
-            this.sle_matkl.Location = new System.Drawing.Point(997, 34);
+            this.sle_matkl.Location = new System.Drawing.Point(925, 34);
             this.sle_matkl.Name = "sle_matkl";
             this.sle_matkl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -294,10 +307,10 @@
             // lbl_matkl
             // 
             this.lbl_matkl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_matkl.Location = new System.Drawing.Point(931, 37);
-            this.lbl_matkl.MinimumSize = new System.Drawing.Size(60, 14);
+            this.lbl_matkl.Location = new System.Drawing.Point(879, 37);
+            this.lbl_matkl.MinimumSize = new System.Drawing.Size(40, 14);
             this.lbl_matkl.Name = "lbl_matkl";
-            this.lbl_matkl.Size = new System.Drawing.Size(60, 14);
+            this.lbl_matkl.Size = new System.Drawing.Size(40, 14);
             this.lbl_matkl.TabIndex = 24;
             this.lbl_matkl.Text = "차종";
             // 
@@ -354,7 +367,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl2.Location = new System.Drawing.Point(1118, 37);
+            this.labelControl2.Location = new System.Drawing.Point(1039, 37);
             this.labelControl2.MinimumSize = new System.Drawing.Size(60, 14);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 14);
@@ -364,7 +377,7 @@
             // sle_mtart
             // 
             this.sle_mtart.EditValue = "";
-            this.sle_mtart.Location = new System.Drawing.Point(825, 34);
+            this.sle_mtart.Location = new System.Drawing.Point(767, 34);
             this.sle_mtart.Name = "sle_mtart";
             this.sle_mtart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -404,7 +417,7 @@
             // lbl_mtart
             // 
             this.lbl_mtart.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_mtart.Location = new System.Drawing.Point(759, 37);
+            this.lbl_mtart.Location = new System.Drawing.Point(701, 37);
             this.lbl_mtart.MinimumSize = new System.Drawing.Size(60, 14);
             this.lbl_mtart.Name = "lbl_mtart";
             this.lbl_mtart.Size = new System.Drawing.Size(60, 14);
@@ -414,7 +427,7 @@
             // date_edate
             // 
             this.date_edate.EditValue = null;
-            this.date_edate.Location = new System.Drawing.Point(439, 34);
+            this.date_edate.Location = new System.Drawing.Point(413, 34);
             this.date_edate.Name = "date_edate";
             this.date_edate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -426,7 +439,7 @@
             // date_sdate
             // 
             this.date_sdate.EditValue = null;
-            this.date_sdate.Location = new System.Drawing.Point(319, 34);
+            this.date_sdate.Location = new System.Drawing.Point(293, 34);
             this.date_sdate.Name = "date_sdate";
             this.date_sdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -438,7 +451,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl1.Location = new System.Drawing.Point(423, 37);
+            this.labelControl1.Location = new System.Drawing.Point(397, 37);
             this.labelControl1.MinimumSize = new System.Drawing.Size(10, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(10, 14);
@@ -448,7 +461,7 @@
             // sle_arbpl
             // 
             this.sle_arbpl.EditValue = "";
-            this.sle_arbpl.Location = new System.Drawing.Point(629, 34);
+            this.sle_arbpl.Location = new System.Drawing.Point(581, 34);
             this.sle_arbpl.Name = "sle_arbpl";
             this.sle_arbpl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -488,7 +501,7 @@
             // lbl_arbpl
             // 
             this.lbl_arbpl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_arbpl.Location = new System.Drawing.Point(563, 37);
+            this.lbl_arbpl.Location = new System.Drawing.Point(515, 37);
             this.lbl_arbpl.MinimumSize = new System.Drawing.Size(60, 14);
             this.lbl_arbpl.Name = "lbl_arbpl";
             this.lbl_arbpl.Size = new System.Drawing.Size(60, 14);
@@ -498,7 +511,7 @@
             // lbl_wdate
             // 
             this.lbl_wdate.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_wdate.Location = new System.Drawing.Point(253, 37);
+            this.lbl_wdate.Location = new System.Drawing.Point(227, 37);
             this.lbl_wdate.MinimumSize = new System.Drawing.Size(60, 14);
             this.lbl_wdate.Name = "lbl_wdate";
             this.lbl_wdate.Size = new System.Drawing.Size(60, 14);
@@ -521,11 +534,11 @@
             this.repositoryItemHyperLinkEdit_Delete,
             this.repositoryItemSearchLookUpEdit_Matnr,
             this.repositoryItemLookUpEdit_Arbpl});
-            this.gc_ppPlan.Size = new System.Drawing.Size(1372, 556);
+            this.gc_ppPlan.Size = new System.Drawing.Size(1405, 556);
             this.gc_ppPlan.TabIndex = 3;
             this.gc_ppPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_ppPlan});
-            this.gc_ppPlan.DoubleClick += new System.EventHandler(this.gc_ppPlan_DoubleClick);
+            this.gc_ppPlan.Click += new System.EventHandler(this.gc_ppPlan_Click);
             // 
             // gv_ppPlan
             // 
@@ -549,6 +562,7 @@
             this.gv_ppPlan.GridControl = this.gc_ppPlan;
             this.gv_ppPlan.Name = "gv_ppPlan";
             this.gv_ppPlan.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gv_ppPlan.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_ppPlan_CellValueChanged);
             this.gv_ppPlan.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_ppPlan_RowUpdated);
             this.gv_ppPlan.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_ppPlan_ValidatingEditor);
             // 
@@ -781,8 +795,6 @@
             this.gridColumn20.MaxWidth = 50;
             this.gridColumn20.MinWidth = 50;
             this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 11;
             this.gridColumn20.Width = 50;
             // 
             // repositoryItemHyperLinkEdit_Save
@@ -816,7 +828,7 @@
             this.Note.MinWidth = 150;
             this.Note.Name = "Note";
             this.Note.Visible = true;
-            this.Note.VisibleIndex = 13;
+            this.Note.VisibleIndex = 11;
             this.Note.Width = 150;
             // 
             // dockManager1
@@ -920,8 +932,8 @@
             this.dockPanel2.Options.ShowAutoHideButton = false;
             this.dockPanel2.Options.ShowCloseButton = false;
             this.dockPanel2.Options.ShowMaximizeButton = false;
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(1380, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(1380, 583);
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(1413, 200);
+            this.dockPanel2.Size = new System.Drawing.Size(1413, 583);
             this.dockPanel2.Text = "dockPanel2";
             // 
             // dockPanel2_Container
@@ -929,16 +941,16 @@
             this.dockPanel2_Container.Controls.Add(this.gc_ppPlan);
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1372, 556);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1405, 556);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.gc_sdPlan);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(1380, 185);
+            this.groupControl1.Location = new System.Drawing.Point(1413, 185);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(64, 583);
+            this.groupControl1.Size = new System.Drawing.Size(31, 583);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -948,7 +960,7 @@
             this.gc_sdPlan.Location = new System.Drawing.Point(2, 22);
             this.gc_sdPlan.MainView = this.gv_sdPlan;
             this.gc_sdPlan.Name = "gc_sdPlan";
-            this.gc_sdPlan.Size = new System.Drawing.Size(60, 559);
+            this.gc_sdPlan.Size = new System.Drawing.Size(27, 559);
             this.gc_sdPlan.TabIndex = 0;
             this.gc_sdPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_sdPlan});
@@ -1109,5 +1121,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gv_sdPlan;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
+        private DevExpress.XtraEditors.SimpleButton btn_save;
     }
 }

@@ -99,7 +99,7 @@
             this.Labst,
             this.Outqty});
             this.gv_matral_list.GridControl = this.gc_matral_list;
-            this.gv_matral_list.Name = "gv_matral_list";
+            this.gv_matral_list.Name = "gv_matral_list";           
             this.gv_matral_list.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_matral_list_ValidatingEditor);
             // 
             // Matnr
