@@ -157,7 +157,7 @@ namespace DLS
         
         #endregion
 
-        private void Mdi_Child_NewOpen(Form NewForm)
+        public void Mdi_Child_NewOpen(Form NewForm)
         {
             foreach (Form oForm in this.MdiChildren)
             {
