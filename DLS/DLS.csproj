@@ -488,6 +488,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\Image\" />
+    <Folder Include="Materials_Management\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\window-menu.png" />

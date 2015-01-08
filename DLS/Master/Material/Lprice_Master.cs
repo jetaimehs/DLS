@@ -35,6 +35,8 @@ namespace DLS.Master.Material
         {
             Common.Util.MyUtil.SetGridControlDesign(ref gcMain);
             Common.Util.MyUtil.SetGridViewDesign(ref MainView);
+            Common.Util.MyUtil.SetGridControlDesign(ref gcSub);
+            Common.Util.MyUtil.SetGridViewDesign(ref SubView);
         }
 
         private void ShowData()
@@ -102,12 +104,7 @@ namespace DLS.Master.Material
             {
                 if (!view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) ) 
                 {
-                    if (view.FocusedColumn.FieldName == "Loekz")
-                    {
-                        e.Cancel = false;
-                        return;
-                    }
-                    else
+                    if (view.FocusedColumn.FieldName == "Sdate" || view.FocusedColumn.FieldName == "Edate" )
                     {
                         e.Cancel = true;
                         return;
@@ -155,9 +152,6 @@ namespace DLS.Master.Material
                 MessageBox.Show("효력 시작일은 종료일보다 커거나 같을 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-
-            //기존 효력일자 수정에 따른 에러 체크필요
-
             return true;
         }
 
@@ -272,6 +266,7 @@ namespace DLS.Master.Material
                 else
                 {
                     ((DataRowView)e.Row).Row.AcceptChanges();
+                    ShowSubData();
                 }
             }      
         }
