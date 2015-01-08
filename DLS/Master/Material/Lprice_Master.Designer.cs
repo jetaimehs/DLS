@@ -55,6 +55,7 @@
             this.Epein = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Waers = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sLoekz = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gp1)).BeginInit();
@@ -69,6 +70,7 @@
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.simpleButton1);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
             this.pc_main.Location = new System.Drawing.Point(0, 0);
@@ -325,6 +327,15 @@
             this.sLoekz.Visible = true;
             this.sLoekz.VisibleIndex = 9;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(206, 49);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 2;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // Lprice_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -379,5 +390,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Epein;
         private DevExpress.XtraGrid.Columns.GridColumn Waers;
         private DevExpress.XtraGrid.Columns.GridColumn sLoekz;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
