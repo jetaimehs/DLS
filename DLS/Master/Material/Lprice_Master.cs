@@ -59,7 +59,7 @@ namespace DLS.Master.Material
         private void MainView_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             if (!MainView.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
-                ShowSubData();  
+                ShowSubData();
         }
 
         private void ShowSubData()
@@ -92,7 +92,7 @@ namespace DLS.Master.Material
             {
                 if (view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) && view.FocusedColumn.FieldName == "Lifnr")
                 {
-                    e.Cancel = false;                    
+                    e.Cancel = false;
                     return;
                 }
                 else
@@ -103,9 +103,9 @@ namespace DLS.Master.Material
             }
             else
             {
-                if (!view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) ) 
+                if (!view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
                 {
-                    if (view.FocusedColumn.FieldName == "Sdate" || view.FocusedColumn.FieldName == "Edate" )
+                    if (view.FocusedColumn.FieldName == "Sdate" || view.FocusedColumn.FieldName == "Edate")
                     {
                         e.Cancel = true;
                         return;
@@ -148,7 +148,7 @@ namespace DLS.Master.Material
                 return false;
             }
 
-            if ( DateTime.Parse(SubView.GetFocusedRowCellValue("Sdate").ToString()) >= DateTime.Parse(SubView.GetFocusedRowCellValue("Edate").ToString()) )
+            if (DateTime.Parse(SubView.GetFocusedRowCellValue("Sdate").ToString()) >= DateTime.Parse(SubView.GetFocusedRowCellValue("Edate").ToString()))
             {
                 MessageBox.Show("효력 시작일은 종료일보다 커거나 같을 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -170,7 +170,7 @@ namespace DLS.Master.Material
         }
 
         private void SubView_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {            
+        {
             GridView view = sender as GridView;
             if (view.FocusedColumn.FieldName == null)
                 return;
@@ -269,12 +269,13 @@ namespace DLS.Master.Material
                     ((DataRowView)e.Row).Row.AcceptChanges();
                     ShowSubData();
                 }
-            }      
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            this.Owner
+            Master.Material.LpriceList fm = new LpriceList();
+            fm.Show();
         }
     }
 }
