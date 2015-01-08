@@ -355,6 +355,16 @@ namespace DLS
                 Mdi_Child_NewOpen(fm);
             }
         }
+
+
+        private void Btn_PP_Output_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Production_Output.cs"))
+            {
+                Production_Planning.Production_Output fm = new Production_Planning.Production_Output();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
         #endregion
         #endregion
 

@@ -10,7 +10,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraEditors.Controls;
 
 namespace DLS.Production_Planning
-{
+{    
     public partial class Production_Plan : DevExpress.XtraEditors.XtraForm
     {
         public Production_Plan()
@@ -36,7 +36,8 @@ namespace DLS.Production_Planning
             Common.Util.MyUtil.SetGridViewDesign(ref gv_sdPlan);
             
             //날짜
-            date_sdate.Text = date_edate.Text = DateTime.Today.ToShortDateString();
+            date_sdate.Text = DateTime.Today.ToShortDateString();
+            date_edate.Text = DateTime.Today.AddDays(1).ToShortDateString();
             
             //제품군
             Hashtable ht1 = new Hashtable();
@@ -62,7 +63,7 @@ namespace DLS.Production_Planning
 
             //자재유형
             Hashtable ht3 = new Hashtable();
-            ht3.Add("@MODE", 100);
+            ht3.Add("@MODE", 101);
             DataTable dt3 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpMtart]", ht3, "");
             sle_mtart.Properties.DataSource = dt3;
             sle_mtart.Properties.DisplayMember = "Code";
@@ -82,7 +83,7 @@ namespace DLS.Production_Planning
             //자재마스터
             Hashtable ht5 = new Hashtable();
             ht5.Add("@MODE", 100);
-            //ht1.Add("@Werks", Main_MID_Form.G_werks);
+            ht5.Add("@Werks", Main_MID_Form.G_werks);
             DataTable dt5 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht5, "");
             //조회
             sle_matnr.Properties.DataSource = dt5;
@@ -110,20 +111,20 @@ namespace DLS.Production_Planning
             ht1.Add("@Sdate", date_sdate.Text);
             ht1.Add("@Edate", date_edate.Text);
 
-            if (!Equals(sle_spart.SelectedText, string.Empty))
-                ht1.Add("@Spart", sle_spart.SelectedText);
+            if (!Equals(sle_spart.Text, string.Empty))
+                ht1.Add("@Spart", sle_spart.Text);
 
-            if (!Equals(sle_arbpl.SelectedText, string.Empty))
-                ht1.Add("@Arbpl", sle_arbpl.SelectedText);
+            if (!Equals(sle_arbpl.Text, string.Empty))
+                ht1.Add("@Arbpl", sle_arbpl.Text);
 
-            if (!Equals(sle_mtart.SelectedText, string.Empty))
-                ht1.Add("@Mtart", sle_mtart.SelectedText);
+            if (!Equals(sle_mtart.Text, string.Empty))
+                ht1.Add("@Mtart", sle_mtart.Text);
 
-            if (!Equals(sle_matkl.SelectedText, string.Empty))
-                ht1.Add("@Matkl", sle_matkl.SelectedText);
+            if (!Equals(sle_matkl.Text, string.Empty))
+                ht1.Add("@Matkl", sle_matkl.Text);
 
-            if (!Equals(sle_matnr.SelectedText, string.Empty))
-                ht1.Add("@Matnr", sle_matnr.SelectedText);
+            if (!Equals(sle_matnr.Text, string.Empty))
+                ht1.Add("@Matnr", sle_matnr.Text);
 
             DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPpPlan]", ht1, "");
 
@@ -177,32 +178,7 @@ namespace DLS.Production_Planning
                             dr1["Mtart"] = (string)dt3.Rows[0]["Mtart"];
                             dr1["Meins"] = (string)dt3.Rows[0]["Meins"];
                             dr1["PPlgort"] = (string)dt3.Rows[0]["PPlgort"];
-                            dr1["Note"] = "Upload";
-
-                            //저장
-                            try
-                            {
-                                ht1.Clear();
-                                ht1.Add("@MODE", 401);
-                                ht1.Add("@pppSeq", dr1["pppSeq"]);
-                                ht1.Add("@Wdate", dr1["Wdate"]);
-                                ht1.Add("@Werks", Main_MID_Form.G_werks);
-                                ht1.Add("@Spart", dr1["Spart"]);
-                                ht1.Add("@Matnr", dr1["Matnr"]);
-                                ht1.Add("@Matkl", dr1["Matkl"]);
-                                ht1.Add("@Mtart", dr1["Mtart"]);
-                                ht1.Add("@Meins", dr1["Meins"]);
-                                ht1.Add("@PPlgort", dr1["PPlgort"]);
-                                ht1.Add("@Arbpl", dr1["Arbpl"]);
-                                ht1.Add("@Gsmng", dr1["Gsmng"]);
-                                ht1.Add("@Decom", dr1["Decom"]);
-                                ht1.Add("@Ifcom", dr1["Ifcom"]);
-                                ht1.Add("@Lvorm", dr1["Lvorm"]);
-                                ht1.Add("@Userid", Login.G_userid);
-
-                                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpPlan]", ht1, "");
-                            }
-                            catch (Exception ex) { throw ex; }                            
+                            dr1["Note"] = "Upload";                                                    
                         }
                         else
                             dr1["Note"] = "미등록된 자재번호 입니다.";
@@ -236,77 +212,7 @@ namespace DLS.Production_Planning
 
         private void repositoryItemHyperLinkEdit_Save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                gv_ppPlan.ClearColumnErrors();
-
-                if (gv_ppPlan.GetFocusedRowCellValue("Matnr").ToString().Trim() == string.Empty)
-                {
-                    gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Matnr"], "필수 입력값 입니다.");
-                    return;
-                }
-                if (gv_ppPlan.GetFocusedRowCellValue("Wdate").ToString().Trim() == string.Empty)
-                {
-                    gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Wdate"], "필수 입력값 입니다.");
-                    return;
-                }
-                if (DialogResult.Cancel == MessageBox.Show("저장 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
-                {
-                    return;
-                }
-
-                Hashtable ht1 = new Hashtable();
-                ht1.Add("@MODE", 401);
-                ht1.Add("@pppSeq", gv_ppPlan.GetFocusedRowCellValue("pppSeq"));
-                ht1.Add("@Wdate", gv_ppPlan.GetFocusedRowCellValue("Wdate"));
-                ht1.Add("@Werks", Main_MID_Form.G_werks);
-                ht1.Add("@Matnr", gv_ppPlan.GetFocusedRowCellValue("Matnr"));
-
-                //신규값이면 채워준다.
-                if (Equals(gv_ppPlan.GetFocusedRowCellValue("pppSeq"), string.Empty))
-                {
-                    Hashtable ht2 = new Hashtable();
-
-                    ht2.Add("@MODE", 101);
-                    ht2.Add("@Werks", Main_MID_Form.G_werks);
-                    ht2.Add("@Matnr", gv_ppPlan.GetFocusedRowCellValue("Matnr"));
-
-                    DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht2, "");
-
-                    if (dt1.Rows.Count > 0)
-                    {
-                        ht1.Add("@Spart", (string)dt1.Rows[0]["Spart"]);
-                        ht1.Add("@Mtart", (string)dt1.Rows[0]["Mtart"]);
-                        ht1.Add("@Matkl", (string)dt1.Rows[0]["Matkl"]);
-                        ht1.Add("@Meins", (string)dt1.Rows[0]["Meins"]);
-                        ht1.Add("@PPlgort", (string)dt1.Rows[0]["PPlgort"]);
-                    }
-                }
-                else
-                {
-                    ht1.Add("@Spart", gv_ppPlan.GetFocusedRowCellValue("Spart"));
-                    ht1.Add("@Mtart", gv_ppPlan.GetFocusedRowCellValue("Mtart"));
-                    ht1.Add("@Matkl", gv_ppPlan.GetFocusedRowCellValue("Matkl"));
-                    ht1.Add("@Meins", gv_ppPlan.GetFocusedRowCellValue("Meins"));
-                    ht1.Add("@PPlgort", gv_ppPlan.GetFocusedRowCellValue("PPlgort"));
-                }
-                                                
-                ht1.Add("@Arbpl", gv_ppPlan.GetFocusedRowCellValue("Arbpl"));
-                ht1.Add("@Gsmng", gv_ppPlan.GetFocusedRowCellValue("Gsmng"));
-                ht1.Add("@Decom", gv_ppPlan.GetFocusedRowCellValue("Decom"));
-                ht1.Add("@Ifcom", gv_ppPlan.GetFocusedRowCellValue("Ifcom"));
-                ht1.Add("@Lvorm", gv_ppPlan.GetFocusedRowCellValue("Lvorm"));
-                ht1.Add("@Userid", Login.G_userid);
-
-                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpPlan]", ht1, "");
-
-                MessageBox.Show("저장되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                ShowData();
-            }
-            catch (Exception ex)
-            {
-            }
+            
         }
 
         private void repositoryItemHyperLinkEdit_Delete_Click(object sender, EventArgs e)
@@ -315,27 +221,29 @@ namespace DLS.Production_Planning
             {
                 gv_ppPlan.ClearColumnErrors();
 
-                if (gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString().Trim() == string.Empty)
-                {
-                    //gv_ppPlan.SetColumnError(gv_ppPlan.Columns["pppSeq"], "필수값 입니다.");
-                    return;
-                }
                 if (DialogResult.Cancel == MessageBox.Show("삭제 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
                 {
                     return;
                 }
 
-                Hashtable ht1 = new Hashtable();
-                ht1 = new Hashtable();
-                ht1.Add("@MODE", 401);
-                ht1.Add("@pppSeq", gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString());
-                ht1.Add("@Lvorm", 1);
+                if (gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString().Trim() == string.Empty)
+                {
+                    gv_ppPlan.GetFocusedDataRow().Delete();
+                }
+                else
+                {
+                    Hashtable ht1 = new Hashtable();
+                    ht1 = new Hashtable();
+                    ht1.Add("@MODE", 401);
+                    ht1.Add("@pppSeq", gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString());
+                    ht1.Add("@Lvorm", 1);
 
-                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpPlan]", ht1, "");
+                    Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpPlan]", ht1, "");
 
-                MessageBox.Show("삭제되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("삭제되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ShowData();
+                    ShowData();
+                }
             }
             catch (Exception ex)
             {
@@ -348,10 +256,10 @@ namespace DLS.Production_Planning
             {
                 DataRowView drv = (DataRowView)e.Row;
 
-                if (drv.Row.RowState == DataRowState.Added)
-                {
-                    drv.Row.Delete();
-                }
+                //if (drv.Row.RowState == DataRowState.Added)
+                //{
+                //    drv.Row.Delete();
+                //}
             }
             catch (Exception ex)
             {
@@ -376,7 +284,43 @@ namespace DLS.Production_Planning
             this.ShowData();
         }
 
-        private void gc_ppPlan_DoubleClick(object sender, EventArgs e)
+        private void btn_com_Click(object sender, EventArgs e)
+        {
+            Hashtable[] mGroup = new Hashtable[1];
+            Hashtable[] arrth = new Hashtable[gv_ppPlan.RowCount];
+
+            if (DialogResult.Cancel == MessageBox.Show("확정 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+            {
+                return;
+            }
+
+            for (int i = 0; i < gv_ppPlan.RowCount; i++)
+            {
+                if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom").ToString(), "1"))
+                    return;
+
+                arrth[i] = new Hashtable();
+                arrth[i].Add("@MODE", 401);
+                arrth[i].Add("@pppSeq", gv_ppPlan.GetRowCellValue(i, "pppSeq").ToString());
+                arrth[i].Add("@Werks", Main_MID_Form.G_werks);
+                arrth[i].Add("@Decom", 1);
+                arrth[i].Add("@Mrp", 1);
+                arrth[i].Add("@Wdate", (DateTime)gv_ppPlan.GetRowCellValue(i, "Wdate"));
+                arrth[i].Add("@Arbpl", gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString());
+                arrth[i].Add("@Matnr", gv_ppPlan.GetRowCellValue(i, "Matnr").ToString());
+                arrth[i].Add("@Gsmng", gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString());
+                arrth[i].Add("@Userid", Login.G_userid);
+            }
+
+            mGroup[0] = Common.Frm10.Base.BaseModules.CreateMultiGroup("[DlsSpPpPlan]", arrth);
+            Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
+
+            MessageBox.Show("확정되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            ShowData();
+        }
+
+        private void gc_ppPlan_Click(object sender, EventArgs e)
         {
             //초기화 시키고,
             gc_sdPlan.DataSource = "";
@@ -386,27 +330,96 @@ namespace DLS.Production_Planning
             ht1.Add("@MODE", 102);
             ht1.Add("@Werks", Main_MID_Form.G_werks);
             ht1.Add("@Matnr", gv_ppPlan.GetFocusedRowCellValue("Matnr"));
-            ht1.Add("@Pday", date_sdate.Text);
+            ht1.Add("@Pday", gv_ppPlan.GetFocusedRowCellValue("Wdate"));
 
             DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPDailySalesPlan]", ht1, "");
 
             gc_sdPlan.DataSource = dt1.DefaultView;
         }
 
-        private void btn_com_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
-            Hashtable ht1 = new Hashtable();
-            ht1 = new Hashtable();
-            ht1.Add("@MODE", 401);
-            ht1.Add("@pppSeq", gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString());
-            ht1.Add("@Decom", 1);
-            ht1.Add("@Mrp", 1);
+            Hashtable[] mGroup = new Hashtable[1];
+            Hashtable[] arrth = new Hashtable[gv_ppPlan.RowCount];
 
-            Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpPlan]", ht1, "");
+            if (DialogResult.Cancel == MessageBox.Show("저장 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+            {
+                return;
+            }
 
-            MessageBox.Show("삭제되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            for (int i = 0; i < gv_ppPlan.RowCount; i++)
+            {
+                gv_ppPlan.ClearColumnErrors();
+
+                if (gv_ppPlan.GetRowCellValue(i, "Matnr").ToString().Trim() == string.Empty)
+                {
+                    gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Matnr"], "필수 입력값 입니다.");
+                    return;
+                }
+                if (gv_ppPlan.GetRowCellValue(i, "Wdate").ToString().Trim() == string.Empty)
+                {
+                    gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Wdate"], "필수 입력값 입니다.");
+                    return;
+                }
+                if (gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString().Trim() == string.Empty)
+                {
+                    gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Arbpl"], "필수 입력값 입니다.");
+                    return;
+                }
+                if (gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString().Trim() == string.Empty)
+                {
+                    gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Gsmng"], "필수 입력값 입니다.");
+                    return;
+                }
+
+                arrth[i] = new Hashtable();
+                arrth[i].Add("@MODE", 401);
+                arrth[i].Add("@pppSeq", gv_ppPlan.GetRowCellValue(i, "pppSeq").ToString());
+                arrth[i].Add("@Wdate", (DateTime)gv_ppPlan.GetRowCellValue(i, "Wdate"));
+                arrth[i].Add("@Werks", Main_MID_Form.G_werks);
+                arrth[i].Add("@Matnr", gv_ppPlan.GetRowCellValue(i, "Matnr").ToString());
+                arrth[i].Add("@Spart", gv_ppPlan.GetRowCellValue(i, "Spart").ToString());
+                arrth[i].Add("@Mtart", gv_ppPlan.GetRowCellValue(i, "Mtart").ToString());
+                arrth[i].Add("@Matkl", gv_ppPlan.GetRowCellValue(i, "Matkl").ToString());
+                arrth[i].Add("@Meins", gv_ppPlan.GetRowCellValue(i, "Meins").ToString());
+                arrth[i].Add("@PPlgort", gv_ppPlan.GetRowCellValue(i, "PPlgort").ToString());
+                arrth[i].Add("@Arbpl", gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString());
+                arrth[i].Add("@Gsmng", gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString());
+                arrth[i].Add("@Decom", gv_ppPlan.GetRowCellValue(i, "Decom").ToString());
+                arrth[i].Add("@Ifcom", gv_ppPlan.GetRowCellValue(i, "Ifcom").ToString());
+                arrth[i].Add("@Lvorm", gv_ppPlan.GetRowCellValue(i, "Lvorm").ToString());
+                arrth[i].Add("@Userid", Login.G_userid);
+            }
+
+            mGroup[0] = Common.Frm10.Base.BaseModules.CreateMultiGroup("[DlsSpPpPlan]", arrth);
+            Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
+
+            MessageBox.Show("저장되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             ShowData();
+        }
+
+        private void gv_ppPlan_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            //품번수정
+            if (e.Column.FieldName.Equals("Matnr") && !string.IsNullOrEmpty(e.Value.ToString()))
+            {
+                Hashtable ht1 = new Hashtable();
+                ht1.Add("@MODE", 101);
+                ht1.Add("@Werks", Main_MID_Form.G_werks);
+                ht1.Add("@Matnr", e.Value.ToString());
+                
+                DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht1, "");
+
+                if (dt1.Rows.Count > 0)
+                {
+                    gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["Spart"], (string)dt1.Rows[0]["Spart"]);
+                    gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["Matkl"], (string)dt1.Rows[0]["Matkl"]);
+                    gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["Mtart"], (string)dt1.Rows[0]["Mtart"]);
+                    gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["Meins"], (string)dt1.Rows[0]["Meins"]);
+                    gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["PPlgort"], (string)dt1.Rows[0]["PPlgort"]);
+                }
+            }
         }
     }
 }
