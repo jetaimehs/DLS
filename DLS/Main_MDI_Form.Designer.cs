@@ -47,8 +47,7 @@
             this.Btn_PP_Plan = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_Arbpl = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_Matkl = new DevExpress.XtraBars.BarButtonItem();
-            this.Btn_Master_Mtart = new DevExpress.XtraBars.BarButtonItem();
-            this.Btn_Master_BOM = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Mtart = new DevExpress.XtraBars.BarButtonItem();            
             this.Btn_Master_Lgort = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_LIfnr = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Master_MM = new DevExpress.XtraBars.BarButtonItem();
@@ -110,8 +109,7 @@
             this.Btn_PP_Plan,
             this.Btn_Master_Arbpl,
             this.Btn_Master_Matkl,
-            this.Btn_Master_Mtart,
-            this.Btn_Master_BOM,
+            this.Btn_Master_Mtart,            
             this.Btn_Master_Lgort,
             this.Btn_Master_LIfnr,
             this.btn_Master_MM,
