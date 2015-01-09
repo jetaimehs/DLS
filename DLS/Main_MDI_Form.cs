@@ -291,7 +291,40 @@ namespace DLS
                 Master.Linfr_Master fm = new Master.Linfr_Master();
                 Mdi_Child_NewOpen(fm);
             }
-        }        
+        }
+
+        //구매단가리스트
+        private void btn_Master_LPlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btn_Master_MM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Material_Master"))
+            {
+                Master.Material.Material_Master fm = new Master.Material.Material_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        private void btn_Master_PMM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Plant_Material_Master"))
+            {
+                Master.Material.Plant_Material_Master fm = new Master.Material.Plant_Material_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        private void btn_Master_Lprice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Lprice_Master"))
+            {
+                Master.Material.Lprice_Master fm = new Master.Material.Lprice_Master();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
 
         #endregion
 
@@ -355,35 +388,26 @@ namespace DLS
             }
         }
         #endregion
-        
+
         #region 자재
 
-        private void btn_Master_MM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //발주관리
+        private void Btn_MM_PO_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Material_Master"))
-            {
-                Master.Material.Material_Master fm = new Master.Material.Material_Master();
-                Mdi_Child_NewOpen(fm);
-            }
+
         }
 
-        private void btn_Master_PMM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //입고관리
+        private void Btn_MM_GR_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Plant_Material_Master"))
-            {
-                Master.Material.Plant_Material_Master fm = new Master.Material.Plant_Material_Master();
-                Mdi_Child_NewOpen(fm);
-            }
+
         }
 
-        private void btn_Master_Lprice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        //발주리스트
+        private void Btn_MM_POlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Lprice_Master"))
-            {
-                Master.Material.Lprice_Master fm = new Master.Material.Lprice_Master();
-                Mdi_Child_NewOpen(fm);
-            }
-        }    
+
+        }
         
         #endregion
 
@@ -438,7 +462,19 @@ namespace DLS
                 Financial.Monthly_Transfer_Cost fm = new Financial.Monthly_Transfer_Cost();
                 Mdi_Child_NewOpen(fm);
             }
-        }        
+        }
+
+        //회계마감
+        private void btn_FI_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        //자재수불
+        private void btn_FI_Material_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
         #endregion
 
         #endregion
@@ -447,6 +483,6 @@ namespace DLS
         {
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
         }
-             
+          
     }
 }
