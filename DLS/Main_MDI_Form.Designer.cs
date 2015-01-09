@@ -53,7 +53,8 @@
             this.Btn_Master_LIfnr = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Master_MM = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Master_PMM = new DevExpress.XtraBars.BarButtonItem();
-            this.Btn_Master_BOM = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Master_Lprice = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_PP_Output = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -64,6 +65,7 @@
             this.Rbn_Menu_MM = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_PP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PP_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.PP_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_FI = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -73,9 +75,8 @@
             this.Master_G5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btn_Master_Lprice = new DevExpress.XtraBars.BarButtonItem();
-            this.PP_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.Btn_PP_Output = new DevExpress.XtraBars.BarButtonItem();
+            this.PP_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Btn_PP_StateReport = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -112,10 +113,10 @@
             this.btn_Master_MM,
             this.btn_Master_PMM,
             this.btn_Master_Lprice,
-            this.Btn_Master_BOM,
-            this.Btn_PP_Output});
+            this.Btn_PP_Output,
+            this.Btn_PP_StateReport});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 34;
+            this.Rbn_Menu.MaxItemId = 35;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -335,6 +336,22 @@
             this.btn_Master_PMM.Name = "btn_Master_PMM";
             this.btn_Master_PMM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_PMM_ItemClick);
             // 
+            // btn_Master_Lprice
+            // 
+            this.btn_Master_Lprice.Caption = "구매단가마스터";
+            this.btn_Master_Lprice.Id = 33;
+            this.btn_Master_Lprice.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_Master_Lprice.Name = "btn_Master_Lprice";
+            this.btn_Master_Lprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_Lprice_ItemClick);
+            // 
+            // Btn_PP_Output
+            // 
+            this.Btn_PP_Output.Caption = "생산실적관리";
+            this.Btn_PP_Output.Id = 29;
+            this.Btn_PP_Output.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_PP_Output.Name = "Btn_PP_Output";
+            this.Btn_PP_Output.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PP_Output_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -391,7 +408,8 @@
             // 
             this.Rbn_Menu_PP.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.PP_G1,
-            this.PP_G2});
+            this.PP_G2,
+            this.PP_G3});
             this.Rbn_Menu_PP.Name = "Rbn_Menu_PP";
             this.Rbn_Menu_PP.Text = "생산";
             // 
@@ -400,6 +418,12 @@
             this.PP_G1.ItemLinks.Add(this.Btn_PP_Plan);
             this.PP_G1.Name = "PP_G1";
             this.PP_G1.Text = "생산계획";
+            // 
+            // PP_G2
+            // 
+            this.PP_G2.ItemLinks.Add(this.Btn_PP_Output);
+            this.PP_G2.Name = "PP_G2";
+            this.PP_G2.Text = "생산실적";
             // 
             // Rbn_Menu_FI
             // 
@@ -473,25 +497,19 @@
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // btn_Master_Lprice
-            // PP_G2
+            // PP_G3
             // 
-            this.btn_Master_Lprice.Caption = "구매단가마스터";
-            this.btn_Master_Lprice.Id = 33;
-            this.btn_Master_Lprice.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.btn_Master_Lprice.Name = "btn_Master_Lprice";
-            this.btn_Master_Lprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_Lprice_ItemClick);
-            this.PP_G2.ItemLinks.Add(this.Btn_PP_Output);
-            this.PP_G2.Name = "PP_G2";
-            this.PP_G2.Text = "생산실적";
+            this.PP_G3.ItemLinks.Add(this.Btn_PP_StateReport);
+            this.PP_G3.Name = "PP_G3";
+            this.PP_G3.Text = "리포트";
             // 
-            // Btn_PP_Output
+            // Btn_PP_StateReport
             // 
-            this.Btn_PP_Output.Caption = "생산실적관리";
-            this.Btn_PP_Output.Id = 29;
-            this.Btn_PP_Output.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.Btn_PP_Output.Name = "Btn_PP_Output";
-            this.Btn_PP_Output.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PP_Output_ItemClick);
+            this.Btn_PP_StateReport.Caption = "기간별생산현황";
+            this.Btn_PP_StateReport.Id = 34;
+            this.Btn_PP_StateReport.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_PP_StateReport.Name = "Btn_PP_StateReport";
+            this.Btn_PP_StateReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PP_StateReport_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -562,6 +580,8 @@
         private DevExpress.XtraBars.BarButtonItem btn_Master_Lprice;
         private DevExpress.XtraBars.BarButtonItem Btn_PP_Output;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PP_G2;
+        private DevExpress.XtraBars.BarButtonItem Btn_PP_StateReport;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup PP_G3;
 
     }
 }
