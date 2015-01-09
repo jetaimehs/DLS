@@ -55,7 +55,7 @@ namespace DLS.Master.Material
 
         private void MainView_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            if ( ((DataRowView)e.Row).Row.RowState == DataRowState.Added || ((DataRowView)e.Row).Row.RowState == DataRowState.Modified )
+            if (((DataRowView)e.Row).Row.RowState == DataRowState.Added || ((DataRowView)e.Row).Row.RowState == DataRowState.Modified)
             {
                 Hashtable ht = new Hashtable();
                 ht.Add("@Matnr", MainView.GetFocusedRowCellValue("Matnr"));
@@ -67,7 +67,7 @@ namespace DLS.Master.Material
                 switch (((DataRowView)e.Row).Row.RowState)
                 {
                     //신규행이 추가된 경우 삽입            
-                    case DataRowState.Added :
+                    case DataRowState.Added:
                         ht.Add("@MODE", 200);
                         break;
 
@@ -75,12 +75,12 @@ namespace DLS.Master.Material
                     case DataRowState.Modified:
                         ht.Add("@MODE", 300);
                         break;
-                }                
+                }
 
                 DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpMatrialMaster]", ht, "");
 
                 ((DataRowView)e.Row).Row.AcceptChanges();
-            }          
+            }
         }
 
         private void MainView_ShowingEditor(object sender, CancelEventArgs e)
@@ -89,7 +89,7 @@ namespace DLS.Master.Material
             if (MainView.FocusedColumn.FieldName == "Matnr" && (!MainView.FocusedRowHandle.Equals(GridControl.NewItemRowHandle)))
             {
                 e.Cancel = true;
-            }            
+            }
         }
 
         private void MainView_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -107,7 +107,7 @@ namespace DLS.Master.Material
         private void MainView_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             if (!MainView.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
-                ShowSubData();  
+                ShowSubData();
         }
 
         //메인뷰 값 체크
@@ -130,7 +130,8 @@ namespace DLS.Master.Material
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 101);
             ht.Add("@Werks", Main_MID_Form.G_werks.ToString());
-            ht.Add("@Matnr", MainView.GetFocusedRowCellValue("Matnr").ToString());            
+            if (MainView.GetFocusedRowCellValue("Matnr") != null)
+                ht.Add("@Matnr", MainView.GetFocusedRowCellValue("Matnr").ToString());
 
             DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht, "");
 
@@ -148,6 +149,7 @@ namespace DLS.Master.Material
                 ht.Add("@Matnr", view.GetFocusedRowCellValue("Matnr"));
                 ht.Add("@Matkl", view.GetFocusedRowCellValue("Matkl"));
                 ht.Add("@Mtart", view.GetFocusedRowCellValue("Mtart"));
+                ht.Add("@Eisbe", view.GetFocusedRowCellValue("Eisbe"));
                 ht.Add("@Stuph", view.GetFocusedRowCellValue("Stuph"));
                 ht.Add("@MMlgort", view.GetFocusedRowCellValue("MMlgort"));
                 ht.Add("@PPlgort", view.GetFocusedRowCellValue("PPlgort"));
@@ -172,13 +174,13 @@ namespace DLS.Master.Material
                 DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht, "");
 
                 ((DataRowView)e.Row).Row.AcceptChanges();
-            }      
+            }
         }
 
         private void SubView_ShowingEditor(object sender, CancelEventArgs e)
         {
             DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
-            if (view.RowCount == 1 && (view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle)) )
+            if (view.RowCount == 1 && (view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle)))
             {
                 MessageBox.Show("동일한 자재번호가 추가 할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -226,9 +228,13 @@ namespace DLS.Master.Material
 
         private void SubView_InitNewRow(object sender, InitNewRowEventArgs e)
         {
-            DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;            
+            DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
             view.SetRowCellValue(e.RowHandle, view.Columns["Werks"], Main_MID_Form.G_werks.ToString());
             view.SetRowCellValue(e.RowHandle, view.Columns["Matnr"], MainView.GetFocusedRowCellValue("Matnr"));
+            view.SetRowCellValue(e.RowHandle, view.Columns["MMlgort"], "1000");
+            view.SetRowCellValue(e.RowHandle, view.Columns["PPlgort"], "2000");
+            view.SetRowCellValue(e.RowHandle, view.Columns["SDlgort"], "3000");
+            view.SetRowCellValue(e.RowHandle, view.Columns["OSlgort"], "4000");
             view.SetRowCellValue(e.RowHandle, view.Columns["Loekz"], false);
         }
 
@@ -239,13 +245,14 @@ namespace DLS.Master.Material
                 SubView.GetFocusedRowCellValue("Matnr").ToString().Equals("") ||
                 SubView.GetFocusedRowCellValue("Matkl").ToString().Equals("") ||
                 SubView.GetFocusedRowCellValue("Mtart").ToString().Equals("") ||
+                SubView.GetFocusedRowCellValue("Eisbe").ToString().Equals("") ||
                 SubView.GetFocusedRowCellValue("Stuph").ToString().Equals("") ||
                 SubView.GetFocusedRowCellValue("MMlgort").ToString().Equals("") ||
                 SubView.GetFocusedRowCellValue("PPlgort").ToString().Equals("") ||
                 SubView.GetFocusedRowCellValue("SDlgort").ToString().Equals("") ||
                 SubView.GetFocusedRowCellValue("OSlgort").ToString().Equals("") ||
                 SubView.GetFocusedRowCellValue("Loekz").ToString().Equals(""))
-            {                                   
+            {
                 MessageBox.Show("모든 값을 채워야 합니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
@@ -266,7 +273,7 @@ namespace DLS.Master.Material
 
         private void SubView_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
-            if (SubView.IsFocusedView) 
+            if (SubView.IsFocusedView)
                 ValidationCheck(sender, e);
         }
 
@@ -331,16 +338,25 @@ namespace DLS.Master.Material
                     }
                     break;
 
+                case "Eisbe":
+                    decimal t1 = 0;
+                    if (!decimal.TryParse(e.Value.ToString(), out t1))
+                    {
+                        e.Valid = false;
+                        e.ErrorText = "최보발주수량은 숫자만 입력가능합니다.";
+                    }
+                    break;
+
                 case "Stuph":
-                    decimal t = 0;
-                    if ( !decimal.TryParse(e.Value.ToString(), out t))
+                    decimal t2 = 0;
+                    if (!decimal.TryParse(e.Value.ToString(), out t2))
                     {
                         e.Valid = false;
                         e.ErrorText = "표준 UPH는 숫자만 입력가능합니다.";
                     }
                     break;
             }
-            
+
         }
 
         private void ValidationMessangeShow(DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)

@@ -239,6 +239,12 @@
     <Compile Include="Master\User_Management.Designer.cs">
       <DependentUpon>User_Management.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials_Management\Purchasing_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials_Management\Purchasing_Order.Designer.cs">
+      <DependentUpon>Purchasing_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup_Form\Find_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\User_Management.resx">
       <DependentUpon>User_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials_Management\Purchasing_Order.resx">
+      <DependentUpon>Purchasing_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_Form\Find_User.resx">
       <DependentUpon>Find_User.cs</DependentUpon>
@@ -488,7 +497,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\Image\" />
-    <Folder Include="Materials_Management\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\window-menu.png" />

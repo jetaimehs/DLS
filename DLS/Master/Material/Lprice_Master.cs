@@ -25,6 +25,8 @@ namespace DLS.Master.Material
             this.InitLanguage();    //다국어 설정
             this.InitOnlyData();    //폼로딩시 기본 작업
             this.ShowData();        //DATA 작업
+
+            SubView.OptionsBehavior.AutoPopulateColumns = false;
         }
 
         private void InitLanguage()
@@ -261,7 +263,7 @@ namespace DLS.Master.Material
 
                 if (dt.Rows.Count == 0)
                 {
-                    MessageBox.Show("기존 구매단가의 효력종료일을 수정할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("기존 구매단가와 효력일에 문제가 있습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ((DataRowView)e.Row).Row.RejectChanges();
                 }
                 else
@@ -274,7 +276,7 @@ namespace DLS.Master.Material
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Master.Material.LpriceList fm = new LpriceList();
+            Materials_Management.Purchasing_Order fm = new Materials_Management.Purchasing_Order();
             fm.Show();
         }
     }
