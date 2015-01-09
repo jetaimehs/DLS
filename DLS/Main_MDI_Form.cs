@@ -407,6 +407,15 @@ namespace DLS
                 Mdi_Child_NewOpen(fm);
             }
         }
+
+        private void Btn_PP_StateReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Production_StateReport.cs"))
+            {
+                Production_Planning.Production_StateReport fm = new Production_Planning.Production_StateReport();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
         #endregion
 
         #region 회계

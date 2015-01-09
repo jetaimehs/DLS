@@ -104,8 +104,8 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gc_sdPlan = new DevExpress.XtraGrid.GridControl();
             this.gv_sdPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Pday = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PlanQty = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).BeginInit();
@@ -534,7 +534,7 @@
             this.repositoryItemHyperLinkEdit_Delete,
             this.repositoryItemSearchLookUpEdit_Matnr,
             this.repositoryItemLookUpEdit_Arbpl});
-            this.gc_ppPlan.Size = new System.Drawing.Size(1405, 556);
+            this.gc_ppPlan.Size = new System.Drawing.Size(1417, 556);
             this.gc_ppPlan.TabIndex = 3;
             this.gc_ppPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_ppPlan});
@@ -907,7 +907,7 @@
             this.dockPanel1.Options.ShowMaximizeButton = false;
             this.dockPanel1.OriginalSize = new System.Drawing.Size(1343, 185);
             this.dockPanel1.Size = new System.Drawing.Size(1444, 185);
-            this.dockPanel1.Text = "dockPanel1";
+            this.dockPanel1.Text = "조회정보";
             // 
             // dockPanel1_Container
             // 
@@ -932,27 +932,27 @@
             this.dockPanel2.Options.ShowAutoHideButton = false;
             this.dockPanel2.Options.ShowCloseButton = false;
             this.dockPanel2.Options.ShowMaximizeButton = false;
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(1413, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(1413, 583);
-            this.dockPanel2.Text = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(1425, 200);
+            this.dockPanel2.Size = new System.Drawing.Size(1425, 583);
+            this.dockPanel2.Text = "생산계획";
             // 
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.gc_ppPlan);
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1405, 556);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1417, 556);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.gc_sdPlan);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(1413, 185);
+            this.groupControl1.Location = new System.Drawing.Point(1425, 185);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(31, 583);
+            this.groupControl1.Size = new System.Drawing.Size(19, 583);
             this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = "groupControl1";
+            this.groupControl1.Text = "영업계획";
             // 
             // gc_sdPlan
             // 
@@ -960,7 +960,7 @@
             this.gc_sdPlan.Location = new System.Drawing.Point(2, 22);
             this.gc_sdPlan.MainView = this.gv_sdPlan;
             this.gc_sdPlan.Name = "gc_sdPlan";
-            this.gc_sdPlan.Size = new System.Drawing.Size(27, 559);
+            this.gc_sdPlan.Size = new System.Drawing.Size(15, 559);
             this.gc_sdPlan.TabIndex = 0;
             this.gc_sdPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_sdPlan});
@@ -968,28 +968,28 @@
             // gv_sdPlan
             // 
             this.gv_sdPlan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn31,
-            this.gridColumn32});
+            this.Pday,
+            this.PlanQty});
             this.gv_sdPlan.GridControl = this.gc_sdPlan;
             this.gv_sdPlan.Name = "gv_sdPlan";
             // 
-            // gridColumn31
+            // Pday
             // 
-            this.gridColumn31.Caption = "Pday";
-            this.gridColumn31.FieldName = "Pday";
-            this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.OptionsColumn.ReadOnly = true;
-            this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 0;
+            this.Pday.Caption = "계획일자";
+            this.Pday.FieldName = "Pday";
+            this.Pday.Name = "Pday";
+            this.Pday.OptionsColumn.ReadOnly = true;
+            this.Pday.Visible = true;
+            this.Pday.VisibleIndex = 0;
             // 
-            // gridColumn32
+            // PlanQty
             // 
-            this.gridColumn32.Caption = "PlanQty";
-            this.gridColumn32.FieldName = "PlanQty";
-            this.gridColumn32.Name = "gridColumn32";
-            this.gridColumn32.OptionsColumn.ReadOnly = true;
-            this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 1;
+            this.PlanQty.Caption = "계획수량";
+            this.PlanQty.FieldName = "PlanQty";
+            this.PlanQty.Name = "PlanQty";
+            this.PlanQty.OptionsColumn.ReadOnly = true;
+            this.PlanQty.Visible = true;
+            this.PlanQty.VisibleIndex = 1;
             // 
             // Production_Plan
             // 
@@ -1119,8 +1119,8 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraGrid.GridControl gc_sdPlan;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_sdPlan;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
+        private DevExpress.XtraGrid.Columns.GridColumn Pday;
+        private DevExpress.XtraGrid.Columns.GridColumn PlanQty;
         private DevExpress.XtraEditors.SimpleButton btn_save;
     }
 }

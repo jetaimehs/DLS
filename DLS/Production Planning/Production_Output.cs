@@ -8,6 +8,8 @@ using DevExpress.XtraEditors;
 using SAP.Middleware.Connector;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid;
+using DevExpress.Xpf.RichEdit;
 
 namespace DLS.Production_Planning
 {
@@ -106,12 +108,12 @@ namespace DLS.Production_Planning
             dr1 = dt6.NewRow();
             dr1["Code"] = "B";
             dr1["Text"] = "불량";
-            dt6.Rows.InsertAt(dr1, 0);
+            dt6.Rows.InsertAt(dr1, 1);
             
             dr1 = dt6.NewRow();
             dr1["Code"] = "T";
             dr1["Text"] = "샘플";
-            dt6.Rows.InsertAt(dr1, 0);
+            dt6.Rows.InsertAt(dr1, 2);
 
             repositoryItemLookUpEdit_Otype.DataSource = dt6;
             repositoryItemLookUpEdit_Otype.DisplayMember = "Code";
@@ -170,14 +172,42 @@ namespace DLS.Production_Planning
                     return;
                 }
 
+                if (gv_ppOutput.GetFocusedRowCellValue("Decom").Equals(true))
+                {
+                    MessageBox.Show("이미 등록된 실적 입니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string strMsg = string.Empty;
+
                 Hashtable ht1 = new Hashtable();
-                ht1 = new Hashtable();
                 ht1.Add("@MODE", 401);
-                
+                ht1.Add("@Wdate", (DateTime)gv_ppOutput.GetFocusedRowCellValue("Wdate"));
+                ht1.Add("@Werks", Main_MID_Form.G_werks);
+                ht1.Add("@Spart", gv_ppOutput.GetFocusedRowCellValue("Spart").ToString());
+                ht1.Add("@Arbpl", gv_ppOutput.GetFocusedRowCellValue("Arbpl").ToString());
+                ht1.Add("@Mtart", gv_ppOutput.GetFocusedRowCellValue("Mtart").ToString());
+                ht1.Add("@Matkl", gv_ppOutput.GetFocusedRowCellValue("Matkl").ToString());
+                ht1.Add("@Matnr", gv_ppOutput.GetFocusedRowCellValue("Matnr").ToString());
+                ht1.Add("@Otype", gv_ppOutput.GetFocusedRowCellValue("Otype").ToString());
+                ht1.Add("@Lmnga", gv_ppOutput.GetFocusedRowCellValue("Lmnga").ToString());
+                ht1.Add("@Meins", gv_ppOutput.GetFocusedRowCellValue("Meins").ToString());
+                ht1.Add("@Mtime", gv_ppOutput.GetFocusedRowCellValue("Mtime").ToString());
+                ht1.Add("@Jtime", gv_ppOutput.GetFocusedRowCellValue("Jtime").ToString());
+                ht1.Add("@Inper", (string.IsNullOrEmpty(gv_ppOutput.GetFocusedRowCellValue("Inper").ToString()))
+                    ? 0 : (decimal)gv_ppOutput.GetFocusedRowCellValue("Inper"));
+                ht1.Add("@Exper", (string.IsNullOrEmpty(gv_ppOutput.GetFocusedRowCellValue("Exper").ToString()))
+                    ? 0 : (decimal)gv_ppOutput.GetFocusedRowCellValue("Exper"));
+                ht1.Add("@PPlgort", gv_ppOutput.GetFocusedRowCellValue("PPlgort").ToString());
+                ht1.Add("@Stuph", gv_ppOutput.GetFocusedRowCellValue("Stuph").ToString());
+                ht1.Add("@Decom", 1);
+                ht1.Add("@Userid", Login.G_userid);
 
-                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpOutput]", ht1, "");
+                strMsg = Common.Frm10.DataBase.ExecuteDataBase.ExecScalarQuery("[DlsSpPpOutput]", ht1, "").ToString();
 
-                MessageBox.Show("등록되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                strMsg = this.GetMessage(strMsg);
+
+                MessageBox.Show(strMsg, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ShowData();
             }
@@ -186,35 +216,57 @@ namespace DLS.Production_Planning
             }
         }
 
+        private string GetMessage(string strMsg)
+        {
+            switch (strMsg)
+            {
+                case "0":
+                    strMsg = "등록 되었습니다.";
+                    break;
+                case "1":
+                    strMsg = "재고정보가 없습니다.";
+                    break;
+                default:
+                    strMsg = strMsg + " 자재번호의 재고가 부족합니다.";
+                    break;
+            }
+
+            return strMsg;
+        }
+
         private void repositoryItemHyperLinkEdit_Delete_Click(object sender, EventArgs e)
         {
             try
             {
                 gv_ppOutput.ClearColumnErrors();
 
-                if (DialogResult.Cancel == MessageBox.Show("삭제 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+                if (DialogResult.Cancel == MessageBox.Show("취소 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
                 {
                     return;
                 }
 
-                if (gv_ppOutput.GetFocusedRowCellValue("pppSeq").ToString().Trim() == string.Empty)
+                if (gv_ppOutput.GetFocusedRowCellValue("ppoSeq").ToString().Trim() == string.Empty)
                 {
-                    gv_ppOutput.GetFocusedDataRow().Delete();
+                    MessageBox.Show("미등록된 실적 입니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;                    
                 }
-                else
-                {
-                    Hashtable ht1 = new Hashtable();
-                    ht1 = new Hashtable();
-                    ht1.Add("@MODE", 401);
-                    ht1.Add("@pppSeq", gv_ppOutput.GetFocusedRowCellValue("pppSeq").ToString());
-                    ht1.Add("@Lvorm", 1);
 
-                    Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpPlan]", ht1, "");
+                Hashtable ht1 = new Hashtable();
+                ht1.Add("@MODE", 402);
+                ht1.Add("@ppoSeq", gv_ppOutput.GetFocusedRowCellValue("ppoSeq").ToString());
+                ht1.Add("@Wdate", (DateTime)gv_ppOutput.GetFocusedRowCellValue("Wdate"));
+                ht1.Add("@Werks", Main_MID_Form.G_werks);
+                ht1.Add("@Matnr", gv_ppOutput.GetFocusedRowCellValue("Matnr").ToString());
+                ht1.Add("@Lmnga", gv_ppOutput.GetFocusedRowCellValue("Lmnga").ToString());
+                ht1.Add("@PPlgort", gv_ppOutput.GetFocusedRowCellValue("PPlgort").ToString());
+                ht1.Add("@Userid", Login.G_userid);
+                ht1.Add("@Lvorm", 1);
 
-                    MessageBox.Show("삭제되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpOutput]", ht1, "");
 
-                    ShowData();
-                }
+                MessageBox.Show("취소되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ShowData();
             }
             catch (Exception ex)
             {
@@ -229,8 +281,18 @@ namespace DLS.Production_Planning
 
                 if (drv.Row.RowState == DataRowState.Added)
                 {
-                    drv.Row.Delete();
-                }
+                    if (DialogResult.Cancel == MessageBox.Show("입력중인 실적이 있습니다. 이동 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+                    {
+                        gv_ppOutput.FocusedColumn = gv_ppOutput.GetNearestCanFocusedColumn(gv_ppOutput.FocusedColumn);
+                        //gv_ppOutput.CancelUpdateCurrentRow();
+                        gv_ppOutput.FocusedRowHandle = gv_ppOutput.FocusedRowHandle;
+                        return;
+                    }
+                    else
+                    {
+                        drv.Row.Delete();
+                    }
+                }                
             }
             catch (Exception ex)
             {
@@ -274,6 +336,7 @@ namespace DLS.Production_Planning
                     gv_ppOutput.SetRowCellValue(e.RowHandle, gv_ppOutput.Columns["Mtart"], (string)dt1.Rows[0]["Mtart"]);
                     gv_ppOutput.SetRowCellValue(e.RowHandle, gv_ppOutput.Columns["Meins"], (string)dt1.Rows[0]["Meins"]);
                     gv_ppOutput.SetRowCellValue(e.RowHandle, gv_ppOutput.Columns["PPlgort"], (string)dt1.Rows[0]["PPlgort"]);
+                    gv_ppOutput.SetRowCellValue(e.RowHandle, gv_ppOutput.Columns["Stuph"], dt1.Rows[0]["Stuph"].ToString());
                 }
             }
 
@@ -281,7 +344,7 @@ namespace DLS.Production_Planning
             if (e.Column.FieldName.Equals("Lmnga") && !string.IsNullOrEmpty(e.Value.ToString()))
             {
                 decimal dcmUph = 0;
-
+                
                 try
                 {
                     if (string.IsNullOrEmpty(gv_ppOutput.GetRowCellValue(e.RowHandle, "Stuph").ToString()))
@@ -300,6 +363,5 @@ namespace DLS.Production_Planning
                 }
             }
         }
-
     }
 }
