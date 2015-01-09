@@ -117,6 +117,18 @@
     <Compile Include="Common\Frm10\SapConntor\SAPConnection.cs" />
     <Compile Include="Common\Util\MyUtil.cs" />
     <Compile Include="Common\Util\sapTableConvert.cs" />
+    <Compile Include="Financial\Monthly_Sales_Delivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financial\Monthly_Sales_Delivery.Designer.cs">
+      <DependentUpon>Monthly_Sales_Delivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financial\Monthly_Transfer_Cost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financial\Monthly_Transfer_Cost.Designer.cs">
+      <DependentUpon>Monthly_Transfer_Cost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +299,12 @@
     <Compile Include="Sales_Distribution\Transfer_History.Designer.cs">
       <DependentUpon>Transfer_History.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Financial\Monthly_Sales_Delivery.resx">
+      <DependentUpon>Monthly_Sales_Delivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financial\Monthly_Transfer_Cost.resx">
+      <DependentUpon>Monthly_Transfer_Cost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

@@ -46,15 +46,16 @@
             this.Btn_SD_Presult = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_PP_Plan = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_Arbpl = new DevExpress.XtraBars.BarButtonItem();
-            this.Btn_Master_Matkl = new DevExpress.XtraBars.BarButtonItem();
-            this.Btn_Master_Mtart = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_BOM = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Matkl = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_Mtart = new DevExpress.XtraBars.BarButtonItem();            
             this.Btn_Master_Lgort = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_LIfnr = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Master_MM = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Master_PMM = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Master_Lprice = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_PP_Output = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_FI_sales_delivery = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -67,6 +68,9 @@
             this.PP_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PP_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_FI = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.FI_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.FI_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.FI_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Master_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -77,6 +81,7 @@
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.PP_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Btn_PP_StateReport = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_FI_sales_Transfer = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -107,13 +112,19 @@
             this.Btn_Master_Arbpl,
             this.Btn_Master_Matkl,
             this.Btn_Master_Mtart,
-            this.Btn_Master_BOM,
             this.Btn_Master_Lgort,
             this.Btn_Master_LIfnr,
             this.btn_Master_MM,
             this.btn_Master_PMM,
             this.btn_Master_Lprice,
+
+
             this.Btn_PP_Output,
+
+            this.btn_FI_sales_delivery,
+            this.btn_FI_sales_Transfer,
+
+
             this.Btn_PP_StateReport});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
             this.Rbn_Menu.MaxItemId = 35;
@@ -336,6 +347,14 @@
             this.btn_Master_PMM.Name = "btn_Master_PMM";
             this.btn_Master_PMM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_PMM_ItemClick);
             // 
+            // btn_FI_sales_delivery
+            // 
+            this.btn_FI_sales_delivery.Caption = "납품수불";
+            this.btn_FI_sales_delivery.Id = 30;
+            this.btn_FI_sales_delivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_FI_sales_delivery.Name = "btn_FI_sales_delivery";
+            this.btn_FI_sales_delivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_FI_sales_delivery_ItemClick);
+            // 
             // btn_Master_Lprice
             // 
             this.btn_Master_Lprice.Caption = "구매단가마스터";
@@ -427,8 +446,29 @@
             // 
             // Rbn_Menu_FI
             // 
+            this.Rbn_Menu_FI.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.FI_G1,
+            this.FI_G2,
+            this.FI_G3});
             this.Rbn_Menu_FI.Name = "Rbn_Menu_FI";
             this.Rbn_Menu_FI.Text = "회계";
+            // 
+            // FI_G1
+            // 
+            this.FI_G1.Name = "FI_G1";
+            this.FI_G1.Text = "회계마감";
+            // 
+            // FI_G2
+            // 
+            this.FI_G2.Name = "FI_G2";
+            this.FI_G2.Text = "자재";
+            // 
+            // FI_G3
+            // 
+            this.FI_G3.ItemLinks.Add(this.btn_FI_sales_delivery);
+            this.FI_G3.ItemLinks.Add(this.btn_FI_sales_Transfer);
+            this.FI_G3.Name = "FI_G3";
+            this.FI_G3.Text = "영업";
             // 
             // Rbn_Menu_Master
             // 
@@ -511,6 +551,14 @@
             this.Btn_PP_StateReport.Name = "Btn_PP_StateReport";
             this.Btn_PP_StateReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PP_StateReport_ItemClick);
             // 
+            // btn_FI_sales_Transfer
+            // 
+            this.btn_FI_sales_Transfer.Caption = "운송비";
+            this.btn_FI_sales_Transfer.Id = 31;
+            this.btn_FI_sales_Transfer.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_FI_sales_Transfer.Name = "btn_FI_sales_Transfer";
+            this.btn_FI_sales_Transfer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_FI_sales_Transfer_ItemClick);
+            // 
             // Main_MID_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -520,7 +568,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main_MID_Form";
             this.Ribbon = this.Rbn_Menu;
-            this.Text = "영업기준정보";
+            this.Text = "Main_MID_Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_MDI_Form_FormClosing);
             this.Load += new System.EventHandler(this.Main_MID_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).EndInit();
@@ -568,10 +616,10 @@
         private DevExpress.XtraBars.BarButtonItem Btn_PP_Plan;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PP_G1;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Arbpl;
+        private DevExpress.XtraBars.BarButtonItem Btn_Master_BOM;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup Master_G4;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Matkl;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Mtart;
-        private DevExpress.XtraBars.BarButtonItem Btn_Master_BOM;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_Lgort;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_LIfnr;
         private DevExpress.XtraBars.BarButtonItem btn_Master_MM;
@@ -580,6 +628,11 @@
         private DevExpress.XtraBars.BarButtonItem btn_Master_Lprice;
         private DevExpress.XtraBars.BarButtonItem Btn_PP_Output;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PP_G2;
+        private DevExpress.XtraBars.BarButtonItem btn_FI_sales_delivery;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup FI_G1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup FI_G2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup FI_G3;
+        private DevExpress.XtraBars.BarButtonItem btn_FI_sales_Transfer;
         private DevExpress.XtraBars.BarButtonItem Btn_PP_StateReport;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PP_G3;
 

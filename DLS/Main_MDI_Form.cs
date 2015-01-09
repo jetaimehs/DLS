@@ -56,7 +56,7 @@ namespace DLS
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
         }
 
-        private bool FromOpen(string OpenFrom)
+        public bool FromOpen(string OpenFrom)
         {
             foreach (Form oForm in this.MdiChildren)
             {
@@ -157,7 +157,7 @@ namespace DLS
         
         #endregion
 
-        private void Mdi_Child_NewOpen(Form NewForm)
+        public void Mdi_Child_NewOpen(Form NewForm)
         {
             foreach (Form oForm in this.MdiChildren)
             {
@@ -417,6 +417,30 @@ namespace DLS
             }
         }
         #endregion
+
+        #region 회계
+
+        //회계 납품 수불 현황 조회
+        private void btn_FI_sales_delivery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Monthly_Sales_Delivery.cs"))
+            {
+                Financial.Monthly_Sales_Delivery fm = new Financial.Monthly_Sales_Delivery();
+                Mdi_Child_NewOpen(fm);
+            }
+        }        
+
+        //회계 운송비현황 조회
+        private void btn_FI_sales_Transfer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Monthly_Transfer_Cost.cs"))
+            {
+                Financial.Monthly_Transfer_Cost fm = new Financial.Monthly_Transfer_Cost();
+                Mdi_Child_NewOpen(fm);
+            }
+        }        
+        #endregion
+
         #endregion
 
         private void barEditItem1_EditValueChanged(object sender, EventArgs e)

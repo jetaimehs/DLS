@@ -24,7 +24,7 @@ namespace DLS.Sales_Distribution
         {
             this.InitLanguage();    //다국어 설정
             this.InitOnlyData();    //폼로딩시 기본 작업
-            //this.ShowData();        //DATA 작업
+            this.ShowData();        //DATA 작업
         }
 
         private void InitLanguage()
@@ -47,21 +47,13 @@ namespace DLS.Sales_Distribution
             //item1.DisplayFormat = "Total {0}";
             //item1.ShowInGroupColumnFooter = Rfee;
             //gv_matral_list.GroupSummary.Add(item1);
+
+            date_bemon.Text = DateTime.Now.ToString("y");
+            date_afmon.Text = DateTime.Now.ToString("y");
         }
 
         private void ShowData()
         {
-            if (date_bemon.Text.Equals(""))
-            {
-                MessageBox.Show("조회 기간을 선택하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                return;
-            }
-            if (date_afmon.Text.Equals(""))
-            {
-                MessageBox.Show("조회 기간을 선택하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                return;
-            }
-
             DateTime bedate = new DateTime(DateTime.Parse(date_bemon.EditValue.ToString()).Year, DateTime.Parse(date_bemon.EditValue.ToString()).Month, 1);
             DateTime afdate = new DateTime(DateTime.Parse(date_afmon.EditValue.ToString()).Year, DateTime.Parse(date_afmon.EditValue.ToString()).Month, 1);
             afdate = afdate.AddMonths(1).AddDays(-1);
