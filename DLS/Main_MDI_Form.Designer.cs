@@ -64,6 +64,7 @@
             this.btn_FI_Close = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_SD_MonthPlan = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Master_LPlist = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ST_stock_list = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -81,6 +82,8 @@
             this.FI_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.FI_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.FI_G3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.Rbn_Menu_Report = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.Report_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Rbn_Menu_Master = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Master_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Master_G2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -135,9 +138,10 @@
             this.btn_FI_Material,
             this.btn_FI_Close,
             this.Btn_SD_MonthPlan,
-            this.btn_Master_LPlist});
+            this.btn_Master_LPlist,
+            this.btn_ST_stock_list});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 44;
+            this.Rbn_Menu.MaxItemId = 45;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -148,6 +152,7 @@
             this.Rbn_Menu_MM,
             this.Rbn_Menu_PP,
             this.Rbn_Menu_FI,
+            this.Rbn_Menu_Report,
             this.Rbn_Menu_Master});
             this.Rbn_Menu.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSearchLookUpEdit1,
@@ -444,6 +449,14 @@
             this.btn_Master_LPlist.Name = "btn_Master_LPlist";
             this.btn_Master_LPlist.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_LPlist_ItemClick);
             // 
+            // btn_ST_stock_list
+            // 
+            this.btn_ST_stock_list.Caption = "현재고조회";
+            this.btn_ST_stock_list.Id = 44;
+            this.btn_ST_stock_list.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_ST_stock_list.Name = "btn_ST_stock_list";
+            this.btn_ST_stock_list.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ST_stock_list_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -561,6 +574,19 @@
             this.FI_G3.ItemLinks.Add(this.btn_FI_sales_Transfer);
             this.FI_G3.Name = "FI_G3";
             this.FI_G3.Text = "영업";
+            // 
+            // Rbn_Menu_Report
+            // 
+            this.Rbn_Menu_Report.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.Report_G1});
+            this.Rbn_Menu_Report.Name = "Rbn_Menu_Report";
+            this.Rbn_Menu_Report.Text = "리포트";
+            // 
+            // Report_G1
+            // 
+            this.Report_G1.ItemLinks.Add(this.btn_ST_stock_list);
+            this.Report_G1.Name = "Report_G1";
+            this.Report_G1.Text = "재고조회";
             // 
             // Rbn_Menu_Master
             // 
@@ -722,6 +748,9 @@
         private DevExpress.XtraBars.BarButtonItem Btn_SD_MonthPlan;
         private DevExpress.XtraBars.BarButtonItem btn_Master_LPlist;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup MM_G1;
+        private DevExpress.XtraBars.BarButtonItem btn_ST_stock_list;
+        private DevExpress.XtraBars.Ribbon.RibbonPage Rbn_Menu_Report;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup Report_G1;
 
     }
 }

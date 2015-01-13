@@ -477,6 +477,14 @@ namespace DLS
         }
         #endregion
 
+        #region 리포트
+
+        private void btn_ST_stock_list_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+        #endregion
+
         #endregion
 
         private void barEditItem1_EditValueChanged(object sender, EventArgs e)
