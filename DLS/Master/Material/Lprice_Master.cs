@@ -152,7 +152,7 @@ namespace DLS.Master.Material
 
             if ( DateTime.Parse(SubView.GetFocusedRowCellValue("Sdate").ToString()) >= DateTime.Parse(SubView.GetFocusedRowCellValue("Edate").ToString()) )
             {
-                MessageBox.Show("효력 시작일은 종료일보다 커거나 같을 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("효력 시작일은 종료일보다 크거나 같을 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
