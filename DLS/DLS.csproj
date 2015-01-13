@@ -66,10 +66,13 @@
     <ManifestKeyFile>DLS_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
@@ -119,6 +122,12 @@
     <Compile Include="Common\Frm10\SapConntor\SAPConnection.cs" />
     <Compile Include="Common\Util\MyUtil.cs" />
     <Compile Include="Common\Util\sapTableConvert.cs" />
+    <Compile Include="Financial\Monthly_FI_Close.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financial\Monthly_FI_Close.Designer.cs">
+      <DependentUpon>Monthly_FI_Close.cs</DependentUpon>
+    </Compile>
     <Compile Include="Financial\Monthly_Sales_Delivery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +316,9 @@
     <Compile Include="Sales_Distribution\Transfer_History.Designer.cs">
       <DependentUpon>Transfer_History.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Financial\Monthly_FI_Close.resx">
+      <DependentUpon>Monthly_FI_Close.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Financial\Monthly_Sales_Delivery.resx">
       <DependentUpon>Monthly_Sales_Delivery.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,6 +424,7 @@
       <DependentUpon>Transfer_History.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
