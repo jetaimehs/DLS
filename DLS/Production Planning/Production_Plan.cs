@@ -254,12 +254,7 @@ namespace DLS.Production_Planning
         {
             try
             {
-                DataRowView drv = (DataRowView)e.Row;
 
-                //if (drv.Row.RowState == DataRowState.Added)
-                //{
-                //    drv.Row.Delete();
-                //}
             }
             catch (Exception ex)
             {
@@ -297,7 +292,10 @@ namespace DLS.Production_Planning
             for (int i = 0; i < gv_ppPlan.RowCount; i++)
             {
                 if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom").ToString(), "1"))
+                {
+                    gv_ppPlan.SetRowCellValue(i, "Note", "이미 확정된 계획 입니다.");
                     return;
+                }                    
 
                 arrth[i] = new Hashtable();
                 arrth[i].Add("@MODE", 401);

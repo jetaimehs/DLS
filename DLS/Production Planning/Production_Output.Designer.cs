@@ -35,7 +35,7 @@
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_gubun = new DevExpress.XtraEditors.LabelControl();
             this.sle_matnr = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -156,7 +156,7 @@
             // gc_delivery_main
             // 
             this.gc_delivery_main.Controls.Add(this.sle_otype);
-            this.gc_delivery_main.Controls.Add(this.labelControl3);
+            this.gc_delivery_main.Controls.Add(this.lbl_gubun);
             this.gc_delivery_main.Controls.Add(this.sle_matnr);
             this.gc_delivery_main.Controls.Add(this.sle_matkl);
             this.gc_delivery_main.Controls.Add(this.lbl_matkl);
@@ -176,12 +176,11 @@
             this.gc_delivery_main.Name = "gc_delivery_main";
             this.gc_delivery_main.Size = new System.Drawing.Size(1440, 78);
             this.gc_delivery_main.TabIndex = 0;
-            this.gc_delivery_main.Text = "계획 정보";
+            this.gc_delivery_main.Text = "실적 정보";
             // 
             // sle_otype
             // 
-            this.sle_otype.EditValue = "";
-            this.sle_otype.Location = new System.Drawing.Point(1314, 34);
+            this.sle_otype.Location = new System.Drawing.Point(1336, 34);
             this.sle_otype.Name = "sle_otype";
             this.sle_otype.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -218,15 +217,15 @@
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 50;
             // 
-            // labelControl3
+            // lbl_gubun
             // 
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl3.Location = new System.Drawing.Point(1268, 37);
-            this.labelControl3.MinimumSize = new System.Drawing.Size(40, 14);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(40, 14);
-            this.labelControl3.TabIndex = 27;
-            this.labelControl3.Text = "구분";
+            this.lbl_gubun.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lbl_gubun.Location = new System.Drawing.Point(1282, 37);
+            this.lbl_gubun.MinimumSize = new System.Drawing.Size(40, 14);
+            this.lbl_gubun.Name = "lbl_gubun";
+            this.lbl_gubun.Size = new System.Drawing.Size(48, 14);
+            this.lbl_gubun.TabIndex = 27;
+            this.lbl_gubun.Text = "실적구분";
             // 
             // sle_matnr
             // 
@@ -591,7 +590,7 @@
             // 
             // Wdate
             // 
-            this.Wdate.Caption = "Wdate";
+            this.Wdate.Caption = "생산일";
             this.Wdate.DisplayFormat.FormatString = "yyyy-MM-dd";
             this.Wdate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Wdate.FieldName = "Wdate";
@@ -605,7 +604,7 @@
             // 
             // Arbpl
             // 
-            this.Arbpl.Caption = "Arbpl";
+            this.Arbpl.Caption = "작업장";
             this.Arbpl.ColumnEdit = this.repositoryItemSearchLookUpEdit_Arbpl;
             this.Arbpl.FieldName = "Arbpl";
             this.Arbpl.MaxWidth = 120;
@@ -634,7 +633,7 @@
             // 
             // Mtart
             // 
-            this.Mtart.Caption = "Mtart";
+            this.Mtart.Caption = "자재유형";
             this.Mtart.FieldName = "Mtart";
             this.Mtart.MaxWidth = 100;
             this.Mtart.MinWidth = 50;
@@ -645,7 +644,7 @@
             // 
             // Matkl
             // 
-            this.Matkl.Caption = "Matkl";
+            this.Matkl.Caption = "차종";
             this.Matkl.FieldName = "Matkl";
             this.Matkl.MaxWidth = 100;
             this.Matkl.MinWidth = 50;
@@ -658,7 +657,7 @@
             // 
             // Matnr
             // 
-            this.Matnr.Caption = "Matnr";
+            this.Matnr.Caption = "자재번호";
             this.Matnr.ColumnEdit = this.repositoryItemSearchLookUpEdit_Matnr;
             this.Matnr.FieldName = "Matnr";
             this.Matnr.MaxWidth = 200;
@@ -724,7 +723,7 @@
             // 
             // Otype
             // 
-            this.Otype.Caption = "Otype";
+            this.Otype.Caption = "구분";
             this.Otype.ColumnEdit = this.repositoryItemLookUpEdit_Otype;
             this.Otype.FieldName = "Otype";
             this.Otype.MaxWidth = 100;
@@ -747,7 +746,7 @@
             // 
             // Lmnga
             // 
-            this.Lmnga.Caption = "Lmnga";
+            this.Lmnga.Caption = "생산수량";
             this.Lmnga.FieldName = "Lmnga";
             this.Lmnga.MaxWidth = 150;
             this.Lmnga.MinWidth = 50;
@@ -759,7 +758,7 @@
             // 
             // Meins
             // 
-            this.Meins.Caption = "Meins";
+            this.Meins.Caption = "기본단위";
             this.Meins.FieldName = "Meins";
             this.Meins.MaxWidth = 100;
             this.Meins.MinWidth = 50;
@@ -772,7 +771,7 @@
             // 
             // Mtime
             // 
-            this.Mtime.Caption = "Mtime";
+            this.Mtime.Caption = "가동시간";
             this.Mtime.FieldName = "Mtime";
             this.Mtime.MaxWidth = 100;
             this.Mtime.MinWidth = 50;
@@ -784,7 +783,7 @@
             // 
             // Jtime
             // 
-            this.Jtime.Caption = "Jtime";
+            this.Jtime.Caption = "노무시간";
             this.Jtime.FieldName = "Jtime";
             this.Jtime.MaxWidth = 100;
             this.Jtime.MinWidth = 50;
@@ -796,7 +795,7 @@
             // 
             // Inper
             // 
-            this.Inper.Caption = "Inper";
+            this.Inper.Caption = "사내인원";
             this.Inper.FieldName = "Inper";
             this.Inper.MaxWidth = 100;
             this.Inper.MinWidth = 50;
@@ -807,7 +806,7 @@
             // 
             // Exper
             // 
-            this.Exper.Caption = "Exper";
+            this.Exper.Caption = "외주인원";
             this.Exper.FieldName = "Exper";
             this.Exper.MaxWidth = 100;
             this.Exper.MinWidth = 50;
@@ -818,7 +817,7 @@
             // 
             // PPlgort
             // 
-            this.PPlgort.Caption = "PPlgort";
+            this.PPlgort.Caption = "생산저장위치";
             this.PPlgort.FieldName = "PPlgort";
             this.PPlgort.MaxWidth = 100;
             this.PPlgort.MinWidth = 50;
@@ -831,16 +830,20 @@
             // 
             // Decom
             // 
-            this.Decom.Caption = "Decom";
+            this.Decom.Caption = "완료";
             this.Decom.FieldName = "Decom";
+            this.Decom.MaxWidth = 70;
+            this.Decom.MinWidth = 50;
             this.Decom.Name = "Decom";
+            this.Decom.OptionsColumn.AllowEdit = false;
             this.Decom.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Decom.Visible = true;
             this.Decom.VisibleIndex = 13;
+            this.Decom.Width = 70;
             // 
             // Lvorm
             // 
-            this.Lvorm.Caption = "Lvorm";
+            this.Lvorm.Caption = "취소";
             this.Lvorm.FieldName = "Lvorm";
             this.Lvorm.MaxWidth = 70;
             this.Lvorm.MinWidth = 50;
@@ -865,7 +868,7 @@
             // 
             this.repositoryItemHyperLinkEdit_Save.AutoHeight = false;
             this.repositoryItemHyperLinkEdit_Save.Name = "repositoryItemHyperLinkEdit_Save";
-            this.repositoryItemHyperLinkEdit_Save.NullText = "Save";
+            this.repositoryItemHyperLinkEdit_Save.NullText = "등록";
             this.repositoryItemHyperLinkEdit_Save.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Save_Click);
             // 
             // Delete
@@ -882,12 +885,12 @@
             // 
             this.repositoryItemHyperLinkEdit_Delete.AutoHeight = false;
             this.repositoryItemHyperLinkEdit_Delete.Name = "repositoryItemHyperLinkEdit_Delete";
-            this.repositoryItemHyperLinkEdit_Delete.NullText = "Delete";
+            this.repositoryItemHyperLinkEdit_Delete.NullText = "취소";
             this.repositoryItemHyperLinkEdit_Delete.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Delete_Click);
             // 
             // Note
             // 
-            this.Note.Caption = "Note";
+            this.Note.Caption = "메모";
             this.Note.FieldName = "Note";
             this.Note.MinWidth = 150;
             this.Note.Name = "Note";
@@ -1017,7 +1020,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Note;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
         private DevExpress.XtraGrid.Columns.GridColumn Decom;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl lbl_gubun;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit_Arbpl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit_Otype;

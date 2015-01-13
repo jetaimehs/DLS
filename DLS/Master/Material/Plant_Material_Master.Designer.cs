@@ -39,6 +39,7 @@
             this.pMatnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matkl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Mtart = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Eisbe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Stuph = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MMlgort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PPlgort = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -110,6 +111,7 @@
             this.pMatnr,
             this.Matkl,
             this.Mtart,
+            this.Eisbe,
             this.Stuph,
             this.MMlgort,
             this.PPlgort,
@@ -153,13 +155,21 @@
             this.Mtart.Visible = true;
             this.Mtart.VisibleIndex = 3;
             // 
+            // Eisbe
+            // 
+            this.Eisbe.Caption = "최소발주수량";
+            this.Eisbe.FieldName = "Eisbe";
+            this.Eisbe.Name = "Eisbe";
+            this.Eisbe.Visible = true;
+            this.Eisbe.VisibleIndex = 4;
+            // 
             // Stuph
             // 
             this.Stuph.Caption = "표준 UPH";
             this.Stuph.FieldName = "Stuph";
             this.Stuph.Name = "Stuph";
             this.Stuph.Visible = true;
-            this.Stuph.VisibleIndex = 4;
+            this.Stuph.VisibleIndex = 5;
             // 
             // MMlgort
             // 
@@ -167,7 +177,7 @@
             this.MMlgort.FieldName = "MMlgort";
             this.MMlgort.Name = "MMlgort";
             this.MMlgort.Visible = true;
-            this.MMlgort.VisibleIndex = 5;
+            this.MMlgort.VisibleIndex = 6;
             // 
             // PPlgort
             // 
@@ -175,7 +185,7 @@
             this.PPlgort.FieldName = "PPlgort";
             this.PPlgort.Name = "PPlgort";
             this.PPlgort.Visible = true;
-            this.PPlgort.VisibleIndex = 6;
+            this.PPlgort.VisibleIndex = 7;
             // 
             // SDlgort
             // 
@@ -183,7 +193,7 @@
             this.SDlgort.FieldName = "SDlgort";
             this.SDlgort.Name = "SDlgort";
             this.SDlgort.Visible = true;
-            this.SDlgort.VisibleIndex = 7;
+            this.SDlgort.VisibleIndex = 8;
             // 
             // OSlgort
             // 
@@ -191,7 +201,7 @@
             this.OSlgort.FieldName = "OSlgort";
             this.OSlgort.Name = "OSlgort";
             this.OSlgort.Visible = true;
-            this.OSlgort.VisibleIndex = 8;
+            this.OSlgort.VisibleIndex = 9;
             // 
             // Plant_Material_Master
             // 
@@ -230,5 +240,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn SDlgort;
         private DevExpress.XtraGrid.Columns.GridColumn OSlgort;
         private DevExpress.XtraEditors.SimpleButton btn_down;
+        private DevExpress.XtraGrid.Columns.GridColumn Eisbe;
     }
 }

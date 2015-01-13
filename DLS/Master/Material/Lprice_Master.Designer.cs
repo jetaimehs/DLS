@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gp1 = new DevExpress.XtraEditors.GroupControl();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
@@ -69,12 +70,22 @@
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.simpleButton1);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
             this.pc_main.Location = new System.Drawing.Point(0, 0);
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1320, 83);
             this.pc_main.TabIndex = 27;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(206, 49);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 2;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btn_find
             // 
@@ -90,6 +101,7 @@
             // gp1
             // 
             this.gp1.Controls.Add(this.gcMain);
+            this.gp1.Controls.Add(this.gp2);
             this.gp1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gp1.Location = new System.Drawing.Point(0, 83);
             this.gp1.Name = "gp1";
@@ -103,8 +115,8 @@
             this.gcMain.Location = new System.Drawing.Point(2, 22);
             this.gcMain.MainView = this.MainView;
             this.gcMain.Name = "gcMain";
-            this.gcMain.Size = new System.Drawing.Size(1316, 634);
-            this.gcMain.TabIndex = 3;
+            this.gcMain.Size = new System.Drawing.Size(1316, 325);
+            this.gcMain.TabIndex = 31;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.MainView});
             // 
@@ -204,10 +216,10 @@
             // 
             this.gp2.Controls.Add(this.gcSub);
             this.gp2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gp2.Location = new System.Drawing.Point(0, 432);
+            this.gp2.Location = new System.Drawing.Point(2, 347);
             this.gp2.Name = "gp2";
-            this.gp2.Size = new System.Drawing.Size(1320, 309);
-            this.gp2.TabIndex = 29;
+            this.gp2.Size = new System.Drawing.Size(1316, 309);
+            this.gp2.TabIndex = 30;
             this.gp2.Text = "자재별 구매단가 정보";
             // 
             // gcSub
@@ -216,7 +228,7 @@
             this.gcSub.Location = new System.Drawing.Point(2, 22);
             this.gcSub.MainView = this.SubView;
             this.gcSub.Name = "gcSub";
-            this.gcSub.Size = new System.Drawing.Size(1316, 285);
+            this.gcSub.Size = new System.Drawing.Size(1312, 285);
             this.gcSub.TabIndex = 0;
             this.gcSub.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.SubView});
@@ -237,6 +249,7 @@
             this.SubView.GridControl = this.gcSub;
             this.SubView.Name = "SubView";
             this.SubView.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.SubView.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.MainView_SelectionChanged);
             this.SubView.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.SubView_ShowingEditor);
             this.SubView.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.SubView_InitNewRow);
             this.SubView.ShownEditor += new System.EventHandler(this.SubView_ShownEditor);
@@ -330,7 +343,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1320, 741);
-            this.Controls.Add(this.gp2);
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "Lprice_Master";
@@ -355,6 +367,7 @@
         private DevExpress.XtraEditors.PanelControl pc_main;
         private DevExpress.XtraEditors.SimpleButton btn_find;
         private DevExpress.XtraEditors.GroupControl gp1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.GridControl gcMain;
         private DevExpress.XtraGrid.Views.Grid.GridView MainView;
         private DevExpress.XtraGrid.Columns.GridColumn Werks;

@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using System.Collections;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DLS;
 
 namespace DLS.Master.Material
 {
@@ -24,6 +25,8 @@ namespace DLS.Master.Material
             this.InitLanguage();    //다국어 설정
             this.InitOnlyData();    //폼로딩시 기본 작업
             this.ShowData();        //DATA 작업
+
+            SubView.OptionsBehavior.AutoPopulateColumns = false;
         }
 
         private void InitLanguage()
@@ -35,6 +38,8 @@ namespace DLS.Master.Material
         {
             Common.Util.MyUtil.SetGridControlDesign(ref gcMain);
             Common.Util.MyUtil.SetGridViewDesign(ref MainView);
+            Common.Util.MyUtil.SetGridControlDesign(ref gcSub);
+            Common.Util.MyUtil.SetGridViewDesign(ref SubView);
         }
 
         private void ShowData()
@@ -56,7 +61,7 @@ namespace DLS.Master.Material
         private void MainView_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             if (!MainView.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
-                ShowSubData();  
+                ShowSubData();
         }
 
         private void ShowSubData()
@@ -89,7 +94,7 @@ namespace DLS.Master.Material
             {
                 if (view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) && view.FocusedColumn.FieldName == "Lifnr")
                 {
-                    e.Cancel = false;                    
+                    e.Cancel = false;
                     return;
                 }
                 else
@@ -100,14 +105,9 @@ namespace DLS.Master.Material
             }
             else
             {
-                if (!view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) ) 
+                if (!view.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
                 {
-                    if (view.FocusedColumn.FieldName == "Loekz")
-                    {
-                        e.Cancel = false;
-                        return;
-                    }
-                    else
+                    if (view.FocusedColumn.FieldName == "Sdate" || view.FocusedColumn.FieldName == "Edate")
                     {
                         e.Cancel = true;
                         return;
@@ -150,14 +150,11 @@ namespace DLS.Master.Material
                 return false;
             }
 
-            if ( DateTime.Parse(SubView.GetFocusedRowCellValue("Sdate").ToString()) >= DateTime.Parse(SubView.GetFocusedRowCellValue("Edate").ToString()) )
+            if (DateTime.Parse(SubView.GetFocusedRowCellValue("Sdate").ToString()) >= DateTime.Parse(SubView.GetFocusedRowCellValue("Edate").ToString()))
             {
                 MessageBox.Show("효력 시작일은 종료일보다 크거나 같을 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-
-            //기존 효력일자 수정에 따른 에러 체크필요
-
             return true;
         }
 
@@ -175,7 +172,7 @@ namespace DLS.Master.Material
         }
 
         private void SubView_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {            
+        {
             GridView view = sender as GridView;
             if (view.FocusedColumn.FieldName == null)
                 return;
@@ -266,14 +263,21 @@ namespace DLS.Master.Material
 
                 if (dt.Rows.Count == 0)
                 {
-                    MessageBox.Show("기존 구매단가의 효력종료일을 수정할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("기존 구매단가와 효력일에 문제가 있습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ((DataRowView)e.Row).Row.RejectChanges();
                 }
                 else
                 {
                     ((DataRowView)e.Row).Row.AcceptChanges();
+                    ShowSubData();
                 }
-            }      
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Materials_Management.Purchasing_Order fm = new Materials_Management.Purchasing_Order();
+            fm.Show();
         }
     }
 }

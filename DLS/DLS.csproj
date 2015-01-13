@@ -79,6 +79,10 @@
     <Reference Include="DevExpress.Data.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.RichEdit.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 2011.2\Components\Bin\Framework\DevExpress.Xpf.RichEdit.v11.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraBars.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -241,6 +245,12 @@
     <Compile Include="Master\User_Management.Designer.cs">
       <DependentUpon>User_Management.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials_Management\Purchasing_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials_Management\Purchasing_Order.Designer.cs">
+      <DependentUpon>Purchasing_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup_Form\Find_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +268,12 @@
     </Compile>
     <Compile Include="Production Planning\Production_Plan.Designer.cs">
       <DependentUpon>Production_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Planning\Production_StateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Planning\Production_StateReport.Designer.cs">
+      <DependentUpon>Production_StateReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -354,6 +370,9 @@
     <EmbeddedResource Include="Master\User_Management.resx">
       <DependentUpon>User_Management.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Materials_Management\Purchasing_Order.resx">
+      <DependentUpon>Purchasing_Order.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup_Form\Find_User.resx">
       <DependentUpon>Find_User.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Production Planning\Production_Plan.resx">
       <DependentUpon>Production_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Planning\Production_StateReport.resx">
+      <DependentUpon>Production_StateReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
