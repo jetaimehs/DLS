@@ -254,7 +254,11 @@ namespace DLS.Production_Planning
         {
             try
             {
+                DataRowView drv = (DataRowView)e.Row;
 
+                if (drv.Row.RowState == DataRowState.Added)
+                {
+                }
             }
             catch (Exception ex)
             {
@@ -330,9 +334,13 @@ namespace DLS.Production_Planning
             ht1.Add("@Matnr", gv_ppPlan.GetFocusedRowCellValue("Matnr"));
             ht1.Add("@Pday", gv_ppPlan.GetFocusedRowCellValue("Wdate"));
 
-            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPDailySalesPlan]", ht1, "");
+            if (!Equals(gv_ppPlan.GetFocusedRowCellValue("Matnr"), null) &&
+                !Equals(gv_ppPlan.GetFocusedRowCellValue("Wdate"), null))
+            {
+                DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPDailySalesPlan]", ht1, "");
 
-            gc_sdPlan.DataSource = dt1.DefaultView;
+                gc_sdPlan.DataSource = dt1.DefaultView;
+            }
         }
 
         private void btn_save_Click(object sender, EventArgs e)
