@@ -25,8 +25,6 @@ namespace DLS.Master.Material
             this.InitLanguage();    //다국어 설정
             this.InitOnlyData();    //폼로딩시 기본 작업
             this.ShowData();        //DATA 작업
-
-            SubView.OptionsBehavior.AutoPopulateColumns = false;
         }
 
         private void InitLanguage()
@@ -132,6 +130,7 @@ namespace DLS.Master.Material
         void fmLifnr_LifnrClickEvent(string lifnr, string name1)
         {
             SubView.SetFocusedValue(lifnr);
+            SubView.SetFocusedRowCellValue("Name1", name1);
         }
 
         private bool CheckSub()
@@ -175,7 +174,13 @@ namespace DLS.Master.Material
         {
             GridView view = sender as GridView;
             if (view.FocusedColumn.FieldName == null)
+            {
                 return;
+            }
+            else if (view.FocusedRowHandle.Equals(DevExpress.XtraGrid.GridControl.AutoFilterRowHandle))
+            {
+                return;
+            }
 
             switch (view.FocusedColumn.FieldName)
             {
@@ -237,6 +242,7 @@ namespace DLS.Master.Material
                 ht.Add("@LPseq", view.GetFocusedRowCellValue("LPseq"));
                 ht.Add("@Werks", view.GetFocusedRowCellValue("Werks"));
                 ht.Add("@Lifnr", view.GetFocusedRowCellValue("Lifnr"));
+                ht.Add("@Name1", view.GetFocusedRowCellValue("Name1"));
                 ht.Add("@Matnr", view.GetFocusedRowCellValue("Matnr"));
                 ht.Add("@Sdate", view.GetFocusedRowCellValue("Sdate"));
                 ht.Add("@Edate", view.GetFocusedRowCellValue("Edate"));

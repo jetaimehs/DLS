@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
-            this.lblSlfdt = new DevExpress.XtraEditors.LabelControl();
             this.lblPOdat = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.depoDat = new DevExpress.XtraEditors.DateEdit();
             this.btnPO = new DevExpress.XtraEditors.SimpleButton();
             this.btnPlan = new DevExpress.XtraEditors.SimpleButton();
             this.gp1 = new DevExpress.XtraEditors.GroupControl();
@@ -41,7 +39,6 @@
             this.gcMg = new DevExpress.XtraGrid.GridControl();
             this.MgView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MppSeq = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Mtype = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Msg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcSub = new DevExpress.XtraGrid.GridControl();
             this.SubView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -56,7 +53,6 @@
             this.Netwr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Waers = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Slfdt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ppSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Elikz = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Loekz = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
@@ -69,10 +65,8 @@
             this.Brtwr = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depoDat.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depoDat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gp1)).BeginInit();
             this.gp1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gp2)).BeginInit();
@@ -89,10 +83,8 @@
             // 
             // pc_main
             // 
-            this.pc_main.Controls.Add(this.lblSlfdt);
             this.pc_main.Controls.Add(this.lblPOdat);
-            this.pc_main.Controls.Add(this.dateEdit2);
-            this.pc_main.Controls.Add(this.dateEdit1);
+            this.pc_main.Controls.Add(this.depoDat);
             this.pc_main.Controls.Add(this.btnPO);
             this.pc_main.Controls.Add(this.btnPlan);
             this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
@@ -100,14 +92,6 @@
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1319, 36);
             this.pc_main.TabIndex = 28;
-            // 
-            // lblSlfdt
-            // 
-            this.lblSlfdt.Location = new System.Drawing.Point(417, 14);
-            this.lblSlfdt.Name = "lblSlfdt";
-            this.lblSlfdt.Size = new System.Drawing.Size(60, 14);
-            this.lblSlfdt.TabIndex = 7;
-            this.lblSlfdt.Text = "납품요청일";
             // 
             // lblPOdat
             // 
@@ -117,29 +101,17 @@
             this.lblPOdat.TabIndex = 6;
             this.lblPOdat.Text = "발주일";
             // 
-            // dateEdit2
+            // depoDat
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(485, 11);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.depoDat.EditValue = null;
+            this.depoDat.Location = new System.Drawing.Point(239, 11);
+            this.depoDat.Name = "depoDat";
+            this.depoDat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.depoDat.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit2.Size = new System.Drawing.Size(100, 20);
-            this.dateEdit2.TabIndex = 5;
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(239, 11);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit1.Size = new System.Drawing.Size(100, 20);
-            this.dateEdit1.TabIndex = 4;
+            this.depoDat.Size = new System.Drawing.Size(100, 20);
+            this.depoDat.TabIndex = 4;
             // 
             // btnPO
             // 
@@ -148,6 +120,7 @@
             this.btnPO.Size = new System.Drawing.Size(75, 23);
             this.btnPO.TabIndex = 3;
             this.btnPO.Text = "발주확정";
+            this.btnPO.Click += new System.EventHandler(this.btnPO_Click);
             // 
             // btnPlan
             // 
@@ -156,6 +129,7 @@
             this.btnPlan.Size = new System.Drawing.Size(75, 23);
             this.btnPlan.TabIndex = 2;
             this.btnPlan.Text = "발주생성";
+            this.btnPlan.Click += new System.EventHandler(this.btnPlan_Click);
             // 
             // gp1
             // 
@@ -183,9 +157,9 @@
             // 
             this.gp3.Controls.Add(this.gcMg);
             this.gp3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gp3.Location = new System.Drawing.Point(2, 297);
+            this.gp3.Location = new System.Drawing.Point(2, 270);
             this.gp3.Name = "gp3";
-            this.gp3.Size = new System.Drawing.Size(1311, 131);
+            this.gp3.Size = new System.Drawing.Size(1311, 158);
             this.gp3.TabIndex = 1;
             this.gp3.Text = "메세지";
             // 
@@ -195,7 +169,7 @@
             this.gcMg.Location = new System.Drawing.Point(2, 22);
             this.gcMg.MainView = this.MgView;
             this.gcMg.Name = "gcMg";
-            this.gcMg.Size = new System.Drawing.Size(1307, 107);
+            this.gcMg.Size = new System.Drawing.Size(1307, 134);
             this.gcMg.TabIndex = 0;
             this.gcMg.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.MgView});
@@ -204,34 +178,26 @@
             // 
             this.MgView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MppSeq,
-            this.Mtype,
             this.Msg});
             this.MgView.GridControl = this.gcMg;
             this.MgView.Name = "MgView";
+            this.MgView.OptionsBehavior.ReadOnly = true;
             // 
             // MppSeq
             // 
-            this.MppSeq.Caption = "gridColumn1";
-            this.MppSeq.FieldName = "ppSeq";
+            this.MppSeq.Caption = "생산계획번호";
+            this.MppSeq.FieldName = "pppSeq";
             this.MppSeq.Name = "MppSeq";
             this.MppSeq.Visible = true;
             this.MppSeq.VisibleIndex = 0;
             // 
-            // Mtype
-            // 
-            this.Mtype.Caption = "gridColumn2";
-            this.Mtype.FieldName = "Mtype";
-            this.Mtype.Name = "Mtype";
-            this.Mtype.Visible = true;
-            this.Mtype.VisibleIndex = 1;
-            // 
             // Msg
             // 
-            this.Msg.Caption = "gridColumn3";
+            this.Msg.Caption = "메세지";
             this.Msg.FieldName = "Msg";
             this.Msg.Name = "Msg";
             this.Msg.Visible = true;
-            this.Msg.VisibleIndex = 2;
+            this.Msg.VisibleIndex = 1;
             // 
             // gcSub
             // 
@@ -239,7 +205,7 @@
             this.gcSub.Location = new System.Drawing.Point(2, 22);
             this.gcSub.MainView = this.SubView;
             this.gcSub.Name = "gcSub";
-            this.gcSub.Size = new System.Drawing.Size(1311, 275);
+            this.gcSub.Size = new System.Drawing.Size(1311, 248);
             this.gcSub.TabIndex = 0;
             this.gcSub.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.SubView});
@@ -258,7 +224,6 @@
             this.Netwr,
             this.Waers,
             this.Slfdt,
-            this.ppSeq,
             this.Elikz,
             this.Loekz});
             this.SubView.GridControl = this.gcSub;
@@ -270,6 +235,7 @@
             this.SpoSeq.Caption = "발주번호";
             this.SpoSeq.FieldName = "poSeq";
             this.SpoSeq.Name = "SpoSeq";
+            this.SpoSeq.OptionsColumn.AllowEdit = false;
             this.SpoSeq.Visible = true;
             this.SpoSeq.VisibleIndex = 0;
             // 
@@ -278,6 +244,7 @@
             this.poSqn.Caption = "발주아이템";
             this.poSqn.FieldName = "poSqn";
             this.poSqn.Name = "poSqn";
+            this.poSqn.OptionsColumn.AllowEdit = false;
             this.poSqn.Visible = true;
             this.poSqn.VisibleIndex = 1;
             // 
@@ -286,6 +253,7 @@
             this.Matnr.Caption = "자재번호";
             this.Matnr.FieldName = "Matnr";
             this.Matnr.Name = "Matnr";
+            this.Matnr.OptionsColumn.AllowEdit = false;
             this.Matnr.Visible = true;
             this.Matnr.VisibleIndex = 2;
             // 
@@ -294,6 +262,7 @@
             this.Menge.Caption = "발주수량";
             this.Menge.FieldName = "Menge";
             this.Menge.Name = "Menge";
+            this.Menge.OptionsColumn.AllowEdit = false;
             this.Menge.Visible = true;
             this.Menge.VisibleIndex = 3;
             // 
@@ -302,6 +271,7 @@
             this.Matkl.Caption = "자재그룹";
             this.Matkl.FieldName = "Matkl";
             this.Matkl.Name = "Matkl";
+            this.Matkl.OptionsColumn.AllowEdit = false;
             this.Matkl.Visible = true;
             this.Matkl.VisibleIndex = 4;
             // 
@@ -310,6 +280,7 @@
             this.LPseq.Caption = "구매단가코드";
             this.LPseq.FieldName = "LPseq";
             this.LPseq.Name = "LPseq";
+            this.LPseq.OptionsColumn.AllowEdit = false;
             this.LPseq.Visible = true;
             this.LPseq.VisibleIndex = 5;
             // 
@@ -318,6 +289,7 @@
             this.Netpr.Caption = "구매단가";
             this.Netpr.FieldName = "Netpr";
             this.Netpr.Name = "Netpr";
+            this.Netpr.OptionsColumn.AllowEdit = false;
             this.Netpr.Visible = true;
             this.Netpr.VisibleIndex = 6;
             // 
@@ -326,6 +298,7 @@
             this.Epein.Caption = "가격단위";
             this.Epein.FieldName = "Epein";
             this.Epein.Name = "Epein";
+            this.Epein.OptionsColumn.AllowEdit = false;
             this.Epein.Visible = true;
             this.Epein.VisibleIndex = 7;
             // 
@@ -334,6 +307,7 @@
             this.Netwr.Caption = "발주금액";
             this.Netwr.FieldName = "Netwr";
             this.Netwr.Name = "Netwr";
+            this.Netwr.OptionsColumn.AllowEdit = false;
             this.Netwr.Visible = true;
             this.Netwr.VisibleIndex = 8;
             // 
@@ -342,6 +316,7 @@
             this.Waers.Caption = "통화단위";
             this.Waers.FieldName = "Waers";
             this.Waers.Name = "Waers";
+            this.Waers.OptionsColumn.AllowEdit = false;
             this.Waers.Visible = true;
             this.Waers.VisibleIndex = 9;
             // 
@@ -353,29 +328,23 @@
             this.Slfdt.Visible = true;
             this.Slfdt.VisibleIndex = 10;
             // 
-            // ppSeq
-            // 
-            this.ppSeq.Caption = "생산계획번호";
-            this.ppSeq.FieldName = "ppSeq";
-            this.ppSeq.Name = "ppSeq";
-            this.ppSeq.Visible = true;
-            this.ppSeq.VisibleIndex = 11;
-            // 
             // Elikz
             // 
             this.Elikz.Caption = "납품완료지시자";
             this.Elikz.FieldName = "Elikz";
             this.Elikz.Name = "Elikz";
+            this.Elikz.OptionsColumn.AllowEdit = false;
             this.Elikz.Visible = true;
-            this.Elikz.VisibleIndex = 12;
+            this.Elikz.VisibleIndex = 11;
             // 
             // Loekz
             // 
             this.Loekz.Caption = "삭제 지시자";
             this.Loekz.FieldName = "Loekz";
             this.Loekz.Name = "Loekz";
+            this.Loekz.OptionsColumn.AllowEdit = false;
             this.Loekz.Visible = true;
-            this.Loekz.VisibleIndex = 13;
+            this.Loekz.VisibleIndex = 12;
             // 
             // gcMain
             // 
@@ -425,6 +394,7 @@
             this.Lifnr.Caption = "업체코드";
             this.Lifnr.FieldName = "Lifnr";
             this.Lifnr.Name = "Lifnr";
+            this.Lifnr.OptionsColumn.AllowEdit = false;
             this.Lifnr.Visible = true;
             this.Lifnr.VisibleIndex = 2;
             // 
@@ -433,6 +403,7 @@
             this.Name1.Caption = "업체명";
             this.Name1.FieldName = "Name1";
             this.Name1.Name = "Name1";
+            this.Name1.OptionsColumn.AllowEdit = false;
             this.Name1.Visible = true;
             this.Name1.VisibleIndex = 3;
             // 
@@ -449,6 +420,7 @@
             this.Brtwr.Caption = "발주 총 금액";
             this.Brtwr.FieldName = "Brtwr";
             this.Brtwr.Name = "Brtwr";
+            this.Brtwr.OptionsColumn.AllowEdit = false;
             this.Brtwr.Visible = true;
             this.Brtwr.VisibleIndex = 5;
             // 
@@ -461,13 +433,12 @@
             this.Controls.Add(this.pc_main);
             this.Name = "Purchasing_Order";
             this.Text = "Purchasing_Order";
+            this.Load += new System.EventHandler(this.Purchasing_Order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
             this.pc_main.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depoDat.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.depoDat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gp1)).EndInit();
             this.gp1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gp2)).EndInit();
@@ -488,10 +459,8 @@
 
         private DevExpress.XtraEditors.PanelControl pc_main;
         private DevExpress.XtraEditors.SimpleButton btnPlan;
-        private DevExpress.XtraEditors.LabelControl lblSlfdt;
         private DevExpress.XtraEditors.LabelControl lblPOdat;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit depoDat;
         private DevExpress.XtraEditors.SimpleButton btnPO;
         private DevExpress.XtraEditors.GroupControl gp1;
         private DevExpress.XtraEditors.GroupControl gp2;
@@ -511,7 +480,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Netwr;
         private DevExpress.XtraGrid.Columns.GridColumn Waers;
         private DevExpress.XtraGrid.Columns.GridColumn Slfdt;
-        private DevExpress.XtraGrid.Columns.GridColumn ppSeq;
         private DevExpress.XtraGrid.Columns.GridColumn Elikz;
         private DevExpress.XtraGrid.Columns.GridColumn Loekz;
         private DevExpress.XtraGrid.GridControl gcMain;
@@ -523,7 +491,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn poDat;
         private DevExpress.XtraGrid.Columns.GridColumn Brtwr;
         private DevExpress.XtraGrid.Columns.GridColumn MppSeq;
-        private DevExpress.XtraGrid.Columns.GridColumn Mtype;
         private DevExpress.XtraGrid.Columns.GridColumn Msg;
     }
 }

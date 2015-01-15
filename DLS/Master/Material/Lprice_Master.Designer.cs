@@ -49,6 +49,7 @@
             this.LPseq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sWerks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Lifnr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Sdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Edate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -239,6 +240,7 @@
             this.LPseq,
             this.sWerks,
             this.Lifnr,
+            this.Name1,
             this.Matnr,
             this.Sdate,
             this.Edate,
@@ -282,13 +284,22 @@
             this.Lifnr.Visible = true;
             this.Lifnr.VisibleIndex = 2;
             // 
+            // Name1
+            // 
+            this.Name1.Caption = "업체명";
+            this.Name1.FieldName = "Name1";
+            this.Name1.Name = "Name1";
+            this.Name1.OptionsColumn.ReadOnly = true;
+            this.Name1.Visible = true;
+            this.Name1.VisibleIndex = 3;
+            // 
             // Matnr
             // 
             this.Matnr.Caption = "품번";
             this.Matnr.FieldName = "Matnr";
             this.Matnr.Name = "Matnr";
             this.Matnr.Visible = true;
-            this.Matnr.VisibleIndex = 3;
+            this.Matnr.VisibleIndex = 4;
             // 
             // Sdate
             // 
@@ -296,7 +307,7 @@
             this.Sdate.FieldName = "Sdate";
             this.Sdate.Name = "Sdate";
             this.Sdate.Visible = true;
-            this.Sdate.VisibleIndex = 4;
+            this.Sdate.VisibleIndex = 5;
             // 
             // Edate
             // 
@@ -304,7 +315,7 @@
             this.Edate.FieldName = "Edate";
             this.Edate.Name = "Edate";
             this.Edate.Visible = true;
-            this.Edate.VisibleIndex = 5;
+            this.Edate.VisibleIndex = 6;
             // 
             // Price
             // 
@@ -312,7 +323,7 @@
             this.Price.FieldName = "Price";
             this.Price.Name = "Price";
             this.Price.Visible = true;
-            this.Price.VisibleIndex = 6;
+            this.Price.VisibleIndex = 7;
             // 
             // Epein
             // 
@@ -320,7 +331,7 @@
             this.Epein.FieldName = "Epein";
             this.Epein.Name = "Epein";
             this.Epein.Visible = true;
-            this.Epein.VisibleIndex = 7;
+            this.Epein.VisibleIndex = 8;
             // 
             // Waers
             // 
@@ -328,7 +339,7 @@
             this.Waers.FieldName = "Waers";
             this.Waers.Name = "Waers";
             this.Waers.Visible = true;
-            this.Waers.VisibleIndex = 8;
+            this.Waers.VisibleIndex = 9;
             // 
             // sLoekz
             // 
@@ -336,7 +347,7 @@
             this.sLoekz.FieldName = "Loekz";
             this.sLoekz.Name = "sLoekz";
             this.sLoekz.Visible = true;
-            this.sLoekz.VisibleIndex = 9;
+            this.sLoekz.VisibleIndex = 10;
             // 
             // Lprice_Master
             // 
@@ -392,5 +403,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Epein;
         private DevExpress.XtraGrid.Columns.GridColumn Waers;
         private DevExpress.XtraGrid.Columns.GridColumn sLoekz;
+        private DevExpress.XtraGrid.Columns.GridColumn Name1;
     }
 }
