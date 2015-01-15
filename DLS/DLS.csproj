@@ -252,6 +252,12 @@
     <Compile Include="Master\User_Management.Designer.cs">
       <DependentUpon>User_Management.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials_Management\PurchasingOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials_Management\PurchasingOrderList.Designer.cs">
+      <DependentUpon>PurchasingOrderList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materials_Management\Purchasing_Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\User_Management.resx">
       <DependentUpon>User_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials_Management\PurchasingOrderList.resx">
+      <DependentUpon>PurchasingOrderList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials_Management\Purchasing_Order.resx">
       <DependentUpon>Purchasing_Order.cs</DependentUpon>

@@ -296,7 +296,11 @@ namespace DLS
         //구매단가리스트
         private void btn_Master_LPlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("LpriceList"))
+            {
+                Master.Material.LpriceList fm = new Master.Material.LpriceList();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         private void btn_Master_MM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
