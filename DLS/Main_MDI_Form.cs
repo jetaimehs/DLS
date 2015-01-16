@@ -408,6 +408,18 @@ namespace DLS
         {
 
         }
+
+        //발주취소
+        private void Btn_MM_GC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        //창고이전전기
+        private void Btn_MM_ST_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
         
         #endregion
 
@@ -464,10 +476,14 @@ namespace DLS
             }
         }
 
-        //회계마감
+        //물류마감
         private void btn_FI_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("Monthly_FI_Close.cs"))
+            {
+                Financial.Monthly_FI_Close fm = new Financial.Monthly_FI_Close();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         //자재수불

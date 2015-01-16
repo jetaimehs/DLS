@@ -630,6 +630,7 @@
             this.Mtart.MinWidth = 50;
             this.Mtart.Name = "Mtart";
             this.Mtart.OptionsColumn.AllowEdit = false;
+            this.Mtart.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Mtart.Visible = true;
             this.Mtart.VisibleIndex = 2;
             // 
@@ -827,6 +828,8 @@
             this.Note.FieldName = "Note";
             this.Note.MinWidth = 150;
             this.Note.Name = "Note";
+            this.Note.OptionsColumn.AllowEdit = false;
+            this.Note.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Note.Visible = true;
             this.Note.VisibleIndex = 11;
             this.Note.Width = 150;

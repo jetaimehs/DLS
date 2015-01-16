@@ -28,157 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gc_matral_list = new DevExpress.XtraGrid.GridControl();
-            this.gv_matral_list = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.sddSeq = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Kunnr = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NAME1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gc_fi_close = new DevExpress.XtraGrid.GridControl();
+            this.gv_fi_close = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Spmon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matnr = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Matkl = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Budat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Menge = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Price = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Slabst = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Bwart101 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Bwart261 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Bwart131 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Bwart331 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Bwart601 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Bwart411 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Bwart412 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Elabst = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
+            this.btn_cancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gc_delivery_main = new DevExpress.XtraEditors.GroupControl();
-            this.date_af = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.date_be = new DevExpress.XtraEditors.DateEdit();
+            this.date_month = new DevExpress.XtraEditors.DateEdit();
             this.lbl_delivery_date = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).BeginInit();
+            this.Ficlose = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_fi_close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_fi_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).BeginInit();
             this.gc_delivery_main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.date_af.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_af.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_be.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_be.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_month.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_month.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // gc_matral_list
+            // gc_fi_close
             // 
-            this.gc_matral_list.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_matral_list.Location = new System.Drawing.Point(0, 159);
-            this.gc_matral_list.MainView = this.gv_matral_list;
-            this.gc_matral_list.Name = "gc_matral_list";
-            this.gc_matral_list.Size = new System.Drawing.Size(1359, 605);
-            this.gc_matral_list.TabIndex = 10;
-            this.gc_matral_list.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gv_matral_list});
+            this.gc_fi_close.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_fi_close.Location = new System.Drawing.Point(0, 159);
+            this.gc_fi_close.MainView = this.gv_fi_close;
+            this.gc_fi_close.Name = "gc_fi_close";
+            this.gc_fi_close.Size = new System.Drawing.Size(1359, 605);
+            this.gc_fi_close.TabIndex = 10;
+            this.gc_fi_close.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gv_fi_close});
             // 
-            // gv_matral_list
+            // gv_fi_close
             // 
-            this.gv_matral_list.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.sddSeq,
-            this.Kunnr,
-            this.NAME1,
+            this.gv_fi_close.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Spmon,
             this.Matnr,
-            this.Matkl,
-            this.Budat,
-            this.Menge,
-            this.Price,
-            this.CPrice});
-            this.gv_matral_list.GridControl = this.gc_matral_list;
-            this.gv_matral_list.Name = "gv_matral_list";
-            this.gv_matral_list.OptionsView.ShowFooter = true;
+            this.Slabst,
+            this.Bwart101,
+            this.Bwart261,
+            this.Bwart131,
+            this.gridColumn12,
+            this.Bwart331,
+            this.Bwart601,
+            this.Bwart411,
+            this.Bwart412,
+            this.Elabst,
+            this.Ficlose});
+            this.gv_fi_close.GridControl = this.gc_fi_close;
+            this.gv_fi_close.Name = "gv_fi_close";
+            this.gv_fi_close.OptionsView.ShowFooter = true;
             // 
-            // sddSeq
+            // Spmon
             // 
-            this.sddSeq.Caption = "납품번호";
-            this.sddSeq.FieldName = "sddSeq";
-            this.sddSeq.Name = "sddSeq";
-            this.sddSeq.OptionsColumn.AllowEdit = false;
-            this.sddSeq.Visible = true;
-            this.sddSeq.VisibleIndex = 0;
-            // 
-            // Kunnr
-            // 
-            this.Kunnr.Caption = "고객코드";
-            this.Kunnr.FieldName = "Kunnr";
-            this.Kunnr.Name = "Kunnr";
-            this.Kunnr.OptionsColumn.AllowEdit = false;
-            this.Kunnr.Visible = true;
-            this.Kunnr.VisibleIndex = 1;
-            // 
-            // NAME1
-            // 
-            this.NAME1.Caption = "고객명";
-            this.NAME1.FieldName = "NAME1";
-            this.NAME1.Name = "NAME1";
-            this.NAME1.OptionsColumn.AllowEdit = false;
-            this.NAME1.Visible = true;
-            this.NAME1.VisibleIndex = 2;
+            this.Spmon.Caption = "마감년월";
+            this.Spmon.FieldName = "Spmon";
+            this.Spmon.Name = "Spmon";
+            this.Spmon.OptionsColumn.ReadOnly = true;
+            this.Spmon.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Spmon.Visible = true;
+            this.Spmon.VisibleIndex = 0;
             // 
             // Matnr
             // 
             this.Matnr.Caption = "자재번호";
             this.Matnr.FieldName = "Matnr";
             this.Matnr.Name = "Matnr";
-            this.Matnr.OptionsColumn.AllowEdit = false;
+            this.Matnr.OptionsColumn.ReadOnly = true;
+            this.Matnr.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Matnr.Visible = true;
-            this.Matnr.VisibleIndex = 3;
+            this.Matnr.VisibleIndex = 1;
             // 
-            // Matkl
+            // Slabst
             // 
-            this.Matkl.Caption = "자재그룹";
-            this.Matkl.FieldName = "Matkl";
-            this.Matkl.Name = "Matkl";
-            this.Matkl.OptionsColumn.AllowEdit = false;
-            this.Matkl.Visible = true;
-            this.Matkl.VisibleIndex = 4;
+            this.Slabst.Caption = "기초재고";
+            this.Slabst.FieldName = "Slabst";
+            this.Slabst.Name = "Slabst";
+            this.Slabst.OptionsColumn.ReadOnly = true;
+            this.Slabst.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Slabst.Visible = true;
+            this.Slabst.VisibleIndex = 2;
             // 
-            // Budat
+            // Bwart101
             // 
-            this.Budat.Caption = "납품일";
-            this.Budat.FieldName = "Budat";
-            this.Budat.Name = "Budat";
-            this.Budat.OptionsColumn.AllowEdit = false;
-            this.Budat.Visible = true;
-            this.Budat.VisibleIndex = 5;
+            this.Bwart101.Caption = "자재입고";
+            this.Bwart101.FieldName = "Bwart101";
+            this.Bwart101.Name = "Bwart101";
+            this.Bwart101.OptionsColumn.ReadOnly = true;
+            this.Bwart101.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Bwart101.Visible = true;
+            this.Bwart101.VisibleIndex = 3;
             // 
-            // Menge
+            // Bwart261
             // 
-            this.Menge.Caption = "납품수량";
-            this.Menge.DisplayFormat.FormatString = "N0";
-            this.Menge.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Menge.FieldName = "Menge";
-            this.Menge.Name = "Menge";
-            this.Menge.OptionsColumn.AllowEdit = false;
-            this.Menge.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Menge", "SUM={0:N0}")});
-            this.Menge.Visible = true;
-            this.Menge.VisibleIndex = 6;
+            this.Bwart261.Caption = "자재출고";
+            this.Bwart261.FieldName = "Bwart261";
+            this.Bwart261.Name = "Bwart261";
+            this.Bwart261.OptionsColumn.ReadOnly = true;
+            this.Bwart261.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Bwart261.Visible = true;
+            this.Bwart261.VisibleIndex = 4;
             // 
-            // Price
+            // Bwart131
             // 
-            this.Price.Caption = "판매단가";
-            this.Price.DisplayFormat.FormatString = "N0";
-            this.Price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Price.FieldName = "Price";
-            this.Price.Name = "Price";
-            this.Price.OptionsColumn.AllowEdit = false;
-            this.Price.Visible = true;
-            this.Price.VisibleIndex = 7;
+            this.Bwart131.Caption = "생산입고";
+            this.Bwart131.FieldName = "Bwart131";
+            this.Bwart131.Name = "Bwart131";
+            this.Bwart131.OptionsColumn.ReadOnly = true;
+            this.Bwart131.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Bwart131.Visible = true;
+            this.Bwart131.VisibleIndex = 5;
             // 
-            // CPrice
+            // gridColumn12
             // 
-            this.CPrice.Caption = "판매금액";
-            this.CPrice.DisplayFormat.FormatString = "N0";
-            this.CPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.CPrice.FieldName = "CPrice";
-            this.CPrice.Name = "CPrice";
-            this.CPrice.OptionsColumn.AllowEdit = false;
-            this.CPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CPrice", "SUM={0:N0}")});
-            this.CPrice.Visible = true;
-            this.CPrice.VisibleIndex = 8;
+            this.gridColumn12.Caption = "생산출고";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.ReadOnly = true;
+            // 
+            // Bwart331
+            // 
+            this.Bwart331.Caption = "영업입고";
+            this.Bwart331.FieldName = "Bwart331";
+            this.Bwart331.Name = "Bwart331";
+            this.Bwart331.OptionsColumn.ReadOnly = true;
+            this.Bwart331.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Bwart331.Visible = true;
+            this.Bwart331.VisibleIndex = 6;
+            // 
+            // Bwart601
+            // 
+            this.Bwart601.Caption = "영업출고";
+            this.Bwart601.FieldName = "Bwart601";
+            this.Bwart601.Name = "Bwart601";
+            this.Bwart601.OptionsColumn.ReadOnly = true;
+            this.Bwart601.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Bwart601.Visible = true;
+            this.Bwart601.VisibleIndex = 7;
+            // 
+            // Bwart411
+            // 
+            this.Bwart411.Caption = "기타입고";
+            this.Bwart411.FieldName = "Bwart411";
+            this.Bwart411.Name = "Bwart411";
+            this.Bwart411.OptionsColumn.ReadOnly = true;
+            this.Bwart411.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Bwart411.Visible = true;
+            this.Bwart411.VisibleIndex = 8;
+            // 
+            // Bwart412
+            // 
+            this.Bwart412.Caption = "기타출고";
+            this.Bwart412.FieldName = "Bwart412";
+            this.Bwart412.Name = "Bwart412";
+            this.Bwart412.OptionsColumn.ReadOnly = true;
+            this.Bwart412.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Bwart412.Visible = true;
+            this.Bwart412.VisibleIndex = 9;
+            // 
+            // Elabst
+            // 
+            this.Elabst.Caption = "기말재고";
+            this.Elabst.FieldName = "Elabst";
+            this.Elabst.Name = "Elabst";
+            this.Elabst.OptionsColumn.ReadOnly = true;
+            this.Elabst.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.Elabst.Visible = true;
+            this.Elabst.VisibleIndex = 10;
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.btn_cancel);
+            this.pc_main.Controls.Add(this.btn_close);
             this.pc_main.Controls.Add(this.btn_down);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Controls.Add(this.gc_delivery_main);
@@ -188,15 +221,38 @@
             this.pc_main.Size = new System.Drawing.Size(1359, 159);
             this.pc_main.TabIndex = 9;
             // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_cancel.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_cancel.Location = new System.Drawing.Point(174, 12);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(75, 60);
+            this.btn_cancel.TabIndex = 28;
+            this.btn_cancel.Text = "마감취소";
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_close.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_close.Location = new System.Drawing.Point(93, 12);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(75, 60);
+            this.btn_close.TabIndex = 27;
+            this.btn_close.Text = "마감실행";
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // btn_down
             // 
             this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_down.Location = new System.Drawing.Point(93, 12);
+            this.btn_down.Location = new System.Drawing.Point(255, 12);
             this.btn_down.Name = "btn_down";
             this.btn_down.Size = new System.Drawing.Size(75, 60);
             this.btn_down.TabIndex = 26;
             this.btn_down.Text = "다운로드";
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
             // 
             // btn_find
             // 
@@ -207,63 +263,35 @@
             this.btn_find.Size = new System.Drawing.Size(75, 60);
             this.btn_find.TabIndex = 1;
             this.btn_find.Text = "새로고침";
+            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
             // 
             // gc_delivery_main
             // 
-            this.gc_delivery_main.Controls.Add(this.date_af);
-            this.gc_delivery_main.Controls.Add(this.labelControl1);
-            this.gc_delivery_main.Controls.Add(this.date_be);
+            this.gc_delivery_main.Controls.Add(this.date_month);
             this.gc_delivery_main.Controls.Add(this.lbl_delivery_date);
             this.gc_delivery_main.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gc_delivery_main.Location = new System.Drawing.Point(2, 84);
             this.gc_delivery_main.Name = "gc_delivery_main";
             this.gc_delivery_main.Size = new System.Drawing.Size(1355, 73);
             this.gc_delivery_main.TabIndex = 0;
-            this.gc_delivery_main.Text = "납품 정보";
+            this.gc_delivery_main.Text = "마감 정보";
             // 
-            // date_af
+            // date_month
             // 
-            this.date_af.EditValue = null;
-            this.date_af.Location = new System.Drawing.Point(212, 37);
-            this.date_af.Name = "date_af";
-            this.date_af.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.date_month.EditValue = null;
+            this.date_month.Location = new System.Drawing.Point(91, 37);
+            this.date_month.Name = "date_month";
+            this.date_month.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_af.Properties.DisplayFormat.FormatString = "y";
-            this.date_af.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.date_af.Properties.EditFormat.FormatString = "y";
-            this.date_af.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.date_af.Properties.Mask.EditMask = "y";
-            this.date_af.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.date_month.Properties.DisplayFormat.FormatString = "y";
+            this.date_month.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.date_month.Properties.EditFormat.FormatString = "y";
+            this.date_month.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.date_month.Properties.Mask.EditMask = "y";
+            this.date_month.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.date_af.Size = new System.Drawing.Size(100, 20);
-            this.date_af.TabIndex = 20;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl1.Location = new System.Drawing.Point(197, 40);
-            this.labelControl1.MinimumSize = new System.Drawing.Size(1, 14);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(9, 14);
-            this.labelControl1.TabIndex = 19;
-            this.labelControl1.Text = "~";
-            // 
-            // date_be
-            // 
-            this.date_be.EditValue = null;
-            this.date_be.Location = new System.Drawing.Point(91, 37);
-            this.date_be.Name = "date_be";
-            this.date_be.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_be.Properties.DisplayFormat.FormatString = "y";
-            this.date_be.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.date_be.Properties.EditFormat.FormatString = "y";
-            this.date_be.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.date_be.Properties.Mask.EditMask = "y";
-            this.date_be.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.date_be.Size = new System.Drawing.Size(100, 20);
-            this.date_be.TabIndex = 18;
+            this.date_month.Size = new System.Drawing.Size(100, 20);
+            this.date_month.TabIndex = 21;
             // 
             // lbl_delivery_date
             // 
@@ -273,52 +301,65 @@
             this.lbl_delivery_date.Name = "lbl_delivery_date";
             this.lbl_delivery_date.Size = new System.Drawing.Size(60, 14);
             this.lbl_delivery_date.TabIndex = 17;
-            this.lbl_delivery_date.Text = "납품월";
+            this.lbl_delivery_date.Text = "마감월";
+            // 
+            // Ficlose
+            // 
+            this.Ficlose.Caption = "마감표시";
+            this.Ficlose.FieldName = "Ficlose";
+            this.Ficlose.Name = "Ficlose";
+            this.Ficlose.OptionsColumn.ReadOnly = true;
+            this.Ficlose.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Ficlose.Visible = true;
+            this.Ficlose.VisibleIndex = 11;
             // 
             // Monthly_FI_Close
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1359, 764);
-            this.Controls.Add(this.gc_matral_list);
+            this.Controls.Add(this.gc_fi_close);
             this.Controls.Add(this.pc_main);
             this.Name = "Monthly_FI_Close";
             this.Text = "Monthly_FI_Close";
-            ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).EndInit();
+            this.Load += new System.EventHandler(this.Monthly_FI_Close_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_fi_close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_fi_close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_delivery_main)).EndInit();
             this.gc_delivery_main.ResumeLayout(false);
             this.gc_delivery_main.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.date_af.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_af.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_be.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_be.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_month.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_month.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gc_matral_list;
-        private DevExpress.XtraGrid.Views.Grid.GridView gv_matral_list;
-        private DevExpress.XtraGrid.Columns.GridColumn sddSeq;
-        private DevExpress.XtraGrid.Columns.GridColumn Kunnr;
-        private DevExpress.XtraGrid.Columns.GridColumn NAME1;
-        private DevExpress.XtraGrid.Columns.GridColumn Matnr;
-        private DevExpress.XtraGrid.Columns.GridColumn Matkl;
-        private DevExpress.XtraGrid.Columns.GridColumn Budat;
-        private DevExpress.XtraGrid.Columns.GridColumn Menge;
-        private DevExpress.XtraGrid.Columns.GridColumn Price;
-        private DevExpress.XtraGrid.Columns.GridColumn CPrice;
+        private DevExpress.XtraGrid.GridControl gc_fi_close;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_fi_close;
         private DevExpress.XtraEditors.PanelControl pc_main;
         private DevExpress.XtraEditors.SimpleButton btn_down;
         private DevExpress.XtraEditors.SimpleButton btn_find;
         private DevExpress.XtraEditors.GroupControl gc_delivery_main;
-        private DevExpress.XtraEditors.DateEdit date_af;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.DateEdit date_be;
         private DevExpress.XtraEditors.LabelControl lbl_delivery_date;
+        private DevExpress.XtraGrid.Columns.GridColumn Spmon;
+        private DevExpress.XtraGrid.Columns.GridColumn Matnr;
+        private DevExpress.XtraGrid.Columns.GridColumn Slabst;
+        private DevExpress.XtraGrid.Columns.GridColumn Bwart101;
+        private DevExpress.XtraGrid.Columns.GridColumn Bwart261;
+        private DevExpress.XtraGrid.Columns.GridColumn Bwart131;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn Bwart331;
+        private DevExpress.XtraGrid.Columns.GridColumn Bwart601;
+        private DevExpress.XtraGrid.Columns.GridColumn Bwart411;
+        private DevExpress.XtraGrid.Columns.GridColumn Bwart412;
+        private DevExpress.XtraGrid.Columns.GridColumn Elabst;
+        private DevExpress.XtraEditors.SimpleButton btn_cancel;
+        private DevExpress.XtraEditors.SimpleButton btn_close;
+        private DevExpress.XtraEditors.DateEdit date_month;
+        private DevExpress.XtraGrid.Columns.GridColumn Ficlose;
     }
 }
