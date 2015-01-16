@@ -14,6 +14,9 @@ namespace DLS.Master.Material
 {
     public partial class Plant_Material_Master : DevExpress.XtraEditors.XtraForm
     {
+        public delegate void MatnrClickEventHandler(string Matnr, string Maktx);    // string을 반환값으로 같는 대리자를 선
+        public event MatnrClickEventHandler MatnrClickEvent;          // 대리자 타입의 이벤트 처리기를 설정
+
         public Plant_Material_Master()
         {
             InitializeComponent();
@@ -57,6 +60,13 @@ namespace DLS.Master.Material
         private void btn_down_Click(object sender, EventArgs e)
         {
             Common.Frm10.Base.BaseModules.ExcelExport(gcMain, "플린드별 자재리스트");
+        }
+
+        private void MainView_RowClick(object sender, RowClickEventArgs e)
+        {
+            if (MatnrClickEvent != null)
+                MatnrClickEvent(MainView.GetFocusedRowCellValue("Matnr").ToString(), MainView.GetFocusedRowCellValue("Maktx").ToString());
+            this.Close();
         }
     }
 }

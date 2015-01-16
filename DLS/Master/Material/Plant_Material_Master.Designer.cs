@@ -45,6 +45,7 @@
             this.PPlgort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDlgort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OSlgort = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Maktx = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -109,6 +110,7 @@
             this.MainView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Werks,
             this.pMatnr,
+            this.Maktx,
             this.Matkl,
             this.Mtart,
             this.Eisbe,
@@ -120,6 +122,8 @@
             this.MainView.GridControl = this.gcMain;
             this.MainView.Name = "MainView";
             this.MainView.OptionsBehavior.ReadOnly = true;
+            this.MainView.OptionsSelection.MultiSelect = true;
+            this.MainView.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.MainView_RowClick);
             // 
             // Werks
             // 
@@ -145,7 +149,7 @@
             this.Matkl.FieldName = "Matkl";
             this.Matkl.Name = "Matkl";
             this.Matkl.Visible = true;
-            this.Matkl.VisibleIndex = 2;
+            this.Matkl.VisibleIndex = 3;
             // 
             // Mtart
             // 
@@ -153,7 +157,7 @@
             this.Mtart.FieldName = "Mtart";
             this.Mtart.Name = "Mtart";
             this.Mtart.Visible = true;
-            this.Mtart.VisibleIndex = 3;
+            this.Mtart.VisibleIndex = 4;
             // 
             // Eisbe
             // 
@@ -161,7 +165,7 @@
             this.Eisbe.FieldName = "Eisbe";
             this.Eisbe.Name = "Eisbe";
             this.Eisbe.Visible = true;
-            this.Eisbe.VisibleIndex = 4;
+            this.Eisbe.VisibleIndex = 5;
             // 
             // Stuph
             // 
@@ -169,7 +173,7 @@
             this.Stuph.FieldName = "Stuph";
             this.Stuph.Name = "Stuph";
             this.Stuph.Visible = true;
-            this.Stuph.VisibleIndex = 5;
+            this.Stuph.VisibleIndex = 6;
             // 
             // MMlgort
             // 
@@ -177,7 +181,7 @@
             this.MMlgort.FieldName = "MMlgort";
             this.MMlgort.Name = "MMlgort";
             this.MMlgort.Visible = true;
-            this.MMlgort.VisibleIndex = 6;
+            this.MMlgort.VisibleIndex = 7;
             // 
             // PPlgort
             // 
@@ -185,7 +189,7 @@
             this.PPlgort.FieldName = "PPlgort";
             this.PPlgort.Name = "PPlgort";
             this.PPlgort.Visible = true;
-            this.PPlgort.VisibleIndex = 7;
+            this.PPlgort.VisibleIndex = 8;
             // 
             // SDlgort
             // 
@@ -193,7 +197,7 @@
             this.SDlgort.FieldName = "SDlgort";
             this.SDlgort.Name = "SDlgort";
             this.SDlgort.Visible = true;
-            this.SDlgort.VisibleIndex = 8;
+            this.SDlgort.VisibleIndex = 9;
             // 
             // OSlgort
             // 
@@ -201,7 +205,15 @@
             this.OSlgort.FieldName = "OSlgort";
             this.OSlgort.Name = "OSlgort";
             this.OSlgort.Visible = true;
-            this.OSlgort.VisibleIndex = 9;
+            this.OSlgort.VisibleIndex = 10;
+            // 
+            // Maktx
+            // 
+            this.Maktx.Caption = "품명";
+            this.Maktx.FieldName = "Maktx";
+            this.Maktx.Name = "Maktx";
+            this.Maktx.Visible = true;
+            this.Maktx.VisibleIndex = 2;
             // 
             // Plant_Material_Master
             // 
@@ -241,5 +253,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn OSlgort;
         private DevExpress.XtraEditors.SimpleButton btn_down;
         private DevExpress.XtraGrid.Columns.GridColumn Eisbe;
+        private DevExpress.XtraGrid.Columns.GridColumn Maktx;
     }
 }

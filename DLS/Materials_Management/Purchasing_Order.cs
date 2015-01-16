@@ -26,14 +26,13 @@ namespace DLS.Materials_Management
 
         public Purchasing_Order()
         {
-            InitializeComponent();
-            this.InitLanguage();    //다국어 설정
-            this.InitOnlyData();    //폼로딩시 기본 작업
+            InitializeComponent();            
         }
 
         private void Purchasing_Order_Load(object sender, EventArgs e)
         {
-
+            this.InitLanguage();    //다국어 설정
+            this.InitOnlyData();    //폼로딩시 기본 작업
         }
 
         private void InitLanguage()
