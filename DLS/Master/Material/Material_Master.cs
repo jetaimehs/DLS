@@ -283,10 +283,16 @@ namespace DLS.Master.Material
         }
 
         private void ValidationCheck(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
+        {            
             GridView view = sender as GridView;
             if (view.FocusedColumn.FieldName == null)
+            {
                 return;
+            }
+            else if (view.FocusedRowHandle.Equals(DevExpress.XtraGrid.GridControl.AutoFilterRowHandle)) 
+            {
+                return;
+            }
 
             switch (view.FocusedColumn.FieldName)
             {

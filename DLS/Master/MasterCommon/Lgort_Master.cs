@@ -194,6 +194,15 @@ namespace DLS.Master.MasterCommon
         private void MainView_ValidatingEditor_1(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
             GridView view = sender as GridView;
+            if (view.FocusedColumn.FieldName == null)
+            {
+                return;
+            }
+            else if (view.FocusedRowHandle.Equals(DevExpress.XtraGrid.GridControl.AutoFilterRowHandle))
+            {
+                return;
+            }
+
             if (view.FocusedColumn.FieldName == "Code")
             {               
                 if (!e.Value.ToString().Length.Equals(4))

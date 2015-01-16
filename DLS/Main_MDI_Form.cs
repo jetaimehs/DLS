@@ -296,7 +296,11 @@ namespace DLS
         //구매단가리스트
         private void btn_Master_LPlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("LpriceList"))
+            {
+                Master.Material.LpriceList fm = new Master.Material.LpriceList();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         private void btn_Master_MM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -394,19 +398,31 @@ namespace DLS
         //발주관리
         private void Btn_MM_PO_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("Purchasing_Order"))
+            {
+                Materials_Management.Purchasing_Order fm = new Materials_Management.Purchasing_Order();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         //입고관리
         private void Btn_MM_GR_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("Goods_Receipt"))
+            {
+                Materials_Management.Goods_Receipt fm = new Materials_Management.Goods_Receipt();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         //발주리스트
         private void Btn_MM_POlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("PurchasingOrderList"))
+            {
+                Materials_Management.PurchasingOrderList fm = new Materials_Management.PurchasingOrderList();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         //발주취소

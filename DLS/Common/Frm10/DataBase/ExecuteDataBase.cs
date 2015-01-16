@@ -120,6 +120,7 @@ namespace DLS.Common.Frm10.DataBase
         {
             return new ExecuteDataBase()._ExecQueryReturn_NoTran(proc, ht, conn);
         }
+
         #endregion
 
         #region 내부에서 Run되는 메서드 집합(경고:직접사용금지!!)
@@ -467,8 +468,9 @@ namespace DLS.Common.Frm10.DataBase
         {
             IDictionaryEnumerator ie = htOutput.GetEnumerator();
             while (ie.MoveNext())
-            {                
-                comm.Parameters.Add(new SqlParameter(ie.Key.ToString(), ie.Value));                
+            {
+                //comm.Parameters.Add(new SqlParameter(ie.Key.ToString(), ie.Value));                
+                comm.Parameters.Add(ie.Key.ToString(), SqlDbType.NVarChar, ie.Value.ToString().Length);                
                 comm.Parameters[ie.Key.ToString()].Direction = ParameterDirection.Output;                
             }                       
         }
