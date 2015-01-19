@@ -10,19 +10,16 @@ using System.Collections;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 
-namespace DLS.Master.Material
+namespace DLS.Materials_Management
 {
-    public partial class Plant_Material_Master : DevExpress.XtraEditors.XtraForm
+    public partial class PurchasingOrderList : DevExpress.XtraEditors.XtraForm
     {
-        public delegate void MatnrClickEventHandler(string Matnr, string Maktx);    // string을 반환값으로 같는 대리자를 선
-        public event MatnrClickEventHandler MatnrClickEvent;          // 대리자 타입의 이벤트 처리기를 설정
-
-        public Plant_Material_Master()
+        public PurchasingOrderList()
         {
             InitializeComponent();
         }
 
-        private void Plant_Material_Master_Load(object sender, EventArgs e)
+        private void PurchasingOrderList_Load(object sender, EventArgs e)
         {
             this.InitLanguage();    //다국어 설정
             this.InitOnlyData();    //폼로딩시 기본 작업
@@ -46,11 +43,11 @@ namespace DLS.Master.Material
             ht.Add("@MODE", 100);
             ht.Add("@Werks", Main_MID_Form.G_werks.ToString());
 
-            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht, "");
+            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpMmPoItem]", ht, "");
+
 
             gcMain.DataSource = dt;
         }
-
 
         private void btn_find_Click(object sender, EventArgs e)
         {
@@ -59,14 +56,7 @@ namespace DLS.Master.Material
 
         private void btn_down_Click(object sender, EventArgs e)
         {
-            Common.Frm10.Base.BaseModules.ExcelExport(gcMain, "플린드별 자재리스트");
-        }
-
-        private void MainView_RowClick(object sender, RowClickEventArgs e)
-        {
-            if (MatnrClickEvent != null)
-                MatnrClickEvent(MainView.GetFocusedRowCellValue("Matnr").ToString(), MainView.GetFocusedRowCellValue("Maktx").ToString());
-            this.Close();
+            Common.Frm10.Base.BaseModules.ExcelExport(gcMain, "발주리스트 리스트");
         }
     }
 }

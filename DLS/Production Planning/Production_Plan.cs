@@ -295,10 +295,10 @@ namespace DLS.Production_Planning
 
             for (int i = 0; i < gv_ppPlan.RowCount; i++)
             {
-                if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom").ToString(), "1"))
+                if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom"), true))
                 {
                     gv_ppPlan.SetRowCellValue(i, "Note", "이미 확정된 계획 입니다.");
-                    return;
+                    continue;
                 }                    
 
                 arrth[i] = new Hashtable();
@@ -318,7 +318,7 @@ namespace DLS.Production_Planning
             Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
 
             MessageBox.Show("확정되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
             ShowData();
         }
 
@@ -378,6 +378,12 @@ namespace DLS.Production_Planning
                     return;
                 }
 
+                if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom"), true))
+                {
+                    gv_ppPlan.SetRowCellValue(i, gv_ppPlan.Columns["Note"], "이미 확정된 계획 입니다.");
+                    continue;
+                }  
+
                 arrth[i] = new Hashtable();
                 arrth[i].Add("@MODE", 401);
                 arrth[i].Add("@pppSeq", gv_ppPlan.GetRowCellValue(i, "pppSeq").ToString());
@@ -401,7 +407,7 @@ namespace DLS.Production_Planning
             Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
 
             MessageBox.Show("저장되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
             ShowData();
         }
 
@@ -423,7 +429,7 @@ namespace DLS.Production_Planning
                     gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["Matkl"], (string)dt1.Rows[0]["Matkl"]);
                     gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["Mtart"], (string)dt1.Rows[0]["Mtart"]);
                     gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["Meins"], (string)dt1.Rows[0]["Meins"]);
-                    gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["PPlgort"], (string)dt1.Rows[0]["PPlgort"]);
+                    gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["PPlgort"], (string)dt1.Rows[0]["PPlgort"]);   
                 }
             }
         }

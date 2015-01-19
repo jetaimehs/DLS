@@ -94,6 +94,8 @@
             this.Master_G5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Btn_MM_GC = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_MM_ST = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -141,9 +143,11 @@
             this.Btn_SD_MonthPlan,
             this.btn_Master_LPlist,
             this.btn_ST_stock_list,
+            this.Btn_MM_GC,
+            this.Btn_MM_ST,
             this.barButtonItem_info});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 46;
+            this.Rbn_Menu.MaxItemId = 48;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -431,7 +435,7 @@
             // 
             // btn_FI_Close
             // 
-            this.btn_FI_Close.Caption = "회계마감";
+            this.btn_FI_Close.Caption = "물류마감";
             this.btn_FI_Close.Id = 41;
             this.btn_FI_Close.LargeGlyph = global::DLS.Properties.Resources.window_menu;
             this.btn_FI_Close.Name = "btn_FI_Close";
@@ -530,8 +534,10 @@
             // MM_G1
             // 
             this.MM_G1.ItemLinks.Add(this.Btn_MM_PO);
-            this.MM_G1.ItemLinks.Add(this.Btn_MM_GR);
             this.MM_G1.ItemLinks.Add(this.Btn_MM_POlist);
+            this.MM_G1.ItemLinks.Add(this.Btn_MM_GR);
+            this.MM_G1.ItemLinks.Add(this.Btn_MM_GC);
+            this.MM_G1.ItemLinks.Add(this.Btn_MM_ST);
             this.MM_G1.Name = "MM_G1";
             this.MM_G1.Text = "자재관리";
             // 
@@ -576,7 +582,7 @@
             // 
             this.FI_G1.ItemLinks.Add(this.btn_FI_Close);
             this.FI_G1.Name = "FI_G1";
-            this.FI_G1.Text = "회계마감";
+            this.FI_G1.Text = "물류마감";
             // 
             // FI_G2
             // 
@@ -680,6 +686,22 @@
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // Btn_MM_GC
+            // 
+            this.Btn_MM_GC.Caption = "입고취소";
+            this.Btn_MM_GC.Id = 45;
+            this.Btn_MM_GC.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_MM_GC.Name = "Btn_MM_GC";
+            this.Btn_MM_GC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_GC_ItemClick);
+            // 
+            // Btn_MM_ST
+            // 
+            this.Btn_MM_ST.Caption = "창고이전전기";
+            this.Btn_MM_ST.Id = 47;
+            this.Btn_MM_ST.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_MM_ST.Name = "Btn_MM_ST";
+            this.Btn_MM_ST.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_ST_ItemClick);
+            // 
             // Main_MID_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -767,6 +789,8 @@
         private DevExpress.XtraBars.BarButtonItem btn_ST_stock_list;
         private DevExpress.XtraBars.Ribbon.RibbonPage Rbn_Menu_Report;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup Report_G1;
+        private DevExpress.XtraBars.BarButtonItem Btn_MM_GC;
+        private DevExpress.XtraBars.BarButtonItem Btn_MM_ST;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_info;
 
     }
