@@ -258,6 +258,12 @@
     <Compile Include="Materials_Management\Goods_Receipt.Designer.cs">
       <DependentUpon>Goods_Receipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials_Management\GR_Cancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials_Management\GR_Cancel.Designer.cs">
+      <DependentUpon>GR_Cancel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materials_Management\PurchasingOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -394,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Materials_Management\Goods_Receipt.resx">
       <DependentUpon>Goods_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials_Management\GR_Cancel.resx">
+      <DependentUpon>GR_Cancel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials_Management\PurchasingOrderList.resx">
       <DependentUpon>PurchasingOrderList.cs</DependentUpon>
