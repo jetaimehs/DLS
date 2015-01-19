@@ -8,11 +8,15 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid;
 
 namespace DLS.Master.Sales
 {
     public partial class Transport_Company_Master : DevExpress.XtraEditors.XtraForm
     {
+        string oldfee = string.Empty;
+        string oldSdate = string.Empty;
+
         public Transport_Company_Master()
         {
             InitializeComponent();
@@ -34,6 +38,9 @@ namespace DLS.Master.Sales
         {
             Common.Util.MyUtil.SetGridControlDesign(ref gc_Transport_list);
             Common.Util.MyUtil.SetGridViewDesign(ref gv_Transport_list);
+
+            Common.Util.MyUtil.SetGridControlDesign(ref gc_history);
+            Common.Util.MyUtil.SetGridViewDesign(ref gv_history);
         }
 
         private void ShowData()
@@ -81,6 +88,18 @@ namespace DLS.Master.Sales
                     e.Valid = false;
                 }
             }
+
+            if (gv_Transport_list.FocusedColumn.Name.Equals("mFee"))
+            {
+                BaseEdit edit = (sender as GridView).ActiveEditor;
+                oldfee = edit.OldEditValue.ToString();
+            }
+
+            if (gv_Transport_list.FocusedColumn.Name.Equals("Sdate"))
+            {
+                BaseEdit edit = (sender as GridView).ActiveEditor;
+                oldSdate = edit.OldEditValue.ToString();
+            }
         }
 
         private void gv_Transport_list_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
@@ -115,6 +134,8 @@ namespace DLS.Master.Sales
             ht.Add("@Werks", Main_MID_Form.G_werks);
             ht.Add("@Lifnr", gv_Transport_list.GetFocusedRowCellValue("Lifnr"));
             ht.Add("@Cnumber", gv_Transport_list.GetFocusedRowCellValue("Cnumber"));
+            ht.Add("@Sdate", gv_Transport_list.GetFocusedRowCellValue("Sdate"));
+            ht.Add("@Edate", DateTime.Parse("9999-12-31").ToShortDateString());
             ht.Add("@Name1", gv_Transport_list.GetFocusedRowCellValue("Name1"));
             ht.Add("@mFee", gv_Transport_list.GetFocusedRowCellValue("mFee"));
             ht.Add("@Driver", gv_Transport_list.GetFocusedRowCellValue("Driver"));
@@ -153,9 +174,23 @@ namespace DLS.Master.Sales
                 return;
             }
 
+            if (!oldfee.Equals(string.Empty) && oldSdate.Equals(string.Empty))
+            {
+                MessageBox.Show("효력 시작일을 변경하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+                return;
+            }
+
             Hashtable ht = new Hashtable();
-            ht.Add("@MODE", 300);
-            ht.Add("@mFee", gv_Transport_list.GetFocusedRowCellValue("mFee"));
+            if (oldfee.Equals(string.Empty))
+            {
+                ht.Add("@MODE", 300);
+            }
+            else
+            {
+                ht.Add("@MODE", 301);
+                ht.Add("@mFee", gv_Transport_list.GetFocusedRowCellValue("mFee"));
+                ht.Add("@Sdate", gv_Transport_list.GetFocusedRowCellValue("Sdate"));
+            }
             ht.Add("@Driver", gv_Transport_list.GetFocusedRowCellValue("Driver"));
             ht.Add("@Tell", gv_Transport_list.GetFocusedRowCellValue("Tell"));
             ht.Add("@Werks", Main_MID_Form.G_werks);
@@ -218,6 +253,27 @@ namespace DLS.Master.Sales
             {
                 repositoryItemHyperLinkEdit_Add_Click(sender, e);
             }
+        }
+
+        private void gv_Transport_list_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (!gv_Transport_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
+            {
+                ShowSubData();
+            }
+        }
+
+        private void ShowSubData()
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add("@MODE", 101);
+            ht.Add("@Werks", Main_MID_Form.G_werks);
+            ht.Add("@Lifnr", gv_Transport_list.GetRowCellValue(gv_Transport_list.FocusedRowHandle, "Lifnr").ToString());
+            ht.Add("@Cnumber", gv_Transport_list.GetRowCellValue(gv_Transport_list.FocusedRowHandle, "Cnumber").ToString());
+
+            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpDeliveryLifnr]", ht, "");
+
+            gc_history.DataSource = dt;
         }
     }
 }

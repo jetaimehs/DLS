@@ -65,6 +65,7 @@
             this.Btn_SD_MonthPlan = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Master_LPlist = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ST_stock_list = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_info = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_MM_GC = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_MM_ST = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
@@ -144,6 +145,8 @@
             this.btn_Master_LPlist,
             this.btn_ST_stock_list,
             this.Btn_MM_GC,
+
+            this.barButtonItem_info,
             this.Btn_MM_ST,
             this.Btn_MM_GRlist});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
@@ -152,6 +155,7 @@
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
             this.Rbn_Menu.PageHeaderItemLinks.Add(this.barEditItem1);
+            this.Rbn_Menu.PageHeaderItemLinks.Add(this.barButtonItem_info, true, "개인정보변경");
             this.Rbn_Menu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.Rbn_Menu_Home,
             this.Rbn_Menu_SD,
@@ -446,6 +450,7 @@
             this.Btn_SD_MonthPlan.Id = 42;
             this.Btn_SD_MonthPlan.LargeGlyph = global::DLS.Properties.Resources.window_menu;
             this.Btn_SD_MonthPlan.Name = "Btn_SD_MonthPlan";
+            this.Btn_SD_MonthPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_MonthPlan_ItemClick);
             // 
             // btn_Master_LPlist
             // 
@@ -462,6 +467,17 @@
             this.btn_ST_stock_list.LargeGlyph = global::DLS.Properties.Resources.window_menu;
             this.btn_ST_stock_list.Name = "btn_ST_stock_list";
             this.btn_ST_stock_list.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ST_stock_list_ItemClick);
+            // 
+            // barButtonItem_info
+            // 
+            this.barButtonItem_info.Caption = "개인정보변경";
+            this.barButtonItem_info.Hint = "개인정보변경";
+            this.barButtonItem_info.Id = 45;
+            this.barButtonItem_info.Name = "barButtonItem_info";
+            this.barButtonItem_info.ShortcutKeyDisplayString = "100";
+            this.barButtonItem_info.SmallWithoutTextWidth = 30;
+            this.barButtonItem_info.SmallWithTextWidth = 100;
+            this.barButtonItem_info.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_info_ItemClick);
             // 
             // Btn_MM_GC
             // 
@@ -580,6 +596,7 @@
             this.FI_G3});
             this.Rbn_Menu_FI.Name = "Rbn_Menu_FI";
             this.Rbn_Menu_FI.Text = "회계";
+            this.Rbn_Menu_FI.Visible = false;
             // 
             // FI_G1
             // 
@@ -786,7 +803,11 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup Report_G1;
         private DevExpress.XtraBars.BarButtonItem Btn_MM_GC;
         private DevExpress.XtraBars.BarButtonItem Btn_MM_ST;
+<<<<<<< .mine
         private DevExpress.XtraBars.BarButtonItem Btn_MM_GRlist;
+=======
+        private DevExpress.XtraBars.BarButtonItem barButtonItem_info;
+>>>>>>> .theirs
 
     }
 }
