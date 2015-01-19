@@ -436,6 +436,12 @@ namespace DLS
         {
 
         }
+
+        //입고리스트
+        private void Btn_MM_GRlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
         
         #endregion
 
