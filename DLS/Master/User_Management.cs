@@ -31,7 +31,7 @@ namespace DLS.Master
             //그룹 컨트롤 다국어
            // Common.Util.MyUtil.SetMultiLangByButtonAndLabel(ref gc_main);
             //그리드 다국어
-            DLS.Common.Util.MyUtil.SetMultiLangGV(ref gv_UserList);
+            //DLS.Common.Util.MyUtil.SetMultiLangGV(ref gv_UserList);
 
         }
 
@@ -39,12 +39,29 @@ namespace DLS.Master
         {
             DLS.Common.Util.MyUtil.SetGridControlDesign(ref gc_UserList);
             DLS.Common.Util.MyUtil.SetGridViewDesign(ref gv_UserList);
+
+            Hashtable ht = new Hashtable();
+            ht.Add("@MODE", 106);
+
+            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPAccount]", ht, "");
+
+            searchLookUpEdit_auth.Properties.DataSource = dt;
+            searchLookUpEdit_auth.Properties.DisplayMember = "Auth";
+            searchLookUpEdit_auth.Properties.ValueMember = "Auth";        
         }
 
         private void ShowData()
         {
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 103);
+            if (!Login.G_userid.Equals("admin"))
+            {
+                ht.Add("@admin", Login.G_userid);
+            }
+            if (!chk_del.Checked)
+            {
+                ht.Add("@Dflg", 0);
+            }
 
             DataTable dt = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DLSSPAccount]", ht, "");
 
@@ -64,7 +81,17 @@ namespace DLS.Master
         //사용자 추가 버튼 클릭시
         private void btn_add_Click(object sender, EventArgs e)
         {
-            btn_userfind.Enabled = true;
+            Hashtable ht = new Hashtable();
+            ht.Add("@MODE", 201);
+            ht.Add("@NUSERID", txt_userID.Text);
+            ht.Add("@Grade", searchLookUpEdit_auth.Text);
+            ht.Add("@Name", txt_name.Text);
+            ht.Add("@Email",txt_mail.Text);
+            ht.Add("@USERID", Login.G_userid);
+
+            Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DLSSPAccount]", ht, "");
+
+            ShowData();
         }
 
         //삭제버튼 클릭시
@@ -79,13 +106,24 @@ namespace DLS.Master
                 DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("DLSSPAccount", ht, "");
 
                 //삭제되었습니다.
-                MessageBox.Show(Properties.Resources.msg_005, "", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                MessageBox.Show(Properties.Resources.msg_005, "", MessageBoxButtons.OK, MessageBoxIcon.Information); return;
             }
             else
             {
                 //리스트에서 삭제할 사용자를 선택하세요.
                 MessageBox.Show(Properties.Resources.msg_004, "", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Master.User_Auth_Werks fm = new Master.User_Auth_Werks();
+            fm.Show();
+        }
+
+        private void btn_find_Click(object sender, EventArgs e)
+        {
+            ShowData();
         }
     }
 }

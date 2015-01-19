@@ -65,6 +65,8 @@ namespace DLS.Common.Frm10.Base
                     OleDBAdap.Fill(ds_data, TableName);
             }
 
+            oleConn.Close();
+            //System.IO.File.Delete(path);
             return ds_data.Tables[0];
         }
 

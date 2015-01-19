@@ -38,28 +38,30 @@ namespace DLS.Master.Sales
             DLS.Common.Util.MyUtil.SetGridControlDesign(ref gc_Matnr_list);
             DLS.Common.Util.MyUtil.SetGridViewDesign(ref gv_Matnr_list);
 
+            DLS.Common.Util.MyUtil.SetGridControlDesign(ref gc_price);
+            DLS.Common.Util.MyUtil.SetGridViewDesign(ref gv_price);
+
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 100);
 
             DataTable dt = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpKunnr]", ht, "");
+                        
+            SearchLookUpEdit_Kunnr.DataSource = dt;            
+            SearchLookUpEdit_Kunnr.DisplayMember = "Kunnr";
+            SearchLookUpEdit_Kunnr.ValueMember = "Kunnr";
 
-            repositoryItemSearchLookUpEdit_kunnr.DataSource = dt;            
-            repositoryItemSearchLookUpEdit_kunnr.DisplayMember = "Kunnr";
-            repositoryItemSearchLookUpEdit_kunnr.ValueMember = "Kunnr";
+            //Hashtable ht1 = new Hashtable();
+            //ht1.Add("@MODE", 100);
+            //ht1.Add("@Werks", Main_MID_Form.G_werks);
 
-            Hashtable ht1 = new Hashtable();
-            ht1.Add("@MODE", 100);
-            ht1.Add("@Werks", Main_MID_Form.G_werks);
+            //DataTable dt1 = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPDeliveryList]", ht1, "");
 
-            DataTable dt1 = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPDeliveryList]", ht1, "");
+            //repositoryItemSearchLookUpEdit_Matnr.DataSource = dt1;
+            //repositoryItemSearchLookUpEdit_Matnr.DisplayMember = "Matnr";
+            //repositoryItemSearchLookUpEdit_Matnr.ValueMember = "Matnr";
 
-            repositoryItemSearchLookUpEdit_Matnr.DataSource = dt1;
-            repositoryItemSearchLookUpEdit_Matnr.DisplayMember = "Matnr";
-            repositoryItemSearchLookUpEdit_Matnr.ValueMember = "Matnr";
-
-            repositoryItemDateEdit_sdate.NullText = DateTime.Now.ToShortDateString();
-            repositoryItemDateEdit_edate.NullText = "9999-12-31";
-
+            //DateEdit_sdate.NullText = DateTime.Now.ToShortDateString();
+            //DateEdit_edate.NullText = "9999-12-31";
         }
 
         private void ShowData()
@@ -74,94 +76,79 @@ namespace DLS.Master.Sales
             gc_Matnr_list.DataSource = dt;
         }
 
-        private void repositoryItemHyperLinkEdit_add_Click(object sender, EventArgs e)
+        private void repositoryItemHyperLinkEdit_Add_Click(object sender, EventArgs e)
         {
-            DataRowView drv = (DataRowView)gv_Matnr_list.GetRow(gv_Matnr_list.GetSelectedRows()[0]);
+            DataRowView drv = (DataRowView)gv_price.GetRow(gv_price.GetSelectedRows()[0]);
             if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
             {
                 MessageBox.Show("신규라인에서 추가하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
+            if (gv_price.GetFocusedRowCellValue("Kunnr").Equals(""))
+            {
+                MessageBox.Show("고객코드를 선택하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (gv_price.GetFocusedRowCellValue("Sdate").Equals(""))
+            {
+                MessageBox.Show("효력 시작일을 지정하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (gv_price.GetFocusedRowCellValue("Edate").Equals(""))
+            {
+                MessageBox.Show("효력 종료일을 지정하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (DateTime.Parse(gv_price.GetFocusedRowCellValue("Sdate").ToString()) >= DateTime.Parse(gv_price.GetFocusedRowCellValue("Edate").ToString()))
+            {
+                MessageBox.Show("효력 시작일은 종료일보다 크거나 같을 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (gv_price.GetFocusedRowCellValue("Price").Equals(""))
+            {
+                MessageBox.Show("판매단가를 입력하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (gv_price.GetFocusedRowCellValue("Waers").Equals(""))
+            {
+                MessageBox.Show("통화단위를 입력하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 200);
-            ht.Add("@Kunnr", gv_Matnr_list.GetFocusedRowCellValue("Kunnr"));
-            ht.Add("@Matnr", gv_Matnr_list.GetFocusedRowCellValue("Matnr"));
-            ht.Add("@Sdate", gv_Matnr_list.GetFocusedRowCellValue("Sdate"));
-            ht.Add("@Edate", gv_Matnr_list.GetFocusedRowCellValue("Edate"));
-            ht.Add("@Price", gv_Matnr_list.GetFocusedRowCellValue("Price"));
-            ht.Add("@Waers", gv_Matnr_list.GetFocusedRowCellValue("Wares"));
+            ht.Add("@Werks", Main_MID_Form.G_werks);
+            ht.Add("@Kunnr", gv_price.GetFocusedRowCellValue("Kunnr"));
+            ht.Add("@Matnr", gv_Matnr_list.GetRowCellValue(gv_Matnr_list.FocusedRowHandle, "Matnr").ToString());
+            ht.Add("@Sdate", gv_price.GetFocusedRowCellValue("Sdate"));
+            ht.Add("@Edate", gv_price.GetFocusedRowCellValue("Edate"));
+            ht.Add("@Price", gv_price.GetFocusedRowCellValue("Price"));
+            ht.Add("@Waers", gv_price.GetFocusedRowCellValue("Waers"));
             ht.Add("@Userid", Login.G_userid);
 
             DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSPKprice]", ht, "");
 
             MessageBox.Show("저장되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            ShowData();
+            ShowSubData();
         }
 
-        private void repositoryItemHyperLinkEdit_add_KeyDown(object sender, KeyEventArgs e)
+        private void repositoryItemHyperLinkEdit_Add_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Space)
             {
-                repositoryItemHyperLinkEdit_add_Click(sender, e);
+                repositoryItemHyperLinkEdit_Add_Click(sender, e);
             }
         }
-
-        private void repositoryItemHyperLinkEdit_update_Click(object sender, EventArgs e)
+        
+        private void repositoryItemHyperLinkEdit_Delete_Click(object sender, EventArgs e)
         {
-            DataRowView drv = (DataRowView)gv_Matnr_list.GetRow(gv_Matnr_list.GetSelectedRows()[0]);
+            DataRowView drv = (DataRowView)gv_price.GetRow(gv_price.GetSelectedRows()[0]);
 
-            if (drv == null)
-            {
-                MessageBox.Show("리스트에서 수정하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            if (drv.Row.RowState.ToString() == "Detached")
-            {
-                MessageBox.Show("리스트에서 수정하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            Hashtable ht = new Hashtable();
-            ht.Add("@MODE", 300);
-            ht.Add("@Date", DateTime.Parse(gv_Matnr_list.GetFocusedRowCellValue("Edate").ToString()).ToShortDateString());
-            ht.Add("@Werks", Main_MID_Form.G_werks);
-            ht.Add("@Kunnr", gv_Matnr_list.GetFocusedRowCellValue("Kunnr"));
-            ht.Add("@Matnr", gv_Matnr_list.GetFocusedRowCellValue("Matnr"));
-            ht.Add("@Edate", DateTime.Parse(old_Edate).ToShortDateString());
-            ht.Add("@Sdate", DateTime.Parse(gv_Matnr_list.GetFocusedRowCellValue("Sdate").ToString()).ToShortDateString());
-            ht.Add("@Userid", Login.G_userid);
-
-            DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSPKprice]", ht, "");
-
-            MessageBox.Show("수정되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            ShowData();
-
-            old_Edate = string.Empty;
-        }
-
-        private void repositoryItemHyperLinkEdit_update_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Space)
-            {
-                repositoryItemHyperLinkEdit_update_Click(sender, e);
-            }
-        }
-
-        private void repositoryItemHyperLinkEdit_delete_Click(object sender, EventArgs e)
-        {
-            DataRowView drv = (DataRowView)gv_Matnr_list.GetRow(gv_Matnr_list.GetSelectedRows()[0]);
-
-            if (drv == null)
-            {
-                MessageBox.Show("리스트에서 삭제하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            if (drv.Row.RowState.ToString() == "Detached")
+            if (drv == null || drv.Row.RowState.ToString() == "Detached")
             {
                 MessageBox.Show("리스트에서 삭제하세요.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -173,25 +160,26 @@ namespace DLS.Master.Sales
             }
 
             Hashtable ht = new Hashtable();
-            ht.Add("@MODE", 400);
+            ht.Add("@MODE", 300);
             ht.Add("@Werks", Main_MID_Form.G_werks);
-            ht.Add("@Kunnr", gv_Matnr_list.GetFocusedRowCellValue("Kunnr").ToString());
-            ht.Add("@Matnr", gv_Matnr_list.GetFocusedRowCellValue("Matnr").ToString());
-            ht.Add("@Edate", DateTime.Parse(gv_Matnr_list.GetFocusedRowCellValue("Edate").ToString()).ToShortDateString());
-            ht.Add("@Sdate", DateTime.Parse(gv_Matnr_list.GetFocusedRowCellValue("Sdate").ToString()).ToShortDateString());
+            ht.Add("@Kunnr", gv_price.GetFocusedRowCellValue("Kunnr").ToString());
+            ht.Add("@Matnr", gv_price.GetFocusedRowCellValue("Matnr").ToString());
+            ht.Add("@Edate", DateTime.Parse(gv_price.GetFocusedRowCellValue("Edate").ToString()).ToShortDateString());
+            ht.Add("@Sdate", DateTime.Parse(gv_price.GetFocusedRowCellValue("Sdate").ToString()).ToShortDateString());
+            ht.Add("@Userid", Login.G_userid);
 
             DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSPKprice]", ht, "");
 
             MessageBox.Show("삭제되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            ShowData();
+            ShowSubData();
         }
 
-        private void repositoryItemHyperLinkEdit_delete_KeyDown(object sender, KeyEventArgs e)
+        private void repositoryItemHyperLinkEdit_Delete_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Space)
             {
-                repositoryItemHyperLinkEdit_delete_Click(sender, e);
+                repositoryItemHyperLinkEdit_Delete_Click(sender, e);
             }
         }
 
@@ -223,12 +211,12 @@ namespace DLS.Master.Sales
             }
         }
 
-        private void gv_Matnr_list_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        private void gv_price_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
-            DataRowView drv = (DataRowView)gv_Matnr_list.GetRow(gv_Matnr_list.GetSelectedRows()[0]);
-            
+            DataRowView drv = (DataRowView)gv_price.GetRow(gv_price.GetSelectedRows()[0]);
+
             if (gv_Matnr_list.FocusedColumn.Name == "Add")
-            {                
+            {
                 if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
                 {
                     e.ErrorText = "신규라인에서 추가하세요.";
@@ -236,40 +224,38 @@ namespace DLS.Master.Sales
                 }
             }
 
-            if (gv_Matnr_list.FocusedColumn.Name == "Kunnr" || 
+            if (gv_Matnr_list.FocusedColumn.Name == "Kunnr" ||
                 gv_Matnr_list.FocusedColumn.Name == "Matnr" ||
                 gv_Matnr_list.FocusedColumn.Name == "Sdate" ||
                 gv_Matnr_list.FocusedColumn.Name == "Price" ||
                 gv_Matnr_list.FocusedColumn.Name == "Waers")
-            {            
+            {
                 if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
                 {
-                    e.ErrorText = "효력 종료일만 수정할 수 있습니다. ESC를 누르면 돌아갑니다.";
+                    e.ErrorText = "수정할 수 없습니다. ESC를 누르면 돌아갑니다.";
                     e.Valid = false;
                 }
             }
-            else if (gv_Matnr_list.FocusedColumn.Name == "Edate")
-            {
-                if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
-                {
-                    BaseEdit edit = (sender as GridView).ActiveEditor;
-                    old_Edate = edit.OldEditValue.ToString();
-                }
-            }
-        }
-
-        private void gv_Matnr_list_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            if(!gv_Matnr_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
-            {
-                ShowSubData();
-            }
-        }
+        }        
 
         private void ShowSubData()
         {
-            //Hashtable ht = new Hashtable();
-            //ht.Add("@MODE", )
+            Hashtable ht = new Hashtable();
+            ht.Add("@MODE", 101);
+            ht.Add("@Werks", Main_MID_Form.G_werks);
+            ht.Add("@Matnr", gv_Matnr_list.GetRowCellValue(gv_Matnr_list.FocusedRowHandle, "Matnr").ToString());
+
+            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DlsSPKprice", ht, "");
+
+            gc_price.DataSource = dt;
+        }
+
+        private void gv_Matnr_list_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (!gv_Matnr_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
+            {
+                ShowSubData();
+            }
         }
     }
 }

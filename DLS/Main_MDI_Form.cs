@@ -78,7 +78,7 @@ namespace DLS
             {
                     //admin
                 case "1":
-
+                    Master_G1.Visible = false;
                     break;
 
                     //super admin
@@ -86,20 +86,21 @@ namespace DLS
                     break;
 
                     //fi
-                case "3":
-                    
+                case "3":                    
                     Btn_SD_OutDelivery.Enabled = false;
+                    Rbn_Menu_FI.Visible = true;
                     break;
 
                     //관리자
                 case "4":
+                    Rbn_Menu_FI.Visible = true;
                     break;
             }
 
             //관리자가 아니면 모두 안보이는 메뉴들
             if (Login.G_GRADE != "4")
             {
-                Master_G3.Visible = false;
+                Btn_Master_Lgort.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             }
         }
 
@@ -391,6 +392,18 @@ namespace DLS
                 Mdi_Child_NewOpen(fm);
             }
         }
+
+        //월 납품계획 수립
+        private void Btn_SD_MonthPlan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Monthly_SalesPlan.cs"))
+            {
+                Sales_Distribution.Monthly_SalesPlan fm = new Sales_Distribution.Monthly_SalesPlan();
+                Mdi_Child_NewOpen(fm);
+            }
+        }          
+
+
         #endregion
 
         #region 자재
@@ -443,6 +456,12 @@ namespace DLS
                 Materials_Management.Material_TF fm = new Materials_Management.Material_TF();
                 Mdi_Child_NewOpen(fm);
             }
+        }
+
+        //입고리스트
+        private void Btn_MM_GRlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
         
         #endregion
@@ -521,7 +540,11 @@ namespace DLS
 
         private void btn_ST_stock_list_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("Now_Matrial_Stock.cs"))
+            {
+                Report.Now_Matrial_Stock fm = new Report.Now_Matrial_Stock();
+                Mdi_Child_NewOpen(fm);
+            }
         }
         #endregion
 
@@ -531,6 +554,11 @@ namespace DLS
         {
             G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
         }
-          
+
+        private void barButtonItem_info_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Popup_Form.Change_Infomation pop = new Popup_Form.Change_Infomation();            
+            pop.Show();
+        }
     }
 }
