@@ -205,4 +205,31 @@
   <data name="SD_G1" xml:space="preserve">
     <value>납품</value>
   </data>
+  <data name="1000" xml:space="preserve">
+    <value>자재창고</value>
+  </data>
+  <data name="2000" xml:space="preserve">
+    <value>생산창고</value>
+  </data>
+  <data name="3000" xml:space="preserve">
+    <value>영업창고</value>
+  </data>
+  <data name="4000" xml:space="preserve">
+    <value>외주창고</value>
+  </data>
+  <data name="Maktx" xml:space="preserve">
+    <value>자재내역</value>
+  </data>
+  <data name="Matkl" xml:space="preserve">
+    <value>자재그룹</value>
+  </data>
+  <data name="Matnr" xml:space="preserve">
+    <value>자재번호</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>자재유형</value>
+  </data>
+  <data name="Werks" xml:space="preserve">
+    <value>플랜트</value>
+  </data>
 </root>

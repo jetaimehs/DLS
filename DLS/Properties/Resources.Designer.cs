@@ -61,6 +61,42 @@ namespace DLS.Properties {
         }
         
         /// <summary>
+        ///   자재창고과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string _1000 {
+            get {
+                return ResourceManager.GetString("1000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   생산창고과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string _2000 {
+            get {
+                return ResourceManager.GetString("2000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   영업창고과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string _3000 {
+            get {
+                return ResourceManager.GetString("3000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   외주창고과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string _4000 {
+            get {
+                return ResourceManager.GetString("4000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   추가과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string btn_add {
@@ -172,11 +208,38 @@ namespace DLS.Properties {
         }
         
         /// <summary>
+        ///   자재내역과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Maktx {
+            get {
+                return ResourceManager.GetString("Maktx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   사용자관리과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string Master_G1 {
             get {
                 return ResourceManager.GetString("Master_G1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   자재그룹과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Matkl {
+            get {
+                return ResourceManager.GetString("Matkl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   자재번호과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Matnr {
+            get {
+                return ResourceManager.GetString("Matnr", resourceCulture);
             }
         }
         
@@ -298,6 +361,15 @@ namespace DLS.Properties {
         }
         
         /// <summary>
+        ///   자재유형과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   부서명과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string unit_name_kor {
@@ -312,6 +384,15 @@ namespace DLS.Properties {
         internal static string User_Management {
             get {
                 return ResourceManager.GetString("User_Management", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   플랜트과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Werks {
+            get {
+                return ResourceManager.GetString("Werks", resourceCulture);
             }
         }
         
