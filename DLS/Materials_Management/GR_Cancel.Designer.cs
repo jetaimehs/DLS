@@ -47,8 +47,14 @@
             this.SWerks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SLifnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SgrDat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SBwart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SMatnr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SMaktx = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SgMenge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SrfSeq = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SrfSqn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SmdSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
             this.MainView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grSeq = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,10 +63,13 @@
             this.Lifnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grDat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Bwart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Maktx = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gMenge = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SMaktx = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rfSeq = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rfSqn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.mdSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deDat.Properties.VistaTimeProperties)).BeginInit();
@@ -98,6 +107,7 @@
             this.btnDo.Size = new System.Drawing.Size(75, 23);
             this.btnDo.TabIndex = 7;
             this.btnDo.Text = "반품 처리";
+            this.btnDo.Click += new System.EventHandler(this.btnDo_Click);
             // 
             // lblDat
             // 
@@ -126,6 +136,7 @@
             this.btnSearch.Size = new System.Drawing.Size(97, 23);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "입고 새로고침";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // gp1
             // 
@@ -214,12 +225,20 @@
             this.SWerks,
             this.SLifnr,
             this.SName1,
+            this.SgrDat,
+            this.SBwart,
             this.SMatnr,
             this.SMaktx,
-            this.SgMenge});
+            this.SgMenge,
+            this.SrfSeq,
+            this.SrfSqn,
+            this.SmdSeq});
             this.SubView.GridControl = this.gcSub;
             this.SubView.Name = "SubView";
             this.SubView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.SubView.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.SubView_ValidateRow);
+            this.SubView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SubView_KeyDown);
+            this.SubView.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.SubView_InvalidValueException);
             // 
             // SgrSeq
             // 
@@ -266,14 +285,38 @@
             this.SName1.Visible = true;
             this.SName1.VisibleIndex = 4;
             // 
+            // SgrDat
+            // 
+            this.SgrDat.Caption = "입고일자";
+            this.SgrDat.FieldName = "grDat";
+            this.SgrDat.Name = "SgrDat";
+            this.SgrDat.Visible = true;
+            this.SgrDat.VisibleIndex = 5;
+            // 
+            // SBwart
+            // 
+            this.SBwart.Caption = "이동유형";
+            this.SBwart.FieldName = "Bwart";
+            this.SBwart.Name = "SBwart";
+            this.SBwart.Visible = true;
+            this.SBwart.VisibleIndex = 6;
+            // 
             // SMatnr
             // 
-            this.SMatnr.Caption = "자재번호";
+            this.SMatnr.Caption = "품번";
             this.SMatnr.FieldName = "Matnr";
             this.SMatnr.Name = "SMatnr";
             this.SMatnr.OptionsColumn.AllowEdit = false;
             this.SMatnr.Visible = true;
-            this.SMatnr.VisibleIndex = 5;
+            this.SMatnr.VisibleIndex = 7;
+            // 
+            // SMaktx
+            // 
+            this.SMaktx.Caption = "품명";
+            this.SMaktx.FieldName = "Maktx";
+            this.SMaktx.Name = "SMaktx";
+            this.SMaktx.Visible = true;
+            this.SMaktx.VisibleIndex = 8;
             // 
             // SgMenge
             // 
@@ -281,7 +324,31 @@
             this.SgMenge.FieldName = "gMenge";
             this.SgMenge.Name = "SgMenge";
             this.SgMenge.Visible = true;
-            this.SgMenge.VisibleIndex = 7;
+            this.SgMenge.VisibleIndex = 9;
+            // 
+            // SrfSeq
+            // 
+            this.SrfSeq.Caption = "참조문서번호";
+            this.SrfSeq.FieldName = "rfSeq";
+            this.SrfSeq.Name = "SrfSeq";
+            this.SrfSeq.Visible = true;
+            this.SrfSeq.VisibleIndex = 10;
+            // 
+            // SrfSqn
+            // 
+            this.SrfSqn.Caption = "참조문서아이템";
+            this.SrfSqn.FieldName = "rfSqn";
+            this.SrfSqn.Name = "SrfSqn";
+            this.SrfSqn.Visible = true;
+            this.SrfSqn.VisibleIndex = 11;
+            // 
+            // SmdSeq
+            // 
+            this.SmdSeq.Caption = "자재문서번호";
+            this.SmdSeq.FieldName = "mdSeq";
+            this.SmdSeq.Name = "SmdSeq";
+            this.SmdSeq.Visible = true;
+            this.SmdSeq.VisibleIndex = 12;
             // 
             // gcMain
             // 
@@ -303,13 +370,18 @@
             this.Lifnr,
             this.Name1,
             this.grDat,
+            this.Bwart,
             this.Matnr,
             this.Maktx,
-            this.gMenge});
+            this.gMenge,
+            this.rfSeq,
+            this.rfSqn,
+            this.mdSeq});
             this.MainView.GridControl = this.gcMain;
             this.MainView.Name = "MainView";
             this.MainView.OptionsBehavior.ReadOnly = true;
             this.MainView.OptionsSelection.MultiSelect = true;
+            this.MainView.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.MainView_RowClick);
             // 
             // grSeq
             // 
@@ -363,13 +435,21 @@
             this.grDat.Visible = true;
             this.grDat.VisibleIndex = 5;
             // 
+            // Bwart
+            // 
+            this.Bwart.Caption = "이동유형";
+            this.Bwart.FieldName = "Bwart";
+            this.Bwart.Name = "Bwart";
+            this.Bwart.Visible = true;
+            this.Bwart.VisibleIndex = 6;
+            // 
             // Matnr
             // 
             this.Matnr.Caption = "품번";
             this.Matnr.FieldName = "Matnr";
             this.Matnr.Name = "Matnr";
             this.Matnr.Visible = true;
-            this.Matnr.VisibleIndex = 6;
+            this.Matnr.VisibleIndex = 7;
             // 
             // Maktx
             // 
@@ -377,7 +457,7 @@
             this.Maktx.FieldName = "Maktx";
             this.Maktx.Name = "Maktx";
             this.Maktx.Visible = true;
-            this.Maktx.VisibleIndex = 7;
+            this.Maktx.VisibleIndex = 8;
             // 
             // gMenge
             // 
@@ -385,15 +465,31 @@
             this.gMenge.FieldName = "gMenge";
             this.gMenge.Name = "gMenge";
             this.gMenge.Visible = true;
-            this.gMenge.VisibleIndex = 8;
+            this.gMenge.VisibleIndex = 9;
             // 
-            // SMaktx
+            // rfSeq
             // 
-            this.SMaktx.Caption = "자재명";
-            this.SMaktx.FieldName = "Maktx";
-            this.SMaktx.Name = "SMaktx";
-            this.SMaktx.Visible = true;
-            this.SMaktx.VisibleIndex = 6;
+            this.rfSeq.Caption = "참조문서번호";
+            this.rfSeq.FieldName = "rfSeq";
+            this.rfSeq.Name = "rfSeq";
+            this.rfSeq.Visible = true;
+            this.rfSeq.VisibleIndex = 10;
+            // 
+            // rfSqn
+            // 
+            this.rfSqn.Caption = "참조문서아이템";
+            this.rfSqn.FieldName = "rfSqn";
+            this.rfSqn.Name = "rfSqn";
+            this.rfSqn.Visible = true;
+            this.rfSqn.VisibleIndex = 11;
+            // 
+            // mdSeq
+            // 
+            this.mdSeq.Caption = "자재문서번호";
+            this.mdSeq.FieldName = "mdSeq";
+            this.mdSeq.Name = "mdSeq";
+            this.mdSeq.Visible = true;
+            this.mdSeq.VisibleIndex = 12;
             // 
             // GR_Cancel
             // 
@@ -403,6 +499,7 @@
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "GR_Cancel";
+            this.Load += new System.EventHandler(this.GR_Cancel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
             this.pc_main.PerformLayout();
@@ -459,5 +556,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn Maktx;
         private DevExpress.XtraGrid.Columns.GridColumn gMenge;
         private DevExpress.XtraGrid.Columns.GridColumn SMaktx;
+        private DevExpress.XtraGrid.Columns.GridColumn SgrDat;
+        private DevExpress.XtraGrid.Columns.GridColumn SBwart;
+        private DevExpress.XtraGrid.Columns.GridColumn SrfSeq;
+        private DevExpress.XtraGrid.Columns.GridColumn SrfSqn;
+        private DevExpress.XtraGrid.Columns.GridColumn SmdSeq;
+        private DevExpress.XtraGrid.Columns.GridColumn Bwart;
+        private DevExpress.XtraGrid.Columns.GridColumn rfSeq;
+        private DevExpress.XtraGrid.Columns.GridColumn rfSqn;
+        private DevExpress.XtraGrid.Columns.GridColumn mdSeq;
     }
 }

@@ -33,12 +33,16 @@
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
             this.MainView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.poSeq = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.poSqn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Werks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Lifnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.poDat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matnr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Maktx = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Menge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gMenge = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matkl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Netpr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Epein = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,9 +50,6 @@
             this.Waers = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Slfdt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Elikz = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.poSqn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.poSeq = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Maktx = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcMain)).BeginInit();
@@ -110,6 +111,7 @@
             this.Matnr,
             this.Maktx,
             this.Menge,
+            this.gMenge,
             this.Matkl,
             this.Netpr,
             this.Epein,
@@ -119,13 +121,32 @@
             this.Elikz});
             this.MainView.GridControl = this.gcMain;
             this.MainView.Name = "MainView";
-            this.MainView.OptionsBehavior.ReadOnly = true;
+            this.MainView.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.MainView_RowUpdated);
+            // 
+            // poSeq
+            // 
+            this.poSeq.Caption = "발주번호";
+            this.poSeq.FieldName = "poSeq";
+            this.poSeq.Name = "poSeq";
+            this.poSeq.OptionsColumn.ReadOnly = true;
+            this.poSeq.Visible = true;
+            this.poSeq.VisibleIndex = 0;
+            // 
+            // poSqn
+            // 
+            this.poSqn.Caption = "발주아이템번호";
+            this.poSqn.FieldName = "poSqn";
+            this.poSqn.Name = "poSqn";
+            this.poSqn.OptionsColumn.ReadOnly = true;
+            this.poSqn.Visible = true;
+            this.poSqn.VisibleIndex = 1;
             // 
             // Werks
             // 
             this.Werks.Caption = "플랜트";
             this.Werks.FieldName = "Werks";
             this.Werks.Name = "Werks";
+            this.Werks.OptionsColumn.ReadOnly = true;
             this.Werks.Visible = true;
             this.Werks.VisibleIndex = 2;
             // 
@@ -134,6 +155,7 @@
             this.Lifnr.Caption = "업체코드";
             this.Lifnr.FieldName = "Lifnr";
             this.Lifnr.Name = "Lifnr";
+            this.Lifnr.OptionsColumn.ReadOnly = true;
             this.Lifnr.Visible = true;
             this.Lifnr.VisibleIndex = 3;
             // 
@@ -142,6 +164,7 @@
             this.Name1.Caption = "업체명";
             this.Name1.FieldName = "Name1";
             this.Name1.Name = "Name1";
+            this.Name1.OptionsColumn.ReadOnly = true;
             this.Name1.Visible = true;
             this.Name1.VisibleIndex = 4;
             // 
@@ -150,6 +173,7 @@
             this.poDat.Caption = "발주일자";
             this.poDat.FieldName = "poDat";
             this.poDat.Name = "poDat";
+            this.poDat.OptionsColumn.ReadOnly = true;
             this.poDat.Visible = true;
             this.poDat.VisibleIndex = 5;
             // 
@@ -158,64 +182,90 @@
             this.Matnr.Caption = "자재번호";
             this.Matnr.FieldName = "Matnr";
             this.Matnr.Name = "Matnr";
+            this.Matnr.OptionsColumn.ReadOnly = true;
             this.Matnr.Visible = true;
             this.Matnr.VisibleIndex = 6;
+            // 
+            // Maktx
+            // 
+            this.Maktx.Caption = "자재명";
+            this.Maktx.FieldName = "Maktx";
+            this.Maktx.Name = "Maktx";
+            this.Maktx.OptionsColumn.ReadOnly = true;
+            this.Maktx.Visible = true;
+            this.Maktx.VisibleIndex = 7;
             // 
             // Menge
             // 
             this.Menge.Caption = "발주수량";
             this.Menge.FieldName = "Menge";
             this.Menge.Name = "Menge";
+            this.Menge.OptionsColumn.ReadOnly = true;
             this.Menge.Visible = true;
             this.Menge.VisibleIndex = 8;
+            // 
+            // gMenge
+            // 
+            this.gMenge.Caption = "입고수량";
+            this.gMenge.FieldName = "gMenge";
+            this.gMenge.Name = "gMenge";
+            this.gMenge.OptionsColumn.ReadOnly = true;
+            this.gMenge.Visible = true;
+            this.gMenge.VisibleIndex = 9;
             // 
             // Matkl
             // 
             this.Matkl.Caption = "자재그룹";
             this.Matkl.FieldName = "Matkl";
             this.Matkl.Name = "Matkl";
+            this.Matkl.OptionsColumn.ReadOnly = true;
             this.Matkl.Visible = true;
-            this.Matkl.VisibleIndex = 9;
+            this.Matkl.VisibleIndex = 10;
             // 
             // Netpr
             // 
             this.Netpr.Caption = "발주단가";
             this.Netpr.FieldName = "Netpr";
             this.Netpr.Name = "Netpr";
+            this.Netpr.OptionsColumn.ReadOnly = true;
             this.Netpr.Visible = true;
-            this.Netpr.VisibleIndex = 10;
+            this.Netpr.VisibleIndex = 11;
             // 
             // Epein
             // 
             this.Epein.Caption = "가격단위";
             this.Epein.FieldName = "Epein";
             this.Epein.Name = "Epein";
+            this.Epein.OptionsColumn.ReadOnly = true;
             this.Epein.Visible = true;
-            this.Epein.VisibleIndex = 11;
+            this.Epein.VisibleIndex = 12;
             // 
             // Netwr
             // 
             this.Netwr.Caption = "발주금액";
             this.Netwr.FieldName = "Netwr";
             this.Netwr.Name = "Netwr";
+            this.Netwr.OptionsColumn.ReadOnly = true;
             this.Netwr.Visible = true;
-            this.Netwr.VisibleIndex = 12;
+            this.Netwr.VisibleIndex = 13;
             // 
             // Waers
             // 
             this.Waers.Caption = "통화단위";
             this.Waers.FieldName = "Waers";
             this.Waers.Name = "Waers";
+            this.Waers.OptionsColumn.ReadOnly = true;
             this.Waers.Visible = true;
-            this.Waers.VisibleIndex = 13;
+            this.Waers.VisibleIndex = 14;
             // 
             // Slfdt
             // 
             this.Slfdt.Caption = "납품요청일";
             this.Slfdt.FieldName = "Slfdt";
             this.Slfdt.Name = "Slfdt";
+            this.Slfdt.OptionsColumn.ReadOnly = true;
             this.Slfdt.Visible = true;
-            this.Slfdt.VisibleIndex = 14;
+            this.Slfdt.VisibleIndex = 15;
             // 
             // Elikz
             // 
@@ -223,31 +273,7 @@
             this.Elikz.FieldName = "Elikz";
             this.Elikz.Name = "Elikz";
             this.Elikz.Visible = true;
-            this.Elikz.VisibleIndex = 15;
-            // 
-            // poSqn
-            // 
-            this.poSqn.Caption = "발주아이템번호";
-            this.poSqn.FieldName = "poSqn";
-            this.poSqn.Name = "poSqn";
-            this.poSqn.Visible = true;
-            this.poSqn.VisibleIndex = 1;
-            // 
-            // poSeq
-            // 
-            this.poSeq.Caption = "발주번호";
-            this.poSeq.FieldName = "poSeq";
-            this.poSeq.Name = "poSeq";
-            this.poSeq.Visible = true;
-            this.poSeq.VisibleIndex = 0;
-            // 
-            // Maktx
-            // 
-            this.Maktx.Caption = "자재명";
-            this.Maktx.FieldName = "Maktx";
-            this.Maktx.Name = "Maktx";
-            this.Maktx.Visible = true;
-            this.Maktx.VisibleIndex = 7;
+            this.Elikz.VisibleIndex = 16;
             // 
             // PurchasingOrderList
             // 
@@ -290,6 +316,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Waers;
         private DevExpress.XtraGrid.Columns.GridColumn Slfdt;
         private DevExpress.XtraGrid.Columns.GridColumn Elikz;
+        private DevExpress.XtraGrid.Columns.GridColumn gMenge;
 
     }
 }

@@ -58,5 +58,26 @@ namespace DLS.Materials_Management
         {
             Common.Frm10.Base.BaseModules.ExcelExport(gcMain, "발주리스트 리스트");
         }
+
+        private void MainView_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
+
+            if (((DataRowView)e.Row).Row.RowState == DataRowState.Modified)
+            {
+                Hashtable ht = new Hashtable();
+                ht.Add("@MODE", 301);
+                ht.Add("@poSeq", view.GetFocusedRowCellValue("poSeq"));
+                ht.Add("@poSqn", view.GetFocusedRowCellValue("poSqn"));
+                ht.Add("@Elikz", view.GetFocusedRowCellValue("Elikz"));
+                ht.Add("@Userid", Login.G_userid);
+
+                DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpMmPoItem]", ht, "");
+                if (dt.Rows.Count == 0)
+                {
+                    ((DataRowView)e.Row).Row.AcceptChanges();
+                }
+            }
+        }
     }
 }

@@ -425,10 +425,14 @@ namespace DLS
             }
         }
 
-        //발주취소
+        //입고취소
         private void Btn_MM_GC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("GR_Cancel"))
+            {
+                Materials_Management.GR_Cancel fm = new Materials_Management.GR_Cancel();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         //창고이전전기
