@@ -803,11 +803,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup Report_G1;
         private DevExpress.XtraBars.BarButtonItem Btn_MM_GC;
         private DevExpress.XtraBars.BarButtonItem Btn_MM_ST;
-<<<<<<< .mine
         private DevExpress.XtraBars.BarButtonItem Btn_MM_GRlist;
-=======
         private DevExpress.XtraBars.BarButtonItem barButtonItem_info;
->>>>>>> .theirs
-
     }
 }
