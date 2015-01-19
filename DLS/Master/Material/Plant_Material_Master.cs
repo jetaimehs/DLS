@@ -59,7 +59,7 @@ namespace DLS.Master.Material
 
         private void btn_down_Click(object sender, EventArgs e)
         {
-            Common.Frm10.Base.BaseModules.ExcelExport(gcMain, "플린드별 자재리스트");
+            Common.Frm10.Base.BaseModules.ExcelExport(gcMain, "플랜트별 자재리스트");
         }
 
         private void MainView_RowClick(object sender, RowClickEventArgs e)

@@ -438,7 +438,11 @@ namespace DLS
         //창고이전전기
         private void Btn_MM_ST_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("Material_TF"))
+            {
+                Materials_Management.Material_TF fm = new Materials_Management.Material_TF();
+                Mdi_Child_NewOpen(fm);
+            }
         }
         
         #endregion
