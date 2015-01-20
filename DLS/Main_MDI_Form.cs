@@ -526,6 +526,16 @@ namespace DLS
         {
 
         }
+
+        //문서리스트
+        private void btn_DM_list_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Document_List.cs"))
+            {
+                Financial.Document_List fm = new Financial.Document_List();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
         #endregion
 
         #region 리포트
@@ -552,5 +562,6 @@ namespace DLS
             Popup_Form.Change_Infomation pop = new Popup_Form.Change_Infomation();            
             pop.Show();
         }
+
     }
 }

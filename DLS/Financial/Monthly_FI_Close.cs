@@ -126,7 +126,7 @@ namespace DLS.Financial
 
             MessageBox.Show("취소 되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            gc_fi_close.DataSource = "";
+            gc_fi_close.DataSource = null;
         }
 
         private void btn_down_Click(object sender, EventArgs e)

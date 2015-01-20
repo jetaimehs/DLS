@@ -385,5 +385,10 @@ namespace DLS.Production_Planning
                 }
             }
         }
+
+        private void btn_down_Click(object sender, EventArgs e)
+        {
+            Common.Frm10.Base.BaseModules.ExcelExport(gc_ppOutput, "생산실적");
+        }
     }
 }

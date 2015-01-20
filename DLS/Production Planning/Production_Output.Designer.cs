@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
+            this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gc_delivery_main = new DevExpress.XtraEditors.GroupControl();
             this.sle_otype = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -134,6 +135,7 @@
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.btn_down);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Controls.Add(this.gc_delivery_main);
             this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
@@ -141,6 +143,17 @@
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1444, 162);
             this.pc_main.TabIndex = 4;
+            // 
+            // btn_down
+            // 
+            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_down.Location = new System.Drawing.Point(93, 12);
+            this.btn_down.Name = "btn_down";
+            this.btn_down.Size = new System.Drawing.Size(75, 60);
+            this.btn_down.TabIndex = 28;
+            this.btn_down.Text = "다운로드";
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
             // 
             // btn_find
             // 
@@ -566,6 +579,7 @@
             this.gv_ppOutput.GridControl = this.gc_ppOutput;
             this.gv_ppOutput.Name = "gv_ppOutput";
             this.gv_ppOutput.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gv_ppOutput.OptionsView.ShowFooter = true;
             this.gv_ppOutput.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_ppOutput_CellValueChanged);
             this.gv_ppOutput.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_ppOutput_RowUpdated);
             this.gv_ppOutput.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_ppOutput_ValidatingEditor);
@@ -751,6 +765,8 @@
             this.Lmnga.MaxWidth = 150;
             this.Lmnga.MinWidth = 50;
             this.Lmnga.Name = "Lmnga";
+            this.Lmnga.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.Lmnga.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.Lmnga.Visible = true;
             this.Lmnga.VisibleIndex = 6;
@@ -1029,6 +1045,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn Stuph;
+        private DevExpress.XtraEditors.SimpleButton btn_down;
 
 
     }
