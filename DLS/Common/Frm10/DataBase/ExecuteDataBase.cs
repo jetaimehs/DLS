@@ -69,6 +69,7 @@ namespace DLS.Common.Frm10.DataBase
         //
         public static DataTable ExecDataTableQuery(string proc, Hashtable ht, string conn)
         {
+            
             return new ExecuteDataBase()._ExecDataTableQuery(proc, ht, conn);
         }
         public static DataTable ExecDataTableQuery(string proc, Hashtable ht, ref Hashtable htOutput, string conn)

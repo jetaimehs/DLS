@@ -59,6 +59,7 @@
             this.Driver1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ctype1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.mFee1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Dflg = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Transport_list)).BeginInit();
@@ -116,6 +117,7 @@
             this.Sdate,
             this.Edate,
             this.Tell,
+            this.Dflg,
             this.Add,
             this.Update,
             this.Delete});
@@ -221,7 +223,7 @@
             this.Add.ColumnEdit = this.repositoryItemHyperLinkEdit_Add;
             this.Add.Name = "Add";
             this.Add.Visible = true;
-            this.Add.VisibleIndex = 9;
+            this.Add.VisibleIndex = 10;
             // 
             // repositoryItemHyperLinkEdit_Add
             // 
@@ -243,7 +245,7 @@
             this.Update.ColumnEdit = this.repositoryItemHyperLinkEdit_Update;
             this.Update.Name = "Update";
             this.Update.Visible = true;
-            this.Update.VisibleIndex = 10;
+            this.Update.VisibleIndex = 11;
             // 
             // repositoryItemHyperLinkEdit_Update
             // 
@@ -265,7 +267,7 @@
             this.Delete.ColumnEdit = this.repositoryItemHyperLinkEdit_Delete;
             this.Delete.Name = "Delete";
             this.Delete.Visible = true;
-            this.Delete.VisibleIndex = 11;
+            this.Delete.VisibleIndex = 12;
             // 
             // repositoryItemHyperLinkEdit_Delete
             // 
@@ -388,6 +390,14 @@
             this.mFee1.Visible = true;
             this.mFee1.VisibleIndex = 7;
             // 
+            // Dflg
+            // 
+            this.Dflg.Caption = "삭제";
+            this.Dflg.FieldName = "Dflg";
+            this.Dflg.Name = "Dflg";
+            this.Dflg.Visible = true;
+            this.Dflg.VisibleIndex = 9;
+            // 
             // Transport_Company_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -447,5 +457,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Add;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Update;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Delete;
+        private DevExpress.XtraGrid.Columns.GridColumn Dflg;
     }
 }

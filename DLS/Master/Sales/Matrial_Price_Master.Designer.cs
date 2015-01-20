@@ -238,6 +238,7 @@
             this.gv_price.GridControl = this.gc_price;
             this.gv_price.Name = "gv_price";
             this.gv_price.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gv_price.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_price_RowUpdated);
             this.gv_price.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_price_ValidatingEditor);
             // 
             // Kunnr

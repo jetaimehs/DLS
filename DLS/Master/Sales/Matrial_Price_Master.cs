@@ -252,9 +252,27 @@ namespace DLS.Master.Sales
 
         private void gv_Matnr_list_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (!gv_Matnr_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
+            if (!gv_Matnr_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) &&
+                !gv_Matnr_list.FocusedRowHandle.Equals(GridControl.AutoFilterRowHandle))
             {
                 ShowSubData();
+            }
+        }
+
+        private void gv_price_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            try
+            {
+                DataRowView drv = (DataRowView)e.Row;
+
+                if (drv.Row.RowState == DataRowState.Added)
+                {
+                    drv.Row.Delete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
