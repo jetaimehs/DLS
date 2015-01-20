@@ -8,19 +8,17 @@ using DevExpress.XtraEditors;
 using SAP.Middleware.Connector;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraGrid;
-using DevExpress.Xpf.RichEdit;
 
-namespace DLS.Production_Planning
+namespace DLS.Financial
 {
-    public partial class Production_StateReport : DevExpress.XtraEditors.XtraForm
+    public partial class Document_List : DevExpress.XtraEditors.XtraForm
     {
-        public Production_StateReport()
+        public Document_List()
         {
             InitializeComponent();
         }
 
-        private void Production_StateReport_Load(object sender, EventArgs e)
+        private void Document__List_Load(object sender, EventArgs e)
         {
             this.InitLanguage();    //다국어 설정
             this.InitOnlyData();    //폼로딩시 기본 작업
@@ -29,13 +27,13 @@ namespace DLS.Production_Planning
 
         private void InitOnlyData()
         {
-            //생산실적
-            Common.Util.MyUtil.SetGridControlDesign(ref gc_ppStateReport);
-            Common.Util.MyUtil.SetGridViewDesign(ref gv_ppStateReport);
-
+            //문서리스트
+            Common.Util.MyUtil.SetGridControlDesign(ref gc_dm_list);
+            Common.Util.MyUtil.SetGridViewDesign(ref gv_dm_list);
+            
             //날짜
             date_sdate.Text = DateTime.Today.ToShortDateString();
-            date_edate.Text = DateTime.Today.AddDays(1).ToShortDateString();
+            date_edate.Text = DateTime.Today.AddDays(7).ToShortDateString();
 
             //제품군
             Hashtable ht1 = new Hashtable();
@@ -45,14 +43,19 @@ namespace DLS.Production_Planning
             sle_spart.Properties.DisplayMember = "Code";
             sle_spart.Properties.ValueMember = "Code";
 
-            //작업장
+            //이동유형
             Hashtable ht2 = new Hashtable();
-            ht2.Add("@MODE", 101);
-            DataTable dt2 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpArbpl]", ht2, "");
+            ht2.Add("@MODE", 100);
+            DataTable dt2 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpBwart]", ht2, "");
             //조회
-            sle_arbpl.Properties.DataSource = dt2;
-            sle_arbpl.Properties.DisplayMember = "Code";
-            sle_arbpl.Properties.ValueMember = "Code";
+            sle_bwart.Properties.DataSource = dt2;
+            sle_bwart.Properties.DisplayMember = "Code";
+            sle_bwart.Properties.ValueMember = "Code";
+            
+            //그리드
+            repositoryItemLookUpEdit_Bwart.DataSource = dt2;
+            repositoryItemLookUpEdit_Bwart.DisplayMember = "Code";
+            repositoryItemLookUpEdit_Bwart.ValueMember = "Code";
 
             //자재유형
             Hashtable ht3 = new Hashtable();
@@ -82,6 +85,12 @@ namespace DLS.Production_Planning
             sle_matnr.Properties.DataSource = dt5;
             sle_matnr.Properties.DisplayMember = "Matnr";
             sle_matnr.Properties.ValueMember = "Matnr";
+            
+            repositoryItemSearchLookUpEdit_Matnr.DataSource = dt5.DefaultView;
+            repositoryItemSearchLookUpEdit_Matnr.View.OptionsView.ShowAutoFilterRow = true;
+            repositoryItemSearchLookUpEdit_Matnr.DisplayMember = "Matnr";
+            repositoryItemSearchLookUpEdit_Matnr.ValueMember = "Matnr";
+            repositoryItemSearchLookUpEdit_Matnr.View.BestFitColumns();
         }
 
         private void InitLanguage()
@@ -93,16 +102,16 @@ namespace DLS.Production_Planning
         {
             Hashtable ht1 = new Hashtable();
 
-            ht1.Add("@MODE", 101);
+            ht1.Add("@MODE", 100);
             ht1.Add("@Werks", Main_MID_Form.G_werks);
-            ht1.Add("@Sdate", date_sdate.Text);
-            ht1.Add("@Edate", date_edate.Text);
+            ht1.Add("@sBudat", date_sdate.Text);
+            ht1.Add("@eBudat", date_edate.Text);
 
             if (!Equals(sle_spart.Text, string.Empty))
                 ht1.Add("@Spart", sle_spart.Text);
 
-            if (!Equals(sle_arbpl.Text, string.Empty))
-                ht1.Add("@Arbpl", sle_arbpl.Text);
+            if (!Equals(sle_bwart.Text, string.Empty))
+                ht1.Add("@Bwart", sle_bwart.Text);
 
             if (!Equals(sle_mtart.Text, string.Empty))
                 ht1.Add("@Mtart", sle_mtart.Text);
@@ -113,9 +122,9 @@ namespace DLS.Production_Planning
             if (!Equals(sle_matnr.Text, string.Empty))
                 ht1.Add("@Matnr", sle_matnr.Text);
 
-            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPpStateReport]", ht1, "");
+            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpMatrialdocument]", ht1, "");
 
-            gc_ppStateReport.DataSource = dt1.DefaultView;
+            gc_dm_list.DataSource = dt1.DefaultView;
         }
 
         private void btn_find_Click(object sender, EventArgs e)
@@ -125,7 +134,7 @@ namespace DLS.Production_Planning
 
         private void btn_down_Click(object sender, EventArgs e)
         {
-            Common.Frm10.Base.BaseModules.ExcelExport(gc_ppStateReport, "기간별생산현황");
+            Common.Frm10.Base.BaseModules.ExcelExport(gc_dm_list, "자재문서리스트");
         }
     }
 }

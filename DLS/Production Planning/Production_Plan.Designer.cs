@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
+            this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
             this.btn_com = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
@@ -91,7 +92,7 @@
             this.repositoryItemHyperLinkEdit_Save = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.Note = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pppNote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -146,6 +147,7 @@
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.btn_down);
             this.pc_main.Controls.Add(this.btn_save);
             this.pc_main.Controls.Add(this.btn_com);
             this.pc_main.Controls.Add(this.btn_find);
@@ -156,6 +158,17 @@
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1436, 158);
             this.pc_main.TabIndex = 2;
+            // 
+            // btn_down
+            // 
+            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_down.Location = new System.Drawing.Point(336, 12);
+            this.btn_down.Name = "btn_down";
+            this.btn_down.Size = new System.Drawing.Size(75, 60);
+            this.btn_down.TabIndex = 28;
+            this.btn_down.Text = "다운로드";
+            this.btn_down.Click += new System.EventHandler(this.btn_down_Click);
             // 
             // btn_save
             // 
@@ -198,7 +211,7 @@
             this.btn_ExcelUp.Name = "btn_ExcelUp";
             this.btn_ExcelUp.Size = new System.Drawing.Size(75, 60);
             this.btn_ExcelUp.TabIndex = 1;
-            this.btn_ExcelUp.Text = "Excel Upload";
+            this.btn_ExcelUp.Text = "계획업로드";
             this.btn_ExcelUp.Click += new System.EventHandler(this.btn_ExcelUp_Click);
             // 
             // gc_delivery_main
@@ -558,10 +571,11 @@
             this.Lvorm,
             this.gridColumn20,
             this.gridColumn21,
-            this.Note});
+            this.pppNote});
             this.gv_ppPlan.GridControl = this.gc_ppPlan;
             this.gv_ppPlan.Name = "gv_ppPlan";
             this.gv_ppPlan.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gv_ppPlan.OptionsView.ShowFooter = true;
             this.gv_ppPlan.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_ppPlan_CellValueChanged);
             this.gv_ppPlan.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_ppPlan_RowUpdated);
             this.gv_ppPlan.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_ppPlan_ValidatingEditor);
@@ -586,9 +600,7 @@
             // 
             // Wdate
             // 
-            this.Wdate.Caption = "Wdate";
-            this.Wdate.DisplayFormat.FormatString = "yyyy-MM-dd";
-            this.Wdate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.Wdate.Caption = "계획일자";
             this.Wdate.FieldName = "Wdate";
             this.Wdate.MaxWidth = 150;
             this.Wdate.MinWidth = 100;
@@ -600,7 +612,7 @@
             // 
             // Arbpl
             // 
-            this.Arbpl.Caption = "Arbpl";
+            this.Arbpl.Caption = "작업장";
             this.Arbpl.ColumnEdit = this.repositoryItemLookUpEdit_Arbpl;
             this.Arbpl.FieldName = "Arbpl";
             this.Arbpl.MaxWidth = 200;
@@ -624,7 +636,7 @@
             // 
             // Mtart
             // 
-            this.Mtart.Caption = "Mtart";
+            this.Mtart.Caption = "자재유형";
             this.Mtart.FieldName = "Mtart";
             this.Mtart.MaxWidth = 100;
             this.Mtart.MinWidth = 50;
@@ -636,7 +648,7 @@
             // 
             // Matkl
             // 
-            this.Matkl.Caption = "Matkl";
+            this.Matkl.Caption = "차종";
             this.Matkl.FieldName = "Matkl";
             this.Matkl.MaxWidth = 100;
             this.Matkl.MinWidth = 50;
@@ -649,7 +661,7 @@
             // 
             // Matnr
             // 
-            this.Matnr.Caption = "Matnr";
+            this.Matnr.Caption = "자재번호";
             this.Matnr.ColumnEdit = this.repositoryItemSearchLookUpEdit_Matnr;
             this.Matnr.FieldName = "Matnr";
             this.Matnr.MaxWidth = 200;
@@ -715,7 +727,7 @@
             // 
             // Gsmng
             // 
-            this.Gsmng.Caption = "Gsmng";
+            this.Gsmng.Caption = "계획수량";
             this.Gsmng.FieldName = "Gsmng";
             this.Gsmng.MaxWidth = 150;
             this.Gsmng.MinWidth = 50;
@@ -727,7 +739,7 @@
             // 
             // Meins
             // 
-            this.Meins.Caption = "Meins";
+            this.Meins.Caption = "단위";
             this.Meins.FieldName = "Meins";
             this.Meins.MaxWidth = 100;
             this.Meins.MinWidth = 50;
@@ -740,7 +752,7 @@
             // 
             // PPlgort
             // 
-            this.PPlgort.Caption = "PPlgort";
+            this.PPlgort.Caption = "저장위치";
             this.PPlgort.FieldName = "PPlgort";
             this.PPlgort.MaxWidth = 100;
             this.PPlgort.MinWidth = 50;
@@ -753,7 +765,7 @@
             // 
             // Decom
             // 
-            this.Decom.Caption = "Decom";
+            this.Decom.Caption = "계획확정";
             this.Decom.FieldName = "Decom";
             this.Decom.MaxWidth = 70;
             this.Decom.MinWidth = 50;
@@ -766,7 +778,7 @@
             // 
             // Ifcom
             // 
-            this.Ifcom.Caption = "Ifcom";
+            this.Ifcom.Caption = "자재I/F";
             this.Ifcom.FieldName = "Ifcom";
             this.Ifcom.MaxWidth = 70;
             this.Ifcom.MinWidth = 50;
@@ -779,7 +791,7 @@
             // 
             // Lvorm
             // 
-            this.Lvorm.Caption = "Lvorm";
+            this.Lvorm.Caption = "삭제표시";
             this.Lvorm.FieldName = "Lvorm";
             this.Lvorm.MaxWidth = 70;
             this.Lvorm.MinWidth = 50;
@@ -822,17 +834,17 @@
             this.repositoryItemHyperLinkEdit_Delete.NullText = "Delete";
             this.repositoryItemHyperLinkEdit_Delete.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Delete_Click);
             // 
-            // Note
+            // pppNote
             // 
-            this.Note.Caption = "Note";
-            this.Note.FieldName = "Note";
-            this.Note.MinWidth = 150;
-            this.Note.Name = "Note";
-            this.Note.OptionsColumn.AllowEdit = false;
-            this.Note.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Note.Visible = true;
-            this.Note.VisibleIndex = 11;
-            this.Note.Width = 150;
+            this.pppNote.Caption = "메모";
+            this.pppNote.FieldName = "pppNote";
+            this.pppNote.MinWidth = 150;
+            this.pppNote.Name = "pppNote";
+            this.pppNote.OptionsColumn.AllowEdit = false;
+            this.pppNote.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.pppNote.Visible = true;
+            this.pppNote.VisibleIndex = 11;
+            this.pppNote.Width = 150;
             // 
             // dockManager1
             // 
@@ -1108,7 +1120,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraGrid.Columns.GridColumn Lvorm;
-        private DevExpress.XtraGrid.Columns.GridColumn Note;
+        private DevExpress.XtraGrid.Columns.GridColumn pppNote;
         private DevExpress.XtraGrid.Columns.GridColumn Mtart;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel4;
@@ -1125,5 +1137,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Pday;
         private DevExpress.XtraGrid.Columns.GridColumn PlanQty;
         private DevExpress.XtraEditors.SimpleButton btn_save;
+        private DevExpress.XtraEditors.SimpleButton btn_down;
     }
 }
