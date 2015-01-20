@@ -280,10 +280,5 @@ namespace DLS.Master.Material
             }
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            Materials_Management.GR_List fm = new Materials_Management.GR_List();
-            fm.Show();
-        }
     }
 }
