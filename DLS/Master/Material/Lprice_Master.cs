@@ -282,8 +282,7 @@ namespace DLS.Master.Material
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Materials_Management.PurchasingOrderList fm = new Materials_Management.PurchasingOrderList();
-            //Materials_Management.Purchasing_Order fm = new Materials_Management.Purchasing_Order();
+            Materials_Management.GR_List fm = new Materials_Management.GR_List();
             fm.Show();
         }
     }
