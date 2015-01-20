@@ -186,7 +186,7 @@
             // 
             // MppSeq
             // 
-            this.MppSeq.Caption = "생산계획번호";
+            this.MppSeq.Caption = "번호";
             this.MppSeq.FieldName = "pppSeq";
             this.MppSeq.Name = "MppSeq";
             this.MppSeq.Visible = true;

@@ -161,6 +161,22 @@ namespace DLS.Production_Planning
             gc_ppOutput.DataSource = dt1.DefaultView;
         }
 
+        private bool CheckFiClose()
+        {
+            bool bl = false;
+
+            Hashtable ht1 = new Hashtable();
+
+            ht1.Add("MODE", 100);
+            ht1.Add("@Werks", Main_MID_Form.G_werks);
+            ht1.Add("@Syear", ((DateTime)gv_ppOutput.GetFocusedRowCellValue("Wdate")).ToString().Substring(0, 4));
+            ht1.Add("@Smonth", ((DateTime)gv_ppOutput.GetFocusedRowCellValue("Wdate")).ToString().Substring(5, 2));
+
+            bl = Equals(1, Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpFiCloseDate]", ht1, "").Rows.Count);
+
+            return bl;
+        }
+
         private void repositoryItemHyperLinkEdit_Save_Click(object sender, EventArgs e)
         {
             try
@@ -169,6 +185,12 @@ namespace DLS.Production_Planning
 
                 if (DialogResult.Cancel == MessageBox.Show("등록 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
                 {
+                    return;
+                }
+
+                if (this.CheckFiClose().Equals(true))
+                {
+                    MessageBox.Show("이미 마감된 일자입니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -362,6 +384,11 @@ namespace DLS.Production_Planning
                     throw ex;
                 }
             }
+        }
+
+        private void btn_down_Click(object sender, EventArgs e)
+        {
+            Common.Frm10.Base.BaseModules.ExcelExport(gc_ppOutput, "생산실적");
         }
     }
 }

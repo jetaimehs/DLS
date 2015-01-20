@@ -438,16 +438,34 @@ namespace DLS
             }
         }
 
-        //발주취소
+        //입고취소
         private void Btn_MM_GC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("GR_Cancel"))
+            {
+                Materials_Management.GR_Cancel fm = new Materials_Management.GR_Cancel();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         //창고이전전기
         private void Btn_MM_ST_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (FromOpen("Material_TF"))
+            {
+                Materials_Management.Material_TF fm = new Materials_Management.Material_TF();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
 
+        //입고리스트
+        private void Btn_MM_GRlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("GR_List"))
+            {
+                Materials_Management.GR_List fm = new Materials_Management.GR_List();
+                Mdi_Child_NewOpen(fm);
+            }
         }
         
         #endregion
@@ -518,7 +536,21 @@ namespace DLS
         //자재수불
         private void btn_FI_Material_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (FromOpen("GR_List"))
+            {
+                Materials_Management.GR_List fm = new Materials_Management.GR_List();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
 
+        //문서리스트
+        private void btn_DM_list_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Document_List.cs"))
+            {
+                Financial.Document_List fm = new Financial.Document_List();
+                Mdi_Child_NewOpen(fm);
+            }
         }
         #endregion
 
@@ -546,5 +578,6 @@ namespace DLS
             Popup_Form.Change_Infomation pop = new Popup_Form.Change_Infomation();            
             pop.Show();
         }
+
     }
 }

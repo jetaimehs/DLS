@@ -178,10 +178,10 @@ namespace DLS.Production_Planning
                             dr1["Mtart"] = (string)dt3.Rows[0]["Mtart"];
                             dr1["Meins"] = (string)dt3.Rows[0]["Meins"];
                             dr1["PPlgort"] = (string)dt3.Rows[0]["PPlgort"];
-                            dr1["Note"] = "Upload";                                                    
+                            dr1["ppNote"] = "Upload";                                                    
                         }
                         else
-                            dr1["Note"] = "미등록된 자재번호 입니다.";
+                            dr1["ppNote"] = "미등록된 자재번호 입니다.";
 
                         dt2.Rows.Add(dr1);
                     }
@@ -207,7 +207,7 @@ namespace DLS.Production_Planning
             dt.Columns.Add(new DataColumn("Decom", typeof(Boolean)));
             dt.Columns.Add(new DataColumn("Ifcom", typeof(Boolean)));
             dt.Columns.Add(new DataColumn("Lvorm", typeof(Boolean)));
-            dt.Columns.Add(new DataColumn("Note", typeof(string)));
+            dt.Columns.Add(new DataColumn("ppNote", typeof(string)));
         }
 
         private void repositoryItemHyperLinkEdit_Save_Click(object sender, EventArgs e)
@@ -295,22 +295,26 @@ namespace DLS.Production_Planning
 
             for (int i = 0; i < gv_ppPlan.RowCount; i++)
             {
-                if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom"), true))
-                {
-                    gv_ppPlan.SetRowCellValue(i, "Note", "이미 확정된 계획 입니다.");
-                    continue;
-                }                    
-
                 arrth[i] = new Hashtable();
                 arrth[i].Add("@MODE", 401);
                 arrth[i].Add("@pppSeq", gv_ppPlan.GetRowCellValue(i, "pppSeq").ToString());
-                arrth[i].Add("@Werks", Main_MID_Form.G_werks);
-                arrth[i].Add("@Decom", 1);
-                arrth[i].Add("@Mrp", 1);
-                arrth[i].Add("@Wdate", (DateTime)gv_ppPlan.GetRowCellValue(i, "Wdate"));
-                arrth[i].Add("@Arbpl", gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString());
-                arrth[i].Add("@Matnr", gv_ppPlan.GetRowCellValue(i, "Matnr").ToString());
-                arrth[i].Add("@Gsmng", gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString());
+
+                if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom"), true))
+                {
+                    arrth[i].Add("@pppNote", "이미 확정된 계획 입니다.");
+                }
+                else
+                {
+                    arrth[i].Add("@Werks", Main_MID_Form.G_werks);
+                    arrth[i].Add("@Wdate", (DateTime)gv_ppPlan.GetRowCellValue(i, "Wdate"));
+                    arrth[i].Add("@Decom", 1);
+                    arrth[i].Add("@Mrp", 1);                    
+                    arrth[i].Add("@Arbpl", gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString());
+                    arrth[i].Add("@Matnr", gv_ppPlan.GetRowCellValue(i, "Matnr").ToString());
+                    arrth[i].Add("@Gsmng", gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString());
+                    arrth[i].Add("@pppNote", string.Empty);
+                }
+
                 arrth[i].Add("@Userid", Login.G_userid);
             }
 
@@ -325,7 +329,7 @@ namespace DLS.Production_Planning
         private void gc_ppPlan_Click(object sender, EventArgs e)
         {
             //초기화 시키고,
-            gc_sdPlan.DataSource = "";
+            gc_sdPlan.DataSource = null;
 
             Hashtable ht1 = new Hashtable();
 
@@ -378,28 +382,31 @@ namespace DLS.Production_Planning
                     return;
                 }
 
-                if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom"), true))
-                {
-                    gv_ppPlan.SetRowCellValue(i, gv_ppPlan.Columns["Note"], "이미 확정된 계획 입니다.");
-                    continue;
-                }  
-
                 arrth[i] = new Hashtable();
                 arrth[i].Add("@MODE", 401);
                 arrth[i].Add("@pppSeq", gv_ppPlan.GetRowCellValue(i, "pppSeq").ToString());
-                arrth[i].Add("@Wdate", (DateTime)gv_ppPlan.GetRowCellValue(i, "Wdate"));
-                arrth[i].Add("@Werks", Main_MID_Form.G_werks);
-                arrth[i].Add("@Matnr", gv_ppPlan.GetRowCellValue(i, "Matnr").ToString());
-                arrth[i].Add("@Spart", gv_ppPlan.GetRowCellValue(i, "Spart").ToString());
-                arrth[i].Add("@Mtart", gv_ppPlan.GetRowCellValue(i, "Mtart").ToString());
-                arrth[i].Add("@Matkl", gv_ppPlan.GetRowCellValue(i, "Matkl").ToString());
-                arrth[i].Add("@Meins", gv_ppPlan.GetRowCellValue(i, "Meins").ToString());
-                arrth[i].Add("@PPlgort", gv_ppPlan.GetRowCellValue(i, "PPlgort").ToString());
-                arrth[i].Add("@Arbpl", gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString());
-                arrth[i].Add("@Gsmng", gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString());
-                arrth[i].Add("@Decom", gv_ppPlan.GetRowCellValue(i, "Decom").ToString());
-                arrth[i].Add("@Ifcom", gv_ppPlan.GetRowCellValue(i, "Ifcom").ToString());
-                arrth[i].Add("@Lvorm", gv_ppPlan.GetRowCellValue(i, "Lvorm").ToString());
+
+                if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom"), true))
+                {
+                    arrth[i].Add("@pppNote", "이미 확정된 계획 입니다.");
+                }
+                else
+                {
+                    arrth[i].Add("@Wdate", (DateTime)gv_ppPlan.GetRowCellValue(i, "Wdate"));
+                    arrth[i].Add("@Werks", Main_MID_Form.G_werks);
+                    arrth[i].Add("@Matnr", gv_ppPlan.GetRowCellValue(i, "Matnr").ToString());
+                    arrth[i].Add("@Spart", gv_ppPlan.GetRowCellValue(i, "Spart").ToString());
+                    arrth[i].Add("@Mtart", gv_ppPlan.GetRowCellValue(i, "Mtart").ToString());
+                    arrth[i].Add("@Matkl", gv_ppPlan.GetRowCellValue(i, "Matkl").ToString());
+                    arrth[i].Add("@Meins", gv_ppPlan.GetRowCellValue(i, "Meins").ToString());
+                    arrth[i].Add("@PPlgort", gv_ppPlan.GetRowCellValue(i, "PPlgort").ToString());
+                    arrth[i].Add("@Arbpl", gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString());
+                    arrth[i].Add("@Gsmng", gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString());
+                    arrth[i].Add("@Decom", gv_ppPlan.GetRowCellValue(i, "Decom").ToString());
+                    arrth[i].Add("@Ifcom", gv_ppPlan.GetRowCellValue(i, "Ifcom").ToString());
+                    arrth[i].Add("@Lvorm", gv_ppPlan.GetRowCellValue(i, "Lvorm").ToString());
+                }
+
                 arrth[i].Add("@Userid", Login.G_userid);
             }
 
@@ -432,6 +439,11 @@ namespace DLS.Production_Planning
                     gv_ppPlan.SetRowCellValue(e.RowHandle, gv_ppPlan.Columns["PPlgort"], (string)dt1.Rows[0]["PPlgort"]);   
                 }
             }
+        }
+
+        private void btn_down_Click(object sender, EventArgs e)
+        {
+            Common.Frm10.Base.BaseModules.ExcelExport(gc_ppPlan, "생산계획");
         }
     }
 }
