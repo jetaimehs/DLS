@@ -77,6 +77,23 @@ namespace DLS.Sales_Distribution
                 return;
             }
 
+            for (int i = 0; i < drs.Length; i++)
+            {
+                Hashtable ht2 = new Hashtable();
+                ht2.Add("@MODE", 100);
+                ht2.Add("@Werks", Main_MID_Form.G_werks);
+                ht2.Add("@Syear", DateTime.Parse(drs[i]["Budat"].ToString()).Year.ToString());
+                ht2.Add("@Smonth", DateTime.Parse(drs[i]["Budat"].ToString()).Month.ToString());
+
+                DataTable dt2 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpFiCloseDate]", ht2, "");
+
+                if (dt2.Rows.Count > 0)
+                {
+                    MessageBox.Show("회계마감으로 인해 취소할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
             if (DialogResult.Cancel == MessageBox.Show("선택하신 출고번호에 포함된 모든 출고가 취소 됩니다. 취소하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)) return;
 
             Hashtable[] mGroup = new Hashtable[1];

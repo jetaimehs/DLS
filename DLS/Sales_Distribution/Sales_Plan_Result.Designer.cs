@@ -83,6 +83,7 @@
             this.Result});
             this.gv_Result_list.GridControl = this.gc_Result_list;
             this.gv_Result_list.Name = "gv_Result_list";
+            this.gv_Result_list.OptionsView.ShowFooter = true;
             // 
             // Budat
             // 
@@ -147,6 +148,8 @@
             this.PlanQty.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.PlanQty.FieldName = "PlanQty";
             this.PlanQty.Name = "PlanQty";
+            this.PlanQty.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PlanQty", "SUM={0:N0}")});
             this.PlanQty.Visible = true;
             this.PlanQty.VisibleIndex = 6;
             // 
@@ -160,6 +163,8 @@
             this.Menge.FieldName = "Menge";
             this.Menge.Name = "Menge";
             this.Menge.OptionsColumn.AllowEdit = false;
+            this.Menge.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Menge", "SUM={0:N0}")});
             this.Menge.Visible = true;
             this.Menge.VisibleIndex = 7;
             // 
@@ -172,6 +177,8 @@
             this.Result.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Result.FieldName = "Result";
             this.Result.Name = "Result";
+            this.Result.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Result", "SUM={0:N0}")});
             this.Result.Visible = true;
             this.Result.VisibleIndex = 8;
             // 

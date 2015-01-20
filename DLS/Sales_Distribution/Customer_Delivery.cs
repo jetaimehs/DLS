@@ -119,11 +119,25 @@ namespace DLS.Sales_Distribution
 
             // 납품이력 저장
             DataView dv1 = (DataView)gv_matral_list.DataSource;
-            DataRow[] dr_Delivery_Order = dv1.Table.Select("Outqty <> ''");
+            DataRow[] dr_Delivery_Order = dv1.Table.Select("Outqty <> '0'");
 
             if (dr_Delivery_Order.Length == 0)
             {
                 MessageBox.Show("출고량이 입력되지 않았습니다..", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Hashtable ht2 = new Hashtable();
+            ht2.Add("@MODE", 100);
+            ht2.Add("@Werks", Main_MID_Form.G_werks);
+            ht2.Add("@Syear", DateTime.Parse(date_delivery.Text).Year.ToString());
+            ht2.Add("@Smonth", DateTime.Parse(date_delivery.Text).Month.ToString());
+
+            DataTable dt2 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpFiCloseDate]", ht2, "");
+
+            if (dt2.Rows.Count > 0)
+            {
+                MessageBox.Show("회계마감으로 인해 출고할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

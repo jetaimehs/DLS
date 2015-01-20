@@ -159,7 +159,7 @@
             this.Rfee.Name = "Rfee";
             this.Rfee.OptionsColumn.AllowEdit = false;
             this.Rfee.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Rfee", "N0")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Rfee", "SUM={0:N0}")});
             this.Rfee.Visible = true;
             this.Rfee.VisibleIndex = 6;
             // 

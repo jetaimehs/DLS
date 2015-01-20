@@ -96,6 +96,11 @@ namespace DLS.Sales_Distribution
             dtUpload.Columns[10].ColumnName = "Delseq";
             dtUpload.Columns[11].ColumnName = "PlanQty";
 
+            for (int i = 0; i < dtUpload.Rows.Count; i++)
+            {
+                dtUpload.Rows[i]["Matnr"] = dtUpload.Rows[i]["Matnr"].ToString().Replace(" ", "-");
+            }
+
             DataTable dt_distinct = dtUpload.DefaultView.ToTable(true, "Kunnr", "PackTyp", "OrderTyp", "Matnr");
 
             dt_distinct.Columns.Add("PlanQty");
