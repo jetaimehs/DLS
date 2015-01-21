@@ -60,6 +60,8 @@
             this.repositoryItemHyperLinkEdit_Add = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.Delete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.KUNNR1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NAME11 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Matnr_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Matnr_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
@@ -256,10 +258,14 @@
             this.SearchLookUpEdit_Kunnr.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.SearchLookUpEdit_Kunnr.Name = "SearchLookUpEdit_Kunnr";
+            this.SearchLookUpEdit_Kunnr.NullText = "";
             this.SearchLookUpEdit_Kunnr.View = this.repositoryItemSearchLookUpEdit1View;
             // 
             // repositoryItemSearchLookUpEdit1View
             // 
+            this.repositoryItemSearchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.KUNNR1,
+            this.NAME11});
             this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -385,6 +391,22 @@
             this.repositoryItemHyperLinkEdit_Delete.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Delete_Click);
             this.repositoryItemHyperLinkEdit_Delete.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repositoryItemHyperLinkEdit_Delete_KeyDown);
             // 
+            // KUNNR1
+            // 
+            this.KUNNR1.Caption = "고객코드";
+            this.KUNNR1.FieldName = "KUNNR";
+            this.KUNNR1.Name = "KUNNR1";
+            this.KUNNR1.Visible = true;
+            this.KUNNR1.VisibleIndex = 0;
+            // 
+            // NAME11
+            // 
+            this.NAME11.Caption = "고객명";
+            this.NAME11.FieldName = "NAME1";
+            this.NAME11.Name = "NAME11";
+            this.NAME11.Visible = true;
+            this.NAME11.VisibleIndex = 1;
+            // 
             // Matrial_Price_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -448,5 +470,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Add;
         private DevExpress.XtraGrid.Columns.GridColumn Delete;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Delete;
+        private DevExpress.XtraGrid.Columns.GridColumn KUNNR1;
+        private DevExpress.XtraGrid.Columns.GridColumn NAME11;
     }
 }

@@ -70,6 +70,7 @@
             this.Btn_MM_ST = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_MM_GRlist = new DevExpress.XtraBars.BarButtonItem();
             this.btn_DM_list = new DevExpress.XtraBars.BarButtonItem();
+            this.Btn_Master_UserAuth = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.Home_G1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -98,7 +99,6 @@
             this.Master_G5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Btn_Master_UserAuth = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -514,6 +514,14 @@
             this.btn_DM_list.Name = "btn_DM_list";
             this.btn_DM_list.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DM_list_ItemClick);
             // 
+            // Btn_Master_UserAuth
+            // 
+            this.Btn_Master_UserAuth.Caption = "사용자권한관리";
+            this.Btn_Master_UserAuth.Id = 50;
+            this.Btn_Master_UserAuth.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_UserAuth.Name = "Btn_Master_UserAuth";
+            this.Btn_Master_UserAuth.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_UserAuth_ItemClick);
+            // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
@@ -727,14 +735,6 @@
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // Btn_Master_UserAuth
-            // 
-            this.Btn_Master_UserAuth.Caption = "사용자권한관리";
-            this.Btn_Master_UserAuth.Id = 50;
-            this.Btn_Master_UserAuth.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.Btn_Master_UserAuth.Name = "Btn_Master_UserAuth";
-            this.Btn_Master_UserAuth.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_UserAuth_ItemClick);
-            // 
             // Main_MID_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -744,7 +744,7 @@
             this.IsMdiContainer = true;
             this.Name = "Main_MID_Form";
             this.Ribbon = this.Rbn_Menu;
-            this.Text = "사용자권한관리";
+            this.Text = "동희물류관리시템";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_MDI_Form_FormClosing);
             this.Load += new System.EventHandler(this.Main_MID_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).EndInit();

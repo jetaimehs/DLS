@@ -53,7 +53,7 @@ namespace DLS
             }
 
             barEditItem1.EditValue = cb_werks.Items[0].ToString();
-            G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
+            G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];            
         }
 
         public bool FromOpen(string OpenFrom)
@@ -134,7 +134,7 @@ namespace DLS
         private void Rgb_Skin_GalleryItemClick(object sender, GalleryItemClickEventArgs e)
         {
             Hashtable ht = new Hashtable();
-            ht.Add("@MODE", 300);
+            ht.Add("@MODE", 301);
             ht.Add("@USERID", Login.G_userid);
             ht.Add("@Skin", e.Item.Tag);
 
@@ -153,7 +153,7 @@ namespace DLS
             NewForm.BringToFront(); // 폼을 제일 위로
             NewForm.Focus();
             NewForm.Show();
-            NewForm.Text = Common.Util.MyUtil.SetMultiLang(NewForm.Name);
+            //NewForm.Text = Common.Util.MyUtil.SetMultiLang(NewForm.Name);
         }
 
         #region 메뉴버튼 클릭

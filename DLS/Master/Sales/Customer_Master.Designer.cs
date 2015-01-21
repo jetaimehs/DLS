@@ -205,7 +205,7 @@
             this.Controls.Add(this.gc_Kunnr_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Customer_Master";
-            this.Text = "Customer_Master";
+            this.Text = "고객마스터관리";
             this.Load += new System.EventHandler(this.Customer_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Kunnr_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Kunnr_list)).EndInit();
