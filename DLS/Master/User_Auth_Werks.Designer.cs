@@ -64,7 +64,7 @@
             // 
             // gc_User_Auth
             // 
-            this.gc_User_Auth.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gc_User_Auth.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gc_User_Auth.Location = new System.Drawing.Point(0, 163);
             this.gc_User_Auth.MainView = this.gv_User_Auth;
             this.gc_User_Auth.Name = "gc_User_Auth";
@@ -123,7 +123,7 @@
             this.pc_main.Controls.Add(this.btn_add);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Controls.Add(this.gc_main);
-            this.pc_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
             this.pc_main.Location = new System.Drawing.Point(0, 0);
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1332, 163);
@@ -284,8 +284,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 743);
-            this.Controls.Add(this.pc_main);
             this.Controls.Add(this.gc_User_Auth);
+            this.Controls.Add(this.pc_main);
             this.Text = "User_Auth_Werks";
             this.Load += new System.EventHandler(this.User_Auth_Werks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_User_Auth)).EndInit();

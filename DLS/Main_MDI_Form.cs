@@ -141,29 +141,12 @@ namespace DLS
             ExecuteDataBase.ExecNonQuery("DLSSPAccount", ht, "");
         }
 
-        #region MDI 하위폼 열기
-
-        #region 메뉴 마스터 사용자 관리
-
-        private void Btn_Master_User_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (FromOpen("User_Management"))
-            {
-                Master.User_Management fm = new Master.User_Management();
-                Mdi_Child_NewOpen(fm);
-            }
-        }
-
-        #endregion
-        
-        #endregion
-
         public void Mdi_Child_NewOpen(Form NewForm)
         {
-            foreach (Form oForm in this.MdiChildren)
-            {
-                oForm.Dispose();    //동시에 1개만 떠 있도록. 
-            }
+            //foreach (Form oForm in this.MdiChildren)
+            //{
+            //    oForm.Dispose();    //동시에 1개만 떠 있도록. 
+            //}
 
             NewForm.MdiParent = this;
             NewForm.WindowState = FormWindowState.Maximized;
@@ -176,11 +159,22 @@ namespace DLS
         #region 메뉴버튼 클릭
         #region 기준정보
         //사용자 관리
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+
+        private void Btn_Master_User_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (FromOpen("User_Management"))
             {
                 Master.User_Management fm = new Master.User_Management();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
+        //사용자 플랜트 권한 추가
+        private void Btn_Master_UserAuth_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("User_Auth_Werks"))
+            {
+                Master.User_Auth_Werks fm = new Master.User_Auth_Werks();
                 Mdi_Child_NewOpen(fm);
             }
         }
@@ -578,6 +572,5 @@ namespace DLS
             Popup_Form.Change_Infomation pop = new Popup_Form.Change_Infomation();            
             pop.Show();
         }
-
     }
 }
