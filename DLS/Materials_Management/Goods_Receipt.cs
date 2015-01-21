@@ -60,7 +60,7 @@ namespace DLS.Materials_Management
             SqlCommand cmd = new SqlCommand("",con);           
 
             con.Open();
-            cmd.CommandText = "SET FMTONLY ON; SELECT B.poSeq, B.poSqn, A.Werks, A.Lifnr, A.Name1, B.Matnr, B.Menge, C.gMenge, B.Elikz FROM DLS_MmPo AS A INNER JOIN DLS_MmPoItem AS B ON A.poSeq=b.poSeq INNER JOIN DLS_MmGrItem AS C ON B.poSeq=C.rfSeq AND B.poSqn=C.rfSqn; SET FMTONLY OFF;";
+            cmd.CommandText = "SET FMTONLY ON; SELECT B.poSeq, B.poSqn, A.Werks, A.Lifnr, A.Name1, B.Matnr, B.Menge, C.gMenge, B.Elikz, B.Slfdt FROM DLS_MmPo AS A INNER JOIN DLS_MmPoItem AS B ON A.poSeq=b.poSeq INNER JOIN DLS_MmGrItem AS C ON B.poSeq=C.rfSeq AND B.poSqn=C.rfSqn; SET FMTONLY OFF;";
             dtGrTemp.Load(cmd.ExecuteReader());
             dtGrTemp.PrimaryKey = new DataColumn[] { dtGrTemp.Columns["poSeq"], dtGrTemp.Columns["poSqn"]};
 
@@ -110,6 +110,7 @@ namespace DLS.Materials_Management
             dr["Menge"] = MainView.GetRowCellValue(e.RowHandle, "Menge");
             dr["gMenge"] = MainView.GetRowCellValue(e.RowHandle, "Menge");
             dr["Elikz"] = true;
+            dr["Slfdt"] = MainView.GetRowCellValue(e.RowHandle, "Slfdt");
 
             try
             {
@@ -208,6 +209,7 @@ namespace DLS.Materials_Management
                 drGrItem["rfSeq"] = dr["poSeq"];
                 drGrItem["rfSqn"] = dr["poSqn"];
                 drGrItem["mdSeq"] = "";
+                drGrItem["Loekz"] = false;
                 drGrItem["regdate"] = DateTime.Today;
                 drGrItem["regid"] = Login.G_userid;
                 drGrItem["Elikz"] = dr["Elikz"];
@@ -241,6 +243,7 @@ namespace DLS.Materials_Management
                     ht.Add("@gMenge", drGrItem["gMenge"]);
                     ht.Add("@rfSeq", drGrItem["rfSeq"]);
                     ht.Add("@rfSqn", drGrItem["rfSqn"]);
+                    ht.Add("@Loekz", drGrItem["Loekz"]);
                     ht.Add("@Userid", Login.G_userid);
                     ht.Add("@grDat", dtGr.Rows[0]["grDat"]);
                     ht.Add("@Bwart", dtGr.Rows[0]["Bwart"]);

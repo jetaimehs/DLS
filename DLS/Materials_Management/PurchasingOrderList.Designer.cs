@@ -94,7 +94,7 @@
             this.gcMain.Location = new System.Drawing.Point(0, 83);
             this.gcMain.MainView = this.MainView;
             this.gcMain.Name = "gcMain";
-            this.gcMain.Size = new System.Drawing.Size(1311, 698);
+            this.gcMain.Size = new System.Drawing.Size(1311, 659);
             this.gcMain.TabIndex = 30;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.MainView});
@@ -279,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 781);
+            this.ClientSize = new System.Drawing.Size(1311, 742);
             this.Controls.Add(this.gcMain);
             this.Controls.Add(this.pc_main);
             this.Name = "PurchasingOrderList";

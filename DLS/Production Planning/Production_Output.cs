@@ -303,17 +303,7 @@ namespace DLS.Production_Planning
 
                 if (drv.Row.RowState == DataRowState.Added)
                 {
-                    if (DialogResult.Cancel == MessageBox.Show("입력중인 실적이 있습니다. 이동 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
-                    {
-                        gv_ppOutput.FocusedColumn = gv_ppOutput.GetNearestCanFocusedColumn(gv_ppOutput.FocusedColumn);
-                        //gv_ppOutput.CancelUpdateCurrentRow();
-                        gv_ppOutput.FocusedRowHandle = gv_ppOutput.FocusedRowHandle;
-                        return;
-                    }
-                    else
-                    {
-                        drv.Row.Delete();
-                    }
+                    drv.Row.Delete();
                 }                
             }
             catch (Exception ex)
@@ -389,6 +379,16 @@ namespace DLS.Production_Planning
         private void btn_down_Click(object sender, EventArgs e)
         {
             Common.Frm10.Base.BaseModules.ExcelExport(gc_ppOutput, "생산실적");
+        }
+
+        private void gv_ppOutput_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            e.Valid = false;
+        }
+
+        private void gv_ppOutput_InvalidValueException(object sender, InvalidValueExceptionEventArgs e)
+        {
+            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
         }
     }
 }

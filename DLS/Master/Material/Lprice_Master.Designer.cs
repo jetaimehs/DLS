@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gp1 = new DevExpress.XtraEditors.GroupControl();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
@@ -71,22 +70,12 @@
             // 
             // pc_main
             // 
-            this.pc_main.Controls.Add(this.simpleButton1);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
             this.pc_main.Location = new System.Drawing.Point(0, 0);
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1320, 83);
             this.pc_main.TabIndex = 27;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(206, 49);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "simpleButton1";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btn_find
             // 
@@ -378,7 +367,6 @@
         private DevExpress.XtraEditors.PanelControl pc_main;
         private DevExpress.XtraEditors.SimpleButton btn_find;
         private DevExpress.XtraEditors.GroupControl gp1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.GridControl gcMain;
         private DevExpress.XtraGrid.Views.Grid.GridView MainView;
         private DevExpress.XtraGrid.Columns.GridColumn Werks;

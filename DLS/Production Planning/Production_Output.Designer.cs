@@ -581,8 +581,10 @@
             this.gv_ppOutput.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gv_ppOutput.OptionsView.ShowFooter = true;
             this.gv_ppOutput.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_ppOutput_CellValueChanged);
+            this.gv_ppOutput.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gv_ppOutput_ValidateRow);
             this.gv_ppOutput.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_ppOutput_RowUpdated);
             this.gv_ppOutput.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_ppOutput_ValidatingEditor);
+            this.gv_ppOutput.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.gv_ppOutput_InvalidValueException);
             // 
             // pppSeq
             // 
