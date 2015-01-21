@@ -43,11 +43,16 @@ namespace DLS.Sales_Distribution
             if (rad_type.EditValue.Equals("1"))
             {
                 ht.Add("@MODE", 100);                
-                ht.Add("@date", date_plan.Text);
+                ht.Add("@date", date_plan.Text);                
             }
             else
             {
+                DateTime datebe = new DateTime(DateTime.Parse(date_plan.EditValue.ToString()).Year, DateTime.Parse(date_plan.EditValue.ToString()).Month, 1);
+                DateTime dateaf = datebe.AddMonths(1).AddDays(-1);
 
+                ht.Add("@MODE", 101);
+                ht.Add("@datebe", datebe);
+                ht.Add("@dateaf", dateaf);
             }
 
             ht.Add("@Werks", Main_MID_Form.G_werks);

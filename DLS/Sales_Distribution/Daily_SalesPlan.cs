@@ -26,7 +26,7 @@ namespace DLS.Sales_Distribution
 
         private void InitLanguage()
         {
-            
+
         }
 
         private void InitOnlyData()
@@ -98,7 +98,7 @@ namespace DLS.Sales_Distribution
                 arrth[i].Add("@Kunnr", dr_Delivery_Order[i]["Kunnr"].ToString());
                 arrth[i].Add("@Matnr", dr_Delivery_Order[i]["Matnr"].ToString());
                 arrth[i].Add("@Labst", dr_Delivery_Order[i]["Labst"].ToString());
-                arrth[i].Add("@PlanQty", dr_Delivery_Order[i]["PlanQty"].ToString());                
+                arrth[i].Add("@PlanQty", dr_Delivery_Order[i]["PlanQty"].ToString());
                 arrth[i].Add("@UserID", Login.G_userid);
             }
 
@@ -122,7 +122,7 @@ namespace DLS.Sales_Distribution
             if (rad_type.EditValue.Equals("0"))
             {
                 if (e.Column.FieldName.Equals("PlanQty"))
-                {                    
+                {
                     Hashtable ht = new Hashtable();
                     ht.Add("@MODE", 300);
                     ht.Add("@Pday", gv_DailySales_list.GetRowCellValue(e.RowHandle, "Pday"));
@@ -143,10 +143,13 @@ namespace DLS.Sales_Distribution
         {
             DataRowView drv = (DataRowView)gv_DailySales_list.GetRow(gv_DailySales_list.GetSelectedRows()[0]);
 
-            if (drv["ppFlg"].Equals("X"))
+            if (rad_type.EditValue.Equals("0"))
             {
-                e.ErrorText = "영업계획을 참조하여 생산계획이 수립되었으므로 수정할 수 없습니다. ESC키를 누르면 돌아갑니다.";
-                e.Valid = false;
+                if (drv["ppFlg"].Equals("X"))
+                {
+                    e.ErrorText = "영업계획을 참조하여 생산계획이 수립되었으므로 수정할 수 없습니다. ESC키를 누르면 돌아갑니다.";
+                    e.Valid = false;
+                }
             }
         }
     }

@@ -461,7 +461,11 @@ namespace DLS
         //입고리스트
         private void Btn_MM_GRlist_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("GR_List"))
+            {
+                Materials_Management.GR_List fm = new Materials_Management.GR_List();
+                Mdi_Child_NewOpen(fm);
+            }
         }
         
         #endregion
@@ -532,7 +536,11 @@ namespace DLS
         //자재수불
         private void btn_FI_Material_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (FromOpen("GR_List"))
+            {
+                Materials_Management.GR_List fm = new Materials_Management.GR_List();
+                Mdi_Child_NewOpen(fm);
+            }
         }
 
         //문서리스트
