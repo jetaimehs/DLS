@@ -178,10 +178,10 @@ namespace DLS.Production_Planning
                             dr1["Mtart"] = (string)dt3.Rows[0]["Mtart"];
                             dr1["Meins"] = (string)dt3.Rows[0]["Meins"];
                             dr1["PPlgort"] = (string)dt3.Rows[0]["PPlgort"];
-                            dr1["ppNote"] = "Upload";                                                    
+                            dr1["pppNote"] = "Upload";                                                    
                         }
                         else
-                            dr1["ppNote"] = "미등록된 자재번호 입니다.";
+                            dr1["pppNote"] = "미등록된 자재번호 입니다.";
 
                         dt2.Rows.Add(dr1);
                     }
@@ -207,7 +207,7 @@ namespace DLS.Production_Planning
             dt.Columns.Add(new DataColumn("Decom", typeof(Boolean)));
             dt.Columns.Add(new DataColumn("Ifcom", typeof(Boolean)));
             dt.Columns.Add(new DataColumn("Lvorm", typeof(Boolean)));
-            dt.Columns.Add(new DataColumn("ppNote", typeof(string)));
+            dt.Columns.Add(new DataColumn("pppNote", typeof(string)));
         }
 
         private void repositoryItemHyperLinkEdit_Save_Click(object sender, EventArgs e)
