@@ -297,7 +297,7 @@ namespace DLS.Master.Sales
             ht1.Add("@Werks", Main_MID_Form.G_werks);
             ht1.Add("@Rcode", gv_route.GetFocusedRowCellValue("Rcode"));
 
-            int cnt = (int)Common.Frm10.DataBase.ExecuteDataBase.ExecQueryReturn_NoTran("[DlsSpRoute]", ht1, "");
+            int cnt = int.Parse(Common.Frm10.DataBase.ExecuteDataBase.ExecScalarQuery("[DlsSpRoute]", ht1, "").ToString());
 
             if (cnt > 1)
             {

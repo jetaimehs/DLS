@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
+using SAP.Middleware.Connector;
 
 namespace DLS.Master.Sales
 {
@@ -30,11 +31,11 @@ namespace DLS.Master.Sales
 
         private void InitLanguage()
         {
-            
+
         }
 
         private void InitOnlyData()
-        {   
+        {
             DLS.Common.Util.MyUtil.SetGridControlDesign(ref gc_Matnr_list);
             DLS.Common.Util.MyUtil.SetGridViewDesign(ref gv_Matnr_list);
 
@@ -45,10 +46,16 @@ namespace DLS.Master.Sales
             ht.Add("@MODE", 100);
 
             DataTable dt = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpKunnr]", ht, "");
-                        
-            SearchLookUpEdit_Kunnr.DataSource = dt;            
-            SearchLookUpEdit_Kunnr.DisplayMember = "Kunnr";
-            SearchLookUpEdit_Kunnr.ValueMember = "Kunnr";
+
+            //Hashtable ht1 = new Hashtable();
+
+            //IRfcTable sapTable = Common.Frm10.SapConntor.SAPConnection.SAPGetTable("ZMM_CUSTOMER_LIST", "FT_ZMMS0037", ht1);
+            //DataTable netTable = Common.Util.sapTableConvert.DataTableSet(sapTable);
+
+
+            SearchLookUpEdit_Kunnr.DataSource = dt;
+            SearchLookUpEdit_Kunnr.DisplayMember = "KUNNR";
+            SearchLookUpEdit_Kunnr.ValueMember = "KUNNR";
 
             //Hashtable ht1 = new Hashtable();
             //ht1.Add("@MODE", 100);
@@ -143,7 +150,7 @@ namespace DLS.Master.Sales
                 repositoryItemHyperLinkEdit_Add_Click(sender, e);
             }
         }
-        
+
         private void repositoryItemHyperLinkEdit_Delete_Click(object sender, EventArgs e)
         {
             DataRowView drv = (DataRowView)gv_price.GetRow(gv_price.GetSelectedRows()[0]);
@@ -215,28 +222,31 @@ namespace DLS.Master.Sales
         {
             DataRowView drv = (DataRowView)gv_price.GetRow(gv_price.GetSelectedRows()[0]);
 
-            if (gv_Matnr_list.FocusedColumn.Name == "Add")
+            if (drv != null)
             {
-                if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
+                if (gv_price.FocusedColumn.Name == "Add")
                 {
-                    e.ErrorText = "신규라인에서 추가하세요.";
-                    e.Valid = false;
+                    if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
+                    {
+                        e.ErrorText = "신규라인에서 추가하세요.";
+                        e.Valid = false;
+                    }
                 }
-            }
 
-            if (gv_Matnr_list.FocusedColumn.Name == "Kunnr" ||
-                gv_Matnr_list.FocusedColumn.Name == "Matnr" ||
-                gv_Matnr_list.FocusedColumn.Name == "Sdate" ||
-                gv_Matnr_list.FocusedColumn.Name == "Price" ||
-                gv_Matnr_list.FocusedColumn.Name == "Waers")
-            {
-                if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
+                if (gv_price.FocusedColumn.Name == "Kunnr" ||
+                    gv_price.FocusedColumn.Name == "Matnr" ||
+                    gv_price.FocusedColumn.Name == "Sdate" ||
+                    gv_price.FocusedColumn.Name == "Price" ||
+                    gv_price.FocusedColumn.Name == "Waers")
                 {
-                    e.ErrorText = "수정할 수 없습니다. ESC를 누르면 돌아갑니다.";
-                    e.Valid = false;
+                    if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
+                    {
+                        e.ErrorText = "수정할 수 없습니다. ESC를 누르면 돌아갑니다.";
+                        e.Valid = false;
+                    }
                 }
             }
-        }        
+        }
 
         private void ShowSubData()
         {
@@ -252,10 +262,33 @@ namespace DLS.Master.Sales
 
         private void gv_Matnr_list_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (!gv_Matnr_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
+            if (!gv_Matnr_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) &&
+                !gv_Matnr_list.FocusedRowHandle.Equals(GridControl.AutoFilterRowHandle))
             {
                 ShowSubData();
             }
+        }
+
+        private void gv_price_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            try
+            {
+                DataRowView drv = (DataRowView)e.Row;
+
+                if (drv.Row.RowState == DataRowState.Added)
+                {
+                    drv.Row.Delete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void btn_upload_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

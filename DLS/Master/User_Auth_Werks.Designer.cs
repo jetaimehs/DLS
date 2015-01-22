@@ -31,7 +31,7 @@
             this.gc_User_Auth = new DevExpress.XtraGrid.GridControl();
             this.gv_User_Auth = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.UserID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Name11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Werks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Name3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
@@ -64,7 +64,7 @@
             // 
             // gc_User_Auth
             // 
-            this.gc_User_Auth.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gc_User_Auth.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gc_User_Auth.Location = new System.Drawing.Point(0, 163);
             this.gc_User_Auth.MainView = this.gv_User_Auth;
             this.gc_User_Auth.Name = "gc_User_Auth";
@@ -77,7 +77,7 @@
             // 
             this.gv_User_Auth.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.UserID,
-            this.Name,
+            this.Name11,
             this.Werks,
             this.Name3});
             this.gv_User_Auth.GridControl = this.gc_User_Auth;
@@ -91,14 +91,14 @@
             this.UserID.Visible = true;
             this.UserID.VisibleIndex = 0;
             // 
-            // Name
+            // Name11
             // 
-            this.Name.Caption = "이름";
-            this.Name.FieldName = "Name";
-            this.Name.Name = "Name";
-            this.Name.OptionsColumn.AllowEdit = false;
-            this.Name.Visible = true;
-            this.Name.VisibleIndex = 1;
+            this.Name11.Caption = "이름";
+            this.Name11.FieldName = "Name";
+            this.Name11.Name = "Name11";
+            this.Name11.OptionsColumn.AllowEdit = false;
+            this.Name11.Visible = true;
+            this.Name11.VisibleIndex = 1;
             // 
             // Werks
             // 
@@ -123,7 +123,7 @@
             this.pc_main.Controls.Add(this.btn_add);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Controls.Add(this.gc_main);
-            this.pc_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
             this.pc_main.Location = new System.Drawing.Point(0, 0);
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1332, 163);
@@ -284,9 +284,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 743);
-            this.Controls.Add(this.pc_main);
             this.Controls.Add(this.gc_User_Auth);
-            this.Text = "User_Auth_Werks";
+            this.Controls.Add(this.pc_main);
+            this.Name = "User_Auth_Werks";
+            this.Text = "사용자플랜트관리";
             this.Load += new System.EventHandler(this.User_Auth_Werks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_User_Auth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_User_Auth)).EndInit();
@@ -307,7 +308,7 @@
 
         private DevExpress.XtraGrid.GridControl gc_User_Auth;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_User_Auth;
-        private DevExpress.XtraGrid.Columns.GridColumn Name;
+        private DevExpress.XtraGrid.Columns.GridColumn Name11;
         private DevExpress.XtraGrid.Columns.GridColumn Name3;
         private DevExpress.XtraGrid.Columns.GridColumn UserID;
         private DevExpress.XtraGrid.Columns.GridColumn Werks;

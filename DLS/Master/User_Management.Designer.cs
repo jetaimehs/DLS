@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gc_main = new DevExpress.XtraEditors.GroupControl();
+            this.chk_del = new DevExpress.XtraEditors.CheckEdit();
             this.searchLookUpEdit_auth = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Auth = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,11 +53,11 @@
             this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Text1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dflg = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.chk_del = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_main)).BeginInit();
             this.gc_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_del.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit_auth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_mail.Properties)).BeginInit();
@@ -65,12 +65,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_UserList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_UserList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_del.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pc_main
             // 
-            this.pc_main.Controls.Add(this.simpleButton1);
             this.pc_main.Controls.Add(this.btn_delete);
             this.pc_main.Controls.Add(this.btn_add);
             this.pc_main.Controls.Add(this.btn_find);
@@ -80,15 +78,6 @@
             this.pc_main.Name = "pc_main";
             this.pc_main.Size = new System.Drawing.Size(1339, 158);
             this.pc_main.TabIndex = 0;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(526, 32);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "simpleButton1";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btn_delete
             // 
@@ -141,6 +130,14 @@
             this.gc_main.Size = new System.Drawing.Size(1335, 75);
             this.gc_main.TabIndex = 0;
             this.gc_main.Text = "사용자 정보";
+            // 
+            // chk_del
+            // 
+            this.chk_del.Location = new System.Drawing.Point(31, 40);
+            this.chk_del.Name = "chk_del";
+            this.chk_del.Properties.Caption = "삭제사용자보기";
+            this.chk_del.Size = new System.Drawing.Size(112, 19);
+            this.chk_del.TabIndex = 9;
             // 
             // searchLookUpEdit_auth
             // 
@@ -320,14 +317,6 @@
             this.Dflg.Visible = true;
             this.Dflg.VisibleIndex = 4;
             // 
-            // chk_del
-            // 
-            this.chk_del.Location = new System.Drawing.Point(31, 40);
-            this.chk_del.Name = "chk_del";
-            this.chk_del.Properties.Caption = "삭제사용자보기";
-            this.chk_del.Size = new System.Drawing.Size(112, 19);
-            this.chk_del.TabIndex = 9;
-            // 
             // User_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -341,6 +330,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gc_main)).EndInit();
             this.gc_main.ResumeLayout(false);
             this.gc_main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_del.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit_auth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_mail.Properties)).EndInit();
@@ -348,7 +338,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_UserList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_UserList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_del.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,7 +362,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn UserID;
         private DevExpress.XtraGrid.Columns.GridColumn Email;
         private DevExpress.XtraGrid.Columns.GridColumn Dflg;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit_auth;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn Auth;

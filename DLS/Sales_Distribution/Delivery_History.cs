@@ -85,6 +85,7 @@ namespace DLS.Sales_Distribution
                 ht2.Add("@Syear", DateTime.Parse(drs[i]["Budat"].ToString()).Year.ToString());
                 ht2.Add("@Smonth", DateTime.Parse(drs[i]["Budat"].ToString()).Month.ToString());
 
+                
                 DataTable dt2 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpFiCloseDate]", ht2, "");
 
                 if (dt2.Rows.Count > 0)

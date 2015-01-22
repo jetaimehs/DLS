@@ -99,6 +99,10 @@ namespace DLS.Sales_Distribution
             for (int i = 0; i < dtUpload.Rows.Count; i++)
             {
                 dtUpload.Rows[i]["Matnr"] = dtUpload.Rows[i]["Matnr"].ToString().Replace(" ", "-");
+                if (!dtUpload.Rows[i]["OrderTyp"].Equals("VM"))
+                {
+                    dtUpload.Rows[i]["OrderTyp"] = "None";
+                }
             }
 
             DataTable dt_distinct = dtUpload.DefaultView.ToTable(true, "Kunnr", "PackTyp", "OrderTyp", "Matnr");

@@ -53,7 +53,7 @@ namespace DLS
             }
 
             barEditItem1.EditValue = cb_werks.Items[0].ToString();
-            G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];
+            G_werks = barEditItem1.EditValue.ToString().Split(new char[] { '-' })[0];            
         }
 
         public bool FromOpen(string OpenFrom)
@@ -134,16 +134,31 @@ namespace DLS
         private void Rgb_Skin_GalleryItemClick(object sender, GalleryItemClickEventArgs e)
         {
             Hashtable ht = new Hashtable();
-            ht.Add("@MODE", 300);
+            ht.Add("@MODE", 301);
             ht.Add("@USERID", Login.G_userid);
             ht.Add("@Skin", e.Item.Tag);
 
             ExecuteDataBase.ExecNonQuery("DLSSPAccount", ht, "");
         }
 
-        #region MDI 하위폼 열기
+        public void Mdi_Child_NewOpen(Form NewForm)
+        {
+            //foreach (Form oForm in this.MdiChildren)
+            //{
+            //    oForm.Dispose();    //동시에 1개만 떠 있도록. 
+            //}
 
-        #region 메뉴 마스터 사용자 관리
+            NewForm.MdiParent = this;
+            NewForm.WindowState = FormWindowState.Maximized;
+            NewForm.BringToFront(); // 폼을 제일 위로
+            NewForm.Focus();
+            NewForm.Show();
+            //NewForm.Text = Common.Util.MyUtil.SetMultiLang(NewForm.Name);
+        }
+
+        #region 메뉴버튼 클릭
+        #region 기준정보
+        //사용자 관리
 
         private void Btn_Master_User_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -154,33 +169,12 @@ namespace DLS
             }
         }
 
-        #endregion
-        
-        #endregion
-
-        public void Mdi_Child_NewOpen(Form NewForm)
+        //사용자 플랜트 권한 추가
+        private void Btn_Master_UserAuth_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            foreach (Form oForm in this.MdiChildren)
+            if (FromOpen("User_Auth_Werks"))
             {
-                oForm.Dispose();    //동시에 1개만 떠 있도록. 
-            }
-
-            NewForm.MdiParent = this;
-            NewForm.WindowState = FormWindowState.Maximized;
-            NewForm.BringToFront(); // 폼을 제일 위로
-            NewForm.Focus();
-            NewForm.Show();
-            NewForm.Text = Common.Util.MyUtil.SetMultiLang(NewForm.Name);
-        }
-
-        #region 메뉴버튼 클릭
-        #region 기준정보
-        //사용자 관리
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (FromOpen("User_Management"))
-            {
-                Master.User_Management fm = new Master.User_Management();
+                Master.User_Auth_Werks fm = new Master.User_Auth_Werks();
                 Mdi_Child_NewOpen(fm);
             }
         }
@@ -578,6 +572,5 @@ namespace DLS
             Popup_Form.Change_Infomation pop = new Popup_Form.Change_Infomation();            
             pop.Show();
         }
-
     }
 }

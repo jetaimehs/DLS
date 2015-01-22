@@ -68,37 +68,40 @@ namespace DLS.Master.Sales
         {
             DataRowView drv = (DataRowView)gv_Transport_list.GetRow(gv_Transport_list.GetSelectedRows()[0]);
 
-            if (gv_Transport_list.FocusedColumn.Name == "Add")
+            if (drv != null)
             {
+                if (gv_Transport_list.FocusedColumn.Name == "Add")
+                {
+                    if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
+                    {
+                        e.ErrorText = "신규라인에서 추가하세요.";
+                        e.Valid = false;
+                    }
+                }
+
                 if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
                 {
-                    e.ErrorText = "신규라인에서 추가하세요.";
-                    e.Valid = false;
+                    if (gv_Transport_list.FocusedColumn.Name == "Lifnr" ||
+                        gv_Transport_list.FocusedColumn.Name == "Cnumber" ||
+                        gv_Transport_list.FocusedColumn.Name == "Name1" ||
+                        gv_Transport_list.FocusedColumn.Name == "Ctype")
+                    {
+                        e.ErrorText = "월대금액, 운전자, 전화번호만 수정가능합니다. ESC키를 누르면 돌아갑니다.";
+                        e.Valid = false;
+                    }
                 }
-            }
 
-            if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
-            {
-                if (gv_Transport_list.FocusedColumn.Name == "Lifnr" ||
-                    gv_Transport_list.FocusedColumn.Name == "Cnumber" ||
-                    gv_Transport_list.FocusedColumn.Name == "Name1" ||
-                    gv_Transport_list.FocusedColumn.Name == "Ctype")
+                if (gv_Transport_list.FocusedColumn.Name.Equals("mFee"))
                 {
-                    e.ErrorText = "월대금액, 운전자, 전화번호만 수정가능합니다. ESC키를 누르면 돌아갑니다.";
-                    e.Valid = false;
+                    BaseEdit edit = (sender as GridView).ActiveEditor;
+                    oldfee = edit.OldEditValue.ToString();
                 }
-            }
 
-            if (gv_Transport_list.FocusedColumn.Name.Equals("mFee"))
-            {
-                BaseEdit edit = (sender as GridView).ActiveEditor;
-                oldfee = edit.OldEditValue.ToString();
-            }
-
-            if (gv_Transport_list.FocusedColumn.Name.Equals("Sdate"))
-            {
-                BaseEdit edit = (sender as GridView).ActiveEditor;
-                oldSdate = edit.OldEditValue.ToString();
+                if (gv_Transport_list.FocusedColumn.Name.Equals("Sdate"))
+                {
+                    BaseEdit edit = (sender as GridView).ActiveEditor;
+                    oldSdate = edit.OldEditValue.ToString();
+                }
             }
         }
 
