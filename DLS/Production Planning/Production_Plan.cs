@@ -227,6 +227,12 @@ namespace DLS.Production_Planning
                     return;
                 }
 
+                if (gv_ppPlan.GetFocusedRowCellValue("Ifcom").Equals(true))
+                {
+                    MessageBox.Show("이미 발주완료된 계획은 삭제 할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 if (gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString().Trim() == string.Empty)
                 {
                     gv_ppPlan.GetFocusedDataRow().Delete();
@@ -238,6 +244,7 @@ namespace DLS.Production_Planning
                     ht1.Add("@MODE", 401);
                     ht1.Add("@pppSeq", gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString());
                     ht1.Add("@Lvorm", 1);
+                    ht1.Add("@Userid", Login.G_userid);
 
                     Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpPlan]", ht1, "");
 

@@ -44,9 +44,9 @@ namespace DLS.Master.Production
             //패널 다국어
 
             //그리드 컬럼 헤드텍스트 다국어
-            Common.Util.MyUtil.SetMultiLangGV(ref gv_Complate);
-            Common.Util.MyUtil.SetMultiLangGV(ref gv_Main);
-            Common.Util.MyUtil.SetMultiLangGV(ref gv_Node);
+            //Common.Util.MyUtil.SetMultiLangGV(ref gv_Complate);
+            //Common.Util.MyUtil.SetMultiLangGV(ref gv_Main);
+            //Common.Util.MyUtil.SetMultiLangGV(ref gv_Node);
 
             //그리드 제외한 컨트롤 다국어 설정
             this.Text = Common.Util.MyUtil.SetMultiLang("User_Management");
