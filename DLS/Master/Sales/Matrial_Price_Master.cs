@@ -54,8 +54,8 @@ namespace DLS.Master.Sales
 
 
             SearchLookUpEdit_Kunnr.DataSource = dt;
-            SearchLookUpEdit_Kunnr.DisplayMember = "KUNNR";
-            SearchLookUpEdit_Kunnr.ValueMember = "KUNNR";
+            SearchLookUpEdit_Kunnr.DisplayMember = "Kunnr";
+            SearchLookUpEdit_Kunnr.ValueMember = "Kunnr";
 
             //Hashtable ht1 = new Hashtable();
             //ht1.Add("@MODE", 100);
@@ -288,7 +288,8 @@ namespace DLS.Master.Sales
 
         private void btn_upload_Click(object sender, EventArgs e)
         {
-
+            Popup_Form.Change_Kprice pop = new Popup_Form.Change_Kprice();            
+            pop.Show();
         }
     }
 }

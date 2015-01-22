@@ -32,7 +32,7 @@
     <SuiteName>DLS</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>setup.html</WebPage>
-    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationRevision>20</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -73,8 +73,10 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <ApplicationIcon>pro3_2_10.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v11.2, Version=11.2.14.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
@@ -776,6 +778,309 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btn_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_입고예정.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_입고완료.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_입고취소.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_자재마스터.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_재고관리.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_재고조회.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_중포장.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_중포장1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_포장사양서.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_포장삭제내역.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_포장자재기준정보.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_플랜트마스터.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpellingOptions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unmark_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnmarkAll_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserKey_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1372260121_ContainerRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1377607488_synaptic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ActiveRents_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonForward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Controls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\description.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\en-US.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExportToExcel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExportToPDF_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertPicture-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemMarked_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ko-KR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online_Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlusMinus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAP_입고내역.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search-Folders_17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectAllMarked_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_BOM관리.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_PO등록1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_PO별재고조회.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_고객자재관리.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_고객정보.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_권한관리.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_발주생성.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_불량확인.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_사용자관리.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_사용자정보변경.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_완성품번관리1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SKD_운송경로.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagram_v2-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dictionary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay_buy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\benchmarking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_inbound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck_pay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pro3_2_10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pro3_2_10.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pro3_2_10.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
