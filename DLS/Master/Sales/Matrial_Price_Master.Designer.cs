@@ -46,6 +46,8 @@
             this.Kunnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SearchLookUpEdit_Kunnr = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.KUNNR1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NAME11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matnr1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Maktx1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,8 +62,7 @@
             this.repositoryItemHyperLinkEdit_Add = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.Delete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.KUNNR1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NAME11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_upload = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Matnr_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Matnr_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
@@ -160,6 +161,7 @@
             // 
             // pc_main
             // 
+            this.pc_main.Controls.Add(this.btn_upload);
             this.pc_main.Controls.Add(this.btn_down);
             this.pc_main.Controls.Add(this.btn_find);
             this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
@@ -270,6 +272,22 @@
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // KUNNR1
+            // 
+            this.KUNNR1.Caption = "고객코드";
+            this.KUNNR1.FieldName = "KUNNR";
+            this.KUNNR1.Name = "KUNNR1";
+            this.KUNNR1.Visible = true;
+            this.KUNNR1.VisibleIndex = 0;
+            // 
+            // NAME11
+            // 
+            this.NAME11.Caption = "고객명";
+            this.NAME11.FieldName = "NAME1";
+            this.NAME11.Name = "NAME11";
+            this.NAME11.Visible = true;
+            this.NAME11.VisibleIndex = 1;
             // 
             // Name1
             // 
@@ -391,21 +409,16 @@
             this.repositoryItemHyperLinkEdit_Delete.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Delete_Click);
             this.repositoryItemHyperLinkEdit_Delete.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repositoryItemHyperLinkEdit_Delete_KeyDown);
             // 
-            // KUNNR1
+            // btn_upload
             // 
-            this.KUNNR1.Caption = "고객코드";
-            this.KUNNR1.FieldName = "KUNNR";
-            this.KUNNR1.Name = "KUNNR1";
-            this.KUNNR1.Visible = true;
-            this.KUNNR1.VisibleIndex = 0;
-            // 
-            // NAME11
-            // 
-            this.NAME11.Caption = "고객명";
-            this.NAME11.FieldName = "NAME1";
-            this.NAME11.Name = "NAME11";
-            this.NAME11.Visible = true;
-            this.NAME11.VisibleIndex = 1;
+            this.btn_upload.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_upload.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_upload.Location = new System.Drawing.Point(174, 12);
+            this.btn_upload.Name = "btn_upload";
+            this.btn_upload.Size = new System.Drawing.Size(75, 60);
+            this.btn_upload.TabIndex = 27;
+            this.btn_upload.Text = "판가변경";
+            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
             // Matrial_Price_Master
             // 
@@ -472,5 +485,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Delete;
         private DevExpress.XtraGrid.Columns.GridColumn KUNNR1;
         private DevExpress.XtraGrid.Columns.GridColumn NAME11;
+        private DevExpress.XtraEditors.SimpleButton btn_upload;
     }
 }

@@ -285,5 +285,10 @@ namespace DLS.Master.Sales
                 throw ex;
             }
         }
+
+        private void btn_upload_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

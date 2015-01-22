@@ -34,6 +34,7 @@ namespace DLS.Production_Planning
             //영업계획
             Common.Util.MyUtil.SetGridControlDesign(ref gc_sdPlan);
             Common.Util.MyUtil.SetGridViewDesign(ref gv_sdPlan);
+            gv_sdPlan.OptionsView.ShowAutoFilterRow = false;
             
             //날짜
             date_sdate.Text = DateTime.Today.ToShortDateString();
@@ -181,7 +182,7 @@ namespace DLS.Production_Planning
                             dr1["pppNote"] = "Upload";                                                    
                         }
                         else
-                            dr1["pppNote"] = "미등록된 자재번호 입니다.";
+                            dr1["pppNote"] = dr2[1].ToString() + "은 미등록된 자재번호 입니다.";
 
                         dt2.Rows.Add(dr1);
                     }
