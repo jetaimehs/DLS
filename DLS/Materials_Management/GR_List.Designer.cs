@@ -51,6 +51,12 @@
             this.rfSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rfSqn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.mdSeq = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Brtwr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Waers = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Netwr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Epein = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Netpr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LPseq = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deEdt.Properties.VistaTimeProperties)).BeginInit();
@@ -145,7 +151,7 @@
             this.gp1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gp1.Location = new System.Drawing.Point(0, 47);
             this.gp1.Name = "gp1";
-            this.gp1.Size = new System.Drawing.Size(1284, 720);
+            this.gp1.Size = new System.Drawing.Size(1284, 695);
             this.gp1.TabIndex = 33;
             this.gp1.Text = "입고";
             // 
@@ -155,7 +161,7 @@
             this.gcMain.Location = new System.Drawing.Point(2, 22);
             this.gcMain.MainView = this.MainView;
             this.gcMain.Name = "gcMain";
-            this.gcMain.Size = new System.Drawing.Size(1280, 696);
+            this.gcMain.Size = new System.Drawing.Size(1280, 671);
             this.gcMain.TabIndex = 4;
             this.gcMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.MainView});
@@ -170,9 +176,15 @@
             this.Name1,
             this.grDat,
             this.Bwart,
+            this.Brtwr,
             this.Matnr,
             this.Maktx,
             this.gMenge,
+            this.LPseq,
+            this.Netpr,
+            this.Epein,
+            this.Netwr,
+            this.Waers,
             this.rfSeq,
             this.rfSqn,
             this.mdSeq});
@@ -246,7 +258,7 @@
             this.Matnr.FieldName = "Matnr";
             this.Matnr.Name = "Matnr";
             this.Matnr.Visible = true;
-            this.Matnr.VisibleIndex = 7;
+            this.Matnr.VisibleIndex = 8;
             // 
             // Maktx
             // 
@@ -254,7 +266,7 @@
             this.Maktx.FieldName = "Maktx";
             this.Maktx.Name = "Maktx";
             this.Maktx.Visible = true;
-            this.Maktx.VisibleIndex = 8;
+            this.Maktx.VisibleIndex = 9;
             // 
             // gMenge
             // 
@@ -262,7 +274,7 @@
             this.gMenge.FieldName = "gMenge";
             this.gMenge.Name = "gMenge";
             this.gMenge.Visible = true;
-            this.gMenge.VisibleIndex = 9;
+            this.gMenge.VisibleIndex = 10;
             // 
             // rfSeq
             // 
@@ -270,7 +282,7 @@
             this.rfSeq.FieldName = "rfSeq";
             this.rfSeq.Name = "rfSeq";
             this.rfSeq.Visible = true;
-            this.rfSeq.VisibleIndex = 10;
+            this.rfSeq.VisibleIndex = 16;
             // 
             // rfSqn
             // 
@@ -278,7 +290,7 @@
             this.rfSqn.FieldName = "rfSqn";
             this.rfSqn.Name = "rfSqn";
             this.rfSqn.Visible = true;
-            this.rfSqn.VisibleIndex = 11;
+            this.rfSqn.VisibleIndex = 17;
             // 
             // mdSeq
             // 
@@ -286,13 +298,61 @@
             this.mdSeq.FieldName = "mdSeq";
             this.mdSeq.Name = "mdSeq";
             this.mdSeq.Visible = true;
-            this.mdSeq.VisibleIndex = 12;
+            this.mdSeq.VisibleIndex = 18;
+            // 
+            // Brtwr
+            // 
+            this.Brtwr.Caption = "입고 총 금액";
+            this.Brtwr.FieldName = "Brtwr";
+            this.Brtwr.Name = "Brtwr";
+            this.Brtwr.Visible = true;
+            this.Brtwr.VisibleIndex = 7;
+            // 
+            // Waers
+            // 
+            this.Waers.Caption = "통화단위";
+            this.Waers.FieldName = "Waers";
+            this.Waers.Name = "Waers";
+            this.Waers.Visible = true;
+            this.Waers.VisibleIndex = 15;
+            // 
+            // Netwr
+            // 
+            this.Netwr.Caption = "입고금액";
+            this.Netwr.FieldName = "Netwr";
+            this.Netwr.Name = "Netwr";
+            this.Netwr.Visible = true;
+            this.Netwr.VisibleIndex = 14;
+            // 
+            // Epein
+            // 
+            this.Epein.Caption = "금액단위";
+            this.Epein.FieldName = "Epein";
+            this.Epein.Name = "Epein";
+            this.Epein.Visible = true;
+            this.Epein.VisibleIndex = 13;
+            // 
+            // Netpr
+            // 
+            this.Netpr.Caption = "입고단가";
+            this.Netpr.FieldName = "Netpr";
+            this.Netpr.Name = "Netpr";
+            this.Netpr.Visible = true;
+            this.Netpr.VisibleIndex = 12;
+            // 
+            // LPseq
+            // 
+            this.LPseq.Caption = "단가코드";
+            this.LPseq.FieldName = "LPseq";
+            this.LPseq.Name = "LPseq";
+            this.LPseq.Visible = true;
+            this.LPseq.VisibleIndex = 11;
             // 
             // GR_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 767);
+            this.ClientSize = new System.Drawing.Size(1284, 742);
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "GR_List";
@@ -338,5 +398,11 @@
         private DevExpress.XtraEditors.SimpleButton btnDown;
         private DevExpress.XtraEditors.DateEdit deEdt;
         private DevExpress.XtraEditors.DateEdit deSdt;
+        private DevExpress.XtraGrid.Columns.GridColumn Brtwr;
+        private DevExpress.XtraGrid.Columns.GridColumn LPseq;
+        private DevExpress.XtraGrid.Columns.GridColumn Netpr;
+        private DevExpress.XtraGrid.Columns.GridColumn Epein;
+        private DevExpress.XtraGrid.Columns.GridColumn Netwr;
+        private DevExpress.XtraGrid.Columns.GridColumn Waers;
     }
 }

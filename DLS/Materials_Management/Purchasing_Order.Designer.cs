@@ -228,7 +228,10 @@
             this.Loekz});
             this.SubView.GridControl = this.gcSub;
             this.SubView.Name = "SubView";
+            this.SubView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
             this.SubView.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.SubView.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.SubView_RowUpdated);
+            this.SubView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SubView_KeyDown);
             // 
             // SpoSeq
             // 
@@ -262,7 +265,6 @@
             this.Menge.Caption = "발주수량";
             this.Menge.FieldName = "Menge";
             this.Menge.Name = "Menge";
-            this.Menge.OptionsColumn.AllowEdit = false;
             this.Menge.Visible = true;
             this.Menge.VisibleIndex = 3;
             // 

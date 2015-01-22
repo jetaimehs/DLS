@@ -294,6 +294,34 @@ namespace DLS.Materials_Management
             #endregion
         }
 
+        //그리드 수량 수정에 따른 발주 재구성
+        private void MakePO()
+        {
+            DataTable dtPoT = dtPo.Copy();
+            DataTable dtPoItemT = dtPoItem.Copy();
+            dtPo.Rows.Clear();
+            dtPoItem.Rows.Clear();
+
+            foreach (DataRow drPoT in dtPoT.Rows)
+            {
+                if (dtPoItemT.Select("poSeq ='" + drPoT["poSeq"] + "'").Length > 0)
+                {
+                    int i = 1;
+                    decimal dBrtwr = 0;
+                    foreach (DataRow drPoItemT in dtPoItemT.Select("poSeq ='" + drPoT["poSeq"] + "'"))
+                    {                        
+                        drPoItemT["poSqn"] = i++;
+                        drPoItemT["Netwr"] = decimal.Parse(drPoItemT["Menge"].ToString()) * decimal.Parse(drPoItemT["Netpr"].ToString()) / decimal.Parse(drPoItemT["Epein"].ToString());
+                        dBrtwr = dBrtwr + decimal.Parse(drPoItemT["Netwr"].ToString());
+
+                        dtPoItem.ImportRow(drPoItemT);
+                    }                   
+                    drPoT["Brtwr"] = decimal.Round(dBrtwr,2);
+                    dtPo.ImportRow(drPoT);
+                }                
+            }
+        }
+
         private void btnPO_Click(object sender, EventArgs e)
         {
             //확정할 발주가 없는경우
@@ -439,6 +467,24 @@ namespace DLS.Materials_Management
                     con.Close();
             }
 
+        }
+
+        private void SubView_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            MakePO();
+        }
+
+        private void SubView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && e.Modifiers == Keys.Control)
+            {
+                if (MessageBox.Show("삭제 하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) !=
+                  DialogResult.Yes)
+                    return;
+                GridView view = sender as GridView;
+                view.DeleteRow(view.FocusedRowHandle);
+                MakePO();
+            }
         }
     }
 }

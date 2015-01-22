@@ -50,6 +50,10 @@
             this.SMatnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SMenge = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SgMenge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Netpr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Epein = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Netwr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Waers = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SElikz = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcMain = new DevExpress.XtraGrid.GridControl();
             this.MainView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -139,7 +143,7 @@
             this.gp1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gp1.Location = new System.Drawing.Point(0, 40);
             this.gp1.Name = "gp1";
-            this.gp1.Size = new System.Drawing.Size(1299, 720);
+            this.gp1.Size = new System.Drawing.Size(1299, 702);
             this.gp1.TabIndex = 31;
             this.gp1.Text = "발주";
             // 
@@ -150,7 +154,7 @@
             this.gp2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gp2.Location = new System.Drawing.Point(2, 282);
             this.gp2.Name = "gp2";
-            this.gp2.Size = new System.Drawing.Size(1295, 436);
+            this.gp2.Size = new System.Drawing.Size(1295, 418);
             this.gp2.TabIndex = 32;
             this.gp2.Text = "입고";
             // 
@@ -160,7 +164,7 @@
             this.gp3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gp3.Location = new System.Drawing.Point(2, 270);
             this.gp3.Name = "gp3";
-            this.gp3.Size = new System.Drawing.Size(1291, 164);
+            this.gp3.Size = new System.Drawing.Size(1291, 146);
             this.gp3.TabIndex = 1;
             this.gp3.Text = "메세지";
             // 
@@ -170,7 +174,7 @@
             this.gcMg.Location = new System.Drawing.Point(2, 22);
             this.gcMg.MainView = this.MgView;
             this.gcMg.Name = "gcMg";
-            this.gcMg.Size = new System.Drawing.Size(1287, 140);
+            this.gcMg.Size = new System.Drawing.Size(1287, 122);
             this.gcMg.TabIndex = 0;
             this.gcMg.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.MgView});
@@ -222,11 +226,16 @@
             this.SMatnr,
             this.SMenge,
             this.SgMenge,
+            this.Netpr,
+            this.Epein,
+            this.Netwr,
+            this.Waers,
             this.SElikz});
             this.SubView.GridControl = this.gcSub;
             this.SubView.Name = "SubView";
             this.SubView.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
             this.SubView.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.SubView_ValidateRow);
+            this.SubView.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.SubView_RowUpdated);
             this.SubView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SubView_KeyDown);
             this.SubView.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.SubView_InvalidValueException);
             // 
@@ -301,13 +310,49 @@
             this.SgMenge.Visible = true;
             this.SgMenge.VisibleIndex = 7;
             // 
+            // Netpr
+            // 
+            this.Netpr.Caption = "입고단가";
+            this.Netpr.FieldName = "Netpr";
+            this.Netpr.Name = "Netpr";
+            this.Netpr.OptionsColumn.AllowEdit = false;
+            this.Netpr.Visible = true;
+            this.Netpr.VisibleIndex = 8;
+            // 
+            // Epein
+            // 
+            this.Epein.Caption = "가격단위";
+            this.Epein.FieldName = "Epein";
+            this.Epein.Name = "Epein";
+            this.Epein.OptionsColumn.AllowEdit = false;
+            this.Epein.Visible = true;
+            this.Epein.VisibleIndex = 9;
+            // 
+            // Netwr
+            // 
+            this.Netwr.Caption = "입고금액";
+            this.Netwr.FieldName = "Netwr";
+            this.Netwr.Name = "Netwr";
+            this.Netwr.OptionsColumn.AllowEdit = false;
+            this.Netwr.Visible = true;
+            this.Netwr.VisibleIndex = 10;
+            // 
+            // Waers
+            // 
+            this.Waers.Caption = "통화단위";
+            this.Waers.FieldName = "Waers";
+            this.Waers.Name = "Waers";
+            this.Waers.OptionsColumn.AllowEdit = false;
+            this.Waers.Visible = true;
+            this.Waers.VisibleIndex = 11;
+            // 
             // SElikz
             // 
             this.SElikz.Caption = "납품완료지시자";
             this.SElikz.FieldName = "Elikz";
             this.SElikz.Name = "SElikz";
             this.SElikz.Visible = true;
-            this.SElikz.VisibleIndex = 8;
+            this.SElikz.VisibleIndex = 12;
             // 
             // gcMain
             // 
@@ -436,7 +481,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1299, 760);
+            this.ClientSize = new System.Drawing.Size(1299, 742);
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "Goods_Receipt";
@@ -500,5 +545,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn SName1;
         private DevExpress.XtraGrid.Columns.GridColumn SgMenge;
         private DevExpress.XtraEditors.SimpleButton btnDo;
+        private DevExpress.XtraGrid.Columns.GridColumn Netpr;
+        private DevExpress.XtraGrid.Columns.GridColumn Epein;
+        private DevExpress.XtraGrid.Columns.GridColumn Netwr;
+        private DevExpress.XtraGrid.Columns.GridColumn Waers;
     }
 }
