@@ -293,6 +293,16 @@ namespace DLS.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap change_pay {
+            get {
+                object obj = ResourceManager.GetObject("change_pay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Charts {
             get {
                 object obj = ResourceManager.GetObject("Charts", resourceCulture);
@@ -353,9 +363,29 @@ namespace DLS.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_property {
+            get {
+                object obj = ResourceManager.GetObject("delete_property", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap description {
             get {
                 object obj = ResourceManager.GetObject("description", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap diagram_32 {
+            get {
+                object obj = ResourceManager.GetObject("diagram_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -947,6 +977,16 @@ namespace DLS.Properties {
         internal static System.Drawing.Bitmap Refresh_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Refresh_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Remove_Male_User {
+            get {
+                object obj = ResourceManager.GetObject("Remove_Male_User", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

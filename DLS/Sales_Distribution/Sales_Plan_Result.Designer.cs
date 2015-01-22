@@ -195,7 +195,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(93, 12);
             this.btn_down.Name = "btn_down";
@@ -206,7 +206,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -281,7 +281,7 @@
             this.Controls.Add(this.gc_Result_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Sales_Plan_Result";
-            this.Text = "Sales_Plan_Result";
+            this.Text = "영업계획실적관리";
             this.Load += new System.EventHandler(this.Sales_Plan_Result_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Result_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Result_list)).EndInit();

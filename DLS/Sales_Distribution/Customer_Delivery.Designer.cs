@@ -185,7 +185,7 @@
             // 
             // btn_Rundelivery
             // 
-            this.btn_Rundelivery.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_Rundelivery.Image = global::DLS.Properties.Resources.diagram_32;
             this.btn_Rundelivery.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_Rundelivery.Location = new System.Drawing.Point(93, 12);
             this.btn_Rundelivery.Name = "btn_Rundelivery";
@@ -196,7 +196,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";

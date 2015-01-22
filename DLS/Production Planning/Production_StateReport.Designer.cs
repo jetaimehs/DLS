@@ -347,7 +347,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(93, 12);
             this.btn_down.Name = "btn_down";
@@ -358,7 +358,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -692,7 +692,7 @@
             this.Controls.Add(this.gc_ppStateReport);
             this.Controls.Add(this.pc_main);
             this.Name = "Production_StateReport";
-            this.Text = "Production_StateReport";
+            this.Text = "기간별생산현황";
             this.Load += new System.EventHandler(this.Production_StateReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_ppStateReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_ppStateReport)).EndInit();

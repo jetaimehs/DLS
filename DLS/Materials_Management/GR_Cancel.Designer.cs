@@ -505,6 +505,7 @@
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "GR_Cancel";
+            this.Text = "입고취소관리";
             this.Load += new System.EventHandler(this.GR_Cancel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);

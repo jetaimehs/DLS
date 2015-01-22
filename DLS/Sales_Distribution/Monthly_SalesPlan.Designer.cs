@@ -212,7 +212,7 @@
             // 
             // btn_upload
             // 
-            this.btn_upload.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_upload.Image = global::DLS.Properties.Resources.SKD_발주생성;
             this.btn_upload.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_upload.Location = new System.Drawing.Point(93, 12);
             this.btn_upload.Name = "btn_upload";
@@ -223,7 +223,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(255, 12);
             this.btn_down.Name = "btn_down";
@@ -233,7 +233,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_delete.Image = global::DLS.Properties.Resources.delete_property;
             this.btn_delete.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_delete.Location = new System.Drawing.Point(174, 12);
             this.btn_delete.Name = "btn_delete";
@@ -244,7 +244,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -302,7 +302,7 @@
             this.Controls.Add(this.gc_MonSales_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Monthly_SalesPlan";
-            this.Text = "Monthly_SalesPlan";
+            this.Text = "월영업계획관리";
             this.Load += new System.EventHandler(this.Monthly_SalesPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_MonSales_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_MonSales_list)).EndInit();

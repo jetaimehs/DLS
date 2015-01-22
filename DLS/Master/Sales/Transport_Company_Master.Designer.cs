@@ -42,6 +42,7 @@
             this.repositoryItemDateEdit_Sdate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.Edate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tell = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Dflg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Add = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Add = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.Update = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,7 +60,6 @@
             this.Driver1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ctype1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.mFee1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Dflg = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Transport_list)).BeginInit();
@@ -85,7 +85,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(93, 12);
             this.btn_down.Name = "btn_down";
@@ -96,7 +96,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -210,6 +210,14 @@
             this.Tell.Name = "Tell";
             this.Tell.Visible = true;
             this.Tell.VisibleIndex = 8;
+            // 
+            // Dflg
+            // 
+            this.Dflg.Caption = "삭제";
+            this.Dflg.FieldName = "Dflg";
+            this.Dflg.Name = "Dflg";
+            this.Dflg.Visible = true;
+            this.Dflg.VisibleIndex = 9;
             // 
             // Add
             // 
@@ -390,14 +398,6 @@
             this.mFee1.Visible = true;
             this.mFee1.VisibleIndex = 7;
             // 
-            // Dflg
-            // 
-            this.Dflg.Caption = "삭제";
-            this.Dflg.FieldName = "Dflg";
-            this.Dflg.Name = "Dflg";
-            this.Dflg.Visible = true;
-            this.Dflg.VisibleIndex = 9;
-            // 
             // Transport_Company_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -407,7 +407,7 @@
             this.Controls.Add(this.gc_Transport_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Transport_Company_Master";
-            this.Text = "Transport_Company_Master";
+            this.Text = "운송업체관리";
             this.Load += new System.EventHandler(this.Transport_Company_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);

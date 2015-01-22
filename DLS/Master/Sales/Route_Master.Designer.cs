@@ -31,7 +31,7 @@
             this.gc_Route_list = new DevExpress.XtraGrid.GridControl();
             this.gv_Route_list = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Rcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Text = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Textgv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Rfee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Sdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEdit_Sdate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
@@ -99,7 +99,7 @@
             // 
             this.gv_Route_list.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Rcode,
-            this.Text,
+            this.Textgv,
             this.Rfee,
             this.Sdate,
             this.Edate,
@@ -121,14 +121,14 @@
             this.Rcode.Visible = true;
             this.Rcode.VisibleIndex = 0;
             // 
-            // Text
+            // Textgv
             // 
-            this.Text.Caption = "운송경로내역";
-            this.Text.FieldName = "Text";
-            this.Text.Name = "Text";
-            this.Text.OptionsColumn.AllowEdit = false;
-            this.Text.Visible = true;
-            this.Text.VisibleIndex = 1;
+            this.Textgv.Caption = "운송경로내역";
+            this.Textgv.FieldName = "Text";
+            this.Textgv.Name = "Textgv";
+            this.Textgv.OptionsColumn.AllowEdit = false;
+            this.Textgv.Visible = true;
+            this.Textgv.VisibleIndex = 1;
             // 
             // Rfee
             // 
@@ -235,7 +235,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(93, 12);
             this.btn_down.Name = "btn_down";
@@ -246,7 +246,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -404,6 +404,7 @@
             this.Controls.Add(this.gc_Route_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Route_Master";
+            this.Text = "운송경로관리";
             this.Load += new System.EventHandler(this.Route_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Route_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Route_list)).EndInit();
@@ -439,7 +440,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_down;
         private DevExpress.XtraEditors.SimpleButton btn_find;
         private DevExpress.XtraGrid.Columns.GridColumn Rcode;
-        private DevExpress.XtraGrid.Columns.GridColumn Text;
+        private DevExpress.XtraGrid.Columns.GridColumn Textgv;
         private DevExpress.XtraGrid.Columns.GridColumn Rfee;
         private DevExpress.XtraGrid.GridControl gc_route;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_route;

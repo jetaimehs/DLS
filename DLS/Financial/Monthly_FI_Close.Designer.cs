@@ -42,6 +42,7 @@
             this.Bwart411 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Bwart412 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Elabst = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Ficlose = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
             this.btn_cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
@@ -50,7 +51,6 @@
             this.gc_delivery_main = new DevExpress.XtraEditors.GroupControl();
             this.date_month = new DevExpress.XtraEditors.DateEdit();
             this.lbl_delivery_date = new DevExpress.XtraEditors.LabelControl();
-            this.Ficlose = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gc_fi_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_fi_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
@@ -208,6 +208,16 @@
             this.Elabst.Visible = true;
             this.Elabst.VisibleIndex = 10;
             // 
+            // Ficlose
+            // 
+            this.Ficlose.Caption = "마감표시";
+            this.Ficlose.FieldName = "Ficlose";
+            this.Ficlose.Name = "Ficlose";
+            this.Ficlose.OptionsColumn.ReadOnly = true;
+            this.Ficlose.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Ficlose.Visible = true;
+            this.Ficlose.VisibleIndex = 11;
+            // 
             // pc_main
             // 
             this.pc_main.Controls.Add(this.btn_cancel);
@@ -223,7 +233,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_cancel.Image = global::DLS.Properties.Resources.Close_32x32;
             this.btn_cancel.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_cancel.Location = new System.Drawing.Point(174, 12);
             this.btn_cancel.Name = "btn_cancel";
@@ -245,7 +255,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(255, 12);
             this.btn_down.Name = "btn_down";
@@ -256,7 +266,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -303,16 +313,6 @@
             this.lbl_delivery_date.TabIndex = 17;
             this.lbl_delivery_date.Text = "마감월";
             // 
-            // Ficlose
-            // 
-            this.Ficlose.Caption = "마감표시";
-            this.Ficlose.FieldName = "Ficlose";
-            this.Ficlose.Name = "Ficlose";
-            this.Ficlose.OptionsColumn.ReadOnly = true;
-            this.Ficlose.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
-            this.Ficlose.Visible = true;
-            this.Ficlose.VisibleIndex = 11;
-            // 
             // Monthly_FI_Close
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -321,7 +321,7 @@
             this.Controls.Add(this.gc_fi_close);
             this.Controls.Add(this.pc_main);
             this.Name = "Monthly_FI_Close";
-            this.Text = "Monthly_FI_Close";
+            this.Text = "물류마감";
             this.Load += new System.EventHandler(this.Monthly_FI_Close_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_fi_close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_fi_close)).EndInit();

@@ -69,7 +69,6 @@
             this.barButtonItem_info = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_MM_ST = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_MM_GRlist = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_DM_list = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_UserAuth = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -99,6 +98,8 @@
             this.Master_G5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btn_DM_list = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_doc = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -108,7 +109,6 @@
             // Rbn_Menu
             // 
             this.Rbn_Menu.ExpandCollapseItem.Id = 0;
-            this.Rbn_Menu.ExpandCollapseItem.Name = "";
             this.Rbn_Menu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.Rbn_Menu.ExpandCollapseItem,
             this.Rgb_Skin,
@@ -150,10 +150,10 @@
             this.barButtonItem_info,
             this.Btn_MM_ST,
             this.Btn_MM_GRlist,
-            this.btn_DM_list,
-            this.Btn_Master_UserAuth});
+            this.Btn_Master_UserAuth,
+            this.btn_doc});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 51;
+            this.Rbn_Menu.MaxItemId = 52;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -209,7 +209,7 @@
             // 
             // Btn_SD_OutDelivery
             // 
-            this.Btn_SD_OutDelivery.Caption = "출고처리";
+            this.Btn_SD_OutDelivery.Caption = "출고관리";
             this.Btn_SD_OutDelivery.Id = 11;
             this.Btn_SD_OutDelivery.LargeGlyph = global::DLS.Properties.Resources.truck;
             this.Btn_SD_OutDelivery.Name = "Btn_SD_OutDelivery";
@@ -441,7 +441,7 @@
             // 
             // btn_FI_Close
             // 
-            this.btn_FI_Close.Caption = "물류마감";
+            this.btn_FI_Close.Caption = "마감관리";
             this.btn_FI_Close.Id = 41;
             this.btn_FI_Close.LargeGlyph = global::DLS.Properties.Resources.end;
             this.btn_FI_Close.Name = "btn_FI_Close";
@@ -505,14 +505,6 @@
             this.Btn_MM_GRlist.LargeGlyph = global::DLS.Properties.Resources.SKD_불량확인;
             this.Btn_MM_GRlist.Name = "Btn_MM_GRlist";
             this.Btn_MM_GRlist.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_GRlist_ItemClick);
-            // 
-            // btn_DM_list
-            // 
-            this.btn_DM_list.Caption = "문서리스트";
-            this.btn_DM_list.Id = 49;
-            this.btn_DM_list.LargeGlyph = global::DLS.Properties.Resources.SKD_포장사양서;
-            this.btn_DM_list.Name = "btn_DM_list";
-            this.btn_DM_list.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DM_list_ItemClick);
             // 
             // Btn_Master_UserAuth
             // 
@@ -628,7 +620,6 @@
             // FI_G1
             // 
             this.FI_G1.ItemLinks.Add(this.btn_FI_Close);
-            this.FI_G1.ItemLinks.Add(this.btn_DM_list);
             this.FI_G1.Name = "FI_G1";
             this.FI_G1.Text = "물류마감";
             // 
@@ -650,11 +641,12 @@
             this.Rbn_Menu_Report.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.Report_G1});
             this.Rbn_Menu_Report.Name = "Rbn_Menu_Report";
-            this.Rbn_Menu_Report.Text = "리포트";
+            this.Rbn_Menu_Report.Text = "재고";
             // 
             // Report_G1
             // 
             this.Report_G1.ItemLinks.Add(this.btn_ST_stock_list);
+            this.Report_G1.ItemLinks.Add(this.btn_doc);
             this.Report_G1.Name = "Report_G1";
             this.Report_G1.Text = "재고조회";
             // 
@@ -725,7 +717,6 @@
             this.repositoryItemSearchLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSearchLookUpEdit1.Name = "repositoryItemSearchLookUpEdit1";
-            this.repositoryItemSearchLookUpEdit1.NullText = "";
             this.repositoryItemSearchLookUpEdit1.View = this.repositoryItemSearchLookUpEdit1View;
             // 
             // repositoryItemSearchLookUpEdit1View
@@ -734,6 +725,14 @@
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // btn_doc
+            // 
+            this.btn_doc.Caption = "문서리스트";
+            this.btn_doc.Id = 51;
+            this.btn_doc.LargeGlyph = global::DLS.Properties.Resources.SKD_불량확인;
+            this.btn_doc.Name = "btn_doc";
+            this.btn_doc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_doc_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -826,7 +825,8 @@
         private DevExpress.XtraBars.BarButtonItem Btn_MM_ST;
         private DevExpress.XtraBars.BarButtonItem Btn_MM_GRlist;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_info;
-        private DevExpress.XtraBars.BarButtonItem btn_DM_list;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_UserAuth;
+        private DevExpress.XtraBars.BarButtonItem btn_doc;
+        private DevExpress.XtraBars.BarButtonItem btn_DM_list;
     }
 }

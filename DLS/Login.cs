@@ -113,7 +113,7 @@ namespace DLS
         {
             Get_UserInfo();
 
-            if (G_GRADE.Equals("4"))
+          if (G_GRADE.Equals("4"))
             {
                 rad_db.Visible = true;
             }

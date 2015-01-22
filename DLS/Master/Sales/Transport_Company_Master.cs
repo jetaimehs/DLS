@@ -52,6 +52,11 @@ namespace DLS.Master.Sales
             DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpDeliveryLifnr]", ht, "");
 
             gc_Transport_list.DataSource = dt;
+
+            if (dt.Rows.Count < 1)
+            {
+                ShowSubData();
+            }
         }
 
         private void btn_find_Click(object sender, EventArgs e)
@@ -260,7 +265,9 @@ namespace DLS.Master.Sales
 
         private void gv_Transport_list_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (!gv_Transport_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
+            if (!gv_Transport_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) &&
+                !gv_Transport_list.FocusedRowHandle.Equals(GridControl.AutoFilterRowHandle) &&
+                !gv_Transport_list.FocusedRowHandle.Equals(-2147483648))
             {
                 ShowSubData();
             }
@@ -268,13 +275,18 @@ namespace DLS.Master.Sales
 
         private void ShowSubData()
         {
-            Hashtable ht = new Hashtable();
-            ht.Add("@MODE", 101);
-            ht.Add("@Werks", Main_MID_Form.G_werks);
-            ht.Add("@Lifnr", gv_Transport_list.GetRowCellValue(gv_Transport_list.FocusedRowHandle, "Lifnr").ToString());
-            ht.Add("@Cnumber", gv_Transport_list.GetRowCellValue(gv_Transport_list.FocusedRowHandle, "Cnumber").ToString());
+            DataTable dt = new DataTable();
 
-            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpDeliveryLifnr]", ht, "");
+            if (gv_Transport_list.RowCount > 0)
+            {
+                Hashtable ht = new Hashtable();
+                ht.Add("@MODE", 101);
+                ht.Add("@Werks", Main_MID_Form.G_werks);
+                ht.Add("@Lifnr", gv_Transport_list.GetRowCellValue(gv_Transport_list.FocusedRowHandle, "Lifnr").ToString());
+                ht.Add("@Cnumber", gv_Transport_list.GetRowCellValue(gv_Transport_list.FocusedRowHandle, "Cnumber").ToString());
+
+                dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpDeliveryLifnr]", ht, "");
+            }
 
             gc_history.DataSource = dt;
         }

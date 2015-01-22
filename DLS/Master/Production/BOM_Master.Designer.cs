@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("노드1");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("노드2");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("노드3");
@@ -56,8 +57,8 @@
             treeNode3,
             treeNode13});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BOM_Master));
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem_FIND = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem_Export = new DevExpress.XtraBars.BarSubItem();
@@ -82,7 +83,7 @@
             this.dockPanel_Tree = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel5_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.treeView_BOM = new System.Windows.Forms.TreeView();
-            this.imageList1 = new System.Windows.Forms.ImageList();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dockPanel_Par = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gc_Node = new DevExpress.XtraGrid.GridControl();
@@ -757,7 +758,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "BOM_Master";
-            this.Text = "BOM_Master";
+            this.Text = "BOM마스터";
             this.Load += new System.EventHandler(this.BOM_Management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

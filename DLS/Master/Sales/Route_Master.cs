@@ -41,6 +41,7 @@ namespace DLS.Master.Sales
 
         private void ShowMainData()
         {
+
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 101);
             ht.Add("@Werks", Main_MID_Form.G_werks);
@@ -48,16 +49,25 @@ namespace DLS.Master.Sales
             DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpRoute]", ht, "");
 
             gc_route.DataSource = dt;
+
+            if(dt.Rows.Count < 1)
+            {
+                ShowData();
+            }
         }
 
         private void ShowData()
         {
-            Hashtable ht = new Hashtable();
-            ht.Add("@MODE", 100);
-            ht.Add("@Werks", Main_MID_Form.G_werks);
-            ht.Add("@Rcode", gv_route.GetRowCellValue(gv_route.FocusedRowHandle, "Rcode"));
+            DataTable dt = new DataTable();
+            if (gv_route.RowCount > 0)
+            {
+                Hashtable ht = new Hashtable();
+                ht.Add("@MODE", 100);
+                ht.Add("@Werks", Main_MID_Form.G_werks);
+                ht.Add("@Rcode", gv_route.GetRowCellValue(gv_route.FocusedRowHandle, "Rcode"));
 
-            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpRoute]", ht, "");
+                dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpRoute]", ht, "");
+            }            
 
             gc_Route_list.DataSource = dt;
         }
@@ -137,7 +147,8 @@ namespace DLS.Master.Sales
 
             MessageBox.Show("저장되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            ShowData();
+            //ShowData();
+            ShowMainData();
         }
 
         private void repositoryItemHyperLinkEdit_Add_KeyDown(object sender, KeyEventArgs e)
@@ -216,15 +227,18 @@ namespace DLS.Master.Sales
 
             MessageBox.Show("삭제되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            ShowData();
+            ShowMainData();
         }
 
         private void gv_route_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (!gv_route.FocusedRowHandle.Equals(GridControl.NewItemRowHandle))
+            if (!gv_route.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) &&
+                !gv_route.FocusedRowHandle.Equals(GridControl.AutoFilterRowHandle) &&
+                !gv_route.FocusedRowHandle.Equals(-2147483648))
             {
                 ShowData();
             }
+
         }
 
         private void HyperLinkEdit_Add1_Click(object sender, EventArgs e)
@@ -258,6 +272,7 @@ namespace DLS.Master.Sales
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 200);
             ht.Add("@Werks", Main_MID_Form.G_werks);
+            ht.Add("@Rcode", gv_route.GetRowCellValue(gv_route.FocusedRowHandle, "Rcode"));
             ht.Add("@Text", gv_route.GetFocusedRowCellValue("Text"));
             ht.Add("@Rfee", gv_route.GetFocusedRowCellValue("Rfee"));
             ht.Add("@Sdate", gv_route.GetFocusedRowCellValue("Sdate"));

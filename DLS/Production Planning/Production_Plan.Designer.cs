@@ -161,7 +161,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(336, 12);
             this.btn_down.Name = "btn_down";
@@ -172,7 +172,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_save.Image = global::DLS.Properties.Resources.ButtonSave;
             this.btn_save.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_save.Location = new System.Drawing.Point(93, 12);
             this.btn_save.Name = "btn_save";
@@ -183,7 +183,7 @@
             // 
             // btn_com
             // 
-            this.btn_com.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_com.Image = global::DLS.Properties.Resources.SelectAllMarked_32x32;
             this.btn_com.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_com.Location = new System.Drawing.Point(174, 12);
             this.btn_com.Name = "btn_com";
@@ -194,7 +194,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(255, 12);
             this.btn_find.Name = "btn_find";
@@ -205,7 +205,7 @@
             // 
             // btn_ExcelUp
             // 
-            this.btn_ExcelUp.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_ExcelUp.Image = global::DLS.Properties.Resources.Previous_32x32;
             this.btn_ExcelUp.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_ExcelUp.Location = new System.Drawing.Point(12, 12);
             this.btn_ExcelUp.Name = "btn_ExcelUp";
@@ -1016,7 +1016,7 @@
             this.Controls.Add(this.dockPanel2);
             this.Controls.Add(this.dockPanel1);
             this.Name = "Production_Plan";
-            this.Text = "Production_Plan";
+            this.Text = "생산계획관리";
             this.Load += new System.EventHandler(this.Production_Plan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);

@@ -88,6 +88,10 @@ namespace DLS
                     //fi
                 case "3":                    
                     Btn_SD_OutDelivery.Enabled = false;
+                    Rbn_Menu_SD.Visible = false;
+                    Rbn_Menu_MM.Visible = false;
+                    Rbn_Menu_PP.Visible = false;
+                    Rbn_Menu_Master.Visible = false;
                     Rbn_Menu_FI.Visible = true;
                     break;
 
@@ -535,17 +539,7 @@ namespace DLS
                 Materials_Management.GR_List fm = new Materials_Management.GR_List();
                 Mdi_Child_NewOpen(fm);
             }
-        }
-
-        //문서리스트
-        private void btn_DM_list_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            if (FromOpen("Document_List.cs"))
-            {
-                Financial.Document_List fm = new Financial.Document_List();
-                Mdi_Child_NewOpen(fm);
-            }
-        }
+        }        
         #endregion
 
         #region 리포트
@@ -558,6 +552,16 @@ namespace DLS
                 Mdi_Child_NewOpen(fm);
             }
         }
+
+        private void btn_doc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (FromOpen("Document_List.cs"))
+            {
+                Financial.Document_List fm = new Financial.Document_List();
+                Mdi_Child_NewOpen(fm);
+            }
+        }
+
         #endregion
 
         #endregion
@@ -572,5 +576,7 @@ namespace DLS
             Popup_Form.Change_Infomation pop = new Popup_Form.Change_Infomation();            
             pop.Show();
         }
+
+        
     }
 }

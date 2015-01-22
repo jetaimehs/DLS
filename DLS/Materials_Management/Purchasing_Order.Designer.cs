@@ -434,7 +434,7 @@
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "Purchasing_Order";
-            this.Text = "Purchasing_Order";
+            this.Text = "구매발주관리";
             this.Load += new System.EventHandler(this.Purchasing_Order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);

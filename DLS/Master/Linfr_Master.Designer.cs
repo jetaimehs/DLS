@@ -48,7 +48,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -153,6 +153,7 @@
             this.Controls.Add(this.gc_Lifnr);
             this.Controls.Add(this.pc_main);
             this.Name = "Linfr_Master";
+            this.Text = "업체조회";
             ((System.ComponentModel.ISupportInitialize)(this.LifnrView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Lifnr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();

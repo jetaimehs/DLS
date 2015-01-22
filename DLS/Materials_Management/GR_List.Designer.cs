@@ -45,18 +45,18 @@
             this.Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grDat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Bwart = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Brtwr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Maktx = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gMenge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LPseq = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Netpr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Epein = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Netwr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Waers = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rfSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rfSqn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.mdSeq = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Brtwr = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Waers = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Netwr = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Epein = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Netpr = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LPseq = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deEdt.Properties.VistaTimeProperties)).BeginInit();
@@ -252,6 +252,14 @@
             this.Bwart.Visible = true;
             this.Bwart.VisibleIndex = 6;
             // 
+            // Brtwr
+            // 
+            this.Brtwr.Caption = "입고 총 금액";
+            this.Brtwr.FieldName = "Brtwr";
+            this.Brtwr.Name = "Brtwr";
+            this.Brtwr.Visible = true;
+            this.Brtwr.VisibleIndex = 7;
+            // 
             // Matnr
             // 
             this.Matnr.Caption = "품번";
@@ -275,6 +283,46 @@
             this.gMenge.Name = "gMenge";
             this.gMenge.Visible = true;
             this.gMenge.VisibleIndex = 10;
+            // 
+            // LPseq
+            // 
+            this.LPseq.Caption = "단가코드";
+            this.LPseq.FieldName = "LPseq";
+            this.LPseq.Name = "LPseq";
+            this.LPseq.Visible = true;
+            this.LPseq.VisibleIndex = 11;
+            // 
+            // Netpr
+            // 
+            this.Netpr.Caption = "입고단가";
+            this.Netpr.FieldName = "Netpr";
+            this.Netpr.Name = "Netpr";
+            this.Netpr.Visible = true;
+            this.Netpr.VisibleIndex = 12;
+            // 
+            // Epein
+            // 
+            this.Epein.Caption = "금액단위";
+            this.Epein.FieldName = "Epein";
+            this.Epein.Name = "Epein";
+            this.Epein.Visible = true;
+            this.Epein.VisibleIndex = 13;
+            // 
+            // Netwr
+            // 
+            this.Netwr.Caption = "입고금액";
+            this.Netwr.FieldName = "Netwr";
+            this.Netwr.Name = "Netwr";
+            this.Netwr.Visible = true;
+            this.Netwr.VisibleIndex = 14;
+            // 
+            // Waers
+            // 
+            this.Waers.Caption = "통화단위";
+            this.Waers.FieldName = "Waers";
+            this.Waers.Name = "Waers";
+            this.Waers.Visible = true;
+            this.Waers.VisibleIndex = 15;
             // 
             // rfSeq
             // 
@@ -300,54 +348,6 @@
             this.mdSeq.Visible = true;
             this.mdSeq.VisibleIndex = 18;
             // 
-            // Brtwr
-            // 
-            this.Brtwr.Caption = "입고 총 금액";
-            this.Brtwr.FieldName = "Brtwr";
-            this.Brtwr.Name = "Brtwr";
-            this.Brtwr.Visible = true;
-            this.Brtwr.VisibleIndex = 7;
-            // 
-            // Waers
-            // 
-            this.Waers.Caption = "통화단위";
-            this.Waers.FieldName = "Waers";
-            this.Waers.Name = "Waers";
-            this.Waers.Visible = true;
-            this.Waers.VisibleIndex = 15;
-            // 
-            // Netwr
-            // 
-            this.Netwr.Caption = "입고금액";
-            this.Netwr.FieldName = "Netwr";
-            this.Netwr.Name = "Netwr";
-            this.Netwr.Visible = true;
-            this.Netwr.VisibleIndex = 14;
-            // 
-            // Epein
-            // 
-            this.Epein.Caption = "금액단위";
-            this.Epein.FieldName = "Epein";
-            this.Epein.Name = "Epein";
-            this.Epein.Visible = true;
-            this.Epein.VisibleIndex = 13;
-            // 
-            // Netpr
-            // 
-            this.Netpr.Caption = "입고단가";
-            this.Netpr.FieldName = "Netpr";
-            this.Netpr.Name = "Netpr";
-            this.Netpr.Visible = true;
-            this.Netpr.VisibleIndex = 12;
-            // 
-            // LPseq
-            // 
-            this.LPseq.Caption = "단가코드";
-            this.LPseq.FieldName = "LPseq";
-            this.LPseq.Name = "LPseq";
-            this.LPseq.Visible = true;
-            this.LPseq.VisibleIndex = 11;
-            // 
             // GR_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -356,7 +356,7 @@
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "GR_List";
-            this.Text = "GR_List";
+            this.Text = "입고리스트";
             this.Load += new System.EventHandler(this.GR_List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);

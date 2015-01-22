@@ -485,6 +485,7 @@
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "Goods_Receipt";
+            this.Text = "입고관리";
             this.Load += new System.EventHandler(this.Goods_Receipt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);

@@ -32,7 +32,7 @@
     <SuiteName>DLS</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>setup.html</WebPage>
-    <ApplicationRevision>20</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -318,6 +318,12 @@
     <Compile Include="Popup_Form\Change_Infomation.Designer.cs">
       <DependentUpon>Change_Infomation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup_Form\Change_Kprice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup_Form\Change_Kprice.Designer.cs">
+      <DependentUpon>Change_Kprice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup_Form\Find_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -481,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_Form\Change_Infomation.resx">
       <DependentUpon>Change_Infomation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup_Form\Change_Kprice.resx">
+      <DependentUpon>Change_Kprice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_Form\Find_User.resx">
       <DependentUpon>Find_User.cs</DependentUpon>
@@ -1072,6 +1081,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pro3_2_10.ico" />
+    <None Include="Resources\delete_property.png" />
+    <None Include="Resources\diagram-32.png" />
+    <None Include="Resources\Remove-Male-User.png" />
+    <None Include="Resources\change_pay.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
