@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("노드1");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("노드2");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("노드3");
@@ -57,8 +56,8 @@
             treeNode3,
             treeNode13});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BOM_Master));
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem_FIND = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem_Export = new DevExpress.XtraBars.BarSubItem();
@@ -77,12 +76,13 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Select = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.dockPanel_Tree = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel5_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.treeView_BOM = new System.Windows.Forms.TreeView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.dockPanel_Par = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gc_Node = new DevExpress.XtraGrid.GridControl();
@@ -291,6 +291,7 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn5,
+            this.gridColumn23,
             this.gridColumn6});
             this.gv_Complate.GridControl = this.gc_Complate;
             this.gv_Complate.Name = "gv_Complate";
@@ -353,6 +354,18 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "BOM생성";
+            this.gridColumn23.FieldName = "BOMcrt";
+            this.gridColumn23.MaxWidth = 100;
+            this.gridColumn23.MinWidth = 100;
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 5;
+            this.gridColumn23.Width = 100;
+            // 
             // gridColumn6
             // 
             this.gridColumn6.ColumnEdit = this.repositoryItemHyperLinkEdit_Select;
@@ -360,7 +373,7 @@
             this.gridColumn6.MinWidth = 60;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
             this.gridColumn6.Width = 60;
             // 
             // repositoryItemHyperLinkEdit_Select
@@ -825,5 +838,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Delete;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Select;
         private System.Windows.Forms.ImageList imageList1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
     }
 }

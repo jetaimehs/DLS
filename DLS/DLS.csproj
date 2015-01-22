@@ -316,12 +316,6 @@
     <Compile Include="Popup_Form\Change_Infomation.Designer.cs">
       <DependentUpon>Change_Infomation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup_Form\Change_Kprice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popup_Form\Change_Kprice.Designer.cs">
-      <DependentUpon>Change_Kprice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Popup_Form\Find_User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -485,9 +479,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_Form\Change_Infomation.resx">
       <DependentUpon>Change_Infomation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Popup_Form\Change_Kprice.resx">
-      <DependentUpon>Change_Kprice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup_Form\Find_User.resx">
       <DependentUpon>Find_User.cs</DependentUpon>
