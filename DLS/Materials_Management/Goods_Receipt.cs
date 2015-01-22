@@ -60,14 +60,14 @@ namespace DLS.Materials_Management
             SqlCommand cmd = new SqlCommand("",con);           
 
             con.Open();
-            cmd.CommandText = "SET FMTONLY ON; SELECT B.poSeq, B.poSqn, A.Werks, A.Lifnr, A.Name1, B.Matnr, B.Menge, C.gMenge, B.Elikz, B.Slfdt FROM DLS_MmPo AS A INNER JOIN DLS_MmPoItem AS B ON A.poSeq=b.poSeq INNER JOIN DLS_MmGrItem AS C ON B.poSeq=C.rfSeq AND B.poSqn=C.rfSqn; SET FMTONLY OFF;";
+            cmd.CommandText = "SET FMTONLY ON; SELECT B.poSeq, B.poSqn, A.Werks, A.Lifnr, A.Name1, B.Matnr, B.Menge, B.Elikz, B.Slfdt, C.gMenge, C.LPseq, C.Netpr, C.Epein, C.Netwr, C.Waers FROM DLS_MmPo AS A INNER JOIN DLS_MmPoItem AS B ON A.poSeq=b.poSeq INNER JOIN DLS_MmGrItem AS C ON B.poSeq=C.rfSeq AND B.poSqn=C.rfSqn; SET FMTONLY OFF;";
             dtGrTemp.Load(cmd.ExecuteReader());
             dtGrTemp.PrimaryKey = new DataColumn[] { dtGrTemp.Columns["poSeq"], dtGrTemp.Columns["poSqn"]};
 
-            cmd.CommandText = "SET FMTONLY ON; SELECT * FROM [DLS_MmGr]; SET FMTONLY OFF;";
+            cmd.CommandText = "SET FMTONLY ON; SELECT grSeq, Werks, Lifnr, Name1, grDat, Bwart, Brtwr FROM [DLS_MmGr]; SET FMTONLY OFF;";
             dtGr.Load(cmd.ExecuteReader());
 
-            cmd.CommandText = "SET FMTONLY ON; SELECT * FROM [DLS_MmGrItem]; SET FMTONLY OFF;";
+            cmd.CommandText = "SET FMTONLY ON; SELECT grSeq, grSqn, Matnr, gMenge, rfSeq, rfSqn, LPseq, Netpr, Epein, Netwr, Waers FROM [DLS_MmGrItem]; SET FMTONLY OFF;";
             dtGrItem.Load(cmd.ExecuteReader());
             dtGrItem.Columns.Add("Elikz", DbType.Boolean.GetType() );
 
@@ -114,6 +114,55 @@ namespace DLS.Materials_Management
 
             try
             {
+                #region 구매단가 체크
+                //구매단가 조회
+                Hashtable htLprice = new Hashtable();
+                htLprice.Add("@MODE", 101);
+                htLprice.Add("@Werks", Main_MID_Form.G_werks.ToString());
+                htLprice.Add("@Matnr", dr["Matnr"].ToString());
+                DataTable dtLprice = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpLprice]", htLprice, "");
+
+                if (dtLprice != null)
+                {
+                    DataRow drMg = dtMg.NewRow();
+                    if (dtLprice.Rows.Count < 1)
+                    {
+                        //dtMg 추가
+                        drMg["pppSeq"] = dr["pppSeq"];
+                        drMg["Msg"] = "유효한 구매단가가 없습니다";
+                        dtMg.Rows.Add(drMg);
+                        MessageBox.Show(drMg["Msg"].ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else if (dtLprice.Rows.Count > 1)
+                    {
+                        //dtMg 추가
+                        drMg["pppSeq"] = dr["pppSeq"];
+                        drMg["Msg"] = "유효한 구매단가가 둘 이상입니다";
+                        dtMg.Rows.Add(drMg);
+                        MessageBox.Show(drMg["Msg"].ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                else
+                {
+                    //dtMg에 추가
+                    DataRow drMg = dtMg.NewRow();
+                    drMg["pppSeq"] = dr["pppSeq"];
+                    drMg["Msg"] = "유효한 구매단가가 없습니다";
+                    dtMg.Rows.Add(drMg);
+                    MessageBox.Show(drMg["Msg"].ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                dr["LPseq"] = dtLprice.Rows[0]["LPseq"];
+                dr["Netpr"] = dtLprice.Rows[0]["Price"];
+                dr["Epein"] = dtLprice.Rows[0]["Epein"];
+                dr["Netwr"] = decimal.Round(decimal.Parse(dr["gMenge"].ToString()) * decimal.Parse(dr["Netpr"].ToString()) / decimal.Parse(dr["Epein"].ToString()),2) ; 
+                dr["Waers"] = dtLprice.Rows[0]["Waers"];
+
+                #endregion
+
                 if ( dtGrTemp.Rows.Count != 0 && dtGrTemp.Select("Lifnr = '" + dr["Lifnr"] + "'").Length == 0)
                 {
                     MessageBox.Show("동일한 업체의 발주만 입고 가능합니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -184,6 +233,7 @@ namespace DLS.Materials_Management
 
             #region dtGr dtGrItem생성
             int iCount = 1;
+            decimal dBrtwr = 0.00m;
             foreach (DataRow dr in dtGrTemp.Rows)
             {
                 if (iCount == 1)
@@ -195,8 +245,6 @@ namespace DLS.Materials_Management
                     drGr["Name1"] = dr["Name1"];
                     drGr["grDat"] = deDat.Text;
                     drGr["Bwart"] = "101";
-                    drGr["regdate"] = DateTime.Today;
-                    drGr["regid"] = Login.G_userid;
 
                     dtGr.Rows.Add(drGr);
                 }
@@ -208,13 +256,19 @@ namespace DLS.Materials_Management
                 drGrItem["gMenge"] = dr["gMenge"];
                 drGrItem["rfSeq"] = dr["poSeq"];
                 drGrItem["rfSqn"] = dr["poSqn"];
-                drGrItem["mdSeq"] = "";
-                drGrItem["Loekz"] = false;
-                drGrItem["regdate"] = DateTime.Today;
-                drGrItem["regid"] = Login.G_userid;
                 drGrItem["Elikz"] = dr["Elikz"];
+                drGrItem["LPseq"] = dr["LPseq"];
+                drGrItem["Netpr"] = dr["Netpr"];
+                drGrItem["Epein"] = dr["Epein"];
+                drGrItem["Netwr"] = dr["Netwr"]; dBrtwr = dBrtwr + decimal.Parse(dr["Netwr"].ToString());
+                drGrItem["Waers"] = dr["Waers"];
 
                 dtGrItem.Rows.Add(drGrItem);
+
+                if (iCount == dtGrTemp.Rows.Count)
+                {
+                    dtGr.Rows[0]["Brtwr"] = decimal.Round(dBrtwr,2);
+                }
 
                 iCount++;
             }
@@ -230,6 +284,7 @@ namespace DLS.Materials_Management
                 ht.Add("@Name1", dtGr.Rows[0]["Name1"]);
                 ht.Add("@grDat", dtGr.Rows[0]["grDat"]);
                 ht.Add("@Bwart", dtGr.Rows[0]["Bwart"]);
+                ht.Add("@Brtwr", dtGr.Rows[0]["Brtwr"]);
                 ht.Add("@Userid", Login.G_userid);
                 string grSeq = Common.Frm10.DataBase.ExecuteDataBase.ExecScalarQuery("[DlsSpMmGr]", ht, "").ToString();
 
@@ -243,7 +298,11 @@ namespace DLS.Materials_Management
                     ht.Add("@gMenge", drGrItem["gMenge"]);
                     ht.Add("@rfSeq", drGrItem["rfSeq"]);
                     ht.Add("@rfSqn", drGrItem["rfSqn"]);
-                    ht.Add("@Loekz", drGrItem["Loekz"]);
+                    ht.Add("@LPseq", drGrItem["LPseq"]);
+                    ht.Add("@Netpr", drGrItem["Netpr"]);
+                    ht.Add("@Epein", drGrItem["Epein"]);
+                    ht.Add("@Netwr", drGrItem["Netwr"]);
+                    ht.Add("@Waers", drGrItem["Waers"]);
                     ht.Add("@Userid", Login.G_userid);
                     ht.Add("@grDat", dtGr.Rows[0]["grDat"]);
                     ht.Add("@Bwart", dtGr.Rows[0]["Bwart"]);
@@ -251,7 +310,7 @@ namespace DLS.Materials_Management
 
                     Common.Frm10.DataBase.ExecuteDataBase.ExecScalarQuery("[DlsSpMmGrItem]", ht, "").ToString();
 
-                    //납품마감지시자가 체크되어있으면 업데이트
+                    //납품마감지시자가 체크되어있으면 발주 업데이트
                     if (drGrItem["Elikz"].Equals(1))
                     {
                         ht.Clear();
@@ -274,12 +333,22 @@ namespace DLS.Materials_Management
                 dtGrTemp.Rows.Clear();
                 dtGr.Rows.Clear();
                 dtGrItem.Rows.Clear();
+                ShowMain();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             #endregion
+        }
+
+        private void SubView_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
+
+            decimal dNetwr = decimal.Round(decimal.Parse(view.GetRowCellValue(e.RowHandle, "gMenge").ToString()) * decimal.Parse(view.GetRowCellValue(e.RowHandle, "Netpr").ToString()) / decimal.Parse(view.GetRowCellValue(e.RowHandle, "Epein").ToString()), 2);
+
+            view.SetRowCellValue(e.RowHandle, "Netwr", dNetwr); ; 
         }
     }
 }

@@ -370,7 +370,7 @@
             // sle_matnr
             // 
             this.sle_matnr.EditValue = "";
-            this.sle_matnr.Location = new System.Drawing.Point(1082, 39);
+            this.sle_matnr.Location = new System.Drawing.Point(1107, 39);
             this.sle_matnr.Name = "sle_matnr";
             this.sle_matnr.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -410,7 +410,7 @@
             // sle_matkl
             // 
             this.sle_matkl.EditValue = "";
-            this.sle_matkl.Location = new System.Drawing.Point(902, 39);
+            this.sle_matkl.Location = new System.Drawing.Point(927, 39);
             this.sle_matkl.Name = "sle_matkl";
             this.sle_matkl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -450,12 +450,12 @@
             // lbl_matkl
             // 
             this.lbl_matkl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_matkl.Location = new System.Drawing.Point(856, 42);
+            this.lbl_matkl.Location = new System.Drawing.Point(873, 42);
             this.lbl_matkl.MinimumSize = new System.Drawing.Size(40, 14);
             this.lbl_matkl.Name = "lbl_matkl";
-            this.lbl_matkl.Size = new System.Drawing.Size(40, 14);
+            this.lbl_matkl.Size = new System.Drawing.Size(48, 14);
             this.lbl_matkl.TabIndex = 36;
-            this.lbl_matkl.Text = "차종";
+            this.lbl_matkl.Text = "자재그룹";
             // 
             // sle_spart
             // 
@@ -510,7 +510,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl2.Location = new System.Drawing.Point(1016, 42);
+            this.labelControl2.Location = new System.Drawing.Point(1041, 42);
             this.labelControl2.MinimumSize = new System.Drawing.Size(60, 14);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 14);

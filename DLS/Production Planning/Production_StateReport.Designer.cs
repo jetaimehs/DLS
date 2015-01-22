@@ -136,7 +136,7 @@
             // 
             // Spart
             // 
-            this.Spart.Caption = "제품군";
+            this.Spart.Caption = "자재그룹";
             this.Spart.FieldName = "Spart";
             this.Spart.MaxWidth = 100;
             this.Spart.MinWidth = 50;
@@ -393,7 +393,7 @@
             // sle_matnr
             // 
             this.sle_matnr.EditValue = "";
-            this.sle_matnr.Location = new System.Drawing.Point(1105, 34);
+            this.sle_matnr.Location = new System.Drawing.Point(1121, 34);
             this.sle_matnr.Name = "sle_matnr";
             this.sle_matnr.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -433,7 +433,7 @@
             // sle_matkl
             // 
             this.sle_matkl.EditValue = "";
-            this.sle_matkl.Location = new System.Drawing.Point(925, 34);
+            this.sle_matkl.Location = new System.Drawing.Point(941, 34);
             this.sle_matkl.Name = "sle_matkl";
             this.sle_matkl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -473,12 +473,12 @@
             // lbl_matkl
             // 
             this.lbl_matkl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_matkl.Location = new System.Drawing.Point(879, 37);
+            this.lbl_matkl.Location = new System.Drawing.Point(887, 37);
             this.lbl_matkl.MinimumSize = new System.Drawing.Size(40, 14);
             this.lbl_matkl.Name = "lbl_matkl";
-            this.lbl_matkl.Size = new System.Drawing.Size(40, 14);
+            this.lbl_matkl.Size = new System.Drawing.Size(48, 14);
             this.lbl_matkl.TabIndex = 24;
-            this.lbl_matkl.Text = "차종";
+            this.lbl_matkl.Text = "자재그룹";
             // 
             // sle_spart
             // 
@@ -533,7 +533,7 @@
             // lbl_matnr
             // 
             this.lbl_matnr.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_matnr.Location = new System.Drawing.Point(1039, 37);
+            this.lbl_matnr.Location = new System.Drawing.Point(1055, 37);
             this.lbl_matnr.MinimumSize = new System.Drawing.Size(60, 14);
             this.lbl_matnr.Name = "lbl_matnr";
             this.lbl_matnr.Size = new System.Drawing.Size(60, 14);

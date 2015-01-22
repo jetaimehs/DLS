@@ -61,17 +61,17 @@ namespace DLS.Materials_Management
 
             con.Open();
             cmd.CommandText = "SET FMTONLY ON; SELECT A.Werks, A.Lifnr, A.Name1, A.grDat, A.Bwart, C.Maktx, ";
-            cmd.CommandText = cmd.CommandText + "B.grSeq, B.grSqn, B.Matnr, B.gMenge, B.gMenge as Menge, B.rfSeq, B.rfSqn, B.mdSeq ";
+            cmd.CommandText = cmd.CommandText + "B.grSeq, B.grSqn, B.Matnr, B.gMenge, B.gMenge as Menge, B.rfSeq, B.rfSqn, B.mdSeq, LPseq, Netpr, Epein, Netwr, Waers ";
             cmd.CommandText = cmd.CommandText + "FROM [dbo].[DLS_MmGr] AS A ";
             cmd.CommandText = cmd.CommandText + "INNER JOIN [dbo].[DLS_MmGrItem] AS B ON A.grSeq = B.grSeq ";
             cmd.CommandText = cmd.CommandText + "INNER JOIN [dbo].[DLS_MatrialMaster] AS C ON B.Matnr = C.Matnr; SET FMTONLY OFF;";
             dtGrTemp.Load(cmd.ExecuteReader());
             dtGrTemp.PrimaryKey = new DataColumn[] { dtGrTemp.Columns["rfSeq"], dtGrTemp.Columns["rfSqn"] };
 
-            cmd.CommandText = "SET FMTONLY ON; SELECT grSeq, Werks, Lifnr, Name1, grDat, Bwart FROM [DLS_MmGr]; SET FMTONLY OFF;";
+            cmd.CommandText = "SET FMTONLY ON; SELECT grSeq, Werks, Lifnr, Name1, grDat, Bwart, Brtwr FROM [DLS_MmGr]; SET FMTONLY OFF;";
             dtGr.Load(cmd.ExecuteReader());
 
-            cmd.CommandText = "SET FMTONLY ON; SELECT grSeq, grSqn, Matnr, gMenge, rfSeq, rfSqn, mdSeq FROM [DLS_MmGrItem]; SET FMTONLY OFF;";
+            cmd.CommandText = "SET FMTONLY ON; SELECT grSeq, grSqn, Matnr, gMenge, rfSeq, rfSqn, mdSeq, LPseq, Netpr, Epein, Netwr, Waers FROM [DLS_MmGrItem]; SET FMTONLY OFF;";
             dtGrItem.Load(cmd.ExecuteReader());
 
             dtMg.Columns.Add("mSeq", typeof(String));
@@ -118,6 +118,11 @@ namespace DLS.Materials_Management
             dr["rfSeq"] = view.GetRowCellValue(e.RowHandle, "rfSeq");
             dr["rfSqn"] = view.GetRowCellValue(e.RowHandle, "rfSqn");
             dr["mdSeq"] = view.GetRowCellValue(e.RowHandle, "mdSeq");
+            dr["LPseq"] = view.GetRowCellValue(e.RowHandle, "LPseq");
+            dr["Netpr"] = view.GetRowCellValue(e.RowHandle, "Netpr");
+            dr["Epein"] = view.GetRowCellValue(e.RowHandle, "Epein");
+            dr["Netwr"] = view.GetRowCellValue(e.RowHandle, "Netwr");
+            dr["Waers"] = view.GetRowCellValue(e.RowHandle, "Waers");
 
             try
             {
@@ -190,6 +195,7 @@ namespace DLS.Materials_Management
 
             #region dtGr dtGrItem생성
             int iCount = 1;
+            decimal dBrtwr = 0.00m;
             foreach (DataRow dr in dtGrTemp.Rows)
             {
                 if (iCount == 1)
@@ -213,8 +219,19 @@ namespace DLS.Materials_Management
                 drGrItem["rfSeq"] = dr["rfSeq"];
                 drGrItem["rfSqn"] = dr["rfSqn"];
                 drGrItem["mdSeq"] = dr["mdSeq"];
+                drGrItem["LPseq"] = dr["LPseq"];
+                drGrItem["Netpr"] = dr["Netpr"];
+                drGrItem["Epein"] = dr["Epein"];
+                drGrItem["Netwr"] = decimal.Round(decimal.Parse(dr["gMenge"].ToString()) * decimal.Parse(dr["Netpr"].ToString()) / decimal.Parse(dr["Epein"].ToString()), 2); ;
+                dBrtwr = dBrtwr + decimal.Parse(drGrItem["Netwr"].ToString());
+                drGrItem["Waers"] = dr["Waers"];
 
                 dtGrItem.Rows.Add(drGrItem);
+
+                if (iCount == dtGrTemp.Rows.Count)
+                {
+                    dtGr.Rows[0]["Brtwr"] = decimal.Round(dBrtwr, 2);
+                }
 
                 iCount++;
             }
@@ -230,6 +247,7 @@ namespace DLS.Materials_Management
                 ht.Add("@Name1", dtGr.Rows[0]["Name1"]);
                 ht.Add("@grDat", dtGr.Rows[0]["grDat"]);
                 ht.Add("@Bwart", dtGr.Rows[0]["Bwart"]);
+                ht.Add("@Brtwr", dtGr.Rows[0]["Brtwr"]);
                 ht.Add("@Userid", Login.G_userid);
                 string grSeq = Common.Frm10.DataBase.ExecuteDataBase.ExecScalarQuery("[DlsSpMmGr]", ht, "").ToString();
 
@@ -243,6 +261,11 @@ namespace DLS.Materials_Management
                     ht.Add("@gMenge", drGrItem["gMenge"]);
                     ht.Add("@rfSeq", drGrItem["rfSeq"]);
                     ht.Add("@rfSqn", drGrItem["rfSqn"]);
+                    ht.Add("@LPseq", drGrItem["LPseq"]);
+                    ht.Add("@Netpr", drGrItem["Netpr"]);
+                    ht.Add("@Epein", drGrItem["Epein"]);
+                    ht.Add("@Netwr", drGrItem["Netwr"]);
+                    ht.Add("@Waers", drGrItem["Waers"]);
                     ht.Add("@Userid", Login.G_userid);
                     ht.Add("@grDat", dtGr.Rows[0]["grDat"]);
                     ht.Add("@Bwart", dtGr.Rows[0]["Bwart"]);

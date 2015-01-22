@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("노드1");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("노드2");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("노드3");
@@ -57,8 +56,8 @@
             treeNode3,
             treeNode13});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BOM_Master));
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem_FIND = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem_Export = new DevExpress.XtraBars.BarSubItem();
@@ -77,12 +76,13 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Select = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.dockPanel_Tree = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel5_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.treeView_BOM = new System.Windows.Forms.TreeView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.dockPanel_Par = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gc_Node = new DevExpress.XtraGrid.GridControl();
@@ -291,14 +291,17 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn5,
+            this.gridColumn23,
             this.gridColumn6});
             this.gv_Complate.GridControl = this.gc_Complate;
             this.gv_Complate.Name = "gv_Complate";
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Spart";
+            this.gridColumn4.Caption = "제품군";
             this.gridColumn4.FieldName = "Spart";
+            this.gridColumn4.MaxWidth = 100;
+            this.gridColumn4.MinWidth = 50;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
@@ -306,28 +309,35 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "Mantr";
+            this.gridColumn1.Caption = "자재번호";
             this.gridColumn1.FieldName = "Matnr";
+            this.gridColumn1.MaxWidth = 150;
+            this.gridColumn1.MinWidth = 150;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 150;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Maktx";
+            this.gridColumn2.Caption = "자재내역";
             this.gridColumn2.FieldName = "Maktx";
+            this.gridColumn2.MinWidth = 150;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 150;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Mtart";
+            this.gridColumn3.Caption = "자재유형";
             this.gridColumn3.FieldName = "Mtart";
+            this.gridColumn3.MaxWidth = 100;
+            this.gridColumn3.MinWidth = 50;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
@@ -335,22 +345,36 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "Matkl";
+            this.gridColumn5.Caption = "자재그룹";
             this.gridColumn5.FieldName = "Matkl";
+            this.gridColumn5.MaxWidth = 100;
+            this.gridColumn5.MinWidth = 50;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "BOM생성";
+            this.gridColumn23.FieldName = "BOMcrt";
+            this.gridColumn23.MaxWidth = 100;
+            this.gridColumn23.MinWidth = 100;
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 5;
+            this.gridColumn23.Width = 100;
+            // 
             // gridColumn6
             // 
             this.gridColumn6.ColumnEdit = this.repositoryItemHyperLinkEdit_Select;
-            this.gridColumn6.MaxWidth = 50;
-            this.gridColumn6.MinWidth = 50;
+            this.gridColumn6.MaxWidth = 60;
+            this.gridColumn6.MinWidth = 60;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 50;
+            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.Width = 60;
             // 
             // repositoryItemHyperLinkEdit_Select
             // 
@@ -495,59 +519,65 @@
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "Stufe";
+            this.gridColumn7.Caption = "BOM Lv";
             this.gridColumn7.FieldName = "Stufe";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 0;
             this.gridColumn7.Width = 78;
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "ParMatnr";
+            this.gridColumn8.Caption = "모품번";
             this.gridColumn8.FieldName = "ParMatnr";
+            this.gridColumn8.MinWidth = 150;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 1;
-            this.gridColumn8.Width = 78;
+            this.gridColumn8.VisibleIndex = 0;
+            this.gridColumn8.Width = 150;
             // 
             // gridColumn9
             // 
-            this.gridColumn9.Caption = "ChiMatnr";
+            this.gridColumn9.Caption = "자품번";
             this.gridColumn9.FieldName = "ChiMatnr";
+            this.gridColumn9.MinWidth = 150;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 2;
-            this.gridColumn9.Width = 78;
+            this.gridColumn9.VisibleIndex = 1;
+            this.gridColumn9.Width = 150;
             // 
             // gridColumn10
             // 
-            this.gridColumn10.Caption = "Sdate";
+            this.gridColumn10.Caption = "유효시작일자";
             this.gridColumn10.FieldName = "Sdate";
+            this.gridColumn10.MaxWidth = 150;
+            this.gridColumn10.MinWidth = 150;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
-            this.gridColumn10.Width = 78;
+            this.gridColumn10.VisibleIndex = 2;
+            this.gridColumn10.Width = 150;
             // 
             // gridColumn11
             // 
-            this.gridColumn11.Caption = "Edate";
+            this.gridColumn11.Caption = "유효종료일자";
             this.gridColumn11.FieldName = "Edate";
+            this.gridColumn11.MaxWidth = 150;
+            this.gridColumn11.MinWidth = 150;
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 4;
-            this.gridColumn11.Width = 78;
+            this.gridColumn11.VisibleIndex = 3;
+            this.gridColumn11.Width = 150;
             // 
             // gridColumn12
             // 
-            this.gridColumn12.Caption = "Usage";
+            this.gridColumn12.Caption = "사용량";
             this.gridColumn12.FieldName = "Usage";
+            this.gridColumn12.MaxWidth = 100;
+            this.gridColumn12.MinWidth = 50;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 5;
-            this.gridColumn12.Width = 78;
+            this.gridColumn12.VisibleIndex = 4;
+            this.gridColumn12.Width = 50;
             // 
             // gridColumn18
             // 
@@ -556,7 +586,7 @@
             this.gridColumn18.MinWidth = 60;
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 6;
+            this.gridColumn18.VisibleIndex = 5;
             this.gridColumn18.Width = 60;
             // 
             // repositoryItemHyperLinkEdit_Save
@@ -573,7 +603,7 @@
             this.gridColumn19.MinWidth = 60;
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 7;
+            this.gridColumn19.VisibleIndex = 6;
             this.gridColumn19.Width = 60;
             // 
             // repositoryItemHyperLinkEdit_Delete
@@ -641,40 +671,45 @@
             // 
             // gridColumn14
             // 
-            this.gridColumn14.Caption = "Matnr";
+            this.gridColumn14.Caption = "자재번호";
             this.gridColumn14.FieldName = "Matnr";
+            this.gridColumn14.MaxWidth = 150;
+            this.gridColumn14.MinWidth = 150;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 1;
-            this.gridColumn14.Width = 74;
+            this.gridColumn14.Width = 150;
             // 
             // gridColumn15
             // 
-            this.gridColumn15.Caption = "Maktx";
+            this.gridColumn15.Caption = "자재내역";
             this.gridColumn15.FieldName = "Maktx";
+            this.gridColumn15.MinWidth = 100;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 2;
-            this.gridColumn15.Width = 74;
+            this.gridColumn15.Width = 100;
             // 
             // gridColumn16
             // 
-            this.gridColumn16.Caption = "Mtart";
+            this.gridColumn16.Caption = "자재유형";
             this.gridColumn16.FieldName = "Mtart";
+            this.gridColumn16.MaxWidth = 100;
+            this.gridColumn16.MinWidth = 50;
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 3;
-            this.gridColumn16.Width = 74;
+            this.gridColumn16.Width = 100;
             // 
             // gridColumn20
             // 
-            this.gridColumn20.Caption = "Usage";
+            this.gridColumn20.Caption = "사용량";
             this.gridColumn20.FieldName = "Usage";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
@@ -682,17 +717,20 @@
             // 
             // gridColumn17
             // 
-            this.gridColumn17.Caption = "Meins";
+            this.gridColumn17.Caption = "단위";
             this.gridColumn17.FieldName = "Meins";
+            this.gridColumn17.MaxWidth = 100;
+            this.gridColumn17.MinWidth = 50;
             this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsColumn.AllowEdit = false;
             this.gridColumn17.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 4;
-            this.gridColumn17.Width = 74;
+            this.gridColumn17.Width = 100;
             // 
             // gridColumn21
             // 
-            this.gridColumn21.Caption = "Sdate";
+            this.gridColumn21.Caption = "유효시작일자";
             this.gridColumn21.FieldName = "Sdate";
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
@@ -700,7 +738,7 @@
             // 
             // gridColumn22
             // 
-            this.gridColumn22.Caption = "Edate";
+            this.gridColumn22.Caption = "유효종료일자";
             this.gridColumn22.FieldName = "Edate";
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
@@ -800,5 +838,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Delete;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Select;
         private System.Windows.Forms.ImageList imageList1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
     }
 }

@@ -34,6 +34,7 @@ namespace DLS.Production_Planning
             //영업계획
             Common.Util.MyUtil.SetGridControlDesign(ref gc_sdPlan);
             Common.Util.MyUtil.SetGridViewDesign(ref gv_sdPlan);
+            gv_sdPlan.OptionsView.ShowAutoFilterRow = false;
             
             //날짜
             date_sdate.Text = DateTime.Today.ToShortDateString();
@@ -181,7 +182,7 @@ namespace DLS.Production_Planning
                             dr1["pppNote"] = "Upload";                                                    
                         }
                         else
-                            dr1["pppNote"] = "미등록된 자재번호 입니다.";
+                            dr1["pppNote"] = dr2[1].ToString() + "은 미등록된 자재번호 입니다.";
 
                         dt2.Rows.Add(dr1);
                     }
@@ -226,6 +227,12 @@ namespace DLS.Production_Planning
                     return;
                 }
 
+                if (gv_ppPlan.GetFocusedRowCellValue("Ifcom").Equals(true))
+                {
+                    MessageBox.Show("이미 발주완료된 계획은 삭제 할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 if (gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString().Trim() == string.Empty)
                 {
                     gv_ppPlan.GetFocusedDataRow().Delete();
@@ -237,6 +244,7 @@ namespace DLS.Production_Planning
                     ht1.Add("@MODE", 401);
                     ht1.Add("@pppSeq", gv_ppPlan.GetFocusedRowCellValue("pppSeq").ToString());
                     ht1.Add("@Lvorm", 1);
+                    ht1.Add("@Userid", Login.G_userid);
 
                     Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSpPpPlan]", ht1, "");
 

@@ -141,7 +141,7 @@
             this.pc_main.Dock = System.Windows.Forms.DockStyle.Top;
             this.pc_main.Location = new System.Drawing.Point(0, 0);
             this.pc_main.Name = "pc_main";
-            this.pc_main.Size = new System.Drawing.Size(1444, 162);
+            this.pc_main.Size = new System.Drawing.Size(1457, 162);
             this.pc_main.TabIndex = 4;
             // 
             // btn_down
@@ -187,13 +187,13 @@
             this.gc_delivery_main.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gc_delivery_main.Location = new System.Drawing.Point(2, 82);
             this.gc_delivery_main.Name = "gc_delivery_main";
-            this.gc_delivery_main.Size = new System.Drawing.Size(1440, 78);
+            this.gc_delivery_main.Size = new System.Drawing.Size(1453, 78);
             this.gc_delivery_main.TabIndex = 0;
             this.gc_delivery_main.Text = "실적 정보";
             // 
             // sle_otype
             // 
-            this.sle_otype.Location = new System.Drawing.Point(1336, 34);
+            this.sle_otype.Location = new System.Drawing.Point(1344, 34);
             this.sle_otype.Name = "sle_otype";
             this.sle_otype.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -233,7 +233,7 @@
             // lbl_gubun
             // 
             this.lbl_gubun.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_gubun.Location = new System.Drawing.Point(1282, 37);
+            this.lbl_gubun.Location = new System.Drawing.Point(1290, 37);
             this.lbl_gubun.MinimumSize = new System.Drawing.Size(40, 14);
             this.lbl_gubun.Name = "lbl_gubun";
             this.lbl_gubun.Size = new System.Drawing.Size(48, 14);
@@ -243,13 +243,13 @@
             // sle_matnr
             // 
             this.sle_matnr.EditValue = "";
-            this.sle_matnr.Location = new System.Drawing.Point(1105, 34);
+            this.sle_matnr.Location = new System.Drawing.Point(1120, 34);
             this.sle_matnr.Name = "sle_matnr";
             this.sle_matnr.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.sle_matnr.Properties.NullText = "";
             this.sle_matnr.Properties.View = this.gridView5;
-            this.sle_matnr.Size = new System.Drawing.Size(157, 20);
+            this.sle_matnr.Size = new System.Drawing.Size(148, 20);
             this.sle_matnr.TabIndex = 26;
             // 
             // gridView5
@@ -283,7 +283,7 @@
             // sle_matkl
             // 
             this.sle_matkl.EditValue = "";
-            this.sle_matkl.Location = new System.Drawing.Point(925, 34);
+            this.sle_matkl.Location = new System.Drawing.Point(948, 34);
             this.sle_matkl.Name = "sle_matkl";
             this.sle_matkl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -323,12 +323,12 @@
             // lbl_matkl
             // 
             this.lbl_matkl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_matkl.Location = new System.Drawing.Point(879, 37);
+            this.lbl_matkl.Location = new System.Drawing.Point(894, 37);
             this.lbl_matkl.MinimumSize = new System.Drawing.Size(40, 14);
             this.lbl_matkl.Name = "lbl_matkl";
-            this.lbl_matkl.Size = new System.Drawing.Size(40, 14);
+            this.lbl_matkl.Size = new System.Drawing.Size(48, 14);
             this.lbl_matkl.TabIndex = 24;
-            this.lbl_matkl.Text = "차종";
+            this.lbl_matkl.Text = "자재그룹";
             // 
             // sle_spart
             // 
@@ -383,7 +383,7 @@
             // lbl_matnr
             // 
             this.lbl_matnr.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_matnr.Location = new System.Drawing.Point(1039, 37);
+            this.lbl_matnr.Location = new System.Drawing.Point(1054, 37);
             this.lbl_matnr.MinimumSize = new System.Drawing.Size(60, 14);
             this.lbl_matnr.Name = "lbl_matnr";
             this.lbl_matnr.Size = new System.Drawing.Size(60, 14);
@@ -393,7 +393,7 @@
             // sle_mtart
             // 
             this.sle_mtart.EditValue = "";
-            this.sle_mtart.Location = new System.Drawing.Point(767, 34);
+            this.sle_mtart.Location = new System.Drawing.Point(761, 34);
             this.sle_mtart.Name = "sle_mtart";
             this.sle_mtart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -433,7 +433,7 @@
             // lbl_mtart
             // 
             this.lbl_mtart.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_mtart.Location = new System.Drawing.Point(701, 37);
+            this.lbl_mtart.Location = new System.Drawing.Point(695, 37);
             this.lbl_mtart.MinimumSize = new System.Drawing.Size(60, 14);
             this.lbl_mtart.Name = "lbl_mtart";
             this.lbl_mtart.Size = new System.Drawing.Size(60, 14);
@@ -546,7 +546,7 @@
             this.repositoryItemSearchLookUpEdit_Matnr,
             this.repositoryItemLookUpEdit_Otype,
             this.repositoryItemSearchLookUpEdit_Arbpl});
-            this.gc_ppOutput.Size = new System.Drawing.Size(1444, 606);
+            this.gc_ppOutput.Size = new System.Drawing.Size(1457, 617);
             this.gc_ppOutput.TabIndex = 6;
             this.gc_ppOutput.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_ppOutput,
@@ -660,7 +660,7 @@
             // 
             // Matkl
             // 
-            this.Matkl.Caption = "차종";
+            this.Matkl.Caption = "자재그룹";
             this.Matkl.FieldName = "Matkl";
             this.Matkl.MaxWidth = 100;
             this.Matkl.MinWidth = 50;
@@ -932,7 +932,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1444, 768);
+            this.ClientSize = new System.Drawing.Size(1457, 779);
             this.Controls.Add(this.gc_ppOutput);
             this.Controls.Add(this.pc_main);
             this.Name = "Production_Output";

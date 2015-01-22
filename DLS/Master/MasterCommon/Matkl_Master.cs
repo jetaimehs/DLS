@@ -41,7 +41,7 @@ namespace DLS.Master.MasterCommon
         {
             //차종
             Hashtable ht1 = new Hashtable();
-            ht1.Add("I_MODE", "12");
+            ht1.Add("I_MODE", "11");
 
             IRfcTable sapTable = Common.Frm10.SapConntor.SAPConnection.SAPExecuteTableData(ht1, "ZCA_OUTBOUND_INPUT", "E_TAB");
             DataTable dt1 = Common.Util.sapTableConvert.DataTableSet(sapTable);

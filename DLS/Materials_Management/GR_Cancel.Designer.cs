@@ -290,6 +290,7 @@
             this.SgrDat.Caption = "입고일자";
             this.SgrDat.FieldName = "grDat";
             this.SgrDat.Name = "SgrDat";
+            this.SgrDat.OptionsColumn.AllowEdit = false;
             this.SgrDat.Visible = true;
             this.SgrDat.VisibleIndex = 5;
             // 
@@ -298,6 +299,7 @@
             this.SBwart.Caption = "이동유형";
             this.SBwart.FieldName = "Bwart";
             this.SBwart.Name = "SBwart";
+            this.SBwart.OptionsColumn.AllowEdit = false;
             this.SBwart.Visible = true;
             this.SBwart.VisibleIndex = 6;
             // 
@@ -315,6 +317,7 @@
             this.SMaktx.Caption = "품명";
             this.SMaktx.FieldName = "Maktx";
             this.SMaktx.Name = "SMaktx";
+            this.SMaktx.OptionsColumn.AllowEdit = false;
             this.SMaktx.Visible = true;
             this.SMaktx.VisibleIndex = 8;
             // 
@@ -331,6 +334,7 @@
             this.SrfSeq.Caption = "참조문서번호";
             this.SrfSeq.FieldName = "rfSeq";
             this.SrfSeq.Name = "SrfSeq";
+            this.SrfSeq.OptionsColumn.AllowEdit = false;
             this.SrfSeq.Visible = true;
             this.SrfSeq.VisibleIndex = 10;
             // 
@@ -339,6 +343,7 @@
             this.SrfSqn.Caption = "참조문서아이템";
             this.SrfSqn.FieldName = "rfSqn";
             this.SrfSqn.Name = "SrfSqn";
+            this.SrfSqn.OptionsColumn.AllowEdit = false;
             this.SrfSqn.Visible = true;
             this.SrfSqn.VisibleIndex = 11;
             // 
@@ -347,6 +352,7 @@
             this.SmdSeq.Caption = "자재문서번호";
             this.SmdSeq.FieldName = "mdSeq";
             this.SmdSeq.Name = "SmdSeq";
+            this.SmdSeq.OptionsColumn.AllowEdit = false;
             this.SmdSeq.Visible = true;
             this.SmdSeq.VisibleIndex = 12;
             // 
