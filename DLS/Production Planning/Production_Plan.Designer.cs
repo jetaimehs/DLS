@@ -240,7 +240,7 @@
             // sle_matnr
             // 
             this.sle_matnr.EditValue = "";
-            this.sle_matnr.Location = new System.Drawing.Point(1105, 34);
+            this.sle_matnr.Location = new System.Drawing.Point(1130, 34);
             this.sle_matnr.Name = "sle_matnr";
             this.sle_matnr.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -280,7 +280,7 @@
             // sle_matkl
             // 
             this.sle_matkl.EditValue = "";
-            this.sle_matkl.Location = new System.Drawing.Point(925, 34);
+            this.sle_matkl.Location = new System.Drawing.Point(951, 34);
             this.sle_matkl.Name = "sle_matkl";
             this.sle_matkl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -320,12 +320,12 @@
             // lbl_matkl
             // 
             this.lbl_matkl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.lbl_matkl.Location = new System.Drawing.Point(879, 37);
+            this.lbl_matkl.Location = new System.Drawing.Point(897, 37);
             this.lbl_matkl.MinimumSize = new System.Drawing.Size(40, 14);
             this.lbl_matkl.Name = "lbl_matkl";
-            this.lbl_matkl.Size = new System.Drawing.Size(40, 14);
+            this.lbl_matkl.Size = new System.Drawing.Size(48, 14);
             this.lbl_matkl.TabIndex = 24;
-            this.lbl_matkl.Text = "차종";
+            this.lbl_matkl.Text = "자재그룹";
             // 
             // sle_spart
             // 
@@ -380,7 +380,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl2.Location = new System.Drawing.Point(1039, 37);
+            this.labelControl2.Location = new System.Drawing.Point(1064, 37);
             this.labelControl2.MinimumSize = new System.Drawing.Size(60, 14);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 14);
@@ -547,7 +547,7 @@
             this.repositoryItemHyperLinkEdit_Delete,
             this.repositoryItemSearchLookUpEdit_Matnr,
             this.repositoryItemLookUpEdit_Arbpl});
-            this.gc_ppPlan.Size = new System.Drawing.Size(1417, 556);
+            this.gc_ppPlan.Size = new System.Drawing.Size(1418, 556);
             this.gc_ppPlan.TabIndex = 3;
             this.gc_ppPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_ppPlan});
@@ -648,7 +648,7 @@
             // 
             // Matkl
             // 
-            this.Matkl.Caption = "차종";
+            this.Matkl.Caption = "자재그룹";
             this.Matkl.FieldName = "Matkl";
             this.Matkl.MaxWidth = 100;
             this.Matkl.MinWidth = 50;
@@ -947,8 +947,8 @@
             this.dockPanel2.Options.ShowAutoHideButton = false;
             this.dockPanel2.Options.ShowCloseButton = false;
             this.dockPanel2.Options.ShowMaximizeButton = false;
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(1425, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(1425, 583);
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(1426, 200);
+            this.dockPanel2.Size = new System.Drawing.Size(1426, 583);
             this.dockPanel2.Text = "생산계획";
             // 
             // dockPanel2_Container
@@ -956,16 +956,16 @@
             this.dockPanel2_Container.Controls.Add(this.gc_ppPlan);
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1417, 556);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1418, 556);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.gc_sdPlan);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(1425, 185);
+            this.groupControl1.Location = new System.Drawing.Point(1426, 185);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(19, 583);
+            this.groupControl1.Size = new System.Drawing.Size(18, 583);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "영업계획";
             // 
@@ -975,7 +975,7 @@
             this.gc_sdPlan.Location = new System.Drawing.Point(2, 22);
             this.gc_sdPlan.MainView = this.gv_sdPlan;
             this.gc_sdPlan.Name = "gc_sdPlan";
-            this.gc_sdPlan.Size = new System.Drawing.Size(15, 559);
+            this.gc_sdPlan.Size = new System.Drawing.Size(14, 559);
             this.gc_sdPlan.TabIndex = 0;
             this.gc_sdPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_sdPlan});
@@ -987,6 +987,7 @@
             this.PlanQty});
             this.gv_sdPlan.GridControl = this.gc_sdPlan;
             this.gv_sdPlan.Name = "gv_sdPlan";
+            this.gv_sdPlan.OptionsBehavior.ReadOnly = true;
             // 
             // Pday
             // 
