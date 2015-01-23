@@ -304,7 +304,7 @@ namespace DLS.Production_Planning
                 if (drv.Row.RowState == DataRowState.Added)
                 {
                     drv.Row.Delete();
-                }                
+                }
             }
             catch (Exception ex)
             {
@@ -383,12 +383,21 @@ namespace DLS.Production_Planning
 
         private void gv_ppOutput_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-            e.Valid = false;
+            //e.Valid = false;
+            //if (e.Row != null)
+            //{
+            //    DataRowView drv = (DataRowView)e.Row;
+                
+            //    if (drv.Row.RowState == DataRowState.Detached)
+            //    {
+            //        e.Valid = false;
+            //    }
+            //}
         }
 
         private void gv_ppOutput_InvalidValueException(object sender, InvalidValueExceptionEventArgs e)
         {
-            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
+            //e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
         }
     }
 }
