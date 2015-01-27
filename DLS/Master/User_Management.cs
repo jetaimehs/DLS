@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace DLS.Master
 {
@@ -42,12 +43,20 @@ namespace DLS.Master
 
             Hashtable ht = new Hashtable();
             ht.Add("@MODE", 106);
+            if (int.Parse(Login.G_GRADE) != 4)
+            {
+                ht.Add("@Grade", 4);
+            }
 
             DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSPAccount]", ht, "");
 
             searchLookUpEdit_auth.Properties.DataSource = dt;
             searchLookUpEdit_auth.Properties.DisplayMember = "Auth";
-            searchLookUpEdit_auth.Properties.ValueMember = "Auth";        
+            searchLookUpEdit_auth.Properties.ValueMember = "Auth";
+
+            repositoryItemSearchLookUpEdit_Auth.DataSource = dt;
+            repositoryItemSearchLookUpEdit_Auth.DisplayMember = "Text";
+            repositoryItemSearchLookUpEdit_Auth.ValueMember = "Text";
         }
 
         private void ShowData()
@@ -124,6 +133,26 @@ namespace DLS.Master
         private void btn_find_Click(object sender, EventArgs e)
         {
             ShowData();
+        }
+
+        private void gv_UserList_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {            
+            if(((DataRowView)e.Row).Row.RowState == DataRowState.Modified)
+            {
+                Hashtable ht = new Hashtable();
+                ht.Add("@MODE", 302);
+                ht.Add("@Text", gv_UserList.GetFocusedRowCellValue("Text"));
+                ht.Add("@Dflg", gv_UserList.GetFocusedRowCellValue("Dflg"));
+                ht.Add("@NUSERID", gv_UserList.GetFocusedRowCellValue("UserID"));
+                ht.Add("@USERID", Login.G_userid);
+
+                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSPAccount]", ht, "");
+                ((DataRowView)e.Row).Row.AcceptChanges();
+
+                MessageBox.Show("수정되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ShowData();
+            }
         }
     }
 }

@@ -52,6 +52,10 @@
             this.UserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Text1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSearchLookUpEdit_Auth = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Authsl = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Textsl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Dflg = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
@@ -65,6 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_UserList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_UserList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit_Auth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // pc_main
@@ -256,6 +262,8 @@
             this.gc_UserList.Location = new System.Drawing.Point(0, 158);
             this.gc_UserList.MainView = this.gv_UserList;
             this.gc_UserList.Name = "gc_UserList";
+            this.gc_UserList.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemSearchLookUpEdit_Auth});
             this.gc_UserList.Size = new System.Drawing.Size(1339, 625);
             this.gc_UserList.TabIndex = 1;
             this.gc_UserList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -271,6 +279,7 @@
             this.Dflg});
             this.gv_UserList.GridControl = this.gc_UserList;
             this.gv_UserList.Name = "gv_UserList";
+            this.gv_UserList.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_UserList_RowUpdated);
             // 
             // Namegv
             // 
@@ -302,18 +311,52 @@
             // Text1
             // 
             this.Text1.Caption = "권한";
+            this.Text1.ColumnEdit = this.repositoryItemSearchLookUpEdit_Auth;
             this.Text1.FieldName = "Text";
             this.Text1.Name = "Text1";
-            this.Text1.OptionsColumn.AllowEdit = false;
             this.Text1.Visible = true;
             this.Text1.VisibleIndex = 3;
+            // 
+            // repositoryItemSearchLookUpEdit_Auth
+            // 
+            this.repositoryItemSearchLookUpEdit_Auth.AutoHeight = false;
+            this.repositoryItemSearchLookUpEdit_Auth.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSearchLookUpEdit_Auth.Name = "repositoryItemSearchLookUpEdit_Auth";
+            this.repositoryItemSearchLookUpEdit_Auth.NullText = "";
+            this.repositoryItemSearchLookUpEdit_Auth.View = this.repositoryItemSearchLookUpEdit1View;
+            // 
+            // repositoryItemSearchLookUpEdit1View
+            // 
+            this.repositoryItemSearchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Authsl,
+            this.Textsl});
+            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
+            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // Authsl
+            // 
+            this.Authsl.Caption = "권한코드";
+            this.Authsl.FieldName = "Auth";
+            this.Authsl.Name = "Authsl";
+            this.Authsl.Visible = true;
+            this.Authsl.VisibleIndex = 0;
+            // 
+            // Textsl
+            // 
+            this.Textsl.Caption = "내역";
+            this.Textsl.FieldName = "Text";
+            this.Textsl.Name = "Textsl";
+            this.Textsl.Visible = true;
+            this.Textsl.VisibleIndex = 1;
             // 
             // Dflg
             // 
             this.Dflg.Caption = "삭제여부";
             this.Dflg.FieldName = "Dflg";
             this.Dflg.Name = "Dflg";
-            this.Dflg.OptionsColumn.AllowEdit = false;
             this.Dflg.Visible = true;
             this.Dflg.VisibleIndex = 4;
             // 
@@ -340,6 +383,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_UserList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_UserList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit_Auth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,5 +416,9 @@
         private DevExpress.XtraEditors.LabelControl lbl_auth;
         private DevExpress.XtraGrid.Columns.GridColumn Text1;
         private DevExpress.XtraEditors.CheckEdit chk_del;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit_Auth;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn Authsl;
+        private DevExpress.XtraGrid.Columns.GridColumn Textsl;
     }
 }
