@@ -83,6 +83,10 @@ namespace DLS.Production_Planning
             ht5.Add("@MODE", 100);
             ht5.Add("@Werks", Main_MID_Form.G_werks);
             DataTable dt5 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht5, "");
+
+            //정렬
+            dt5.DefaultView.Sort = "Mtart, Matnr";
+
             //조회
             sle_matnr.Properties.DataSource = dt5;
             sle_matnr.Properties.DisplayMember = "Matnr";
