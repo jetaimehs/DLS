@@ -164,6 +164,7 @@
             this.Controls.Add(this.txt_userID);
             this.Controls.Add(this.lbl_userID);
             this.Name = "Change_Infomation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "비밀번호변경";
             this.Load += new System.EventHandler(this.Change_Infomation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_userID.Properties)).EndInit();

@@ -244,7 +244,7 @@
             // 
             // SMenge
             // 
-            this.SMenge.Caption = "반품수량";
+            this.SMenge.Caption = "변경수량";
             this.SMenge.FieldName = "Menge";
             this.SMenge.Name = "SMenge";
             this.SMenge.Visible = true;
