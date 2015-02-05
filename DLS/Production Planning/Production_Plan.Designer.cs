@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
             this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
@@ -93,7 +92,7 @@
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.pppNote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanel4 = new DevExpress.XtraBars.Docking.DockPanel();

@@ -83,6 +83,10 @@ namespace DLS.Production_Planning
             ht5.Add("@MODE", 100);
             ht5.Add("@Werks", Main_MID_Form.G_werks);
             DataTable dt5 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPlantMatrial]", ht5, "");
+
+            //정렬
+            dt5.DefaultView.Sort = "Mtart, Matnr";
+
             //조회
             sle_matnr.Properties.DataSource = dt5;
             sle_matnr.Properties.DisplayMember = "Matnr";
@@ -278,8 +282,10 @@ namespace DLS.Production_Planning
                 ht1.Add("@ppoSeq", gv_ppOutput.GetFocusedRowCellValue("ppoSeq").ToString());
                 ht1.Add("@Wdate", (DateTime)gv_ppOutput.GetFocusedRowCellValue("Wdate"));
                 ht1.Add("@Werks", Main_MID_Form.G_werks);
-                ht1.Add("@Matnr", gv_ppOutput.GetFocusedRowCellValue("Matnr").ToString());
+                ht1.Add("@Mtart", gv_ppOutput.GetFocusedRowCellValue("Mtart").ToString());
+                ht1.Add("@Matnr", gv_ppOutput.GetFocusedRowCellValue("Matnr").ToString());                
                 ht1.Add("@Lmnga", gv_ppOutput.GetFocusedRowCellValue("Lmnga").ToString());
+                ht1.Add("@Otype", gv_ppOutput.GetFocusedRowCellValue("Otype").ToString());
                 ht1.Add("@PPlgort", gv_ppOutput.GetFocusedRowCellValue("PPlgort").ToString());
                 ht1.Add("@Userid", Login.G_userid);
                 ht1.Add("@Lvorm", 1);
