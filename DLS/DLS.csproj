@@ -15,7 +15,7 @@
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\10.206.80.250\data\develop\DLS\</PublishUrl>
+    <PublishUrl>\\10.206.92.221\Installer\DLS\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,14 +25,15 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\10.206.80.250\data\develop\DLS\</UpdateUrl>
+    <InstallUrl>\\10.206.92.221\Installer\DLS\</InstallUrl>
+    <UpdateUrl>\\10.206.92.221\Installer\DLS\</UpdateUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>Donghee Logistics System</ProductName>
     <PublisherName>Donghee IT</PublisherName>
     <SuiteName>DLS</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>setup.html</WebPage>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
