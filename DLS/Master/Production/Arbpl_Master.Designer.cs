@@ -31,7 +31,7 @@
             this.gc_Arbpl_list = new DevExpress.XtraGrid.GridControl();
             this.gv_Arbpl_list = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Code = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Text = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Textgv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Save = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Save = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.Delete = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,7 +65,7 @@
             // 
             this.gv_Arbpl_list.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Code,
-            this.Text,
+            this.Textgv,
             this.Save,
             this.Delete});
             this.gv_Arbpl_list.GridControl = this.gc_Arbpl_list;
@@ -82,13 +82,13 @@
             this.Code.Visible = true;
             this.Code.VisibleIndex = 0;
             // 
-            // Text
+            // Textgv
             // 
-            this.Text.Caption = "작업장 내역";
-            this.Text.FieldName = "Text";
-            this.Text.Name = "Text";
-            this.Text.Visible = true;
-            this.Text.VisibleIndex = 1;
+            this.Textgv.Caption = "작업장 내역";
+            this.Textgv.FieldName = "Text";
+            this.Textgv.Name = "Textgv";
+            this.Textgv.Visible = true;
+            this.Textgv.VisibleIndex = 1;
             // 
             // Save
             // 
@@ -140,7 +140,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(93, 12);
             this.btn_down.Name = "btn_down";
@@ -151,7 +151,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -168,6 +168,7 @@
             this.Controls.Add(this.gc_Arbpl_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Arbpl_Master";
+            this.Text = "작업장마스터";
             this.Load += new System.EventHandler(this.Arbpl_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Arbpl_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Arbpl_list)).EndInit();
@@ -184,7 +185,7 @@
         private DevExpress.XtraGrid.GridControl gc_Arbpl_list;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_Arbpl_list;
         private DevExpress.XtraGrid.Columns.GridColumn Code;
-        private DevExpress.XtraGrid.Columns.GridColumn Text;
+        private DevExpress.XtraGrid.Columns.GridColumn Textgv;
         private DevExpress.XtraGrid.Columns.GridColumn Save;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit_Save;
         private DevExpress.XtraGrid.Columns.GridColumn Delete;

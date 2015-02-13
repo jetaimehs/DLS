@@ -35,7 +35,7 @@
             this.Cnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Driver = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Rcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Text = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Textgv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Rfee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cflg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.carno = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,7 +83,7 @@
             this.Cnumber,
             this.Driver,
             this.Rcode,
-            this.Text,
+            this.Textgv,
             this.Rfee,
             this.Cflg,
             this.carno});
@@ -141,14 +141,14 @@
             this.Rcode.Visible = true;
             this.Rcode.VisibleIndex = 4;
             // 
-            // Text
+            // Textgv
             // 
-            this.Text.Caption = "운송경로내역";
-            this.Text.FieldName = "Text";
-            this.Text.Name = "Text";
-            this.Text.OptionsColumn.AllowEdit = false;
-            this.Text.Visible = true;
-            this.Text.VisibleIndex = 5;
+            this.Textgv.Caption = "운송경로내역";
+            this.Textgv.FieldName = "Text";
+            this.Textgv.Name = "Textgv";
+            this.Textgv.OptionsColumn.AllowEdit = false;
+            this.Textgv.Visible = true;
+            this.Textgv.VisibleIndex = 5;
             // 
             // Rfee
             // 
@@ -204,7 +204,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(93, 12);
             this.btn_down.Name = "btn_down";
@@ -215,7 +215,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -299,6 +299,7 @@
             this.Controls.Add(this.gc_matral_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Transfer_History";
+            this.Text = "운송이력관리";
             ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_SEL)).EndInit();
@@ -332,7 +333,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Cnumber;
         private DevExpress.XtraGrid.Columns.GridColumn Driver;
         private DevExpress.XtraGrid.Columns.GridColumn Rcode;
-        private DevExpress.XtraGrid.Columns.GridColumn Text;
+        private DevExpress.XtraGrid.Columns.GridColumn Textgv;
         private DevExpress.XtraGrid.Columns.GridColumn Rfee;
         private DevExpress.XtraEditors.SimpleButton btn_down;
         private DevExpress.XtraGrid.Columns.GridColumn carno;

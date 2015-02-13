@@ -54,8 +54,8 @@ namespace DLS.Master.Sales
 
 
             SearchLookUpEdit_Kunnr.DataSource = dt;
-            SearchLookUpEdit_Kunnr.DisplayMember = "KUNNR";
-            SearchLookUpEdit_Kunnr.ValueMember = "KUNNR";
+            SearchLookUpEdit_Kunnr.DisplayMember = "Kunnr";
+            SearchLookUpEdit_Kunnr.ValueMember = "Kunnr";
 
             //Hashtable ht1 = new Hashtable();
             //ht1.Add("@MODE", 100);
@@ -81,6 +81,11 @@ namespace DLS.Master.Sales
             DataTable dt = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DlsSPKprice", ht, "");
 
             gc_Matnr_list.DataSource = dt;
+
+            if (dt.Rows.Count < 1)
+            {
+                ShowSubData();
+            }
         }
 
         private void repositoryItemHyperLinkEdit_Add_Click(object sender, EventArgs e)
@@ -250,12 +255,17 @@ namespace DLS.Master.Sales
 
         private void ShowSubData()
         {
-            Hashtable ht = new Hashtable();
-            ht.Add("@MODE", 101);
-            ht.Add("@Werks", Main_MID_Form.G_werks);
-            ht.Add("@Matnr", gv_Matnr_list.GetRowCellValue(gv_Matnr_list.FocusedRowHandle, "Matnr").ToString());
+            DataTable dt = new DataTable();
 
-            DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DlsSPKprice", ht, "");
+            if (gv_Matnr_list.RowCount > 1)
+            {
+                Hashtable ht = new Hashtable();
+                ht.Add("@MODE", 101);
+                ht.Add("@Werks", Main_MID_Form.G_werks);
+                ht.Add("@Matnr", gv_Matnr_list.GetRowCellValue(gv_Matnr_list.FocusedRowHandle, "Matnr").ToString());
+
+                dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DlsSPKprice", ht, "");
+            }
 
             gc_price.DataSource = dt;
         }
@@ -263,7 +273,8 @@ namespace DLS.Master.Sales
         private void gv_Matnr_list_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (!gv_Matnr_list.FocusedRowHandle.Equals(GridControl.NewItemRowHandle) &&
-                !gv_Matnr_list.FocusedRowHandle.Equals(GridControl.AutoFilterRowHandle))
+                !gv_Matnr_list.FocusedRowHandle.Equals(GridControl.AutoFilterRowHandle) &&
+                !gv_Matnr_list.FocusedRowHandle.Equals(-2147483648))
             {
                 ShowSubData();
             }
@@ -288,7 +299,8 @@ namespace DLS.Master.Sales
 
         private void btn_upload_Click(object sender, EventArgs e)
         {
-
+            Popup_Form.Change_Kprice pop = new Popup_Form.Change_Kprice();            
+            pop.Show();
         }
     }
 }

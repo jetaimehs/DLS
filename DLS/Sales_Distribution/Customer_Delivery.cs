@@ -185,10 +185,20 @@ namespace DLS.Sales_Distribution
 
         private void gv_matral_list_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
-            if (double.Parse(e.Value.ToString()) > double.Parse(gv_matral_list.GetRowCellValue(gv_matral_list.GetSelectedRows()[0], "Labst").ToString()))
+            DataRowView drv = (DataRowView)gv_matral_list.GetRow(gv_matral_list.GetSelectedRows()[0]);
+
+            //gv_matral_list.FocusedRowHandle.ToString();
+
+            if (drv != null)
             {
-                e.Valid = false;
-                MessageBox.Show("출고수량이 재고 수량보다 많습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (gv_matral_list.FocusedColumn.Name == "Outqty")
+                {
+                    if (double.Parse(e.Value.ToString()) > double.Parse(gv_matral_list.GetRowCellValue(gv_matral_list.GetSelectedRows()[0], "Labst").ToString()))
+                    {
+                        e.Valid = false;
+                        MessageBox.Show("출고수량이 재고 수량보다 많습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 

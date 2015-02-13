@@ -101,7 +101,7 @@
             this.ClientSize = new System.Drawing.Size(473, 424);
             this.Controls.Add(this.gc_UserFind);
             this.Name = "Find_User";
-            this.Text = "Find_User";
+            this.Text = "사용자검색";
             this.Load += new System.EventHandler(this.Find_User_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_UserFind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_UserFind)).EndInit();

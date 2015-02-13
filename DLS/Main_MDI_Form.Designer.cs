@@ -69,7 +69,6 @@
             this.barButtonItem_info = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_MM_ST = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_MM_GRlist = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_DM_list = new DevExpress.XtraBars.BarButtonItem();
             this.Btn_Master_UserAuth = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.Rbn_Menu_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -99,6 +98,8 @@
             this.Master_G5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btn_DM_list = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_doc = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.Rbn_Menu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cb_werks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
@@ -108,7 +109,6 @@
             // Rbn_Menu
             // 
             this.Rbn_Menu.ExpandCollapseItem.Id = 0;
-            this.Rbn_Menu.ExpandCollapseItem.Name = "";
             this.Rbn_Menu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.Rbn_Menu.ExpandCollapseItem,
             this.Rgb_Skin,
@@ -150,10 +150,10 @@
             this.barButtonItem_info,
             this.Btn_MM_ST,
             this.Btn_MM_GRlist,
-            this.btn_DM_list,
-            this.Btn_Master_UserAuth});
+            this.Btn_Master_UserAuth,
+            this.btn_doc});
             this.Rbn_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Rbn_Menu.MaxItemId = 51;
+            this.Rbn_Menu.MaxItemId = 52;
             this.Rbn_Menu.Name = "Rbn_Menu";
             this.Rbn_Menu.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -197,7 +197,7 @@
             // 
             this.Btn_Master_User.Caption = "사용자관리";
             this.Btn_Master_User.Id = 3;
-            this.Btn_Master_User.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_User.LargeGlyph = global::DLS.Properties.Resources.SKD_사용자정보변경;
             this.Btn_Master_User.Name = "Btn_Master_User";
             this.Btn_Master_User.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_User_ItemClick);
             // 
@@ -209,9 +209,9 @@
             // 
             // Btn_SD_OutDelivery
             // 
-            this.Btn_SD_OutDelivery.Caption = "출고처리";
+            this.Btn_SD_OutDelivery.Caption = "출고관리";
             this.Btn_SD_OutDelivery.Id = 11;
-            this.Btn_SD_OutDelivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_OutDelivery.LargeGlyph = global::DLS.Properties.Resources.truck;
             this.Btn_SD_OutDelivery.Name = "Btn_SD_OutDelivery";
             this.Btn_SD_OutDelivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_OutDelivery_ItemClick);
             // 
@@ -219,7 +219,7 @@
             // 
             this.Btn_SD_DeliveryHistory.Caption = "납품이력";
             this.Btn_SD_DeliveryHistory.Id = 12;
-            this.Btn_SD_DeliveryHistory.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_DeliveryHistory.LargeGlyph = global::DLS.Properties.Resources.SKD_포장사양서;
             this.Btn_SD_DeliveryHistory.Name = "Btn_SD_DeliveryHistory";
             this.Btn_SD_DeliveryHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_DeliveryHistory_ItemClick);
             // 
@@ -227,7 +227,7 @@
             // 
             this.Btn_SD_TransferHistory.Caption = "운송이력";
             this.Btn_SD_TransferHistory.Id = 13;
-            this.Btn_SD_TransferHistory.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_TransferHistory.LargeGlyph = global::DLS.Properties.Resources.SKD_입고완료;
             this.Btn_SD_TransferHistory.Name = "Btn_SD_TransferHistory";
             this.Btn_SD_TransferHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_TransferHistory_ItemClick);
             // 
@@ -251,7 +251,7 @@
             // 
             this.Btn_Master_Kunnr.Caption = "고객마스터관리";
             this.Btn_Master_Kunnr.Id = 17;
-            this.Btn_Master_Kunnr.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Kunnr.LargeGlyph = global::DLS.Properties.Resources.SKD_고객정보;
             this.Btn_Master_Kunnr.Name = "Btn_Master_Kunnr";
             this.Btn_Master_Kunnr.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Kunnr_ItemClick);
             // 
@@ -259,7 +259,7 @@
             // 
             this.Btn_Master_Kprice.Caption = "판매단가관리";
             this.Btn_Master_Kprice.Id = 18;
-            this.Btn_Master_Kprice.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Kprice.LargeGlyph = global::DLS.Properties.Resources.Money;
             this.Btn_Master_Kprice.Name = "Btn_Master_Kprice";
             this.Btn_Master_Kprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Kprice_ItemClick);
             // 
@@ -267,7 +267,7 @@
             // 
             this.Btn_Master_Bwart.Caption = "이동유형마스터";
             this.Btn_Master_Bwart.Id = 19;
-            this.Btn_Master_Bwart.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Bwart.LargeGlyph = global::DLS.Properties.Resources.move_48;
             this.Btn_Master_Bwart.Name = "Btn_Master_Bwart";
             this.Btn_Master_Bwart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Bwart_ItemClick);
             // 
@@ -275,7 +275,7 @@
             // 
             this.Btn_Master_Transper.Caption = "운송업체관리";
             this.Btn_Master_Transper.Id = 20;
-            this.Btn_Master_Transper.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Transper.LargeGlyph = global::DLS.Properties.Resources.diagram_v2_32;
             this.Btn_Master_Transper.Name = "Btn_Master_Transper";
             this.Btn_Master_Transper.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Transper_ItemClick);
             // 
@@ -283,7 +283,7 @@
             // 
             this.Btn_Master_Route.Caption = "운송경로관리";
             this.Btn_Master_Route.Id = 21;
-            this.Btn_Master_Route.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Route.LargeGlyph = global::DLS.Properties.Resources.SKD_운송경로;
             this.Btn_Master_Route.Name = "Btn_Master_Route";
             this.Btn_Master_Route.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Route_ItemClick);
             // 
@@ -291,7 +291,7 @@
             // 
             this.Btn_SD_DailyPlan.Caption = "일일영업계획";
             this.Btn_SD_DailyPlan.Id = 22;
-            this.Btn_SD_DailyPlan.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_DailyPlan.LargeGlyph = global::DLS.Properties.Resources.Day;
             this.Btn_SD_DailyPlan.Name = "Btn_SD_DailyPlan";
             this.Btn_SD_DailyPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_DailyPlan_ItemClick);
             // 
@@ -299,7 +299,7 @@
             // 
             this.Btn_SD_Presult.Caption = "계획실적현황";
             this.Btn_SD_Presult.Id = 23;
-            this.Btn_SD_Presult.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_Presult.LargeGlyph = global::DLS.Properties.Resources.SKD_입고예정;
             this.Btn_SD_Presult.Name = "Btn_SD_Presult";
             this.Btn_SD_Presult.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_Presult_ItemClick);
             // 
@@ -307,7 +307,7 @@
             // 
             this.Btn_PP_Plan.Caption = "생산계획관리";
             this.Btn_PP_Plan.Id = 24;
-            this.Btn_PP_Plan.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_PP_Plan.LargeGlyph = global::DLS.Properties.Resources.Day;
             this.Btn_PP_Plan.Name = "Btn_PP_Plan";
             this.Btn_PP_Plan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PP_Plan_ItemClick);
             // 
@@ -315,7 +315,7 @@
             // 
             this.Btn_Master_Arbpl.Caption = "작업장관리";
             this.Btn_Master_Arbpl.Id = 25;
-            this.Btn_Master_Arbpl.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Arbpl.LargeGlyph = global::DLS.Properties.Resources.Options;
             this.Btn_Master_Arbpl.Name = "Btn_Master_Arbpl";
             this.Btn_Master_Arbpl.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Arbpl_ItemClick);
             // 
@@ -323,7 +323,7 @@
             // 
             this.Btn_Master_Matkl.Caption = "자재그룹";
             this.Btn_Master_Matkl.Id = 26;
-            this.Btn_Master_Matkl.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Matkl.LargeGlyph = global::DLS.Properties.Resources.SKD_고객자재관리;
             this.Btn_Master_Matkl.Name = "Btn_Master_Matkl";
             this.Btn_Master_Matkl.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Matkl_ItemClick);
             // 
@@ -331,7 +331,7 @@
             // 
             this.Btn_Master_Mtart.Caption = "자재유형";
             this.Btn_Master_Mtart.Id = 27;
-            this.Btn_Master_Mtart.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Mtart.LargeGlyph = global::DLS.Properties.Resources.dictionary;
             this.Btn_Master_Mtart.Name = "Btn_Master_Mtart";
             this.Btn_Master_Mtart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Mtart_ItemClick);
             // 
@@ -339,7 +339,7 @@
             // 
             this.Btn_Master_Lgort.Caption = "저장위치마스터";
             this.Btn_Master_Lgort.Id = 29;
-            this.Btn_Master_Lgort.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_Lgort.LargeGlyph = global::DLS.Properties.Resources.save_location;
             this.Btn_Master_Lgort.Name = "Btn_Master_Lgort";
             this.Btn_Master_Lgort.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_Lgort_ItemClick);
             // 
@@ -347,7 +347,7 @@
             // 
             this.Btn_Master_LIfnr.Caption = "협력업체마스터";
             this.Btn_Master_LIfnr.Id = 30;
-            this.Btn_Master_LIfnr.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_LIfnr.LargeGlyph = global::DLS.Properties.Resources.SKD_사용자관리;
             this.Btn_Master_LIfnr.Name = "Btn_Master_LIfnr";
             this.Btn_Master_LIfnr.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_LIfnr_ItemClick);
             // 
@@ -355,7 +355,7 @@
             // 
             this.btn_Master_MM.Caption = "자재마스터";
             this.btn_Master_MM.Id = 31;
-            this.btn_Master_MM.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_Master_MM.LargeGlyph = global::DLS.Properties.Resources.benchmarking;
             this.btn_Master_MM.Name = "btn_Master_MM";
             this.btn_Master_MM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_MM_ItemClick);
             // 
@@ -363,7 +363,7 @@
             // 
             this.btn_Master_PMM.Caption = "플랜트별자재리스트";
             this.btn_Master_PMM.Id = 32;
-            this.btn_Master_PMM.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_Master_PMM.LargeGlyph = global::DLS.Properties.Resources.benchmarking;
             this.btn_Master_PMM.Name = "btn_Master_PMM";
             this.btn_Master_PMM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_PMM_ItemClick);
             // 
@@ -371,7 +371,7 @@
             // 
             this.btn_Master_Lprice.Caption = "구매단가마스터";
             this.btn_Master_Lprice.Id = 33;
-            this.btn_Master_Lprice.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_Master_Lprice.LargeGlyph = global::DLS.Properties.Resources.pay_buy;
             this.btn_Master_Lprice.Name = "btn_Master_Lprice";
             this.btn_Master_Lprice.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_Lprice_ItemClick);
             // 
@@ -379,7 +379,7 @@
             // 
             this.Btn_PP_Output.Caption = "생산실적관리";
             this.Btn_PP_Output.Id = 29;
-            this.Btn_PP_Output.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_PP_Output.LargeGlyph = global::DLS.Properties.Resources.pallet;
             this.Btn_PP_Output.Name = "Btn_PP_Output";
             this.Btn_PP_Output.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PP_Output_ItemClick);
             // 
@@ -387,7 +387,7 @@
             // 
             this.btn_FI_sales_delivery.Caption = "납품수불";
             this.btn_FI_sales_delivery.Id = 30;
-            this.btn_FI_sales_delivery.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_FI_sales_delivery.LargeGlyph = global::DLS.Properties.Resources.pay_list;
             this.btn_FI_sales_delivery.Name = "btn_FI_sales_delivery";
             this.btn_FI_sales_delivery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_FI_sales_delivery_ItemClick);
             // 
@@ -395,7 +395,7 @@
             // 
             this.btn_FI_sales_Transfer.Caption = "운송비";
             this.btn_FI_sales_Transfer.Id = 31;
-            this.btn_FI_sales_Transfer.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_FI_sales_Transfer.LargeGlyph = global::DLS.Properties.Resources.truck_pay;
             this.btn_FI_sales_Transfer.Name = "btn_FI_sales_Transfer";
             this.btn_FI_sales_Transfer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_FI_sales_Transfer_ItemClick);
             // 
@@ -403,7 +403,7 @@
             // 
             this.Btn_PP_StateReport.Caption = "기간별생산현황";
             this.Btn_PP_StateReport.Id = 34;
-            this.Btn_PP_StateReport.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_PP_StateReport.LargeGlyph = global::DLS.Properties.Resources.report;
             this.Btn_PP_StateReport.Name = "Btn_PP_StateReport";
             this.Btn_PP_StateReport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_PP_StateReport_ItemClick);
             // 
@@ -411,7 +411,7 @@
             // 
             this.Btn_MM_PO.Caption = "발주관리";
             this.Btn_MM_PO.Id = 35;
-            this.Btn_MM_PO.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_MM_PO.LargeGlyph = global::DLS.Properties.Resources.SKD_포장자재기준정보;
             this.Btn_MM_PO.Name = "Btn_MM_PO";
             this.Btn_MM_PO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_PO_ItemClick);
             // 
@@ -419,7 +419,7 @@
             // 
             this.Btn_MM_GR.Caption = "입고관리";
             this.Btn_MM_GR.Id = 38;
-            this.Btn_MM_GR.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_MM_GR.LargeGlyph = global::DLS.Properties.Resources.SKD_재고관리;
             this.Btn_MM_GR.Name = "Btn_MM_GR";
             this.Btn_MM_GR.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_GR_ItemClick);
             // 
@@ -427,7 +427,7 @@
             // 
             this.Btn_MM_POlist.Caption = "발주리스트";
             this.Btn_MM_POlist.Id = 39;
-            this.Btn_MM_POlist.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_MM_POlist.LargeGlyph = global::DLS.Properties.Resources.SKD_포장사양서;
             this.Btn_MM_POlist.Name = "Btn_MM_POlist";
             this.Btn_MM_POlist.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_POlist_ItemClick);
             // 
@@ -435,15 +435,15 @@
             // 
             this.btn_FI_Material.Caption = "자재수불";
             this.btn_FI_Material.Id = 40;
-            this.btn_FI_Material.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_FI_Material.LargeGlyph = global::DLS.Properties.Resources.SKD_불량확인;
             this.btn_FI_Material.Name = "btn_FI_Material";
             this.btn_FI_Material.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_FI_Material_ItemClick);
             // 
             // btn_FI_Close
             // 
-            this.btn_FI_Close.Caption = "물류마감";
+            this.btn_FI_Close.Caption = "마감관리";
             this.btn_FI_Close.Id = 41;
-            this.btn_FI_Close.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_FI_Close.LargeGlyph = global::DLS.Properties.Resources.end;
             this.btn_FI_Close.Name = "btn_FI_Close";
             this.btn_FI_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_FI_Close_ItemClick);
             // 
@@ -451,7 +451,7 @@
             // 
             this.Btn_SD_MonthPlan.Caption = "월납품계획";
             this.Btn_SD_MonthPlan.Id = 42;
-            this.Btn_SD_MonthPlan.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_SD_MonthPlan.LargeGlyph = global::DLS.Properties.Resources.Calendar;
             this.Btn_SD_MonthPlan.Name = "Btn_SD_MonthPlan";
             this.Btn_SD_MonthPlan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_SD_MonthPlan_ItemClick);
             // 
@@ -459,7 +459,7 @@
             // 
             this.btn_Master_LPlist.Caption = "구매단가리스트";
             this.btn_Master_LPlist.Id = 43;
-            this.btn_Master_LPlist.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_Master_LPlist.LargeGlyph = global::DLS.Properties.Resources.pay_list;
             this.btn_Master_LPlist.Name = "btn_Master_LPlist";
             this.btn_Master_LPlist.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Master_LPlist_ItemClick);
             // 
@@ -467,7 +467,7 @@
             // 
             this.btn_ST_stock_list.Caption = "현재고조회";
             this.btn_ST_stock_list.Id = 44;
-            this.btn_ST_stock_list.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.btn_ST_stock_list.LargeGlyph = global::DLS.Properties.Resources.SKD_재고조회;
             this.btn_ST_stock_list.Name = "btn_ST_stock_list";
             this.btn_ST_stock_list.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ST_stock_list_ItemClick);
             // 
@@ -475,7 +475,7 @@
             // 
             this.Btn_MM_GC.Caption = "입고취소";
             this.Btn_MM_GC.Id = 45;
-            this.Btn_MM_GC.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_MM_GC.LargeGlyph = global::DLS.Properties.Resources.cancel_inbound;
             this.Btn_MM_GC.Name = "Btn_MM_GC";
             this.Btn_MM_GC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_GC_ItemClick);
             // 
@@ -494,7 +494,7 @@
             // 
             this.Btn_MM_ST.Caption = "창고이전전기";
             this.Btn_MM_ST.Id = 47;
-            this.Btn_MM_ST.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_MM_ST.LargeGlyph = global::DLS.Properties.Resources.move_product;
             this.Btn_MM_ST.Name = "Btn_MM_ST";
             this.Btn_MM_ST.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_ST_ItemClick);
             // 
@@ -502,23 +502,15 @@
             // 
             this.Btn_MM_GRlist.Caption = "입고리스트";
             this.Btn_MM_GRlist.Id = 48;
-            this.Btn_MM_GRlist.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_MM_GRlist.LargeGlyph = global::DLS.Properties.Resources.SKD_불량확인;
             this.Btn_MM_GRlist.Name = "Btn_MM_GRlist";
             this.Btn_MM_GRlist.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_MM_GRlist_ItemClick);
-            // 
-            // btn_DM_list
-            // 
-            this.btn_DM_list.Caption = "문서리스트";
-            this.btn_DM_list.Id = 49;
-            this.btn_DM_list.LargeGlyph = global::DLS.Properties.Resources.window_menu;
-            this.btn_DM_list.Name = "btn_DM_list";
-            this.btn_DM_list.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DM_list_ItemClick);
             // 
             // Btn_Master_UserAuth
             // 
             this.Btn_Master_UserAuth.Caption = "사용자권한관리";
             this.Btn_Master_UserAuth.Id = 50;
-            this.Btn_Master_UserAuth.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_UserAuth.LargeGlyph = global::DLS.Properties.Resources.UserKey_32x32;
             this.Btn_Master_UserAuth.Name = "Btn_Master_UserAuth";
             this.Btn_Master_UserAuth.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_UserAuth_ItemClick);
             // 
@@ -628,7 +620,6 @@
             // FI_G1
             // 
             this.FI_G1.ItemLinks.Add(this.btn_FI_Close);
-            this.FI_G1.ItemLinks.Add(this.btn_DM_list);
             this.FI_G1.Name = "FI_G1";
             this.FI_G1.Text = "물류마감";
             // 
@@ -650,11 +641,12 @@
             this.Rbn_Menu_Report.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.Report_G1});
             this.Rbn_Menu_Report.Name = "Rbn_Menu_Report";
-            this.Rbn_Menu_Report.Text = "리포트";
+            this.Rbn_Menu_Report.Text = "재고";
             // 
             // Report_G1
             // 
             this.Report_G1.ItemLinks.Add(this.btn_ST_stock_list);
+            this.Report_G1.ItemLinks.Add(this.btn_doc);
             this.Report_G1.Name = "Report_G1";
             this.Report_G1.Text = "재고조회";
             // 
@@ -696,7 +688,7 @@
             // 
             this.Btn_Master_BOM.Caption = "BOM관리";
             this.Btn_Master_BOM.Id = 28;
-            this.Btn_Master_BOM.LargeGlyph = global::DLS.Properties.Resources.window_menu;
+            this.Btn_Master_BOM.LargeGlyph = global::DLS.Properties.Resources.SKD_BOM관리;
             this.Btn_Master_BOM.Name = "Btn_Master_BOM";
             this.Btn_Master_BOM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Master_BOM_ItemClick);
             // 
@@ -725,7 +717,6 @@
             this.repositoryItemSearchLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemSearchLookUpEdit1.Name = "repositoryItemSearchLookUpEdit1";
-            this.repositoryItemSearchLookUpEdit1.NullText = "";
             this.repositoryItemSearchLookUpEdit1.View = this.repositoryItemSearchLookUpEdit1View;
             // 
             // repositoryItemSearchLookUpEdit1View
@@ -734,6 +725,14 @@
             this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
             this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // btn_doc
+            // 
+            this.btn_doc.Caption = "문서리스트";
+            this.btn_doc.Id = 51;
+            this.btn_doc.LargeGlyph = global::DLS.Properties.Resources.SKD_불량확인;
+            this.btn_doc.Name = "btn_doc";
+            this.btn_doc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_doc_ItemClick);
             // 
             // Main_MID_Form
             // 
@@ -826,7 +825,8 @@
         private DevExpress.XtraBars.BarButtonItem Btn_MM_ST;
         private DevExpress.XtraBars.BarButtonItem Btn_MM_GRlist;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_info;
-        private DevExpress.XtraBars.BarButtonItem btn_DM_list;
         private DevExpress.XtraBars.BarButtonItem Btn_Master_UserAuth;
+        private DevExpress.XtraBars.BarButtonItem btn_doc;
+        private DevExpress.XtraBars.BarButtonItem btn_DM_list;
     }
 }

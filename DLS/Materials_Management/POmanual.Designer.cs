@@ -430,7 +430,7 @@
             this.Controls.Add(this.pc_main);
             this.Controls.Add(this.gp1);
             this.Name = "POmanual";
-            this.Text = "POmanual";
+            this.Text = "수동발주";
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
             this.pc_main.PerformLayout();

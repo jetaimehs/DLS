@@ -39,7 +39,7 @@
             this.Matkl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Budat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Menge = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Text = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Textgv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cflg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sdtSeq = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -94,7 +94,7 @@
             this.Matkl,
             this.Budat,
             this.Menge,
-            this.Text,
+            this.Textgv,
             this.Cnumber,
             this.Cflg,
             this.sdtSeq});
@@ -182,14 +182,14 @@
             this.Menge.Visible = true;
             this.Menge.VisibleIndex = 7;
             // 
-            // Text
+            // Textgv
             // 
-            this.Text.Caption = "운송경로";
-            this.Text.FieldName = "Text";
-            this.Text.Name = "Text";
-            this.Text.OptionsColumn.AllowEdit = false;
-            this.Text.Visible = true;
-            this.Text.VisibleIndex = 8;
+            this.Textgv.Caption = "운송경로";
+            this.Textgv.FieldName = "Text";
+            this.Textgv.Name = "Textgv";
+            this.Textgv.OptionsColumn.AllowEdit = false;
+            this.Textgv.Visible = true;
+            this.Textgv.VisibleIndex = 8;
             // 
             // Cnumber
             // 
@@ -229,7 +229,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(174, 12);
             this.btn_down.Name = "btn_down";
@@ -240,7 +240,7 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_Cancel.Image = global::DLS.Properties.Resources.error;
             this.btn_Cancel.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_Cancel.Location = new System.Drawing.Point(93, 12);
             this.btn_Cancel.Name = "btn_Cancel";
@@ -251,7 +251,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -349,6 +349,7 @@
             this.Controls.Add(this.gc_matral_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Delivery_History";
+            this.Text = "납품이력관리";
             ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_SEL)).EndInit();
@@ -388,7 +389,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Matkl;
         private DevExpress.XtraGrid.Columns.GridColumn Budat;
         private DevExpress.XtraGrid.Columns.GridColumn Menge;
-        private DevExpress.XtraGrid.Columns.GridColumn Text;
+        private DevExpress.XtraGrid.Columns.GridColumn Textgv;
         private DevExpress.XtraGrid.Columns.GridColumn Cnumber;
         private DevExpress.XtraGrid.Columns.GridColumn Cflg;
         private DevExpress.XtraGrid.Columns.GridColumn sdtSeq;

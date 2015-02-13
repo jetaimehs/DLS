@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = global::DLS.Properties.Resources.Login_Form;
             this.ClientSize = new System.Drawing.Size(525, 409);
             this.Controls.Add(this.rad_db);

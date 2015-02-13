@@ -244,7 +244,7 @@
             // 
             // SMenge
             // 
-            this.SMenge.Caption = "반품수량";
+            this.SMenge.Caption = "변경수량";
             this.SMenge.FieldName = "Menge";
             this.SMenge.Name = "SMenge";
             this.SMenge.Visible = true;
@@ -375,7 +375,7 @@
             this.Controls.Add(this.gp1);
             this.Controls.Add(this.pc_main);
             this.Name = "Material_TF";
-            this.Text = "Material_TF";
+            this.Text = "자재전기관리";
             this.Load += new System.EventHandler(this.Material_TF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);

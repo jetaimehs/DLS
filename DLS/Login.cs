@@ -100,17 +100,20 @@ namespace DLS
 
             DataTable dt = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("DLSSPAccount", ht, "");
 
-            G_userid = dt.Rows[0]["UserID"].ToString();
-            G_GRADE = dt.Rows[0]["Grade"].ToString();
-            L_pwd = dt.Rows[0]["Pass"].ToString();
-            G_skin = dt.Rows[0]["Skin"].ToString();            
+            if (dt.Rows.Count > 0)
+            {
+                G_userid = dt.Rows[0]["UserID"].ToString();
+                G_GRADE = dt.Rows[0]["Grade"].ToString();
+                L_pwd = dt.Rows[0]["Pass"].ToString();
+                G_skin = dt.Rows[0]["Skin"].ToString();
+            }
         }
 
         private void txt_pwd_Click(object sender, EventArgs e)
         {
             Get_UserInfo();
 
-            if (G_GRADE.Equals("4"))
+          if (G_GRADE.Equals("4"))
             {
                 rad_db.Visible = true;
             }

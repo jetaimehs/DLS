@@ -185,7 +185,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(174, 12);
             this.btn_down.Name = "btn_down";
@@ -196,7 +196,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_save.Image = global::DLS.Properties.Resources.ButtonSave;
             this.btn_save.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_save.Location = new System.Drawing.Point(93, 12);
             this.btn_save.Name = "btn_save";
@@ -207,7 +207,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -281,7 +281,7 @@
             this.Controls.Add(this.gc_DailySales_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Daily_SalesPlan";
-            this.Text = "Daily_SalesPlan";
+            this.Text = "일일영업계획수립";
             this.Load += new System.EventHandler(this.Daily_SalesPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_DailySales_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_DailySales_list)).EndInit();

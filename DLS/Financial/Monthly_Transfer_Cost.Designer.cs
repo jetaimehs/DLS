@@ -36,7 +36,7 @@
             this.Ctype = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Driver = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cnumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Text = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Textgv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Rfee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
             this.btn_down = new DevExpress.XtraEditors.SimpleButton();
@@ -74,7 +74,7 @@
             this.Ctype,
             this.Driver,
             this.Cnumber,
-            this.Text,
+            this.Textgv,
             this.Rfee});
             this.gv_matral_list.GridControl = this.gc_matral_list;
             this.gv_matral_list.Name = "gv_matral_list";
@@ -134,14 +134,14 @@
             this.Cnumber.Visible = true;
             this.Cnumber.VisibleIndex = 5;
             // 
-            // Text
+            // Textgv
             // 
-            this.Text.Caption = "운송지역";
-            this.Text.FieldName = "Text";
-            this.Text.Name = "Text";
-            this.Text.OptionsColumn.AllowEdit = false;
-            this.Text.Visible = true;
-            this.Text.VisibleIndex = 6;
+            this.Textgv.Caption = "운송지역";
+            this.Textgv.FieldName = "Text";
+            this.Textgv.Name = "Textgv";
+            this.Textgv.OptionsColumn.AllowEdit = false;
+            this.Textgv.Visible = true;
+            this.Textgv.VisibleIndex = 6;
             // 
             // Rfee
             // 
@@ -235,6 +235,7 @@
             this.Controls.Add(this.gc_matral_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Monthly_Transfer_Cost";
+            this.Text = "운송비수불부";
             this.Load += new System.EventHandler(this.Monthly_Transfer_Cost_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).EndInit();
@@ -259,7 +260,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Driver;
         private DevExpress.XtraGrid.Columns.GridColumn Budat;
         private DevExpress.XtraGrid.Columns.GridColumn Cnumber;
-        private DevExpress.XtraGrid.Columns.GridColumn Text;
+        private DevExpress.XtraGrid.Columns.GridColumn Textgv;
         private DevExpress.XtraGrid.Columns.GridColumn Rfee;
         private DevExpress.XtraEditors.PanelControl pc_main;
         private DevExpress.XtraEditors.SimpleButton btn_down;

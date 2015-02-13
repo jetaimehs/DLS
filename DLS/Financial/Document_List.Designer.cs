@@ -274,7 +274,7 @@
             // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(93, 12);
             this.btn_down.Name = "btn_down";
@@ -285,7 +285,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -619,7 +619,7 @@
             this.Controls.Add(this.gc_dm_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Document_List";
-            this.Text = "Document__List";
+            this.Text = "문서리스트";
             this.Load += new System.EventHandler(this.Document__List_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_dm_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_dm_list)).EndInit();

@@ -120,7 +120,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_add.Image = global::DLS.Properties.Resources.ButtonSave;
             this.btn_add.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_add.Location = new System.Drawing.Point(12, 8);
             this.btn_add.Name = "btn_add";
@@ -164,7 +164,8 @@
             this.Controls.Add(this.txt_userID);
             this.Controls.Add(this.lbl_userID);
             this.Name = "Change_Infomation";
-            this.Text = "Change_Infomation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "비밀번호변경";
             this.Load += new System.EventHandler(this.Change_Infomation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_userID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();

@@ -57,7 +57,7 @@ namespace DLS.Financial
 
             DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpFiClose]", ht1, "");
 
-            gc_fi_close.DataSource = dt1;
+            gc_fi_close.DataSource = dt1;            
         }
 
         private void btn_find_Click(object sender, EventArgs e)
@@ -73,6 +73,17 @@ namespace DLS.Financial
             }
 
             Hashtable[] mGroup = new Hashtable[1];
+            Hashtable[] sGroup = new Hashtable[1];
+
+            //문서내역 저장
+            Hashtable ht1 = new Hashtable();
+
+            ht1.Add("@MODE", 501);
+            ht1.Add("@Spmon", date_month.DateTime.ToShortDateString());
+            ht1.Add("@Werks", Main_MID_Form.G_werks);
+
+            sGroup[0] = Common.Frm10.Base.BaseModules.CreateSingleGroup("[DlsSpFiClose]", ht1);
+
             Hashtable[] arrth = new Hashtable[gv_fi_close.RowCount];
 
             for (int i = 0; i < gv_fi_close.RowCount; i++)
@@ -95,7 +106,8 @@ namespace DLS.Financial
             }
 
             mGroup[0] = Common.Frm10.Base.BaseModules.CreateMultiGroup("[DlsSpFiClose]", arrth);
-            Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
+
+            Common.Frm10.DataBase.ExecuteDataBase.ExecComplexTran(sGroup, mGroup, "");
 
             MessageBox.Show("마감 되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

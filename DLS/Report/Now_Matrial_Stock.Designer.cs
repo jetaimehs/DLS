@@ -67,7 +67,7 @@
             // 
             // btn_Down
             // 
-            this.btn_Down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_Down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_Down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_Down.Location = new System.Drawing.Point(93, 12);
             this.btn_Down.Name = "btn_Down";
@@ -78,7 +78,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -95,7 +95,7 @@
             this.Controls.Add(this.gc_matral_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Now_Matrial_Stock";
-            this.Text = "Now_Matrial_Stock";
+            this.Text = "현재고조회";
             this.Load += new System.EventHandler(this.Now_Matrial_Stock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).EndInit();

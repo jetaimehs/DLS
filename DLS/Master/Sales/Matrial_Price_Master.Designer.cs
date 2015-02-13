@@ -37,6 +37,7 @@
             this.Mtart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Spart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
+            this.btn_upload = new DevExpress.XtraEditors.SimpleButton();
             this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.btn_find = new DevExpress.XtraEditors.SimpleButton();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,7 +63,6 @@
             this.repositoryItemHyperLinkEdit_Add = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.Delete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.btn_upload = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Matnr_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Matnr_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
@@ -170,9 +170,20 @@
             this.pc_main.Size = new System.Drawing.Size(1327, 83);
             this.pc_main.TabIndex = 11;
             // 
+            // btn_upload
+            // 
+            this.btn_upload.Image = global::DLS.Properties.Resources.change_pay;
+            this.btn_upload.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.btn_upload.Location = new System.Drawing.Point(174, 12);
+            this.btn_upload.Name = "btn_upload";
+            this.btn_upload.Size = new System.Drawing.Size(75, 60);
+            this.btn_upload.TabIndex = 27;
+            this.btn_upload.Text = "판가변경";
+            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
+            // 
             // btn_down
             // 
-            this.btn_down.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_down.Image = global::DLS.Properties.Resources.ExportToExcel_32x32;
             this.btn_down.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_down.Location = new System.Drawing.Point(93, 12);
             this.btn_down.Name = "btn_down";
@@ -183,7 +194,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
@@ -260,7 +271,7 @@
             this.SearchLookUpEdit_Kunnr.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.SearchLookUpEdit_Kunnr.Name = "SearchLookUpEdit_Kunnr";
-            this.SearchLookUpEdit_Kunnr.NullText = "";
+            this.SearchLookUpEdit_Kunnr.NullText = "Select";
             this.SearchLookUpEdit_Kunnr.View = this.repositoryItemSearchLookUpEdit1View;
             // 
             // repositoryItemSearchLookUpEdit1View
@@ -276,7 +287,7 @@
             // KUNNR1
             // 
             this.KUNNR1.Caption = "고객코드";
-            this.KUNNR1.FieldName = "KUNNR";
+            this.KUNNR1.FieldName = "Kunnr";
             this.KUNNR1.Name = "KUNNR1";
             this.KUNNR1.Visible = true;
             this.KUNNR1.VisibleIndex = 0;
@@ -284,7 +295,7 @@
             // NAME11
             // 
             this.NAME11.Caption = "고객명";
-            this.NAME11.FieldName = "NAME1";
+            this.NAME11.FieldName = "Name1";
             this.NAME11.Name = "NAME11";
             this.NAME11.Visible = true;
             this.NAME11.VisibleIndex = 1;
@@ -409,17 +420,6 @@
             this.repositoryItemHyperLinkEdit_Delete.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit_Delete_Click);
             this.repositoryItemHyperLinkEdit_Delete.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repositoryItemHyperLinkEdit_Delete_KeyDown);
             // 
-            // btn_upload
-            // 
-            this.btn_upload.Image = global::DLS.Properties.Resources.window_menu;
-            this.btn_upload.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_upload.Location = new System.Drawing.Point(174, 12);
-            this.btn_upload.Name = "btn_upload";
-            this.btn_upload.Size = new System.Drawing.Size(75, 60);
-            this.btn_upload.TabIndex = 27;
-            this.btn_upload.Text = "판가변경";
-            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
-            // 
             // Matrial_Price_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -429,7 +429,7 @@
             this.Controls.Add(this.gc_Matnr_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Matrial_Price_Master";
-            this.Text = "Matrial_Price_Master";
+            this.Text = "판매단가관리";
             this.Load += new System.EventHandler(this.Matrial_Price_Master_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Matnr_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Matnr_list)).EndInit();

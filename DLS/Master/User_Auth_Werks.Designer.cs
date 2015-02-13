@@ -131,7 +131,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_delete.Image = global::DLS.Properties.Resources.Remove_Male_User;
             this.btn_delete.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_delete.Location = new System.Drawing.Point(174, 12);
             this.btn_delete.Name = "btn_delete";
@@ -142,7 +142,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_add.Image = global::DLS.Properties.Resources.Add_32x32;
             this.btn_add.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_add.Location = new System.Drawing.Point(93, 12);
             this.btn_add.Name = "btn_add";
@@ -153,7 +153,7 @@
             // 
             // btn_find
             // 
-            this.btn_find.Image = global::DLS.Properties.Resources.window_menu;
+            this.btn_find.Image = global::DLS.Properties.Resources.system_update;
             this.btn_find.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.btn_find.Location = new System.Drawing.Point(12, 12);
             this.btn_find.Name = "btn_find";
