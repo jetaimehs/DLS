@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -9,10 +10,19 @@ using SAP.Middleware.Connector;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraEditors.Controls;
 
+using System.Collections;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+
 namespace DLS.Production_Planning
 {    
     public partial class Production_Plan : DevExpress.XtraEditors.XtraForm
     {
+        readonly Dictionary<object, bool> checkedMap = new Dictionary<object, bool>();
+
+        RepositoryItemCheckEdit chkedit = new RepositoryItemCheckEdit();
+
         public Production_Plan()
         {
             InitializeComponent();
@@ -35,6 +45,9 @@ namespace DLS.Production_Planning
             Common.Util.MyUtil.SetGridControlDesign(ref gc_sdPlan);
             Common.Util.MyUtil.SetGridViewDesign(ref gv_sdPlan);
             gv_sdPlan.OptionsView.ShowAutoFilterRow = false;
+
+            //gv_ppPlan.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.
+            gv_ppPlan.OptionsSelection.MultiSelect = true;
             
             //날짜
             date_sdate.Text = DateTime.Today.ToShortDateString();
@@ -297,6 +310,8 @@ namespace DLS.Production_Planning
 
         private void btn_com_Click(object sender, EventArgs e)
         {
+            int icnt = 0;
+
             Hashtable[] mGroup = new Hashtable[1];
             Hashtable[] arrth = new Hashtable[gv_ppPlan.RowCount];
 
@@ -307,6 +322,13 @@ namespace DLS.Production_Planning
 
             for (int i = 0; i < gv_ppPlan.RowCount; i++)
             {
+                gv_ppPlan.ClearColumnErrors();
+
+                if (Equals(gv_ppPlan.GetRowCellValue(i, "pppSel"), false) || Equals(gv_ppPlan.GetRowCellValue(i, "pppSel"), null))
+                {
+                    continue;
+                }
+
                 arrth[i] = new Hashtable();
                 arrth[i].Add("@MODE", 401);
                 arrth[i].Add("@pppSeq", gv_ppPlan.GetRowCellValue(i, "pppSeq").ToString());
@@ -328,14 +350,21 @@ namespace DLS.Production_Planning
                 }
 
                 arrth[i].Add("@Userid", Login.G_userid);
+
+                icnt++;
             }
 
-            mGroup[0] = Common.Frm10.Base.BaseModules.CreateMultiGroup("[DlsSpPpPlan]", arrth);
-            Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
+            if (icnt > 0)
+            {
+                mGroup[0] = Common.Frm10.Base.BaseModules.CreateMultiGroup("[DlsSpPpPlan]", arrth);
+                Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
 
-            MessageBox.Show("확정되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-            ShowData();
+                MessageBox.Show("확정되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ShowData();
+            }
+            else
+                MessageBox.Show("선택된 계획이 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void gc_ppPlan_Click(object sender, EventArgs e)
@@ -361,6 +390,8 @@ namespace DLS.Production_Planning
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            int icnt = 0;
+
             Hashtable[] mGroup = new Hashtable[1];
             Hashtable[] arrth = new Hashtable[gv_ppPlan.RowCount];
 
@@ -373,25 +404,29 @@ namespace DLS.Production_Planning
             {
                 gv_ppPlan.ClearColumnErrors();
 
+                if (Equals(gv_ppPlan.GetRowCellValue(i, "pppSel"), false) || Equals(gv_ppPlan.GetRowCellValue(i, "pppSel"), null))
+                {
+                    continue;
+                }
                 if (gv_ppPlan.GetRowCellValue(i, "Matnr").ToString().Trim() == string.Empty)
                 {
                     gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Matnr"], "필수 입력값 입니다.");
-                    return;
+                    continue;
                 }
                 if (gv_ppPlan.GetRowCellValue(i, "Wdate").ToString().Trim() == string.Empty)
                 {
                     gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Wdate"], "필수 입력값 입니다.");
-                    return;
+                    continue;
                 }
                 if (gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString().Trim() == string.Empty)
                 {
                     gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Arbpl"], "필수 입력값 입니다.");
-                    return;
+                    continue;
                 }
                 if (gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString().Trim() == string.Empty)
                 {
                     gv_ppPlan.SetColumnError(gv_ppPlan.Columns["Gsmng"], "필수 입력값 입니다.");
-                    return;
+                    continue;
                 }
 
                 arrth[i] = new Hashtable();
@@ -420,14 +455,21 @@ namespace DLS.Production_Planning
                 }
 
                 arrth[i].Add("@Userid", Login.G_userid);
+
+                icnt++;
             }
 
-            mGroup[0] = Common.Frm10.Base.BaseModules.CreateMultiGroup("[DlsSpPpPlan]", arrth);
-            Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
+            if (icnt > 0)
+            {
+                mGroup[0] = Common.Frm10.Base.BaseModules.CreateMultiGroup("[DlsSpPpPlan]", arrth);
+                Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
 
-            MessageBox.Show("저장되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-            ShowData();
+                MessageBox.Show("저장되었습니다,", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ShowData();
+            }
+            else
+                MessageBox.Show("선택된 계획이 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void gv_ppPlan_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -456,6 +498,108 @@ namespace DLS.Production_Planning
         private void btn_down_Click(object sender, EventArgs e)
         {
             Common.Frm10.Base.BaseModules.ExcelExport(gc_ppPlan, "생산계획");
+        }
+
+        private void gv_ppPlan_CustomDrawColumnHeader(object sender, ColumnHeaderCustomDrawEventArgs e)
+        {
+            if (e.Column == (sender as GridView).Columns["pppSel"])
+            {
+                e.Info.InnerElements.Clear();
+                e.Info.Appearance.ForeColor = Color.Blue;
+                e.Painter.DrawObject(e.Info);
+                DrawCheckBox(e.Graphics, e.Bounds, getCheckedCount() == gv_ppPlan.DataRowCount);
+                e.Handled = true;                
+            }
+        }
+
+        protected void DrawCheckBox(Graphics g, Rectangle r, bool Checked)
+        {
+            DevExpress.XtraEditors.ViewInfo.CheckEditViewInfo info;
+            DevExpress.XtraEditors.Drawing.CheckEditPainter painter;
+            DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs args;
+            info = chkedit.CreateViewInfo() as DevExpress.XtraEditors.ViewInfo.CheckEditViewInfo;
+            painter = chkedit.CreatePainter() as DevExpress.XtraEditors.Drawing.CheckEditPainter;
+            info.EditValue = Checked;
+            info.Bounds = r;
+            info.PaintAppearance.ForeColor = Color.Black;
+            info.CalcViewInfo(g);
+            args = new DevExpress.XtraEditors.Drawing.ControlGraphicsInfoArgs(info, new DevExpress.Utils.Drawing.GraphicsCache(g), r);
+            painter.Draw(args);
+            args.Cache.Dispose();
+        }
+
+        int getCheckedCount()
+        {
+            int count = 0;
+            for (int i = 0; i < gv_ppPlan.DataRowCount; i++)
+            {
+                if (gv_ppPlan.GetRowCellValue(i, gv_ppPlan.Columns["pppSel"]) != null)
+                {
+                    if ((bool)gv_ppPlan.GetRowCellValue(i, gv_ppPlan.Columns["pppSel"]) == true)
+                        count++;
+                }
+            }
+            return count;
+        }
+
+        void CheckAll()
+        {
+            for (int i = 0; i < gv_ppPlan.DataRowCount; i++)
+            {
+                gv_ppPlan.SetRowCellValue(i, gv_ppPlan.Columns["pppSel"], true);
+            }
+        }
+        void UnChekAll()
+        {
+            for (int i = 0; i < gv_ppPlan.DataRowCount; i++)
+            {
+                gv_ppPlan.SetRowCellValue(i, gv_ppPlan.Columns["pppSel"], false);
+            }
+        }
+
+        private void gv_ppPlan_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Clicks == 1 && e.Button == MouseButtons.Left)
+            {
+                GridHitInfo info;
+                Point pt = gv_ppPlan.GridControl.PointToClient(Control.MousePosition);
+                info = gv_ppPlan.CalcHitInfo(pt);
+
+                if (info.InColumn && info.Column.FieldName == "pppSel")
+                {
+                    if (getCheckedCount() == gv_ppPlan.DataRowCount)
+                        UnChekAll();
+                    else
+                        CheckAll();
+                }
+            }            
+        }
+
+        private void gv_ppPlan_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            // Check what column
+            if (e.Column != gv_ppPlan.Columns["pppSel"])
+                return;
+
+            if (e.IsGetData)
+            {
+                // check if the row has been checked and set it's value using e.Value
+                bool bl;
+                if (checkedMap.TryGetValue(e.Row, out bl))
+                    e.Value = bl;
+            }
+
+            if (e.IsSetData)
+            {
+                var checkSel = Convert.ToBoolean(e.Value);
+
+                // Check if the key already exist
+                if (checkedMap.ContainsKey(e.Row))
+                    //checkedMap.Remove(e.Row);
+                    checkedMap[e.Row] = checkSel;
+                else
+                    checkedMap.Add(e.Row, checkSel);
+            }
         }
     }
 }

@@ -271,6 +271,12 @@ namespace DLS.Production_Planning
                     return;
                 }
 
+                if (Equals(gv_ppOutput.GetFocusedRowCellValue("Lvorm"), true))
+                {
+                    MessageBox.Show("이미 삭제된 실적 입니다..", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 if (gv_ppOutput.GetFocusedRowCellValue("ppoSeq").ToString().Trim() == string.Empty)
                 {
                     MessageBox.Show("미등록된 실적 입니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -283,7 +289,7 @@ namespace DLS.Production_Planning
                 ht1.Add("@Wdate", (DateTime)gv_ppOutput.GetFocusedRowCellValue("Wdate"));
                 ht1.Add("@Werks", Main_MID_Form.G_werks);
                 ht1.Add("@Mtart", gv_ppOutput.GetFocusedRowCellValue("Mtart").ToString());
-                ht1.Add("@Matnr", gv_ppOutput.GetFocusedRowCellValue("Matnr").ToString());                
+                ht1.Add("@Matnr", gv_ppOutput.GetFocusedRowCellValue("Matnr").ToString());
                 ht1.Add("@Lmnga", gv_ppOutput.GetFocusedRowCellValue("Lmnga").ToString());
                 ht1.Add("@Otype", gv_ppOutput.GetFocusedRowCellValue("Otype").ToString());
                 ht1.Add("@PPlgort", gv_ppOutput.GetFocusedRowCellValue("PPlgort").ToString());
