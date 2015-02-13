@@ -126,6 +126,7 @@
             this.EkorgView.OptionsBehavior.Editable = false;
             this.EkorgView.OptionsBehavior.ReadOnly = true;
             this.EkorgView.OptionsSelection.MultiSelect = true;
+            this.EkorgView.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.EkorgView_RowClick);
             this.EkorgView.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.EkorgView_SelectionChanged);
             // 
             // Ekorg
