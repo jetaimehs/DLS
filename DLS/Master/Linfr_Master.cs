@@ -43,11 +43,14 @@ namespace DLS.Master
         {
             Hashtable ht1 = new Hashtable();
             ht1.Add("I_WERKS", Main_MID_Form.G_werks.ToString());
-
             IRfcTable sapTable = Common.Frm10.SapConntor.SAPConnection.SAPExecuteTableData(ht1, "ZMM_LIST_EKORG", "FT_T024E");
             DataTable dt1 = Common.Util.sapTableConvert.DataTableSet(sapTable);
-
             gc_Ekorg.DataSource = dt1;
+            
+            ht1.Clear();
+            IRfcTable sapTable2 = Common.Frm10.SapConntor.SAPConnection.SAPExecuteTableData(ht1, "ZMM_EKORG_VENDOR_LIST", "FT_ZMMS0011");
+            DataTable dt2 = Common.Util.sapTableConvert.DataTableSet(sapTable2);
+            gc_Lifnr.DataSource = dt2;
         }
 
         private void btn_find_Click(object sender, EventArgs e)
@@ -57,13 +60,7 @@ namespace DLS.Master
 
         private void EkorgView_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
-            Hashtable ht1 = new Hashtable();
-            ht1.Add("P_EKORG", EkorgView.GetFocusedRowCellValue("EKORG").ToString());
-
-            IRfcTable sapTable = Common.Frm10.SapConntor.SAPConnection.SAPExecuteTableData(ht1, "ZMM_EKORG_VENDOR_LIST", "FT_ZMMS0011");
-            DataTable dt1 = Common.Util.sapTableConvert.DataTableSet(sapTable);
-
-            gc_Lifnr.DataSource = dt1;
+            
 
         }
 
@@ -72,6 +69,17 @@ namespace DLS.Master
             if (LifnrClickEvent != null)
                 LifnrClickEvent(LifnrView.GetFocusedRowCellValue("LIFNR").ToString(), LifnrView.GetFocusedRowCellValue("NAME1").ToString());
             this.Close();
+        }
+
+        private void EkorgView_RowClick(object sender, RowClickEventArgs e)
+        {
+            Hashtable ht1 = new Hashtable();
+            ht1.Add("P_EKORG", EkorgView.GetFocusedRowCellValue("EKORG").ToString());
+
+            IRfcTable sapTable = Common.Frm10.SapConntor.SAPConnection.SAPExecuteTableData(ht1, "ZMM_EKORG_VENDOR_LIST", "FT_ZMMS0011");
+            DataTable dt1 = Common.Util.sapTableConvert.DataTableSet(sapTable);
+
+            gc_Lifnr.DataSource = dt1;
         }
     }
 }
