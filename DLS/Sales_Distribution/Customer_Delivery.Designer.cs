@@ -51,7 +51,7 @@
             this.sle_route = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Rcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Text = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Text1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Rfee = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbl_route = new DevExpress.XtraEditors.LabelControl();
             this.date_delivery = new DevExpress.XtraEditors.DateEdit();
@@ -309,7 +309,7 @@
             // 
             this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Rcode,
-            this.Text,
+            this.Text1,
             this.Rfee});
             this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView6.Name = "gridView6";
@@ -326,15 +326,15 @@
             this.Rcode.VisibleIndex = 0;
             this.Rcode.Width = 50;
             // 
-            // Text
+            // Text1
             // 
-            this.Text.Caption = "운송경로내역";
-            this.Text.FieldName = "Text";
-            this.Text.Name = "Text";
-            this.Text.OptionsColumn.AllowEdit = false;
-            this.Text.Visible = true;
-            this.Text.VisibleIndex = 1;
-            this.Text.Width = 50;
+            this.Text1.Caption = "운송경로내역";
+            this.Text1.FieldName = "Text";
+            this.Text1.Name = "Text1";
+            this.Text1.OptionsColumn.AllowEdit = false;
+            this.Text1.Visible = true;
+            this.Text1.VisibleIndex = 1;
+            this.Text1.Width = 50;
             // 
             // Rfee
             // 
@@ -438,6 +438,7 @@
             this.Controls.Add(this.gc_matral_list);
             this.Controls.Add(this.pc_main);
             this.Name = "Customer_Delivery";
+            this.Text = "출고관리";
             this.Load += new System.EventHandler(this.Customer_Delivery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_matral_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_matral_list)).EndInit();
@@ -480,7 +481,7 @@
         private DevExpress.XtraEditors.SearchLookUpEdit sle_route;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
         private DevExpress.XtraGrid.Columns.GridColumn Rcode;
-        private DevExpress.XtraGrid.Columns.GridColumn Text;
+        private DevExpress.XtraGrid.Columns.GridColumn Text1;
         private DevExpress.XtraEditors.LabelControl lbl_route;
         private DevExpress.XtraEditors.DateEdit date_delivery;
         private DevExpress.XtraEditors.LabelControl lbl_delivery_date;
