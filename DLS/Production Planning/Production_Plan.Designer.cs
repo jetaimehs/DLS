@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
             this.btn_down = new DevExpress.XtraEditors.SimpleButton();
             this.btn_save = new DevExpress.XtraEditors.SimpleButton();
@@ -69,6 +70,8 @@
             this.gv_ppPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pppSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Spart = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pppSel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit_pppSel = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.Wdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Arbpl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit_Arbpl = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -92,7 +95,7 @@
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.pppNote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanel4 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -126,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_ppPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_ppPlan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_pppSel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_Arbpl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit_Matnr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
@@ -545,7 +549,8 @@
             this.repositoryItemHyperLinkEdit_Save,
             this.repositoryItemHyperLinkEdit_Delete,
             this.repositoryItemSearchLookUpEdit_Matnr,
-            this.repositoryItemLookUpEdit_Arbpl});
+            this.repositoryItemLookUpEdit_Arbpl,
+            this.repositoryItemCheckEdit_pppSel});
             this.gc_ppPlan.Size = new System.Drawing.Size(1418, 556);
             this.gc_ppPlan.TabIndex = 3;
             this.gc_ppPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -557,6 +562,7 @@
             this.gv_ppPlan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.pppSeq,
             this.Spart,
+            this.pppSel,
             this.Wdate,
             this.Arbpl,
             this.Mtart,
@@ -575,8 +581,11 @@
             this.gv_ppPlan.Name = "gv_ppPlan";
             this.gv_ppPlan.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gv_ppPlan.OptionsView.ShowFooter = true;
+            this.gv_ppPlan.CustomDrawColumnHeader += new DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventHandler(this.gv_ppPlan_CustomDrawColumnHeader);
             this.gv_ppPlan.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_ppPlan_CellValueChanged);
             this.gv_ppPlan.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_ppPlan_RowUpdated);
+            this.gv_ppPlan.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gv_ppPlan_CustomUnboundColumnData);
+            this.gv_ppPlan.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gv_ppPlan_MouseDown);
             this.gv_ppPlan.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_ppPlan_ValidatingEditor);
             // 
             // pppSeq
@@ -597,6 +606,25 @@
             this.Spart.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Spart.Width = 80;
             // 
+            // pppSel
+            // 
+            this.pppSel.Caption = " ";
+            this.pppSel.ColumnEdit = this.repositoryItemCheckEdit_pppSel;
+            this.pppSel.FieldName = "pppSel";
+            this.pppSel.MaxWidth = 50;
+            this.pppSel.MinWidth = 50;
+            this.pppSel.Name = "pppSel";
+            this.pppSel.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.pppSel.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.pppSel.Visible = true;
+            this.pppSel.VisibleIndex = 0;
+            this.pppSel.Width = 50;
+            // 
+            // repositoryItemCheckEdit_pppSel
+            // 
+            this.repositoryItemCheckEdit_pppSel.AutoHeight = false;
+            this.repositoryItemCheckEdit_pppSel.Name = "repositoryItemCheckEdit_pppSel";
+            // 
             // Wdate
             // 
             this.Wdate.Caption = "계획일자";
@@ -606,7 +634,7 @@
             this.Wdate.Name = "Wdate";
             this.Wdate.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.Wdate.Visible = true;
-            this.Wdate.VisibleIndex = 0;
+            this.Wdate.VisibleIndex = 1;
             this.Wdate.Width = 138;
             // 
             // Arbpl
@@ -619,7 +647,7 @@
             this.Arbpl.Name = "Arbpl";
             this.Arbpl.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Arbpl.Visible = true;
-            this.Arbpl.VisibleIndex = 1;
+            this.Arbpl.VisibleIndex = 2;
             this.Arbpl.Width = 147;
             // 
             // repositoryItemLookUpEdit_Arbpl
@@ -643,7 +671,7 @@
             this.Mtart.OptionsColumn.AllowEdit = false;
             this.Mtart.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Mtart.Visible = true;
-            this.Mtart.VisibleIndex = 2;
+            this.Mtart.VisibleIndex = 3;
             // 
             // Matkl
             // 
@@ -655,7 +683,7 @@
             this.Matkl.OptionsColumn.AllowEdit = false;
             this.Matkl.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Matkl.Visible = true;
-            this.Matkl.VisibleIndex = 3;
+            this.Matkl.VisibleIndex = 4;
             this.Matkl.Width = 100;
             // 
             // Matnr
@@ -668,7 +696,7 @@
             this.Matnr.Name = "Matnr";
             this.Matnr.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Matnr.Visible = true;
-            this.Matnr.VisibleIndex = 4;
+            this.Matnr.VisibleIndex = 5;
             this.Matnr.Width = 200;
             // 
             // repositoryItemSearchLookUpEdit_Matnr
@@ -733,7 +761,7 @@
             this.Gsmng.Name = "Gsmng";
             this.Gsmng.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.Gsmng.Visible = true;
-            this.Gsmng.VisibleIndex = 5;
+            this.Gsmng.VisibleIndex = 6;
             this.Gsmng.Width = 57;
             // 
             // Meins
@@ -746,7 +774,7 @@
             this.Meins.OptionsColumn.AllowEdit = false;
             this.Meins.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Meins.Visible = true;
-            this.Meins.VisibleIndex = 6;
+            this.Meins.VisibleIndex = 7;
             this.Meins.Width = 80;
             // 
             // PPlgort
@@ -759,7 +787,7 @@
             this.PPlgort.OptionsColumn.AllowEdit = false;
             this.PPlgort.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.PPlgort.Visible = true;
-            this.PPlgort.VisibleIndex = 7;
+            this.PPlgort.VisibleIndex = 8;
             this.PPlgort.Width = 80;
             // 
             // Decom
@@ -772,7 +800,7 @@
             this.Decom.OptionsColumn.AllowEdit = false;
             this.Decom.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Decom.Visible = true;
-            this.Decom.VisibleIndex = 8;
+            this.Decom.VisibleIndex = 9;
             this.Decom.Width = 70;
             // 
             // Ifcom
@@ -785,7 +813,7 @@
             this.Ifcom.OptionsColumn.AllowEdit = false;
             this.Ifcom.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Ifcom.Visible = true;
-            this.Ifcom.VisibleIndex = 9;
+            this.Ifcom.VisibleIndex = 10;
             this.Ifcom.Width = 70;
             // 
             // Lvorm
@@ -798,7 +826,7 @@
             this.Lvorm.OptionsColumn.AllowEdit = false;
             this.Lvorm.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Lvorm.Visible = true;
-            this.Lvorm.VisibleIndex = 10;
+            this.Lvorm.VisibleIndex = 11;
             this.Lvorm.Width = 70;
             // 
             // gridColumn20
@@ -823,7 +851,7 @@
             this.gridColumn21.MinWidth = 50;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 12;
+            this.gridColumn21.VisibleIndex = 13;
             this.gridColumn21.Width = 50;
             // 
             // repositoryItemHyperLinkEdit_Delete
@@ -842,7 +870,7 @@
             this.pppNote.OptionsColumn.AllowEdit = false;
             this.pppNote.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.pppNote.Visible = true;
-            this.pppNote.VisibleIndex = 11;
+            this.pppNote.VisibleIndex = 12;
             this.pppNote.Width = 150;
             // 
             // dockManager1
@@ -1038,6 +1066,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_ppPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_ppPlan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_pppSel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit_Arbpl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit_Matnr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
@@ -1138,5 +1167,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn PlanQty;
         private DevExpress.XtraEditors.SimpleButton btn_save;
         private DevExpress.XtraEditors.SimpleButton btn_down;
+        private DevExpress.XtraGrid.Columns.GridColumn pppSel;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit_pppSel;
     }
 }
