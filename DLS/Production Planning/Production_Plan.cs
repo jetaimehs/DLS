@@ -146,7 +146,10 @@ namespace DLS.Production_Planning
 
             DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpPpPlan]", ht1, "");
 
-            gc_ppPlan.DataSource = dt1.DefaultView;
+            DataView dv1 = dt1.DefaultView;
+            dv1.Sort = "Wdate ASC";
+
+            gc_ppPlan.DataSource = dv1;
         }
 
         private void btn_ExcelUp_Click(object sender, EventArgs e)
@@ -335,7 +338,7 @@ namespace DLS.Production_Planning
 
                 if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom"), true))
                 {
-                    arrth[i].Add("@pppNote", "이미 확정된 계획 입니다.");
+                    arrth[i].Add("@pppNote", string.Empty);
                 }
                 else
                 {
@@ -346,7 +349,7 @@ namespace DLS.Production_Planning
                     arrth[i].Add("@Arbpl", gv_ppPlan.GetRowCellValue(i, "Arbpl").ToString());
                     arrth[i].Add("@Matnr", gv_ppPlan.GetRowCellValue(i, "Matnr").ToString());
                     arrth[i].Add("@Gsmng", gv_ppPlan.GetRowCellValue(i, "Gsmng").ToString());
-                    arrth[i].Add("@pppNote", string.Empty);
+                    arrth[i].Add("@pppNote", "확정완료");
                 }
 
                 arrth[i].Add("@Userid", Login.G_userid);
@@ -434,8 +437,8 @@ namespace DLS.Production_Planning
                 arrth[i].Add("@pppSeq", gv_ppPlan.GetRowCellValue(i, "pppSeq").ToString());
 
                 if (Equals(gv_ppPlan.GetRowCellValue(i, "Decom"), true))
-                {
-                    arrth[i].Add("@pppNote", "이미 확정된 계획 입니다.");
+                {                    
+                    arrth[i].Add("@pppNote", string.Empty);
                 }
                 else
                 {
@@ -452,6 +455,7 @@ namespace DLS.Production_Planning
                     arrth[i].Add("@Decom", gv_ppPlan.GetRowCellValue(i, "Decom").ToString());
                     arrth[i].Add("@Ifcom", gv_ppPlan.GetRowCellValue(i, "Ifcom").ToString());
                     arrth[i].Add("@Lvorm", gv_ppPlan.GetRowCellValue(i, "Lvorm").ToString());
+                    arrth[i].Add("@pppNote", "저장완료");
                 }
 
                 arrth[i].Add("@Userid", Login.G_userid);

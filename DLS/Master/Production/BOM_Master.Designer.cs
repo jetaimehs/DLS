@@ -529,23 +529,25 @@
             // 
             this.gridColumn8.Caption = "모품번";
             this.gridColumn8.FieldName = "ParMatnr";
-            this.gridColumn8.MinWidth = 150;
+            this.gridColumn8.MaxWidth = 200;
+            this.gridColumn8.MinWidth = 200;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 0;
-            this.gridColumn8.Width = 150;
+            this.gridColumn8.Width = 200;
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "자품번";
             this.gridColumn9.FieldName = "ChiMatnr";
-            this.gridColumn9.MinWidth = 150;
+            this.gridColumn9.MaxWidth = 200;
+            this.gridColumn9.MinWidth = 200;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 1;
-            this.gridColumn9.Width = 150;
+            this.gridColumn9.Width = 200;
             // 
             // gridColumn10
             // 
@@ -574,11 +576,11 @@
             this.gridColumn12.Caption = "사용량";
             this.gridColumn12.FieldName = "Usage";
             this.gridColumn12.MaxWidth = 100;
-            this.gridColumn12.MinWidth = 50;
+            this.gridColumn12.MinWidth = 100;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 4;
-            this.gridColumn12.Width = 50;
+            this.gridColumn12.Width = 100;
             // 
             // gridColumn18
             // 
@@ -654,7 +656,6 @@
             // 
             // gridColumn13
             // 
-            this.gridColumn13.Caption = "gridColumn13";
             this.gridColumn13.ColumnEdit = this.repositoryItemHyperLinkEdit_BOM_Add;
             this.gridColumn13.MaxWidth = 80;
             this.gridColumn13.MinWidth = 80;
@@ -674,26 +675,26 @@
             // 
             this.gridColumn14.Caption = "자재번호";
             this.gridColumn14.FieldName = "Matnr";
-            this.gridColumn14.MaxWidth = 150;
-            this.gridColumn14.MinWidth = 150;
+            this.gridColumn14.MaxWidth = 200;
+            this.gridColumn14.MinWidth = 200;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 1;
-            this.gridColumn14.Width = 150;
+            this.gridColumn14.Width = 200;
             // 
             // gridColumn15
             // 
             this.gridColumn15.Caption = "자재내역";
             this.gridColumn15.FieldName = "Maktx";
-            this.gridColumn15.MinWidth = 100;
+            this.gridColumn15.MinWidth = 200;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 2;
-            this.gridColumn15.Width = 100;
+            this.gridColumn15.Width = 217;
             // 
             // gridColumn16
             // 
@@ -706,7 +707,7 @@
             this.gridColumn16.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 3;
-            this.gridColumn16.Width = 100;
+            this.gridColumn16.Width = 54;
             // 
             // gridColumn20
             // 
@@ -727,7 +728,7 @@
             this.gridColumn17.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 4;
-            this.gridColumn17.Width = 100;
+            this.gridColumn17.Width = 55;
             // 
             // gridColumn21
             // 

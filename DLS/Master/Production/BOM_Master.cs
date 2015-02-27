@@ -114,7 +114,9 @@ namespace DLS.Master.Production
                 treeView_BOM.Nodes.Clear();
 
                 TreeNode tnHead = null;
+                TreeNode tn = null;
                 int iUsage = 0;
+                string strMaktx = string.Empty;
                 string strUsage = string.Empty;
                 string strSdate = string.Empty;
                 string strEdate = string.Empty;
@@ -157,20 +159,25 @@ namespace DLS.Master.Production
                         strEdate = string.Empty;
                     }
 
+                    //자재내역 추가
+                    strMaktx = dt1.Rows[i]["Maktx"].ToString();
+
                     if (dt1.Rows[i]["ParMatnr"].ToString() == "Head")
                     {
                         tnHead = new TreeNode();
                         tnHead.Name = dt1.Rows[i]["NodePath"].ToString();
-                        tnHead.Text = dt1.Rows[i]["ChiMatnr"].ToString() + " [" + strUsage + "]        " + strSdate + " ~ " + strEdate;
+                        tnHead.Text = dt1.Rows[i]["ChiMatnr"].ToString() + " ( " + strMaktx + " ) [" + strUsage + "] " + " / " +
+                            strSdate + " ~ " + strEdate;
                         tnHead.Tag = dt1.Rows[i]["ChiMatnr"].ToString();
                         tnHead.ImageKey = "Head";
                         treeView_BOM.Nodes.Add(tnHead);
                     }
                     else
                     {
-                        TreeNode tn = new TreeNode();
+                        tn = new TreeNode();
                         tn.Name = dt1.Rows[i]["NodePath"].ToString();
-                        tn.Text = dt1.Rows[i]["ChiMatnr"].ToString() + " [" + strUsage + "]        " + strSdate + " ~ " + strEdate;
+                        tn.Text = dt1.Rows[i]["ChiMatnr"].ToString() + " ( " + strMaktx + " ) [" + strUsage + "] " + " / " +
+                            strSdate + " ~ " + strEdate;
                         tn.Tag = dt1.Rows[i]["ChiMatnr"].ToString();
 
                         if (dt1.Rows[i]["Depth"].ToString() != "0")
