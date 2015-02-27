@@ -7,11 +7,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace DLS.Sales_Distribution
 {
     public partial class Monthly_SalesPlan : DevExpress.XtraEditors.XtraForm
     {
+        string old_pack = string.Empty;
+        string old_order = string.Empty;
+
         public Monthly_SalesPlan()
         {
             InitializeComponent();
@@ -26,7 +30,7 @@ namespace DLS.Sales_Distribution
 
         private void InitLanguage()
         {
-            
+
         }
 
         private void InitOnlyData()
@@ -35,6 +39,25 @@ namespace DLS.Sales_Distribution
             Common.Util.MyUtil.SetGridViewDesign(ref gv_MonSales_list);
 
             date_plan.Text = DateTime.Now.ToString("y");
+
+            Hashtable ht = new Hashtable();
+            ht.Add("@MODE", 100);
+
+            DataTable dt = DLS.Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpKunnr]", ht, "");
+            
+            repositoryItemSearchLookUpEdit_kunnr.DataSource = dt;
+            repositoryItemSearchLookUpEdit_kunnr.DisplayMember = "Kunnr";
+            repositoryItemSearchLookUpEdit_kunnr.ValueMember = "Kunnr";
+
+            Hashtable ht1 = new Hashtable();
+            ht1.Add("@MODE", 102);
+            ht1.Add("@Werks", Main_MID_Form.G_werks);
+
+            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpMatrialMaster]", ht1, "");
+
+            repositoryItemSearchLookUpEdit_Matnr.DataSource = dt1;
+            repositoryItemSearchLookUpEdit_Matnr.DisplayMember = "Matnr";
+            repositoryItemSearchLookUpEdit_Matnr.ValueMember = "Matnr";
         }
 
         private void ShowData()
@@ -51,6 +74,8 @@ namespace DLS.Sales_Distribution
 
         private void btn_upload_Click(object sender, EventArgs e)
         {
+            string not_reg_matnr = string.Empty;
+
             if (DialogResult.Cancel == MessageBox.Show(DateTime.Parse(date_plan.EditValue.ToString()).Year.ToString() + DateTime.Parse(date_plan.EditValue.ToString()).Month.ToString() + "월 계획으로 업로드 합니다. 진행 하시겠습니까?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
             {
                 return;
@@ -96,6 +121,12 @@ namespace DLS.Sales_Distribution
             dtUpload.Columns[10].ColumnName = "Delseq";
             dtUpload.Columns[11].ColumnName = "PlanQty";
 
+            Hashtable ht1 = new Hashtable();
+            ht1.Add("@MODE", 102);
+            ht1.Add("@Werks", Main_MID_Form.G_werks);
+
+            DataTable dt1 = Common.Frm10.DataBase.ExecuteDataBase.ExecDataTableQuery("[DlsSpMatrialMaster]", ht1, "");
+
             for (int i = 0; i < dtUpload.Rows.Count; i++)
             {
                 dtUpload.Rows[i]["Matnr"] = dtUpload.Rows[i]["Matnr"].ToString().Replace(" ", "-");
@@ -103,6 +134,16 @@ namespace DLS.Sales_Distribution
                 {
                     dtUpload.Rows[i]["OrderTyp"] = "None";
                 }
+
+                DataRow[] dr_matnr = dt1.Select("Matnr ='" + dtUpload.Rows[i]["Matnr"].ToString() + "'");
+
+                not_reg_matnr += dtUpload.Rows[i]["Matnr"] + "//"; 
+            }
+
+            if (!not_reg_matnr.Equals(string.Empty))
+            {
+                MessageBox.Show("시스템에 등록되지 않은 품번이 있어 업로드를 취소 합니다." + not_reg_matnr, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
 
             DataTable dt_distinct = dtUpload.DefaultView.ToTable(true, "Kunnr", "PackTyp", "OrderTyp", "Matnr");
@@ -119,7 +160,7 @@ namespace DLS.Sales_Distribution
 
                 if (dr1.Length > 0)
                 {
-                    for(int j=0; j<dr1.Length; j++)
+                    for (int j = 0; j < dr1.Length; j++)
                     {
                         dt_distinct.Rows[i]["PlanQty"] = int.Parse(dt_distinct.Rows[i]["PlanQty"].ToString()) + int.Parse(dr1[j]["PlanQty"].ToString());
                     }
@@ -135,11 +176,11 @@ namespace DLS.Sales_Distribution
                 arrth[i].Add("@MODE", 200);
                 arrth[i].Add("@Werks", Main_MID_Form.G_werks);
                 arrth[i].Add("@YM", DateTime.Parse(date_plan.EditValue.ToString()).Year.ToString() + DateTime.Parse(date_plan.EditValue.ToString()).Month.ToString());
-                arrth[i].Add("@Kunnr", dt_distinct.Rows[i]["Kunnr"].ToString());
-                arrth[i].Add("@Matnr", dt_distinct.Rows[i]["Matnr"].ToString());
-                arrth[i].Add("@PackTyp", dt_distinct.Rows[i]["PackTyp"].ToString());
-                arrth[i].Add("@OrderTyp", dt_distinct.Rows[i]["OrderTyp"].ToString());
-                arrth[i].Add("@PlanQty", dt_distinct.Rows[i]["PlanQty"].ToString());                
+                arrth[i].Add("@Kunnr", dt_distinct.Rows[i]["Kunnr"].ToString().Replace(" ", ""));
+                arrth[i].Add("@Matnr", dt_distinct.Rows[i]["Matnr"].ToString().Replace(" ", ""));
+                arrth[i].Add("@PackTyp", dt_distinct.Rows[i]["PackTyp"].ToString().Replace(" ", ""));
+                arrth[i].Add("@OrderTyp", dt_distinct.Rows[i]["OrderTyp"].ToString().Replace(" ", ""));
+                arrth[i].Add("@PlanQty", dt_distinct.Rows[i]["PlanQty"].ToString().Replace(" ", ""));
                 arrth[i].Add("@UserID", Login.G_userid);
             }
 
@@ -147,7 +188,7 @@ namespace DLS.Sales_Distribution
             Common.Frm10.DataBase.ExecuteDataBase.ExecMultiRowGroupTran(mGroup, "");
 
             MessageBox.Show("저장 되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             ShowData();
         }
 
@@ -173,6 +214,128 @@ namespace DLS.Sales_Distribution
             MessageBox.Show("삭제 되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             ShowData();
+        }
+
+        private void gv_MonSales_list_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.GridView view = sender as GridView;
+            if (MessageBox.Show("저장 하시겠습니까?.", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information).Equals(DialogResult.No))
+            {
+                view.CancelUpdateCurrentRow();
+            }
+            else if (!valCheck())
+            {
+                view.CancelUpdateCurrentRow();
+            }
+        }
+
+        private bool valCheck()
+        {
+            if (gv_MonSales_list.GetFocusedRowCellValue("Kunnr").ToString().Equals("") ||
+                gv_MonSales_list.GetFocusedRowCellValue("Matnr").ToString().Equals("") ||
+                gv_MonSales_list.GetFocusedRowCellValue("PackTyp").ToString().Equals("") ||
+                gv_MonSales_list.GetFocusedRowCellValue("OrderTyp").ToString().Equals("") ||
+                gv_MonSales_list.GetFocusedRowCellValue("PlanQty").ToString().Equals(""))
+            {
+                MessageBox.Show("모든 값을 채워야 합니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void gv_MonSales_list_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            if (((DataRowView)e.Row).Row.RowState == DataRowState.Added || ((DataRowView)e.Row).Row.RowState == DataRowState.Modified)
+            {
+                Hashtable ht = new Hashtable();
+
+                switch (((DataRowView)e.Row).Row.RowState)
+                {
+                    //신규행이 추가된 경우 삽입            
+                    case DataRowState.Added:
+                        ht.Add("@MODE", 200);
+                        ht.Add("@PackTyp", gv_MonSales_list.GetFocusedRowCellValue("PackTyp"));
+                        ht.Add("@OrderTyp", gv_MonSales_list.GetFocusedRowCellValue("OrderTyp"));
+                        break;
+
+                    //수정된 경우 삽입            
+                    case DataRowState.Modified:
+                        ht.Add("@MODE", 300);
+                        if (old_pack.Equals(string.Empty))
+                        {
+                            ht.Add("@PackTyp", gv_MonSales_list.GetFocusedRowCellValue("PackTyp"));
+                            ht.Add("@nPackTyp", gv_MonSales_list.GetFocusedRowCellValue("PackTyp"));
+                        }
+                        else
+                        {
+                            ht.Add("@nPackTyp", gv_MonSales_list.GetFocusedRowCellValue("PackTyp"));
+                            ht.Add("@PackTyp", old_pack);
+                        }
+
+                        if (old_order.Equals(string.Empty))
+                        {
+                            ht.Add("@OrderTyp", gv_MonSales_list.GetFocusedRowCellValue("OrderTyp"));
+                            ht.Add("@nOrderTyp", gv_MonSales_list.GetFocusedRowCellValue("OrderTyp"));
+                        }
+                        else
+                        {
+                            ht.Add("@nOrderTyp", gv_MonSales_list.GetFocusedRowCellValue("OrderTyp"));
+                            ht.Add("@OrderTyp", old_order);
+                        }                        
+                        break;
+                }
+
+                ht.Add("@Werks", Main_MID_Form.G_werks);
+                ht.Add("@YM", DateTime.Parse(date_plan.EditValue.ToString()).Year.ToString() + DateTime.Parse(date_plan.EditValue.ToString()).Month.ToString());
+                ht.Add("@Kunnr", gv_MonSales_list.GetFocusedRowCellValue("Kunnr"));
+                ht.Add("@Matnr", gv_MonSales_list.GetFocusedRowCellValue("Matnr"));
+                ht.Add("@PlanQty", gv_MonSales_list.GetFocusedRowCellValue("PlanQty"));
+                ht.Add("@UserID", Login.G_userid);
+
+                Common.Frm10.DataBase.ExecuteDataBase.ExecNonQuery("[DlsSPMonSalesPlan]", ht, "");
+
+                MessageBox.Show("저장 되었습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                old_order = string.Empty; old_pack = string.Empty;
+
+                ((DataRowView)e.Row).Row.AcceptChanges();
+                ShowData();
+            }
+        }
+
+        private void gv_MonSales_list_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+            GridView view = sender as GridView;
+
+            if (view.FocusedColumn.FieldName == null)
+            {
+                return;
+            }
+            else if (view.FocusedRowHandle.Equals(DevExpress.XtraGrid.GridControl.AutoFilterRowHandle))
+            {
+                return;
+            }
+
+            DataRowView drv = (DataRowView)gv_MonSales_list.GetRow(gv_MonSales_list.GetSelectedRows()[0]);
+
+            if (drv != null)
+            {
+                if (drv.Row.RowState.ToString() == "Modified" || drv.Row.RowState.ToString() == "Unchanged")
+                {
+                    switch (view.FocusedColumn.FieldName)
+                    {
+                        case "PackTyp":
+                            old_pack = (sender as GridView).ActiveEditor.OldEditValue.ToString();
+                            break;
+
+                        case "OrderTyp":
+                            old_order = (sender as GridView).ActiveEditor.OldEditValue.ToString();
+                            break;
+                    }
+                }
+            }
+            
         }
     }
 }

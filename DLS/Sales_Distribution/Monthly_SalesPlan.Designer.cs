@@ -33,6 +33,10 @@
             this.Werks = new DevExpress.XtraGrid.Columns.GridColumn();
             this.YM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Kunnr = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSearchLookUpEdit_kunnr = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Kunnr1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Name11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matnr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Maktx = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Matkl = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,7 +45,6 @@
             this.PackTyp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.OrderTyp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PlanQty = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pc_main = new DevExpress.XtraEditors.PanelControl();
             this.btn_upload = new DevExpress.XtraEditors.SimpleButton();
             this.btn_down = new DevExpress.XtraEditors.SimpleButton();
@@ -51,14 +54,23 @@
             this.date_plan = new DevExpress.XtraEditors.DateEdit();
             this.lbl_Plan_date = new DevExpress.XtraEditors.LabelControl();
             this.open_excel = new System.Windows.Forms.OpenFileDialog();
+            this.repositoryItemSearchLookUpEdit_Matnr = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Matnr1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Maktx1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Matkl1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gc_MonSales_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_MonSales_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit_kunnr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).BeginInit();
             this.pc_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Plan_main)).BeginInit();
             this.gc_Plan_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.date_plan.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_plan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit_Matnr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gc_MonSales_list
@@ -67,6 +79,9 @@
             this.gc_MonSales_list.Location = new System.Drawing.Point(0, 159);
             this.gc_MonSales_list.MainView = this.gv_MonSales_list;
             this.gc_MonSales_list.Name = "gc_MonSales_list";
+            this.gc_MonSales_list.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemSearchLookUpEdit_kunnr,
+            this.repositoryItemSearchLookUpEdit_Matnr});
             this.gc_MonSales_list.Size = new System.Drawing.Size(1283, 567);
             this.gc_MonSales_list.TabIndex = 8;
             this.gc_MonSales_list.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -85,10 +100,13 @@
             this.Mtart,
             this.PackTyp,
             this.OrderTyp,
-            this.PlanQty,
-            this.gridColumn12});
+            this.PlanQty});
             this.gv_MonSales_list.GridControl = this.gc_MonSales_list;
             this.gv_MonSales_list.Name = "gv_MonSales_list";
+            this.gv_MonSales_list.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gv_MonSales_list.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gv_MonSales_list_ValidateRow);
+            this.gv_MonSales_list.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gv_MonSales_list_RowUpdated);
+            this.gv_MonSales_list.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_MonSales_list_ValidatingEditor);
             // 
             // Werks
             // 
@@ -111,18 +129,52 @@
             // Kunnr
             // 
             this.Kunnr.Caption = "고객코드";
+            this.Kunnr.ColumnEdit = this.repositoryItemSearchLookUpEdit_kunnr;
             this.Kunnr.FieldName = "Kunnr";
             this.Kunnr.Name = "Kunnr";
-            this.Kunnr.OptionsColumn.AllowEdit = false;
             this.Kunnr.Visible = true;
             this.Kunnr.VisibleIndex = 2;
+            // 
+            // repositoryItemSearchLookUpEdit_kunnr
+            // 
+            this.repositoryItemSearchLookUpEdit_kunnr.AutoHeight = false;
+            this.repositoryItemSearchLookUpEdit_kunnr.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSearchLookUpEdit_kunnr.Name = "repositoryItemSearchLookUpEdit_kunnr";
+            this.repositoryItemSearchLookUpEdit_kunnr.View = this.repositoryItemSearchLookUpEdit1View;
+            // 
+            // repositoryItemSearchLookUpEdit1View
+            // 
+            this.repositoryItemSearchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Kunnr1,
+            this.Name11});
+            this.repositoryItemSearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemSearchLookUpEdit1View.Name = "repositoryItemSearchLookUpEdit1View";
+            this.repositoryItemSearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemSearchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // Kunnr1
+            // 
+            this.Kunnr1.Caption = "고객코드";
+            this.Kunnr1.FieldName = "Kunnr";
+            this.Kunnr1.Name = "Kunnr1";
+            this.Kunnr1.Visible = true;
+            this.Kunnr1.VisibleIndex = 0;
+            // 
+            // Name11
+            // 
+            this.Name11.Caption = "고객명";
+            this.Name11.FieldName = "Name1";
+            this.Name11.Name = "Name11";
+            this.Name11.Visible = true;
+            this.Name11.VisibleIndex = 1;
             // 
             // Matnr
             // 
             this.Matnr.Caption = "자재번호";
+            this.Matnr.ColumnEdit = this.repositoryItemSearchLookUpEdit_Matnr;
             this.Matnr.FieldName = "Matnr";
             this.Matnr.Name = "Matnr";
-            this.Matnr.OptionsColumn.AllowEdit = false;
             this.Matnr.Visible = true;
             this.Matnr.VisibleIndex = 3;
             // 
@@ -167,7 +219,6 @@
             this.PackTyp.Caption = "포장유형";
             this.PackTyp.FieldName = "PackTyp";
             this.PackTyp.Name = "PackTyp";
-            this.PackTyp.OptionsColumn.AllowEdit = false;
             this.PackTyp.Visible = true;
             this.PackTyp.VisibleIndex = 8;
             // 
@@ -176,7 +227,6 @@
             this.OrderTyp.Caption = "발주유형";
             this.OrderTyp.FieldName = "OrderTyp";
             this.OrderTyp.Name = "OrderTyp";
-            this.OrderTyp.OptionsColumn.AllowEdit = false;
             this.OrderTyp.Visible = true;
             this.OrderTyp.VisibleIndex = 9;
             // 
@@ -185,17 +235,8 @@
             this.PlanQty.Caption = "계획수량";
             this.PlanQty.FieldName = "PlanQty";
             this.PlanQty.Name = "PlanQty";
-            this.PlanQty.OptionsColumn.AllowEdit = false;
             this.PlanQty.Visible = true;
             this.PlanQty.VisibleIndex = 10;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "gridColumn12";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.OptionsColumn.AllowEdit = false;
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 11;
             // 
             // pc_main
             // 
@@ -294,6 +335,49 @@
             // 
             this.open_excel.FileName = "openFileDialog1";
             // 
+            // repositoryItemSearchLookUpEdit_Matnr
+            // 
+            this.repositoryItemSearchLookUpEdit_Matnr.AutoHeight = false;
+            this.repositoryItemSearchLookUpEdit_Matnr.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSearchLookUpEdit_Matnr.Name = "repositoryItemSearchLookUpEdit_Matnr";
+            this.repositoryItemSearchLookUpEdit_Matnr.View = this.gridView1;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Matnr1,
+            this.Maktx1,
+            this.Matkl1});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // Matnr1
+            // 
+            this.Matnr1.Caption = "자재번호";
+            this.Matnr1.FieldName = "Matnr";
+            this.Matnr1.Name = "Matnr1";
+            this.Matnr1.Visible = true;
+            this.Matnr1.VisibleIndex = 0;
+            // 
+            // Maktx1
+            // 
+            this.Maktx1.Caption = "자재내역";
+            this.Maktx1.FieldName = "Maktx";
+            this.Maktx1.Name = "Maktx1";
+            this.Maktx1.Visible = true;
+            this.Maktx1.VisibleIndex = 1;
+            // 
+            // Matkl1
+            // 
+            this.Matkl1.Caption = "자재그룹";
+            this.Matkl1.FieldName = "Matkl";
+            this.Matkl1.Name = "Matkl1";
+            this.Matkl1.Visible = true;
+            this.Matkl1.VisibleIndex = 2;
+            // 
             // Monthly_SalesPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -306,6 +390,8 @@
             this.Load += new System.EventHandler(this.Monthly_SalesPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gc_MonSales_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_MonSales_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit_kunnr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pc_main)).EndInit();
             this.pc_main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc_Plan_main)).EndInit();
@@ -313,6 +399,8 @@
             this.gc_Plan_main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.date_plan.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_plan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit_Matnr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,8 +427,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn PackTyp;
         private DevExpress.XtraGrid.Columns.GridColumn OrderTyp;
         private DevExpress.XtraGrid.Columns.GridColumn PlanQty;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraEditors.SimpleButton btn_upload;
         private System.Windows.Forms.OpenFileDialog open_excel;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit_kunnr;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemSearchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn Kunnr1;
+        private DevExpress.XtraGrid.Columns.GridColumn Name11;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit_Matnr;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn Matnr1;
+        private DevExpress.XtraGrid.Columns.GridColumn Maktx1;
+        private DevExpress.XtraGrid.Columns.GridColumn Matkl1;
     }
 }

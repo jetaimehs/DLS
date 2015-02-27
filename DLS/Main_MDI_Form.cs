@@ -60,7 +60,7 @@ namespace DLS
         {
             foreach (Form oForm in this.MdiChildren)
             {
-                if (OpenFrom.Equals(oForm.Text))
+                if (OpenFrom.Equals(oForm.Name))
                 {
                     oForm.BringToFront();
                     oForm.Focus();
@@ -69,6 +69,21 @@ namespace DLS
                 }
             }
             return true;
+        }
+
+        public void Mdi_Child_NewOpen(Form NewForm)
+        {
+            //foreach (Form oForm in this.MdiChildren)
+            //{
+            //    oForm.Dispose();    //동시에 1개만 떠 있도록. 
+            //}
+
+            NewForm.MdiParent = this;
+            NewForm.WindowState = FormWindowState.Maximized;
+            NewForm.BringToFront(); // 폼을 제일 위로
+            NewForm.Focus();
+            NewForm.Show();
+            //NewForm.Text = Common.Util.MyUtil.SetMultiLang(NewForm.Name);
         }
 
         //권한제어
@@ -143,21 +158,6 @@ namespace DLS
             ht.Add("@Skin", e.Item.Tag);
 
             ExecuteDataBase.ExecNonQuery("DLSSPAccount", ht, "");
-        }
-
-        public void Mdi_Child_NewOpen(Form NewForm)
-        {
-            //foreach (Form oForm in this.MdiChildren)
-            //{
-            //    oForm.Dispose();    //동시에 1개만 떠 있도록. 
-            //}
-
-            NewForm.MdiParent = this;
-            NewForm.WindowState = FormWindowState.Maximized;
-            NewForm.BringToFront(); // 폼을 제일 위로
-            NewForm.Focus();
-            NewForm.Show();
-            //NewForm.Text = Common.Util.MyUtil.SetMultiLang(NewForm.Name);
         }
 
         #region 메뉴버튼 클릭
@@ -344,7 +344,7 @@ namespace DLS
         //출고처리
         private void Btn_SD_OutDelivery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Customer_Delivery.cs"))
+            if (FromOpen("Customer_Delivery"))
             {
                 Sales_Distribution.Customer_Delivery fm = new Sales_Distribution.Customer_Delivery();
                 Mdi_Child_NewOpen(fm);
@@ -354,7 +354,7 @@ namespace DLS
         //출고이력
         private void Btn_SD_DeliveryHistory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Delivery_History.cs"))
+            if (FromOpen("Delivery_History"))
             {
                 Sales_Distribution.Delivery_History fm = new Sales_Distribution.Delivery_History();
                 Mdi_Child_NewOpen(fm);
@@ -364,7 +364,7 @@ namespace DLS
         //운송이력
         private void Btn_SD_TransferHistory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Transfer_History.cs"))
+            if (FromOpen("Transfer_History"))
             {
                 Sales_Distribution.Transfer_History fm = new Sales_Distribution.Transfer_History();
                 Mdi_Child_NewOpen(fm);
@@ -374,7 +374,7 @@ namespace DLS
         //일일 영업계획
         private void Btn_SD_DailyPlan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Daily_SalesPlan.cs"))
+            if (FromOpen("Daily_SalesPlan"))
             {
                 Sales_Distribution.Daily_SalesPlan fm = new Sales_Distribution.Daily_SalesPlan();
                 Mdi_Child_NewOpen(fm);
@@ -384,7 +384,7 @@ namespace DLS
         //계획대비 실적
         private void Btn_SD_Presult_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Sales_Plan_Result.cs"))
+            if (FromOpen("Sales_Plan_Result"))
             {
                 Sales_Distribution.Sales_Plan_Result fm = new Sales_Distribution.Sales_Plan_Result();
                 Mdi_Child_NewOpen(fm);
@@ -394,7 +394,7 @@ namespace DLS
         //월 납품계획 수립
         private void Btn_SD_MonthPlan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Monthly_SalesPlan.cs"))
+            if (FromOpen("Monthly_SalesPlan"))
             {
                 Sales_Distribution.Monthly_SalesPlan fm = new Sales_Distribution.Monthly_SalesPlan();
                 Mdi_Child_NewOpen(fm);
@@ -472,7 +472,7 @@ namespace DLS
 
         private void Btn_PP_Plan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Production_Plan.cs"))
+            if (FromOpen("Production_Plan"))
             {
                 Production_Planning.Production_Plan fm = new Production_Planning.Production_Plan();
                 Mdi_Child_NewOpen(fm);
@@ -482,7 +482,7 @@ namespace DLS
 
         private void Btn_PP_Output_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Production_Output.cs"))
+            if (FromOpen("Production_Output"))
             {
                 Production_Planning.Production_Output fm = new Production_Planning.Production_Output();
                 Mdi_Child_NewOpen(fm);
@@ -491,7 +491,7 @@ namespace DLS
 
         private void Btn_PP_StateReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Production_StateReport.cs"))
+            if (FromOpen("Production_StateReport"))
             {
                 Production_Planning.Production_StateReport fm = new Production_Planning.Production_StateReport();
                 Mdi_Child_NewOpen(fm);
@@ -504,7 +504,7 @@ namespace DLS
         //회계 납품 수불 현황 조회
         private void btn_FI_sales_delivery_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Monthly_Sales_Delivery.cs"))
+            if (FromOpen("Monthly_Sales_Delivery"))
             {
                 Financial.Monthly_Sales_Delivery fm = new Financial.Monthly_Sales_Delivery();
                 Mdi_Child_NewOpen(fm);
@@ -514,7 +514,7 @@ namespace DLS
         //회계 운송비현황 조회
         private void btn_FI_sales_Transfer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Monthly_Transfer_Cost.cs"))
+            if (FromOpen("Monthly_Transfer_Cost"))
             {
                 Financial.Monthly_Transfer_Cost fm = new Financial.Monthly_Transfer_Cost();
                 Mdi_Child_NewOpen(fm);
@@ -524,7 +524,7 @@ namespace DLS
         //물류마감
         private void btn_FI_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Monthly_FI_Close.cs"))
+            if (FromOpen("Monthly_FI_Close"))
             {
                 Financial.Monthly_FI_Close fm = new Financial.Monthly_FI_Close();
                 Mdi_Child_NewOpen(fm);
@@ -546,7 +546,7 @@ namespace DLS
 
         private void btn_ST_stock_list_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Now_Matrial_Stock.cs"))
+            if (FromOpen("Now_Matrial_Stock"))
             {
                 Report.Now_Matrial_Stock fm = new Report.Now_Matrial_Stock();
                 Mdi_Child_NewOpen(fm);
@@ -555,7 +555,7 @@ namespace DLS
 
         private void btn_doc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (FromOpen("Document_List.cs"))
+            if (FromOpen("Document_List"))
             {
                 Financial.Document_List fm = new Financial.Document_List();
                 Mdi_Child_NewOpen(fm);
