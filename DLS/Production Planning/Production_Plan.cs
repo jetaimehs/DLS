@@ -298,10 +298,15 @@ namespace DLS.Production_Planning
         {
             if (gv_ppPlan.FocusedColumn.Name == "Matnr")
             {
-                DataRowView drv = (DataRowView)gv_ppPlan.GetRow(gv_ppPlan.GetSelectedRows()[0]);
-                if (drv.Row.RowState.ToString() == "Unchanged")
+                //첫번째 추가열은 제외
+                DataRowView focusedRow = (DataRowView)gv_ppPlan.GetFocusedRow();
+                if (!focusedRow.IsNew)
                 {
-                    e.Valid = false;
+                    DataRowView drv = (DataRowView)gv_ppPlan.GetRow(gv_ppPlan.GetSelectedRows()[0]);
+                    if (drv.Row.RowState.ToString() == "Unchanged")
+                    {
+                        e.Valid = false;
+                    }
                 }
             }
         }

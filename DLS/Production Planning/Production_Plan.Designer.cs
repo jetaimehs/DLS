@@ -68,10 +68,10 @@
             this.ofdExcel = new System.Windows.Forms.OpenFileDialog();
             this.gc_ppPlan = new DevExpress.XtraGrid.GridControl();
             this.gv_ppPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.pppSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Spart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pppSel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit_pppSel = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.pppSeq = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Wdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Arbpl = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit_Arbpl = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -551,7 +551,7 @@
             this.repositoryItemSearchLookUpEdit_Matnr,
             this.repositoryItemLookUpEdit_Arbpl,
             this.repositoryItemCheckEdit_pppSel});
-            this.gc_ppPlan.Size = new System.Drawing.Size(1418, 556);
+            this.gc_ppPlan.Size = new System.Drawing.Size(1425, 556);
             this.gc_ppPlan.TabIndex = 3;
             this.gc_ppPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_ppPlan});
@@ -560,9 +560,9 @@
             // gv_ppPlan
             // 
             this.gv_ppPlan.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.pppSeq,
             this.Spart,
             this.pppSel,
+            this.pppSeq,
             this.Wdate,
             this.Arbpl,
             this.Mtart,
@@ -587,13 +587,6 @@
             this.gv_ppPlan.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gv_ppPlan_CustomUnboundColumnData);
             this.gv_ppPlan.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gv_ppPlan_MouseDown);
             this.gv_ppPlan.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gv_ppPlan_ValidatingEditor);
-            // 
-            // pppSeq
-            // 
-            this.pppSeq.Caption = "pppSeq";
-            this.pppSeq.FieldName = "pppSeq";
-            this.pppSeq.Name = "pppSeq";
-            this.pppSeq.UnboundType = DevExpress.Data.UnboundColumnType.String;
             // 
             // Spart
             // 
@@ -625,6 +618,19 @@
             this.repositoryItemCheckEdit_pppSel.AutoHeight = false;
             this.repositoryItemCheckEdit_pppSel.Name = "repositoryItemCheckEdit_pppSel";
             // 
+            // pppSeq
+            // 
+            this.pppSeq.Caption = "계획일련번호";
+            this.pppSeq.FieldName = "pppSeq";
+            this.pppSeq.MaxWidth = 200;
+            this.pppSeq.MinWidth = 200;
+            this.pppSeq.Name = "pppSeq";
+            this.pppSeq.OptionsColumn.AllowEdit = false;
+            this.pppSeq.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.pppSeq.Visible = true;
+            this.pppSeq.VisibleIndex = 1;
+            this.pppSeq.Width = 200;
+            // 
             // Wdate
             // 
             this.Wdate.Caption = "계획일자";
@@ -634,7 +640,7 @@
             this.Wdate.Name = "Wdate";
             this.Wdate.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.Wdate.Visible = true;
-            this.Wdate.VisibleIndex = 1;
+            this.Wdate.VisibleIndex = 2;
             this.Wdate.Width = 138;
             // 
             // Arbpl
@@ -642,12 +648,12 @@
             this.Arbpl.Caption = "작업장";
             this.Arbpl.ColumnEdit = this.repositoryItemLookUpEdit_Arbpl;
             this.Arbpl.FieldName = "Arbpl";
-            this.Arbpl.MaxWidth = 200;
+            this.Arbpl.MaxWidth = 150;
             this.Arbpl.MinWidth = 100;
             this.Arbpl.Name = "Arbpl";
             this.Arbpl.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Arbpl.Visible = true;
-            this.Arbpl.VisibleIndex = 2;
+            this.Arbpl.VisibleIndex = 3;
             this.Arbpl.Width = 147;
             // 
             // repositoryItemLookUpEdit_Arbpl
@@ -671,7 +677,7 @@
             this.Mtart.OptionsColumn.AllowEdit = false;
             this.Mtart.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Mtart.Visible = true;
-            this.Mtart.VisibleIndex = 3;
+            this.Mtart.VisibleIndex = 4;
             // 
             // Matkl
             // 
@@ -683,7 +689,7 @@
             this.Matkl.OptionsColumn.AllowEdit = false;
             this.Matkl.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Matkl.Visible = true;
-            this.Matkl.VisibleIndex = 4;
+            this.Matkl.VisibleIndex = 5;
             this.Matkl.Width = 100;
             // 
             // Matnr
@@ -691,13 +697,13 @@
             this.Matnr.Caption = "자재번호";
             this.Matnr.ColumnEdit = this.repositoryItemSearchLookUpEdit_Matnr;
             this.Matnr.FieldName = "Matnr";
-            this.Matnr.MaxWidth = 200;
+            this.Matnr.MaxWidth = 150;
             this.Matnr.MinWidth = 150;
             this.Matnr.Name = "Matnr";
             this.Matnr.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Matnr.Visible = true;
-            this.Matnr.VisibleIndex = 5;
-            this.Matnr.Width = 200;
+            this.Matnr.VisibleIndex = 6;
+            this.Matnr.Width = 150;
             // 
             // repositoryItemSearchLookUpEdit_Matnr
             // 
@@ -761,7 +767,7 @@
             this.Gsmng.Name = "Gsmng";
             this.Gsmng.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.Gsmng.Visible = true;
-            this.Gsmng.VisibleIndex = 6;
+            this.Gsmng.VisibleIndex = 7;
             this.Gsmng.Width = 57;
             // 
             // Meins
@@ -774,7 +780,7 @@
             this.Meins.OptionsColumn.AllowEdit = false;
             this.Meins.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Meins.Visible = true;
-            this.Meins.VisibleIndex = 7;
+            this.Meins.VisibleIndex = 8;
             this.Meins.Width = 80;
             // 
             // PPlgort
@@ -787,7 +793,7 @@
             this.PPlgort.OptionsColumn.AllowEdit = false;
             this.PPlgort.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.PPlgort.Visible = true;
-            this.PPlgort.VisibleIndex = 8;
+            this.PPlgort.VisibleIndex = 9;
             this.PPlgort.Width = 80;
             // 
             // Decom
@@ -800,7 +806,7 @@
             this.Decom.OptionsColumn.AllowEdit = false;
             this.Decom.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Decom.Visible = true;
-            this.Decom.VisibleIndex = 9;
+            this.Decom.VisibleIndex = 10;
             this.Decom.Width = 70;
             // 
             // Ifcom
@@ -813,7 +819,7 @@
             this.Ifcom.OptionsColumn.AllowEdit = false;
             this.Ifcom.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Ifcom.Visible = true;
-            this.Ifcom.VisibleIndex = 10;
+            this.Ifcom.VisibleIndex = 11;
             this.Ifcom.Width = 70;
             // 
             // Lvorm
@@ -826,7 +832,7 @@
             this.Lvorm.OptionsColumn.AllowEdit = false;
             this.Lvorm.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Lvorm.Visible = true;
-            this.Lvorm.VisibleIndex = 11;
+            this.Lvorm.VisibleIndex = 12;
             this.Lvorm.Width = 70;
             // 
             // gridColumn20
@@ -851,7 +857,7 @@
             this.gridColumn21.MinWidth = 50;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 13;
+            this.gridColumn21.VisibleIndex = 14;
             this.gridColumn21.Width = 50;
             // 
             // repositoryItemHyperLinkEdit_Delete
@@ -870,7 +876,7 @@
             this.pppNote.OptionsColumn.AllowEdit = false;
             this.pppNote.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.pppNote.Visible = true;
-            this.pppNote.VisibleIndex = 12;
+            this.pppNote.VisibleIndex = 13;
             this.pppNote.Width = 150;
             // 
             // dockManager1
@@ -974,8 +980,8 @@
             this.dockPanel2.Options.ShowAutoHideButton = false;
             this.dockPanel2.Options.ShowCloseButton = false;
             this.dockPanel2.Options.ShowMaximizeButton = false;
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(1426, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(1426, 583);
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(1433, 200);
+            this.dockPanel2.Size = new System.Drawing.Size(1433, 583);
             this.dockPanel2.Text = "생산계획";
             // 
             // dockPanel2_Container
@@ -983,16 +989,16 @@
             this.dockPanel2_Container.Controls.Add(this.gc_ppPlan);
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1418, 556);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1425, 556);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.gc_sdPlan);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(1426, 185);
+            this.groupControl1.Location = new System.Drawing.Point(1433, 185);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(18, 583);
+            this.groupControl1.Size = new System.Drawing.Size(11, 583);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "영업계획";
             // 
@@ -1002,7 +1008,7 @@
             this.gc_sdPlan.Location = new System.Drawing.Point(2, 22);
             this.gc_sdPlan.MainView = this.gv_sdPlan;
             this.gc_sdPlan.Name = "gc_sdPlan";
-            this.gc_sdPlan.Size = new System.Drawing.Size(14, 559);
+            this.gc_sdPlan.Size = new System.Drawing.Size(7, 559);
             this.gc_sdPlan.TabIndex = 0;
             this.gc_sdPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_sdPlan});
