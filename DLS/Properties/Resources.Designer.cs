@@ -480,6 +480,24 @@ namespace DLS.Properties {
         }
         
         /// <summary>
+        ///   기타입고수량과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string EtcInstock {
+            get {
+                return ResourceManager.GetString("EtcInstock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   기타출고수량과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string EtcOutstock {
+            get {
+                return ResourceManager.GetString("EtcOutstock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.Drawing.Bitmap Exclamation {
@@ -596,6 +614,15 @@ namespace DLS.Properties {
             get {
                 object obj = ResourceManager.GetObject("InsertPicture_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   입고수량과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Instock {
+            get {
+                return ResourceManager.GetString("Instock", resourceCulture);
             }
         }
         
@@ -815,6 +842,15 @@ namespace DLS.Properties {
             get {
                 object obj = ResourceManager.GetObject("Options", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   출고수량과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string Outstock {
+            get {
+                return ResourceManager.GetString("Outstock", resourceCulture);
             }
         }
         

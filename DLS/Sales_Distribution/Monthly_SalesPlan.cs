@@ -137,7 +137,10 @@ namespace DLS.Sales_Distribution
 
                 DataRow[] dr_matnr = dt1.Select("Matnr ='" + dtUpload.Rows[i]["Matnr"].ToString() + "'");
 
-                not_reg_matnr += dtUpload.Rows[i]["Matnr"] + "//"; 
+                if (dr_matnr.Length < 1)
+                {
+                    not_reg_matnr += dtUpload.Rows[i]["Matnr"] + "//";
+                }
             }
 
             if (!not_reg_matnr.Equals(string.Empty))
@@ -334,8 +337,7 @@ namespace DLS.Sales_Distribution
                             break;
                     }
                 }
-            }
-            
+            }            
         }
     }
 }
